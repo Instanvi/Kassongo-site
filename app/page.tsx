@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Shield, Scale, Package as PackageIcon, Zap, Flame, Globe, CheckCircle, Smartphone } from "lucide-react";
+import { Shield, Scale, Package as PackageIcon, Zap, Flame, Globe, CheckCircle, Smartphone, Star, Flag } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Button from "../components/Button";
@@ -387,7 +387,12 @@ export default function Home() {
             {/* Hub Selector Form */}
             <div className="lg:col-span-5 bg-white border border-gray-200 rounded-3xl p-6 md:p-8 shadow-soft-xl">
               <div className="flex items-center gap-2 mb-4 text-green-600 text-xs font-bold">
-                <span>★★★★★</span> <span>4.9/5.0 Rated (15,000+ members)</span>
+                <div className="flex gap-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-3 h-3 fill-current" />
+                  ))}
+                </div>
+                <span>4.9/5.0 Rated (15,000+ members)</span>
               </div>
               <h2 className="text-3xl font-display font-bold tracking-tight mb-2 text-gray-900">Kassongo Mailbox</h2>
               <p className="text-xs md:text-sm leading-relaxed text-gray-600 mb-6">
@@ -401,13 +406,14 @@ export default function Home() {
                     <button
                       key={hub}
                       onClick={() => setSelectedHub(hub)}
-                      className={`py-3 px-2 rounded-xl border text-center font-bold uppercase text-xs shadow-soft transition-all hover:shadow-soft-md ${
+                      className={`py-3 px-2 rounded-xl border text-center font-bold uppercase text-xs shadow-soft transition-all hover:shadow-soft-md flex items-center justify-center gap-1.5 ${
                         selectedHub === hub ? "bg-green-900 text-white border-green-900" : "bg-white border-gray-200 text-gray-700"
                       }`}
                     >
-                      {hub === "us" && "🇺🇸 US"}
-                      {hub === "uk" && "🇬🇧 UK"}
-                      {hub === "china" && "🇨🇳 China"}
+                      <Flag className="w-3.5 h-3.5" />
+                      {hub === "us" && "US"}
+                      {hub === "uk" && "UK"}
+                      {hub === "china" && "China"}
                     </button>
                   ))}
                 </div>
@@ -422,7 +428,8 @@ export default function Home() {
                 <div className="mt-3 pt-3 border-t border-gray-200 space-y-1">
                   {hubDetails[selectedHub].features.map((feat) => (
                     <div key={feat} className="text-[10px] font-bold text-gray-600 flex gap-1 items-center">
-                      <span>★</span> <span>{feat}</span>
+                      <Star className="w-2.5 h-2.5 fill-current text-green-600" />
+                      <span>{feat}</span>
                     </div>
                   ))}
                 </div>
@@ -448,7 +455,11 @@ export default function Home() {
                 
                 {/* Five star checklist */}
                 <div className="flex items-center gap-2">
-                  <span className="text-green-400 tracking-tight">★★★★★</span>
+                  <div className="flex gap-0.5 text-green-400">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-3.5 h-3.5 fill-current" />
+                    ))}
+                  </div>
                   <span className="text-xs font-bold text-gray-200">
                     <strong className="text-white">4.9</strong> rating from <strong className="text-white">15,000+</strong> verified accounts
                   </span>
