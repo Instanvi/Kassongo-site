@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { Input } from "./Input";
 import Button from "./Button";
 
 // Simple SVG icon components
@@ -46,47 +47,45 @@ export default function Footer() {
         
         {/* Left Column: Sign Up and Wordmark */}
         <div className="lg:col-span-5 space-y-6">
-          <h3 className="text-xl md:text-2xl font-display font-bold tracking-tight text-yellow-400">
-            Sign Up for 60% Off First Dispatch
+          <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-white">
+            Get Your Hub Address
           </h3>
-
-          <form onSubmit={handleSubscribe} className="flex max-w-sm border border-gray-600 rounded-lg overflow-hidden shadow-soft bg-white">
-            <input
-              type={emailMode ? "email" : "tel"}
-              placeholder={emailMode ? "Enter your email" : "Enter phone number"}
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              className="flex-1 px-4 py-3 text-gray-900 font-semibold text-sm outline-none placeholder:text-gray-400"
-              required
-            />
-            <button
-              type="submit"
-              className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-4 font-bold uppercase text-xs border-l border-gray-300 flex items-center justify-center cursor-pointer transition-colors"
-            >
-              ➔
-            </button>
-          </form>
-
-          <div>
-            <button
-              type="button"
-              onClick={() => {
-                setEmailMode(!emailMode);
-                setPhone("");
-              }}
-              className="text-xs font-bold underline hover:text-yellow-400 transition-colors cursor-pointer"
-            >
-              {emailMode ? "Use phone number instead" : "Email me instead"}
-            </button>
-          </div>
-
-          <p className="text-[10px] leading-relaxed text-gray-300 max-w-sm">
-            *By signing up, you agree to receive recurring automated marketing alerts. Consent is not a condition of purchase. Msg &amp; data rates may apply. View our Privacy Policy &amp; Terms.
+          <p className="text-sm text-gray-300 leading-relaxed max-w-md">
+            Sign up to receive your unique Kassongo shipping addresses in major global trade hubs. Start consolidating and forwarding your shipments today.
           </p>
 
+          <form onSubmit={handleSubscribe} className="flex max-w-sm rounded-xl overflow-hidden shadow-soft">
+            <Input
+              type={emailMode ? "email" : "tel"}
+              placeholder={emailMode ? "Your email" : "Phone number"}
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              required
+              className="rounded-r-none border-r-0"
+            />
+            <Button
+              variant="secondary"
+              type="submit"
+              className="rounded-l-none px-6 shrink-0"
+            >
+              →
+            </Button>
+          </form>
+
+          <button
+            type="button"
+            onClick={() => {
+              setEmailMode(!emailMode);
+              setPhone("");
+            }}
+            className="text-xs font-semibold text-gray-300 hover:text-white transition-colors underline"
+          >
+            {emailMode ? "Use phone instead" : "Use email instead"}
+          </button>
+
           {/* Wordmark Logo */}
-          <div className="pt-6">
-            <div className="flex items-center gap-3">
+          <div className="pt-8">
+            <div className="flex items-center gap-3 mb-4">
               <Image
                 src="/kassongo-logo-sm.png"
                 alt="Kassongo"
@@ -94,22 +93,22 @@ export default function Footer() {
                 height={32}
                 className="w-8 h-8"
               />
-              <span className="font-bold italic text-3xl tracking-tight text-white">
+              <span className="font-bold italic text-2xl tracking-tight text-white">
                 kassongo
               </span>
             </div>
             {/* Socials */}
-            <div className="flex gap-3 mt-4">
-              <a href="#instagram" className="w-9 h-9 rounded-lg bg-green-950 border border-white/10 flex items-center justify-center cursor-pointer hover:border-yellow-400 hover:bg-green-800 transition-all">
+            <div className="flex gap-3">
+              <a href="#instagram" className="w-9 h-9 rounded-lg bg-green-950 border border-white/10 flex items-center justify-center hover:border-white/30 transition-all">
                 <InstagramIcon />
               </a>
-              <a href="#tiktok" className="w-9 h-9 rounded-lg bg-green-950 border border-white/10 flex items-center justify-center cursor-pointer hover:border-yellow-400 hover:bg-green-800 transition-all">
+              <a href="#tiktok" className="w-9 h-9 rounded-lg bg-green-950 border border-white/10 flex items-center justify-center hover:border-white/30 transition-all">
                 <TikTokIcon />
               </a>
-              <a href="#youtube" className="w-9 h-9 rounded-lg bg-green-950 border border-white/10 flex items-center justify-center cursor-pointer hover:border-yellow-400 hover:bg-green-800 transition-all">
+              <a href="#youtube" className="w-9 h-9 rounded-lg bg-green-950 border border-white/10 flex items-center justify-center hover:border-white/30 transition-all">
                 <YoutubeIcon />
               </a>
-              <a href="#facebook" className="w-9 h-9 rounded-lg bg-green-950 border border-white/10 flex items-center justify-center cursor-pointer hover:border-yellow-400 hover:bg-green-800 transition-all">
+              <a href="#facebook" className="w-9 h-9 rounded-lg bg-green-950 border border-white/10 flex items-center justify-center hover:border-white/30 transition-all">
                 <FacebookIcon />
               </a>
             </div>
@@ -117,38 +116,35 @@ export default function Footer() {
         </div>
 
         {/* Right Columns: Nav Links */}
-        <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-10">
           
-          <div className="space-y-4">
-            <h4 className="font-bold text-xs uppercase tracking-wider text-yellow-400">Learn</h4>
-            <ul className="space-y-2 text-xs font-semibold text-gray-200">
-              <li><a href="#services" className="hover:underline">Consolidation Guide</a></li>
-              <li><a href="#how-it-works" className="hover:underline">How Sourcing Works</a></li>
-              <li><a href="#standards" className="hover:underline">Quality Inspections</a></li>
-              <li><a href="#get-address" className="hover:underline">Pricing Calculator</a></li>
-              <li><a href="#faq" className="hover:underline">FAQs</a></li>
+          <div className="space-y-3">
+            <h4 className="font-bold text-sm uppercase tracking-wider text-white">Services</h4>
+            <ul className="space-y-2 text-sm text-gray-300">
+              <li><a href="/#services" className="hover:text-white transition-colors">Consolidated Shipping</a></li>
+              <li><a href="/#services" className="hover:text-white transition-colors">Secure Storage</a></li>
+              <li><a href="/#services" className="hover:text-white transition-colors">Assisted Sourcing</a></li>
+              <li><a href="/#services" className="hover:text-white transition-colors">Express Forwarding</a></li>
             </ul>
           </div>
 
-          <div className="space-y-4">
-            <h4 className="font-bold text-xs uppercase tracking-wider text-yellow-400">Connect</h4>
-            <ul className="space-y-2 text-xs font-semibold text-gray-200">
-              <li><a href="#refer" className="hover:underline">Refer a Friend</a></li>
-              <li><a href="#partners" className="hover:underline">Affiliate Sourcing</a></li>
-              <li><a href="#press" className="hover:underline">Press Inquiries</a></li>
-              <li><a href="#careers" className="hover:underline">Careers</a></li>
-              <li><a href="#contact" className="hover:underline">Contact Us</a></li>
+          <div className="space-y-3">
+            <h4 className="font-bold text-sm uppercase tracking-wider text-white">Company</h4>
+            <ul className="space-y-2 text-sm text-gray-300">
+              <li><a href="/#about" className="hover:text-white transition-colors">About Us</a></li>
+              <li><a href="/#standards" className="hover:text-white transition-colors">How It Works</a></li>
+              <li><a href="/contact" className="hover:text-white transition-colors">Contact</a></li>
+              <li><a href="#careers" className="hover:text-white transition-colors">Careers</a></li>
             </ul>
           </div>
 
-          <div className="space-y-4 col-span-2 md:col-span-1">
-            <h4 className="font-bold text-xs uppercase tracking-wider text-yellow-400">Services</h4>
-            <ul className="space-y-2 text-xs font-semibold text-gray-200">
-              <li><a href="#services" className="hover:underline">Consolidated Air</a></li>
-              <li><a href="#services" className="hover:underline">Secure Storage</a></li>
-              <li><a href="#services" className="hover:underline">Assisted Buying</a></li>
-              <li><a href="#services" className="hover:underline">Express Freight</a></li>
-              <li><a href="#services" className="hover:underline">Customs Handled</a></li>
+          <div className="space-y-3 col-span-2 md:col-span-1">
+            <h4 className="font-bold text-sm uppercase tracking-wider text-white">Support</h4>
+            <ul className="space-y-2 text-sm text-gray-300">
+              <li><a href="/#get-address" className="hover:text-white transition-colors">Get Started</a></li>
+              <li><a href="#help" className="hover:text-white transition-colors">Help Center</a></li>
+              <li><a href="#track" className="hover:text-white transition-colors">Track Shipment</a></li>
+              <li><a href="#faq" className="hover:text-white transition-colors">FAQs</a></li>
             </ul>
           </div>
 
@@ -156,31 +152,27 @@ export default function Footer() {
 
       </div>
 
-      {/* Disclaimers & Bottom Bar */}
-      <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/10 relative z-10 flex flex-col md:flex-row justify-between gap-6 text-[10px] text-gray-300 font-semibold">
-        <div className="max-w-md space-y-2 leading-relaxed">
-          <p>
-            *Disclaimer: Kassongo Express operates as an independent cargo shipping and packaging consolidation service agent. Sourcing references do not represent official partnerships unless stated.
-          </p>
-          <p>
-            © Copyright {new Date().getFullYear()}, Kassongo Express. All rights reserved.
-          </p>
-        </div>
+      {/* Bottom Bar */}
+      <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/10 relative z-10 flex flex-col md:flex-row justify-between gap-6 text-xs text-gray-400">
+        <p>
+          © {new Date().getFullYear()} Kassongo Express. All rights reserved.
+        </p>
 
-        <div className="flex flex-wrap gap-x-6 gap-y-2 items-center">
-          <a href="#refund" className="hover:underline">Refund Policy</a>
-          <a href="#privacy" className="hover:underline">Privacy Policy</a>
-          <a href="#terms" className="hover:underline">Terms Of Service</a>
-          <a href="#shipping" className="hover:underline">Shipping Policy</a>
-          <a href="#accessibility" className="hover:underline">Accessibility</a>
+        <div className="flex flex-wrap gap-x-6 gap-y-2">
+          <a href="#privacy" className="hover:text-white transition-colors">Privacy</a>
+          <a href="#terms" className="hover:text-white transition-colors">Terms</a>
+          <a href="#shipping" className="hover:text-white transition-colors">Shipping Policy</a>
         </div>
       </div>
 
-      {/* Giant backdrop background text */}
-      <div className="absolute bottom-[-10px] left-1/2 -translate-x-1/2 w-full text-center pointer-events-none select-none opacity-[0.03] overflow-hidden whitespace-nowrap">
-        <span className="font-display font-bold text-[9vw] tracking-tighter uppercase text-white block">
-          cheetah speed delivery
-        </span>
+      {/* Giant backdrop branding with logo integration */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-full text-center pointer-events-none select-none overflow-hidden">
+        <div className="flex items-center justify-center gap-2 md:gap-4">
+          {/* KASS */}
+          <span className="font-display font-black text-[12vw] sm:text-[10vw] md:text-[8vw] tracking-tighter uppercase text-green-700 leading-none">
+            KASSONGO
+          </span>
+        </div>
       </div>
 
     </footer>

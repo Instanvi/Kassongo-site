@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Menu, X, ShoppingBag } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Button from "./Button";
 import Image from "next/image";
 
@@ -16,7 +16,7 @@ export default function Header() {
           {/* Logo */}
           <a href="/" className="flex items-center gap-2 group">
             <Image
-              src="/kassongo-logo-sm.png"
+              src="/kassongo-logo-lg.png"
               alt="Kassongo"
               width={32}
               height={32}
@@ -45,19 +45,11 @@ export default function Header() {
             <Button
               variant="secondary"
               size="default"
-              href="#get-address"
+              href="/contact"
               className="hidden md:inline-flex"
             >
-              Shop Now
+              Contact Us
             </Button>
-
-            <button
-              type="button"
-              className="hidden md:flex w-9 h-9 items-center justify-center text-gray-600 hover:text-gray-900 transition-smooth"
-              aria-label="Shopping Cart"
-            >
-              <ShoppingBag className="w-5 h-5" />
-            </button>
 
             {/* Mobile Menu Toggle */}
             <button
@@ -101,11 +93,11 @@ export default function Header() {
                 <Button
                   variant="secondary"
                   size="lg"
-                  href="#get-address"
+                  href="/contact"
                   onClick={() => setIsMenuOpen(false)}
                   className="w-full justify-center"
                 >
-                  Shop Now
+                  Contact Us
                 </Button>
               </div>
             </nav>
