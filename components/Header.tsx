@@ -15,11 +15,10 @@ export default function Header() {
           
           {/* Logo */}
           <a href="/" className="flex items-center gap-2 group">
-            <Image
-              src="/kassongo-logo-lg.png"
+            <img
+              src="/kassongo.svg"
               alt="Kassongo"
-              width={32}
-              height={32}
+              style={{ height: "32px", width: "auto" }} 
               className="w-8 h-8 transition-smooth"
             />
             <span className="font-bold text-lg text-gray-900">

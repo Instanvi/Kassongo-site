@@ -476,7 +476,7 @@ export default function Home() {
                       Select Hub
                     </Button>
                     <a href="#send" className="block text-center text-sm font-medium text-green-600 hover:text-green-700 transition-smooth">
-                      Learn More →
+                      Learn More
                     </a>
                   </div>
                 </div>
@@ -501,7 +501,7 @@ export default function Home() {
                       Select Hub
                     </Button>
                     <a href="#storage" className="block text-center text-sm font-medium text-green-600 hover:text-green-700 transition-smooth">
-                      Learn More →
+                      Learn More
                     </a>
                   </div>
                 </div>
@@ -526,7 +526,7 @@ export default function Home() {
                       Select Hub
                     </Button>
                     <a href="#procurement" className="block text-center text-sm font-medium text-green-600 hover:text-green-700 transition-smooth">
-                      Learn More →
+                      Learn More
                     </a>
                   </div>
                 </div>
@@ -551,7 +551,7 @@ export default function Home() {
                       Select Hub
                     </Button>
                     <a href="#receive" className="block text-center text-sm font-medium text-green-600 hover:text-green-700 transition-smooth">
-                      Learn More →
+                      Learn More
                     </a>
                   </div>
                 </div>
