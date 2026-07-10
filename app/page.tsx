@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Shield, Scale, Package as PackageIcon, Zap, Flame, Globe, CheckCircle, Smartphone, Star, Flag } from "lucide-react";
+import { Shield, Scale, Package as PackageIcon, Zap, Flame, CheckCircle, Globe, MapPin, ShoppingCart, Truck, Send, Inbox, Warehouse, Bus } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Button from "../components/Button";
@@ -46,119 +46,409 @@ export default function Home() {
       {/* Main Container */}
       <main role="main" className="max-w-screen overflow-x-clip pt-16" id="main">
         
-        {/* 1. Hero Section */}
-        <section className="bg-gradient-soft py-16 px-6 md:py-24 md:px-12 lg:px-20">
-          <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
-            
-            {/* Hero Left Info */}
-            <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left gap-8">
+        {/* 1. Hero Section - Rebranded */}
+        <section className="relative bg-white py-12 px-6 md:py-16 lg:py-20 overflow-hidden">
+          
+          {/* Background decoration */}
+          <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-white to-yellow-50 opacity-60"></div>
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-green-900/5 to-transparent"></div>
+          
+          <div className="max-w-7xl mx-auto relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               
-              {/* Star Rating Statement */}
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 text-sm font-semibold text-gray-600">
-                <div className="flex text-green-500">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                    </svg>
-                  ))}
+              {/* Left Column - Content */}
+              <div className="space-y-8">
+                
+                {/* Badge */}
+                <div className="inline-flex items-center gap-2 bg-green-900 text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide shadow-soft">
+                  <Zap className="w-3 h-3 text-yellow-400" />
+                  <span>Trusted Freight Forwarding</span>
                 </div>
-                <span className="text-gray-700">
-                  <strong className="text-gray-900">4.9</strong> from <strong className="text-gray-900">15,000+</strong> reviews · <strong className="text-gray-900">1,000,000+</strong> members
-                </span>
+
+                {/* Main Headline */}
+                <div className="space-y-4">
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-black leading-[0.95] tracking-tight text-gray-900">
+                    Ship Smarter.<br />
+                    <span className="text-green-600">Ship Faster.</span><br />
+                    <span className="text-yellow-400">Ship Global.</span>
+                  </h1>
+                  <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-xl">
+                    Your worldwide freight forwarding partner. Consolidate, store, and ship from the US, UK, and China to anywhere in the world.
+                  </p>
+                </div>
+
+                {/* CTAs */}
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button 
+                    variant="primary" 
+                    size="lg" 
+                    href="#get-address"
+                    className="shadow-soft-lg hover:shadow-soft-xl transition-all"
+                  >
+                    <PackageIcon className="w-5 h-5" />
+                    Get Free Address
+                  </Button>
+                  <Button 
+                    variant="secondary" 
+                    size="lg" 
+                    href="/contact"
+                    className="shadow-soft hover:shadow-soft-md transition-all"
+                  >
+                    <Send className="w-5 h-5" />
+                    Contact Us
+                  </Button>
+                </div>
+
+                {/* Trust Indicators */}
+                <div className="flex flex-wrap items-center gap-6 pt-4">
+                  <div className="flex items-center gap-2">
+                    <Shield className="w-5 h-5 text-green-600" />
+                    <span className="text-sm font-semibold text-gray-700">Fully Insured</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Truck className="w-5 h-5 text-green-600" />
+                    <span className="text-sm font-semibold text-gray-700">Real-time Tracking</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-green-600" />
+                    <span className="text-sm font-semibold text-gray-700">30 Days Free Storage</span>
+                  </div>
+                </div>
+
+                {/* Stats Row */}
+                <div className="grid grid-cols-3 gap-6 pt-8 border-t border-gray-200">
+                  <div>
+                    <div className="text-3xl md:text-4xl font-display font-black text-green-600 mb-1">60+</div>
+                    <div className="text-xs font-bold uppercase text-gray-500 tracking-wide">Global Hubs</div>
+                  </div>
+                  <div>
+                    <div className="text-3xl md:text-4xl font-display font-black text-green-600 mb-1">21+</div>
+                    <div className="text-xs font-bold uppercase text-gray-500 tracking-wide">Carriers</div>
+                  </div>
+                  <div>
+                    <div className="text-3xl md:text-4xl font-display font-black text-green-600 mb-1">1M+</div>
+                    <div className="text-xs font-bold uppercase text-gray-500 tracking-wide">Members</div>
+                  </div>
+                </div>
+
               </div>
 
-              {/* Title */}
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight tracking-tight text-gray-900">
-                Global Sourcing<br />
-                Never Felt <span className="text-green-600 italic">So Simple.</span>
-              </h1>
-
-              {/* Call to action */}
-              <div className="w-full max-w-md flex flex-col gap-3">
-                <Button variant="primary" size="lg" href="#get-address" className="w-full transition-smooth shadow-soft-md hover:shadow-soft-lg">
-                  Get Address + 30d Free Storage
-                </Button>
+              {/* Right Column - Visual */}
+              <div className="relative">
                 
-                <div className="flex items-center justify-center lg:justify-start gap-6 text-xs font-medium text-gray-600">
-                  <span className="flex items-center gap-1.5">
-                    <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    30-day guarantee
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                    Cancel anytime
-                  </span>
+                {/* Main Image Card */}
+                <div className="relative bg-white rounded-2xl shadow-soft-xl border border-gray-200 overflow-hidden">
+                  <img
+                    src="/screenshot-1.jpg"
+                    alt="Kassongo Freight Platform"
+                    className="w-full h-auto"
+                  />
+                  
+                  {/* Floating Badge on Image */}
+                  <div className="absolute top-4 right-4 bg-yellow-400 text-gray-900 px-4 py-2 rounded-xl shadow-soft-lg">
+                    <div className="text-xs font-bold uppercase tracking-wide">Starting at</div>
+                    <div className="text-2xl font-black">$3.80<span className="text-sm font-semibold">/kg</span></div>
+                  </div>
                 </div>
-              </div>
 
-              {/* 3 Stats */}
-              <div className="flex items-start justify-center lg:justify-start gap-8 md:gap-12 w-full pt-6 border-t border-gray-200">
+                {/* Floating Stats Cards 
+                <div className="absolute -bottom-6 -left-6 bg-green-900 text-white p-6 rounded-2xl shadow-soft-xl border border-green-800 hidden lg:block">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 bg-green-700 rounded-xl flex items-center justify-center">
+                      <Zap className="w-6 h-6 text-yellow-400" />
+                    </div>
+                    <div>
+                      <div className="text-2xl font-black">6 Days</div>
+                      <div className="text-xs font-semibold text-green-300">Avg. Customs</div>
+                    </div>
+                  </div>
+                </div>
                 
-                <div className="flex flex-col items-center gap-2">
-                  <div className="relative flex items-center justify-center w-16 h-16 gradient-green rounded-2xl shadow-soft text-white font-bold text-lg">
-                    60+
-                  </div>
-                  <p className="text-xs font-semibold uppercase text-gray-900 text-center mt-1">Sourcing Hubs</p>
-                  <p className="text-xs text-gray-500 text-center leading-tight">Major markets</p>
-                </div>
 
-                <div className="flex flex-col items-center gap-2">
-                  <div className="relative flex items-center justify-center w-16 h-16 bg-yellow-400 rounded-2xl shadow-soft text-gray-900 font-bold text-lg">
-                    21+
+                <div className="absolute -top-6 -right-6 bg-white p-5 rounded-2xl shadow-soft-xl border border-gray-200 hidden lg:block">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex text-green-600">
+                      {[...Array(5)].map((_, i) => (
+                        <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                          <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                        </svg>
+                      ))}
+                    </div>
                   </div>
-                  <p className="text-xs font-semibold uppercase text-gray-900 text-center mt-1">Carriers</p>
-                  <p className="text-xs text-gray-500 text-center leading-tight">Air & ocean routes</p>
+                  <div className="text-xl font-black text-gray-900">4.9/5</div>
+                  <div className="text-xs font-semibold text-gray-500">15K+ Reviews</div>
                 </div>
-
-                <div className="flex flex-col items-center gap-2">
-                  <div className="relative flex items-center justify-center w-16 h-16 bg-gray-900 rounded-2xl shadow-soft text-white font-bold text-lg">
-                    6d
-                  </div>
-                  <p className="text-xs font-semibold uppercase text-gray-900 text-center mt-1">Avg Clearing</p>
-                  <p className="text-xs text-gray-500 text-center leading-tight">Quick customs</p>
-                </div>
-
+*/}
               </div>
 
             </div>
-
-            {/* Hero Right Visual Column */}
-            <div className="flex-1 w-full max-w-lg relative">
-              <div className="w-full bg-white rounded-3xl overflow-hidden shadow-soft-xl hover:shadow-soft-xl transition-smooth-slow border border-gray-100">
-                <img
-                  src="/screenshot-1.jpg"
-                  alt="Kassongo Sourcing Platform"
-                  className="w-full h-auto aspect-square object-cover"
-                />
-              </div>
-            </div>
-
           </div>
         </section>
 
-        {/* 2. Press Logo Marquee */}
+        {/* 2. How It Works - Visual Process Section */}
+        <section id="how-it-works" className="py-20 px-6 md:px-12 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight mb-16 text-center text-gray-900">
+              How It Works
+            </h2>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              
+              {/* Left: Cheetah World Graphic */}
+              <div className="relative flex items-center justify-center">
+                <div className="w-full max-w-md aspect-square relative">
+                  {/* Cheetah World Image - blends naturally with background */}
+                  <div className="absolute inset-0 flex items-center justify-center p-8">
+                    <img 
+                      src="/CheetahWorld.png" 
+                      alt="Kassongo Global Network" 
+                      className="w-auto h-700 object-contain opacity-80"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Right: 3-Step Process */}
+              <div className="space-y-8">
+                
+                {/* Step 1 */}
+                <div className="flex items-start gap-4 group">
+                  <div className="flex-shrink-0 w-16 h-16 bg-green-900 rounded-2xl flex items-center justify-center shadow-soft group-hover:shadow-soft-lg transition-all">
+                    <MapPin className="w-8 h-8 text-yellow-400" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="inline-flex items-center justify-center w-8 h-8 bg-green-900 text-white rounded-full text-sm font-bold">1</span>
+                      <h3 className="text-xl font-bold text-gray-900">Get Your Address</h3>
+                    </div>
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      Sign up to receive your unique Kassongo Mail shipping addresses in major global trade hubs
+                    </p>
+                  </div>
+                </div>
+
+                {/* Connecting dotted line */}
+                <div className="ml-8 border-l-2 border-dashed border-gray-300 h-8"></div>
+
+                {/* Step 2 */}
+                <div className="flex items-start gap-4 group">
+                  <div className="flex-shrink-0 w-16 h-16 bg-green-900 rounded-2xl flex items-center justify-center shadow-soft group-hover:shadow-soft-lg transition-all">
+                    <ShoppingCart className="w-8 h-8 text-yellow-400" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="inline-flex items-center justify-center w-8 h-8 bg-green-900 text-white rounded-full text-sm font-bold">2</span>
+                      <h3 className="text-xl font-bold text-gray-900">Shop & Source</h3>
+                    </div>
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      Buy from any supplier or factory and input your unique Kassongo address at checkout
+                    </p>
+                  </div>
+                </div>
+
+                {/* Connecting dotted line */}
+                <div className="ml-8 border-l-2 border-dashed border-gray-300 h-8"></div>
+
+                {/* Step 3 */}
+                <div className="flex items-start gap-4 group">
+                  <div className="flex-shrink-0 w-16 h-16 bg-green-900 rounded-2xl flex items-center justify-center shadow-soft group-hover:shadow-soft-lg transition-all">
+                    <Truck className="w-8 h-8 text-yellow-400" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="inline-flex items-center justify-center w-8 h-8 bg-green-900 text-white rounded-full text-sm font-bold">3</span>
+                      <h3 className="text-xl font-bold text-gray-900">Consolidate & Save</h3>
+                    </div>
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      We hold your items in our secure storage, combine them into one optimized shipment to slash your costs, and forward them safely to you. Customs Handled.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* 3. Send/Receive/Storage Services Section */}
+        <section className="py-20 px-6 md:px-12 bg-gray-50">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight mb-16 text-center text-gray-900">
+              Global Storage & Forwarding Solutions
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              
+              {/* Send Card */}
+              <div className="bg-white rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all border border-gray-200">
+                <div className="w-16 h-16 bg-green-900 rounded-2xl flex items-center justify-center mb-6 shadow-soft">
+                  <Send className="w-8 h-8 text-yellow-400" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-gray-900">Send</h3>
+                <p className="text-sm text-gray-600 leading-relaxed mb-4">
+                  Get a global address instantly. Buy from Alibaba, Amazon, or 1688 and let us handle everything. We securely store, combine, and forward your boxes to save you money.
+                </p>
+                <ul className="space-y-2 text-xs text-gray-500">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-600" />
+                    <span>Instant address generation</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-600" />
+                    <span>Buy from any supplier</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-600" />
+                    <span>30 days free storage</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Receive Card */}
+              <div className="bg-white rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all border border-gray-200">
+                <div className="w-16 h-16 bg-green-900 rounded-2xl flex items-center justify-center mb-6 shadow-soft">
+                  <Inbox className="w-8 h-8 text-yellow-400" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-gray-900">Receive</h3>
+                <p className="text-sm text-gray-600 leading-relaxed mb-4">
+                  Send packages worldwide, effortlessly. Drop off your package and we'll ship it anywhere with full tracking and insurance included.
+                </p>
+                <ul className="space-y-2 text-xs text-gray-500">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-600" />
+                    <span>Worldwide delivery</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-600" />
+                    <span>Real-time tracking</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-600" />
+                    <span>Full insurance coverage</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Storage Card */}
+              <div className="bg-white rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all border border-gray-200">
+                <div className="w-16 h-16 bg-green-900 rounded-2xl flex items-center justify-center mb-6 shadow-soft">
+                  <Warehouse className="w-8 h-8 text-yellow-400" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-gray-900">Storage</h3>
+                <p className="text-sm text-gray-600 leading-relaxed mb-4">
+                  Secure storage, smarter shipping. We hold your inventory safely until you're ready to ship. Customs Handled.
+                </p>
+                <ul className="space-y-2 text-xs text-gray-500">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-600" />
+                    <span>Climate-controlled facilities</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-600" />
+                    <span>24/7 security monitoring</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-600" />
+                    <span>Flexible storage duration</span>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* 4. Bus Station Convenience Section */}
+        <section className="py-16 px-6 md:px-12 bg-gradient-to-br from-green-50 to-yellow-50">
+          <div className="max-w-5xl mx-auto">
+            <div className="bg-white rounded-3xl shadow-soft-xl p-8 md:p-12 border border-gray-200">
+              <div className="flex flex-col md:flex-row items-center gap-8">
+                
+                {/* Icon */}
+                <div className="flex-shrink-0">
+                  <div className="w-24 h-24 bg-gradient-to-br from-green-900 to-green-700 rounded-3xl flex items-center justify-center shadow-soft-lg">
+                    <Bus className="w-12 h-12 text-yellow-400" />
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="flex-1 text-center md:text-left">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-3 text-gray-900">
+                    Convenient Service Access via Local Bus Stations
+                  </h3>
+                  <p className="text-sm md:text-base text-gray-600 leading-relaxed">
+                    No need to travel to a distant main cargo hub. Easily drop off your outbound parcels or pick up your international arrivals right at your nearest trusted local bus station terminal.
+                  </p>
+                </div>
+
+                {/* Badge */}
+                <div className="flex-shrink-0">
+                  <div className="bg-green-900 text-white px-6 py-4 rounded-2xl shadow-soft text-center">
+                    <div className="text-3xl font-black mb-1">60+</div>
+                    <div className="text-xs font-bold uppercase tracking-wide">Locations</div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 5. Partner Logo Marquee */}
         <section className="bg-white py-6 border-y border-gray-100 overflow-hidden">
+          <p className="text-center text-[10px] uppercase font-bold tracking-widest text-gray-400 mb-5">We offer assisted sourcing from</p>
           <div className="animate-marquee">
             <div className="flex items-center gap-16 px-8">
-              {[...Array(2)].map((_, setIndex) => (
-                <div key={setIndex} className="flex items-center gap-16">
-                  <span className="font-display font-bold tracking-tight text-gray-400 text-sm whitespace-nowrap">FedEx Express</span>
-                  <span className="font-display font-bold tracking-tight text-gray-400 text-sm whitespace-nowrap">DHL Global</span>
-                  <span className="font-display font-bold tracking-tight text-gray-400 text-sm whitespace-nowrap">Cargo Air</span>
-                  <span className="font-display font-bold tracking-tight text-gray-400 text-sm whitespace-nowrap">Sourcing Pro</span>
-                  <span className="font-display font-bold tracking-tight text-gray-400 text-sm whitespace-nowrap">Logistics Today</span>
-                  <span className="font-display font-bold tracking-tight text-gray-400 text-sm whitespace-nowrap">Customs Daily</span>
+              {[...Array(3)].map((_, si) => (
+                <div key={si} className="flex items-center gap-16">
+                  {/* Amazon — use .webp */}
+                  <div className="flex items-center justify-center grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100">
+                    <img src="/Amazon_logo.svg.webp" alt="Amazon" style={{ height: "30px", width: "auto" }} className="object-contain" />
+                  </div>
+                  {/* Alibaba */}
+                  <div className="flex items-center justify-center grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100">
+                    <img src="/brandbird-alibaba-logotype.svg" alt="Alibaba" style={{ height: "28px", width: "auto" }} className="object-contain" />
+                  </div>
+                  {/* eBay */}
+                  <div className="flex items-center justify-center grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100">
+                    <img src="/EBay_logo.svg" alt="eBay" style={{ height: "30px", width: "auto" }} className="object-contain" />
+                  </div>
+                  {/* AliExpress — PNG, bigger */}
+                  <div className="flex items-center justify-center grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100">
+                    <img src="/aliexpress-logo-5a8f.png" alt="AliExpress" style={{ height: "100px", width: "auto" }} className="object-contain" />
+                  </div>
+                  {/* SHEIN */}
+                  <div className="flex items-center justify-center grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100">
+                    <img src="/shein-1.svg" alt="SHEIN" style={{ height: "24px", width: "auto" }} className="object-contain" />
+                  </div>
+                  {/* Walmart */}
+                  <div className="flex items-center justify-center grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100">
+                    <img src="/Walmart_logo_(2008).svg.webp" alt="Walmart" style={{ height: "30px", width: "auto" }} className="object-contain" />
+                  </div>
+                  {/* 1688 */}
+                  <div className="flex items-center justify-center grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100">
+                    <img src="/1688.png" alt="1688" style={{ height: "32px", width: "auto" }} className="object-contain" />
+                  </div>
+                  {/* Taobao */}
+                  <div className="flex items-center justify-center grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100">
+                    <img src="/taobao-new-flat-design.svg" alt="Taobao" style={{ height: "32px", width: "auto" }} className="object-contain" />
+                  </div>
+                  {/* Jumia — PNG, bigger */}
+                  <div className="flex items-center justify-center grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100">
+                    <img src="/Jumia-Logo-2012.png" alt="Jumia" style={{ height: "50px", width: "auto" }} className="object-contain" />
+                  </div>
+                  {/* Swappa — webp, bigger */}
+                  <div className="flex items-center justify-center grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100">
+                    <img src="/Logo_swappa_footer.svg.webp" alt="Swappa" style={{ height: "50px", width: "auto" }} className="object-contain" />
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* 3. Find Your Service Cards Section */}
+        {/* 6. Find Your Service Cards Section */}
         <section id="services" className="py-24 px-6 md:px-12 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight mb-16 text-center text-gray-900">
@@ -271,7 +561,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 4. Dark Green Banner */}
+        {/* 7. Dark Green Banner */}
         <section className="bg-green-900 text-white py-20 px-6 text-center">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight tracking-tight">
@@ -281,7 +571,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 5. Trust Standards Section */}
+        {/* 8. Trust Standards Section */}
         <section id="standards" className="bg-green-900 text-white py-16 px-6 md:px-12">
           <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
             <div className="max-w-xl text-left">
@@ -321,7 +611,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 6. Checkout Flyer Section */}
+        {/* 9. Checkout Flyer Section */}
         <section id="get-address" className="py-20 px-6 md:px-12 max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             
@@ -387,12 +677,7 @@ export default function Home() {
             {/* Hub Selector Form */}
             <div className="lg:col-span-5 bg-white border border-gray-200 rounded-3xl p-6 md:p-8 shadow-soft-xl">
               <div className="flex items-center gap-2 mb-4 text-green-600 text-xs font-bold">
-                <div className="flex gap-0.5">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-3 h-3 fill-current" />
-                  ))}
-                </div>
-                <span>4.9/5.0 Rated (15,000+ members)</span>
+                <span>★★★★★</span> <span>4.9/5.0 Rated (15,000+ members)</span>
               </div>
               <h2 className="text-3xl font-display font-bold tracking-tight mb-2 text-gray-900">Kassongo Mailbox</h2>
               <p className="text-xs md:text-sm leading-relaxed text-gray-600 mb-6">
@@ -402,20 +687,25 @@ export default function Home() {
               <div className="mb-6">
                 <span className="text-xs font-bold uppercase text-gray-700 block mb-2">Select Sourcing Hub Address:</span>
                 <div className="grid grid-cols-3 gap-2">
-                  {(["us", "uk", "china"] as const).map((hub) => (
-                    <button
-                      key={hub}
-                      onClick={() => setSelectedHub(hub)}
-                      className={`py-3 px-2 rounded-xl border text-center font-bold uppercase text-xs shadow-soft transition-all hover:shadow-soft-md flex items-center justify-center gap-1.5 ${
-                        selectedHub === hub ? "bg-green-900 text-white border-green-900" : "bg-white border-gray-200 text-gray-700"
-                      }`}
-                    >
-                      <Flag className="w-3.5 h-3.5" />
-                      {hub === "us" && "US"}
-                      {hub === "uk" && "UK"}
-                      {hub === "china" && "China"}
-                    </button>
-                  ))}
+                  {(["us", "uk", "china"] as const).map((hub) => {
+                    const flagCode = hub === "china" ? "cn" : hub === "uk" ? "gb" : "us";
+                    const label = hub === "china" ? "China" : hub === "uk" ? "UK" : "US";
+                    return (
+                      <button
+                        key={hub}
+                        onClick={() => setSelectedHub(hub)}
+                        className={`py-3 px-3 rounded-xl border text-center font-bold uppercase text-xs shadow-soft transition-all hover:shadow-soft-md flex items-center justify-center gap-2 ${
+                          selectedHub === hub ? "bg-green-900 text-white border-green-900" : "bg-white border-gray-200 text-gray-700"
+                        }`}
+                      >
+                        <span 
+                          className={`fi fi-${flagCode}`} 
+                          style={{ width: "1.25rem", height: "0.9375rem", borderRadius: "3px", display: "inline-block", backgroundSize: "cover", flexShrink: 0 }} 
+                        />
+                        <span>{label}</span>
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
 
@@ -428,8 +718,7 @@ export default function Home() {
                 <div className="mt-3 pt-3 border-t border-gray-200 space-y-1">
                   {hubDetails[selectedHub].features.map((feat) => (
                     <div key={feat} className="text-[10px] font-bold text-gray-600 flex gap-1 items-center">
-                      <Star className="w-2.5 h-2.5 fill-current text-green-600" />
-                      <span>{feat}</span>
+                      <span>★</span> <span>{feat}</span>
                     </div>
                   ))}
                 </div>
@@ -443,7 +732,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 7. Hype Download Section */}
+        {/* 10. Hype Download Section */}
         <section className="py-20 px-6 md:px-12 lg:px-20 max-w-6xl mx-auto">
           <div className="bg-green-900 text-white rounded-3xl shadow-soft-xl overflow-hidden relative border border-gray-200">
             
@@ -455,11 +744,7 @@ export default function Home() {
                 
                 {/* Five star checklist */}
                 <div className="flex items-center gap-2">
-                  <div className="flex gap-0.5 text-green-400">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 fill-current" />
-                    ))}
-                  </div>
+                  <span className="text-green-400 tracking-tight">★★★★★</span>
                   <span className="text-xs font-bold text-gray-200">
                     <strong className="text-white">4.9</strong> rating from <strong className="text-white">15,000+</strong> verified accounts
                   </span>
@@ -488,21 +773,28 @@ export default function Home() {
 
                 {/* Download buttons */}
                 <div className="flex flex-wrap gap-4 pt-4">
-                  {/* Google Play */}
-                  <a
-                    href="#google-play"
-                    className="bg-white text-gray-900 font-bold uppercase text-xs py-3 px-6 rounded-full border border-gray-200 shadow-soft hover:shadow-soft-md transition-all flex items-center gap-2"
-                  >
-                    <Smartphone className="w-4 h-4" />
-                    Download on Play Store
-                  </a>
                   {/* App Store */}
                   <a
                     href="#app-store"
-                    className="bg-yellow-400 text-gray-900 font-bold uppercase text-xs py-3 px-6 rounded-full border border-yellow-500 shadow-soft hover:shadow-soft-md transition-all flex items-center gap-2"
+                    className="bg-black text-white rounded-xl px-5 py-2.5 flex items-center gap-3 border border-white/20 hover:bg-gray-900 transition-all shadow-soft hover:shadow-soft-md min-w-[155px]"
                   >
-                    <Smartphone className="w-4 h-4" />
-                    Download on App Store
+                    <img src="/Apple_logo_black.svg" alt="Apple" className="w-6 h-7 object-contain shrink-0 invert" />
+                    <div className="flex flex-col leading-tight">
+                      <span className="text-[10px] font-normal text-gray-300 tracking-wide">Download on the</span>
+                      <span className="text-base font-semibold tracking-tight">App Store</span>
+                    </div>
+                  </a>
+
+                  {/* Google Play */}
+                  <a
+                    href="#google-play"
+                    className="bg-black text-white rounded-xl px-5 py-2.5 flex items-center gap-3 border border-white/20 hover:bg-gray-900 transition-all shadow-soft hover:shadow-soft-md min-w-[155px]"
+                  >
+                    <img src="/Google_Play_2022_icon.svg.webp" alt="Google Play" className="w-7 h-7 object-contain shrink-0" />
+                    <div className="flex flex-col leading-tight">
+                      <span className="text-[10px] font-normal text-gray-300 tracking-wide">GET IT ON</span>
+                      <span className="text-base font-semibold tracking-tight">Google Play</span>
+                    </div>
                   </a>
                 </div>
 
@@ -519,7 +811,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 8. Sourcing Partners Grid */}
+        {/* 11. Sourcing Partners Grid */}
         <section id="about" className="py-20 px-6 md:px-12 bg-gray-50 text-center md:text-left">
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -532,27 +824,59 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-5">
               <h3 className="font-bold uppercase tracking-wider text-gray-600 text-xs text-center">
                 We offer Assisted sourcing from..
               </h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+              <div className="grid grid-cols-3 gap-3">
                 {[
-                  { name: "amazon", label: "Amazon", color: "text-black" },
-                  { name: "alibaba", label: "Alibaba", color: "text-[#ff6a00]" },
-                  { name: "ebay", label: "eBay", color: "text-[#0064d2]" },
-                  { name: "taobao", label: "Taobao", color: "text-[#ff4400]" },
-                  { name: "shein", label: "SHEIN", color: "text-black font-extrabold" },
-                  { name: "walmart", label: "Walmart", color: "text-[#0071ce]" }
+                  { src: "/Amazon_logo.svg.webp", alt: "Amazon", h: "34px", w: "auto" },
+                  { src: "/brandbird-alibaba-logotype.svg", alt: "Alibaba", h: "32px", w: "auto" },
+                  { src: "/EBay_logo.svg", alt: "eBay", h: "34px", w: "auto" },
+                  { src: "/Logo_swappa_footer.svg.webp", alt: "Swappa", h: "50px", w: "auto" },
+                  { src: "/1688.png", alt: "1688", h: "34px", w: "auto" },
+                  { src: "/taobao-new-flat-design.svg", alt: "Taobao", h: "32px", w: "auto" },
+                  { src: "/aliexpress-logo-5a8f.png", alt: "AliExpress", h: "100px", w: "auto" },
+                  { src: "/Walmart_logo_(2008).svg.webp", alt: "Walmart", h: "34px", w: "auto" },
+                  { src: "/shein-1.svg", alt: "SHEIN", h: "26px", w: "auto" },
+                  { src: "/Jumia-Logo-2012.png", alt: "Jumia", h: "50px", w: "auto" },
                 ].map((brand) => (
                   <div
-                    key={brand.name}
-                    className="bg-white rounded-xl p-4 border border-gray-200 shadow-soft hover:shadow-soft-md transition-smooth flex items-center justify-center"
+                    key={brand.alt}
+                    className="bg-white rounded-xl p-4 border border-gray-200 shadow-soft hover:shadow-soft-md transition-smooth flex items-center justify-center h-20"
                   >
-                    <span className={`font-bold text-sm ${brand.color}`}>{brand.label}</span>
+                    <img src={brand.src} alt={brand.alt} style={{ height: brand.h, width: "auto" }} className="object-contain" />
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 12. Country Flags Row */}
+        <section className="bg-gradient-to-r from-green-900 to-green-800 py-12 px-6 md:px-12">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+              {[
+                { code: "cn", label: "China" },
+                { code: "ca", label: "Canada" },
+                { code: "us", label: "USA" },
+                { code: "ng", label: "Nigeria" },
+                { code: "fr", label: "France" },
+                { code: "de", label: "Germany" },
+                { code: "ae", label: "UAE" },
+                { code: "gb", label: "U.K" },
+                { code: "za", label: "S.A" },
+                { code: "be", label: "Belgium" },
+              ].map((c) => (
+                <div key={c.code} className="flex flex-col items-center gap-2.5">
+                  <span 
+                    className={`fi fi-${c.code} shadow-soft-md`} 
+                    style={{ width: "3rem", height: "2.25rem", borderRadius: "6px", display: "block", backgroundSize: "cover" }} 
+                  />
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-white/90">{c.label}</span>
+                </div>
+              ))}
             </div>
           </div>
         </section>
