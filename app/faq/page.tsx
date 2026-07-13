@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import { HelpCircle, ChevronDown, ChevronUp, Package, DollarSign, Globe, Shield, Clock, Truck, AlertCircle } from "lucide-react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 interface FAQItem {
   question: string;
@@ -296,17 +296,17 @@ const faqData: FAQItem[] = [
 ];
 
 const categories = [
-  { name: "Getting Started", icon: HelpCircle },
-  { name: "Shipping Addresses", icon: Globe },
-  { name: "Pricing & Fees", icon: DollarSign },
-  { name: "Package Consolidation", icon: Package },
-  { name: "Customs & Duties", icon: Shield },
-  { name: "Prohibited Items", icon: AlertCircle },
-  { name: "Shipping & Delivery", icon: Truck },
-  { name: "Insurance & Claims", icon: Shield },
-  { name: "Security & Privacy", icon: Shield },
-  { name: "Account Management", icon: HelpCircle },
-  { name: "Common Issues", icon: Clock }
+  { name: "Getting Started" },
+  { name: "Shipping Addresses" },
+  { name: "Pricing & Fees" },
+  { name: "Package Consolidation" },
+  { name: "Customs & Duties" },
+  { name: "Prohibited Items" },
+  { name: "Shipping & Delivery" },
+  { name: "Insurance & Claims" },
+  { name: "Security & Privacy" },
+  { name: "Account Management" },
+  { name: "Common Issues" }
 ];
 
 export default function FAQPage() {
@@ -333,16 +333,12 @@ export default function FAQPage() {
       <main className="flex-1 pt-16">
         
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-green-50 via-white to-yellow-50 py-20 px-6 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-l from-green-900/5 to-transparent"></div>
-          <div className="max-w-4xl mx-auto text-center relative z-10">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-green-900 rounded-2xl mb-6">
-              <HelpCircle className="w-10 h-10 text-yellow-400" />
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-black tracking-tight text-gray-900 mb-6">
+        <section className="relative bg-white py-16 px-6 border-b border-gray-200">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl font-display font-bold tracking-tight text-gray-900 mb-4">
               Frequently Asked Questions
             </h1>
-            <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto mb-8">
+            <p className="text-base text-gray-600 leading-relaxed max-w-2xl mx-auto mb-8">
               Find answers to common questions about Kassongo Express shipping, consolidation, customs, and more.
             </p>
             
@@ -353,23 +349,22 @@ export default function FAQPage() {
                 placeholder="Search for answers..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full px-6 py-4 bg-white border-2 border-gray-200 rounded-2xl text-gray-900 text-base placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent transition-all shadow-soft"
+                className="w-full px-5 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 text-base placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-green-600 focus:border-green-600 transition-all"
               />
             </div>
           </div>
         </section>
 
         {/* FAQ Content */}
-        <section className="py-16 md:py-24 px-6">
+        <section className="py-16 px-6">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
               
               {/* Category Sidebar */}
               <div className="lg:col-span-1">
-                <div className="sticky top-24 space-y-2">
-                  <h3 className="font-bold text-sm text-gray-500 uppercase tracking-wide mb-4 px-4">Categories</h3>
+                <div className="sticky top-24 space-y-1">
+                  <h3 className="font-semibold text-sm text-gray-700 mb-3 px-3">Categories</h3>
                   {categories.map((category) => {
-                    const Icon = category.icon;
                     const count = faqData.filter(faq => faq.category === category.name).length;
                     return (
                       <button
@@ -378,19 +373,16 @@ export default function FAQPage() {
                           setSelectedCategory(category.name);
                           setOpenIndex(null);
                         }}
-                        className={`w-full flex items-center justify-between gap-3 px-4 py-3 rounded-xl text-left transition-all ${
+                        className={`w-full flex items-center justify-between gap-2 px-3 py-2.5 rounded-lg text-left transition-all text-sm ${
                           selectedCategory === category.name
-                            ? "bg-green-900 text-white shadow-soft-md"
-                            : "bg-gray-50 text-gray-700 hover:bg-gray-100"
+                            ? "bg-green-900 text-white"
+                            : "text-gray-700 hover:bg-gray-100"
                         }`}
                       >
-                        <div className="flex items-center gap-3">
-                          <Icon className="w-5 h-5 flex-shrink-0" />
-                          <span className="font-medium text-sm">{category.name}</span>
-                        </div>
-                        <span className={`text-xs font-semibold px-2 py-1 rounded-full ${
+                        <span className="font-medium">{category.name}</span>
+                        <span className={`text-xs font-medium px-2 py-0.5 rounded ${
                           selectedCategory === category.name
-                            ? "bg-yellow-400 text-gray-900"
+                            ? "bg-white/20 text-white"
                             : "bg-gray-200 text-gray-600"
                         }`}>
                           {count}
@@ -404,39 +396,39 @@ export default function FAQPage() {
               {/* FAQ List */}
               <div className="lg:col-span-3">
                 <div className="mb-6">
-                  <h2 className="text-2xl font-bold text-gray-900">{selectedCategory}</h2>
-                  <p className="text-sm text-gray-600 mt-1">{filteredFAQs.length} questions</p>
+                  <h2 className="text-xl font-bold text-gray-900">{selectedCategory}</h2>
+                  <p className="text-sm text-gray-500 mt-1">{filteredFAQs.length} questions</p>
                 </div>
 
                 {filteredFAQs.length === 0 ? (
-                  <div className="text-center py-12 bg-gray-50 rounded-2xl">
+                  <div className="text-center py-12 bg-gray-50 rounded-lg">
                     <p className="text-gray-600">No questions found matching your search.</p>
                   </div>
                 ) : (
-                  <div className="space-y-4">
+                  <div className="space-y-3">
                     {filteredFAQs.map((faq, index) => (
                       <div
                         key={index}
-                        className="bg-white border-2 border-gray-200 rounded-2xl overflow-hidden hover:border-green-300 transition-all"
+                        className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-gray-300 transition-all"
                       >
                         <button
                           onClick={() => toggleQuestion(index)}
-                          className="w-full flex items-start justify-between gap-4 p-6 text-left"
+                          className="w-full flex items-start justify-between gap-4 p-5 text-left"
                         >
-                          <span className="font-semibold text-gray-900 text-lg flex-1">
+                          <span className="font-semibold text-gray-900 flex-1">
                             {faq.question}
                           </span>
-                          <div className="flex-shrink-0 w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+                          <div className="flex-shrink-0">
                             {openIndex === index ? (
-                              <ChevronUp className="w-5 h-5 text-green-700" />
+                              <ChevronUp className="w-5 h-5 text-gray-400" />
                             ) : (
-                              <ChevronDown className="w-5 h-5 text-green-700" />
+                              <ChevronDown className="w-5 h-5 text-gray-400" />
                             )}
                           </div>
                         </button>
                         
                         {openIndex === index && (
-                          <div className="px-6 pb-6 border-t border-gray-100">
+                          <div className="px-5 pb-5 border-t border-gray-100">
                             <p className="text-gray-700 leading-relaxed mt-4">{faq.answer}</p>
                           </div>
                         )}
@@ -451,24 +443,24 @@ export default function FAQPage() {
         </section>
 
         {/* Contact Section */}
-        <section className="py-16 px-6 bg-gradient-to-br from-green-50 to-yellow-50">
+        <section className="py-16 px-6 bg-gray-50 border-t border-gray-200">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl font-bold text-gray-900 mb-3">
               Still Have Questions?
             </h2>
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="text-base text-gray-600 mb-6">
               Can't find what you're looking for? Our support team is here to help.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <a
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-green-900 text-white font-semibold rounded-xl hover:bg-green-800 transition-all shadow-soft-lg hover:shadow-soft-xl"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-green-900 text-white font-semibold rounded-lg hover:bg-green-800 transition-all"
               >
                 Contact Support
               </a>
               <a
                 href="mailto:support@kassongo.com"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-gray-900 font-semibold rounded-xl border-2 border-gray-200 hover:border-green-900 transition-all"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-gray-900 font-semibold rounded-lg border border-gray-300 hover:border-gray-400 transition-all"
               >
                 support@kassongo.com
               </a>

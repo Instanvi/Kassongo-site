@@ -1,12 +1,24 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import Button from "./Button";
-import Image from "next/image";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+  
+  // Check if we're on the homepage
+  const isHomepage = pathname === "/";
+  
+  // Navigation items with conditional URLs
+  const navItems = [
+    { label: "How It Works", href: isHomepage ? "#how-it-works" : "/#how-it-works" },
+    { label: "Services", href: isHomepage ? "#services" : "/#services" },
+    { label: "About", href: isHomepage ? "#about" : "/#about" },
+    { label: "Standards", href: isHomepage ? "#standards" : "/#standards" },
+  ];
 
   return (
     <header className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
@@ -28,18 +40,15 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#how-it-works" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-smooth">
-              How It Works
-            </a>
-            <a href="#services" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-smooth">
-              Services
-            </a>
-            <a href="#about" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-smooth">
-              About
-            </a>
-            <a href="#standards" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-smooth">
-              Standards
-            </a>
+            {navItems.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-smooth"
+              >
+                {item.label}
+              </a>
+            ))}
           </nav>
 
           {/* Actions */}
@@ -70,34 +79,16 @@ export default function Header() {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-gray-200 animate-fade-in">
             <nav className="flex flex-col gap-1">
-              <a
-                href="#how-it-works"
-                onClick={() => setIsMenuOpen(false)}
-                className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-smooth"
-              >
-                How It Works
-              </a>
-              <a
-                href="#services"
-                onClick={() => setIsMenuOpen(false)}
-                className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-smooth"
-              >
-                Services
-              </a>
-              <a
-                href="#about"
-                onClick={() => setIsMenuOpen(false)}
-                className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-smooth"
-              >
-                About
-              </a>
-              <a
-                href="#standards"
-                onClick={() => setIsMenuOpen(false)}
-                className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-smooth"
-              >
-                Standards
-              </a>
+              {navItems.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-smooth"
+                >
+                  {item.label}
+                </a>
+              ))}
               <div className="mt-4 px-4">
                 <Button
                   variant="secondary"

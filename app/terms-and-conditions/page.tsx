@@ -2,7 +2,6 @@
 
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import { FileText, ShieldCheck, AlertCircle } from "lucide-react";
 
 export default function TermsAndConditionsPage() {
   return (
@@ -12,43 +11,34 @@ export default function TermsAndConditionsPage() {
       <main className="flex-1 pt-16">
         
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-green-50 via-white to-yellow-50 py-20 px-6 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-l from-green-900/5 to-transparent"></div>
-          <div className="max-w-4xl mx-auto text-center relative z-10">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-green-900 rounded-2xl mb-6">
-              <FileText className="w-10 h-10 text-yellow-400" />
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-black tracking-tight text-gray-900 mb-6">
+        <section className="relative bg-white py-8 px-6 border-b border-gray-200">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl font-display font-bold tracking-tight text-gray-900 mb-4">
               Terms & Conditions
             </h1>
-            <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-base text-gray-600">
               Last Updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
             </p>
           </div>
         </section>
 
         {/* Terms Content */}
-        <section className="py-16 md:py-24 px-6">
+        <section className="py-10 px-6">
           <div className="max-w-4xl mx-auto">
             
             {/* Important Notice */}
-            <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-xl mb-12">
-              <div className="flex items-start gap-4">
-                <AlertCircle className="w-6 h-6 text-yellow-600 flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-bold text-gray-900 mb-2">Important Notice</h3>
-                  <p className="text-sm text-gray-700 leading-relaxed">
-                    By completing the registration process and using Kassongo Express services, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions. Please read carefully before proceeding.
-                  </p>
-                </div>
-              </div>
+            <div className="bg-gray-50 border-l-4 border-gray-400 p-5 rounded-r-lg mb-10">
+              <h3 className="font-bold text-gray-900 mb-2">Important Notice</h3>
+              <p className="text-sm text-gray-700 leading-relaxed">
+                By completing the registration process and using Kassongo Express services, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions. Please read carefully before proceeding.
+              </p>
             </div>
 
             {/* Terms Sections */}
-            <div className="prose prose-lg max-w-none">
+            <div className="space-y-10">
               
               {/* Section 1 */}
-              <section className="mb-12">
+              <section>
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Acceptance of Terms</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   The following Terms and Conditions govern your use of Kassongo Express LLC (also referred to herein as "Kassongo Express" or "Kassongo"). Completion of the registration process will constitute your acceptance of the Terms and Conditions provided below. There may be additional terms and conditions provided throughout kassongo.com governing your use of particular functions, features, information, and applications available through the platform.
@@ -56,18 +46,18 @@ export default function TermsAndConditionsPage() {
               </section>
 
               {/* Section 2 */}
-              <section className="mb-12">
+              <section>
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">2. Prohibited Items</h2>
-                <div className="bg-red-50 border border-red-200 rounded-xl p-6 mb-4">
-                  <p className="font-semibold text-red-900 mb-3">Cross-border pharmaceuticals, drugs, and illegal substances are strictly prohibited.</p>
-                  <p className="text-sm text-red-800">
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-5 mb-4">
+                  <p className="font-semibold text-gray-900 mb-3">Cross-border pharmaceuticals, drugs, and illegal substances are strictly prohibited.</p>
+                  <p className="text-sm text-gray-700">
                     This includes but is not limited to: prescription medications, over-the-counter drugs, marijuana, psilocybin, and any controlled substances.
                   </p>
                 </div>
               </section>
 
               {/* Section 3 */}
-              <section className="mb-12">
+              <section>
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">3. Power of Attorney & Agency Appointment</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   The customer constitutes and appoints Kassongo Express, acting through any of its authorized persons, as true and lawful agent for the receipt and opening of mail, the performance of customs clearance, preparation of shipping documents, with full power of attorney to act to the extent allowed by law for the specific purposes enumerated in this section, including without limitation preparation of certificates of origin, shipping documentation, air/waybills, or any other document required to ship merchandise to the customer.
@@ -75,7 +65,7 @@ export default function TermsAndConditionsPage() {
               </section>
 
               {/* Section 4 */}
-              <section className="mb-12">
+              <section>
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">4. Marketing Communications</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   Customer gives full consent to Kassongo Express to email promotional or account-related offers. If you would like to be removed from the mailing list, please contact us at support@kassongo.com.
@@ -83,7 +73,7 @@ export default function TermsAndConditionsPage() {
               </section>
 
               {/* Section 5 */}
-              <section className="mb-12">
+              <section>
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">5. Account Information & Accuracy</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   In consideration for using Kassongo Express, you must provide and maintain current, complete, and accurate information about yourself when prompted. In the event that any information provided during registration or in your account settings is inaccurate, Kassongo Express reserves the right to terminate your account immediately and your right to use our services.
@@ -94,7 +84,7 @@ export default function TermsAndConditionsPage() {
               </section>
 
               {/* Section 6 */}
-              <section className="mb-12">
+              <section>
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">6. Account Security</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   The customer is solely responsible for maintaining the confidentiality of their password and account, as well as for any and all activities that occur under said account. Customer must notify Kassongo Express immediately of any unauthorized use of their account or any other breach of security. Until Kassongo Express is notified in writing of a breach in security, you will remain liable for any unauthorized use of the service through your account.
@@ -105,7 +95,7 @@ export default function TermsAndConditionsPage() {
               </section>
 
               {/* Section 7 */}
-              <section className="mb-12">
+              <section>
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">7. Package Shipping & Inspection</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   Upon your request, Kassongo Express will ship all packages to the address you registered with us. No packages will be shipped until all shipping charges and storage costs (if any) have been paid in addition to all applicable documentation being approved.
@@ -119,7 +109,7 @@ export default function TermsAndConditionsPage() {
               </section>
 
               {/* Section 8 */}
-              <section className="mb-12">
+              <section>
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">8. Carrier Services & Liability</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   Kassongo Express is not responsible for the actual shipping carrier service chosen by the customer (FedEx, USPS, DHL, etc.). Customer is responsible for ensuring that packages can be shipped based on size, weight, and volume restrictions.
@@ -130,12 +120,12 @@ export default function TermsAndConditionsPage() {
               </section>
 
               {/* Section 9 */}
-              <section className="mb-12">
+              <section>
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">9. Legal Compliance</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   Use of Kassongo Express is subject to all applicable local, state, national, and international laws and regulations. You agree not to:
                 </p>
-                <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-4">
+                <ul className="space-y-2 text-gray-700 mb-4 ml-6">
                   <li>Use Kassongo Express for illegal purposes</li>
                   <li>Ship prohibited or restricted materials</li>
                   <li>Interfere with or disrupt networks connected to Kassongo Express</li>
@@ -149,39 +139,39 @@ export default function TermsAndConditionsPage() {
               </section>
 
               {/* Section 10 */}
-              <section className="mb-12">
+              <section>
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">10. Restricted Destinations</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   Kassongo Express does not ship to the following countries:
                 </p>
-                <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-4">
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-5 mb-4">
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-3 text-sm text-gray-700">
-                    <div>• Algeria</div>
-                    <div>• Cuba</div>
-                    <div>• Iran</div>
-                    <div>• Myanmar</div>
-                    <div>• Nigeria</div>
-                    <div>• North Korea</div>
-                    <div>• Sudan</div>
-                    <div>• Syria</div>
-                    <div>• Libya</div>
-                    <div>• Yemen</div>
-                    <div>• Russia</div>
-                    <div>• Belarus</div>
+                    <div>Algeria</div>
+                    <div>Cuba</div>
+                    <div>Iran</div>
+                    <div>Myanmar</div>
+                    <div>Nigeria</div>
+                    <div>North Korea</div>
+                    <div>Sudan</div>
+                    <div>Syria</div>
+                    <div>Libya</div>
+                    <div>Yemen</div>
+                    <div>Russia</div>
+                    <div>Belarus</div>
                   </div>
                 </div>
-                <p className="text-sm text-gray-600 italic">
+                <p className="text-sm text-gray-600">
                   Kassongo Express may add additional countries to this list at its discretion based on international sanctions and regulations.
                 </p>
               </section>
 
               {/* Section 11 */}
-              <section className="mb-12">
+              <section>
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">11. Customs & Duties</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   Customer is solely responsible for:
                 </p>
-                <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-4">
+                <ul className="space-y-2 text-gray-700 mb-4 ml-6">
                   <li>Providing an invoice detailing the description of contents</li>
                   <li>Declaring the correct value of each package for excise, duty, and tax payments</li>
                   <li>Declaring customs duty in their own country</li>
@@ -200,7 +190,7 @@ export default function TermsAndConditionsPage() {
               </section>
 
               {/* Section 12 */}
-              <section className="mb-12">
+              <section>
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">12. Payment Requirements</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   Customer shall make payments for postage and deposits from their own account(s). The account must be under the same name as the Kassongo Express account. Customer must be over 18 years old to use the service.
@@ -214,12 +204,12 @@ export default function TermsAndConditionsPage() {
               </section>
 
               {/* Section 13 */}
-              <section className="mb-12">
+              <section>
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">13. COD & Prohibited Deliveries</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   Kassongo Express will not accept:
                 </p>
-                <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-4">
+                <ul className="space-y-2 text-gray-700 mb-4 ml-6">
                   <li>Items delivered COD (Cash on Delivery)</li>
                   <li>Prohibited or restricted merchandise</li>
                   <li>Goods that are clearly damaged</li>
@@ -230,7 +220,7 @@ export default function TermsAndConditionsPage() {
               </section>
 
               {/* Section 14 */}
-              <section className="mb-12">
+              <section>
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">14. Account Termination</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   Kassongo Express may terminate your use of the service at any time, effective immediately, at Kassongo's sole discretion should your conduct fail to conform to these Terms and Conditions. Kassongo Express shall not be liable to you or any third party for termination of your service use.
@@ -241,7 +231,7 @@ export default function TermsAndConditionsPage() {
               </section>
 
               {/* Section 15 */}
-              <section className="mb-12">
+              <section>
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">15. Package Consolidation</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   Kassongo Express allows for consolidation of packages. However, Kassongo Express is not responsible for missing content of any package due to the consolidation request without proof of what was actually received.
@@ -255,7 +245,7 @@ export default function TermsAndConditionsPage() {
               </section>
 
               {/* Section 16 */}
-              <section className="mb-12">
+              <section>
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">16. Incorrect Package Delivery</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   Customer must immediately notify Kassongo Express if an incorrect package is received. Kassongo Express will reimburse the customer for shipping to the correct address.
@@ -266,13 +256,13 @@ export default function TermsAndConditionsPage() {
               </section>
 
               {/* Section 17 */}
-              <section className="mb-12">
+              <section>
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">17. Storage Fees & Package Abandonment</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   Packages may be stored in Kassongo warehouses for a maximum of <strong>90 days from receipt</strong>. Storage fees vary by membership level:
                 </p>
-                <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-4">
-                  <ul className="space-y-2 text-gray-700">
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-5 mb-4">
+                  <ul className="space-y-2 text-gray-700 text-sm">
                     <li><strong>Free Plan:</strong> Storage fees begin on day 7</li>
                     <li><strong>Gold Member:</strong> Storage fees begin on day 30</li>
                     <li><strong>Platinum Member:</strong> Storage fees begin on day 45</li>
@@ -287,7 +277,7 @@ export default function TermsAndConditionsPage() {
               </section>
 
               {/* Section 18 */}
-              <section className="mb-12">
+              <section>
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">18. Claims for Lost or Damaged Packages</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   For claim payouts, the customer will be reimbursed by the lower of either the declared value of contents or the vendor invoice value. Customers are responsible for filling out the correct description of contents and value for customs.
@@ -295,12 +285,12 @@ export default function TermsAndConditionsPage() {
                 <p className="text-gray-700 leading-relaxed mb-4">
                   Kassongo has the right to issue payment based on its discretion if information is incomplete or missing. All claims must include:
                 </p>
-                <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-4">
+                <ul className="space-y-2 text-gray-700 mb-4 ml-6">
                   <li><strong>Lost packages:</strong> Must be reported within 30 days from shipment date</li>
                   <li><strong>Damaged packages:</strong> Must be reported within 10 days after receiving the package</li>
                   <li>Proof of value by invoice or order confirmation</li>
                 </ul>
-                <p className="text-gray-700 leading-relaxed mb-4 bg-red-50 border-l-4 border-red-400 p-4 rounded-r-lg">
+                <p className="text-gray-700 leading-relaxed mb-4 bg-gray-50 border border-gray-200 rounded-lg p-4">
                   <strong>Important:</strong> False claims will be charged a minimum of $5.00 as cost for Kassongo's expenses for investigating the claim.
                 </p>
                 <p className="text-gray-700 leading-relaxed mb-4">
@@ -309,7 +299,7 @@ export default function TermsAndConditionsPage() {
               </section>
 
               {/* Section 19 */}
-              <section className="mb-12">
+              <section>
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">19. Declared Value & Insurance</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   Customers are required to enter a declared value for assessing customs, duties, and taxes charged by government authorities. Customers understand and agree that any insurance payout awarded by providers is based on the declared value entered by the customer, not the actual amount paid.
@@ -317,7 +307,7 @@ export default function TermsAndConditionsPage() {
               </section>
 
               {/* Section 20 */}
-              <section className="mb-12">
+              <section>
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">20. Lien on Property</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   Kassongo Express shall have a general lien on any and all property (and documents relating thereto) of the customer in its possession, custody, or control, for all claims for charges, expenses, or advances incurred in connection with any freight forwarding service provided to the customer.
@@ -328,7 +318,7 @@ export default function TermsAndConditionsPage() {
               </section>
 
               {/* Section 21 */}
-              <section className="mb-12">
+              <section>
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">21. Limitation of Liability</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   All packages are shipped on a limited liability basis. <strong>In no event shall Kassongo Express's aggregate liability exceed $100 per shipment unless additional insurance is purchased.</strong>
@@ -339,7 +329,7 @@ export default function TermsAndConditionsPage() {
               </section>
 
               {/* Section 22 */}
-              <section className="mb-12">
+              <section>
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">22. Customer Indemnification</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   Customer shall indemnify and hold Kassongo Express harmless from any and all claims, including legal fees incurred in defending against said claims, from third parties arising out of the transmission of packages/mail sent by customer through Kassongo Express.
@@ -347,12 +337,12 @@ export default function TermsAndConditionsPage() {
               </section>
 
               {/* Section 23 */}
-              <section className="mb-12">
+              <section>
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">23. Force Majeure</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   Kassongo shall be excused from performance of its obligations, in whole or in part, if failure or inability to perform is caused by Force Majeure, including but not limited to:
                 </p>
-                <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-4">
+                <ul className="space-y-2 text-gray-700 mb-4 ml-6">
                   <li>Acts of God, fire, flood, or other natural catastrophes</li>
                   <li>Utility outages (electric, communications, or other)</li>
                   <li>National emergencies, civil disturbances, insurrections, riots, wars</li>
@@ -364,7 +354,7 @@ export default function TermsAndConditionsPage() {
               </section>
 
               {/* Section 24 */}
-              <section className="mb-12">
+              <section>
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">24. Anti-Terrorism Compliance</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   Customer represents and warrants to Kassongo Express that neither the customer nor any person acting on their behalf is a person or entity described by Section 1 of Executive Order No. 13,224 - Blocking Property and Prohibiting Transactions With Persons Who Commit, Threaten to Commit, or Support Terrorism.
@@ -372,7 +362,7 @@ export default function TermsAndConditionsPage() {
               </section>
 
               {/* Section 25 */}
-              <section className="mb-12">
+              <section>
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">25. Membership & Subscription Terms</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   Monthly membership subscriptions renew automatically until the membership is cancelled. When cancelled, the membership will end on the next renewal date. Memberships do not backdate. No refunds are provided for early cancellation.
@@ -383,7 +373,7 @@ export default function TermsAndConditionsPage() {
               </section>
 
               {/* Section 26 */}
-              <section className="mb-12">
+              <section>
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">26. Unclaimed Packages</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   Packages delivered by carriers or third parties where suite numbers are not visible or do not match the account name must be claimed within 30 days of delivery. Any packages not claimed within this time frame will be subject to Kassongo Express abandonment regulations.
@@ -391,33 +381,29 @@ export default function TermsAndConditionsPage() {
               </section>
 
               {/* Section 27 */}
-              <section className="mb-12">
+              <section>
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">27. Changes to Terms</h2>
-                <div className="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-r-xl">
+                <div className="bg-gray-50 border-l-4 border-gray-400 p-5 rounded-r-lg">
                   <p className="text-gray-900 font-semibold mb-2">
                     Kassongo Express may make future changes or modifications to these Terms and Conditions at any time without notice.
                   </p>
-                  <p className="text-gray-700">
+                  <p className="text-gray-700 text-sm">
                     Your subsequent viewing or use of kassongo.com will constitute your agreement to the changes and modifications.
                   </p>
                 </div>
               </section>
 
               {/* Contact Section */}
-              <section className="mb-12 bg-green-50 border border-green-200 rounded-2xl p-8">
-                <div className="flex items-start gap-4">
-                  <ShieldCheck className="w-8 h-8 text-green-600 flex-shrink-0 mt-1" />
-                  <div>
-                    <h2 className="text-2xl font-bold text-gray-900 mb-3">Questions About These Terms?</h2>
-                    <p className="text-gray-700 mb-4">
-                      If you have any questions about these Terms and Conditions or need clarification on any section, please don't hesitate to reach out to our support team.
-                    </p>
-                    <div className="space-y-2 text-sm">
-                      <p><strong>Email:</strong> legal@kassongo.com</p>
-                      <p><strong>Phone:</strong> +1 (234) 567-8900</p>
-                      <p><strong>Address:</strong> 123 Freight Avenue, New York, NY 10001</p>
-                    </div>
-                  </div>
+              <section className="bg-gray-50 border border-gray-200 rounded-lg p-6">
+                <h2 className="text-2xl font-bold text-gray-900 mb-3">Contact Information</h2>
+                <p className="text-gray-700 mb-4 text-sm">
+                  If you have any questions about these Terms and Conditions or need clarification on any section, please contact us:
+                </p>
+                <div className="space-y-1 text-sm text-gray-700">
+                  <p><strong>Email:</strong> legal@kassongo.com</p>
+                  <p><strong>Customer Service:</strong> support@kassongo.com</p>
+                  <p><strong>Phone:</strong> +1 (234) 567-8900</p>
+                  <p><strong>Mail:</strong> Kassongo Express Legal Department<br />123 Freight Avenue<br />New York, NY 10001<br />United States</p>
                 </div>
               </section>
 

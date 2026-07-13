@@ -69,7 +69,7 @@ export default function Home() {
                 <div className="space-y-4">
                   <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-black leading-[0.95] tracking-tight text-gray-900">
                     Ship Smarter.<br />
-                    <span className="text-green-600">Ship Faster.</span><br />
+                    <span className="text-green-800">Ship Faster.</span><br />
                     <span className="text-yellow-400">Ship Global.</span>
                   </h1>
                   <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-xl">
@@ -118,15 +118,15 @@ export default function Home() {
                 {/* Stats Row */}
                 <div className="grid grid-cols-3 gap-6 pt-8 border-t border-gray-200">
                   <div>
-                    <div className="text-3xl md:text-4xl font-display font-black text-green-600 mb-1">60+</div>
+                    <div className="text-3xl md:text-4xl font-display font-black text-green-800 mb-1">60+</div>
                     <div className="text-xs font-bold uppercase text-gray-500 tracking-wide">Global Hubs</div>
                   </div>
                   <div>
-                    <div className="text-3xl md:text-4xl font-display font-black text-green-600 mb-1">21+</div>
+                    <div className="text-3xl md:text-4xl font-display font-black text-green-800 mb-1">21+</div>
                     <div className="text-xs font-bold uppercase text-gray-500 tracking-wide">Carriers</div>
                   </div>
                   <div>
-                    <div className="text-3xl md:text-4xl font-display font-black text-green-600 mb-1">1M+</div>
+                    <div className="text-3xl md:text-4xl font-display font-black text-green-800 mb-1">1M+</div>
                     <div className="text-xs font-bold uppercase text-gray-500 tracking-wide">Members</div>
                   </div>
                 </div>
@@ -151,34 +151,6 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Floating Stats Cards 
-                <div className="absolute -bottom-6 -left-6 bg-green-900 text-white p-6 rounded-2xl shadow-soft-xl border border-green-800 hidden lg:block">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 bg-green-700 rounded-xl flex items-center justify-center">
-                      <Zap className="w-6 h-6 text-yellow-400" />
-                    </div>
-                    <div>
-                      <div className="text-2xl font-black">6 Days</div>
-                      <div className="text-xs font-semibold text-green-300">Avg. Customs</div>
-                    </div>
-                  </div>
-                </div>
-                
-
-                <div className="absolute -top-6 -right-6 bg-white p-5 rounded-2xl shadow-soft-xl border border-gray-200 hidden lg:block">
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="flex text-green-600">
-                      {[...Array(5)].map((_, i) => (
-                        <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                          <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                        </svg>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="text-xl font-black text-gray-900">4.9/5</div>
-                  <div className="text-xs font-semibold text-gray-500">15K+ Reviews</div>
-                </div>
-*/}
               </div>
 
             </div>
@@ -458,102 +430,94 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               
               {/* Card 1 */}
-              <div className="bg-white rounded-2xl p-6 flex flex-col shadow-card hover:shadow-card transition-smooth border border-gray-100 relative group">
-                <span className="absolute top-4 right-4 badge badge-green text-xs">
-                  Best Seller
-                </span>
-                <div className="mt-2 mb-6 rounded-xl overflow-hidden border border-gray-100">
-                  <img src="/screenshot-1.jpg" alt="Consolidated Shipping" className="w-full h-48 object-cover" />
+              <div className="bg-gradient-to-b from-[#24963f] to-[#0c4e25] rounded-3xl p-6 flex flex-col justify-between h-[500px] shadow-card hover:shadow-card transition-smooth relative group text-white">
+                <div>
+                  <h3 className="text-2xl font-display font-black text-white mb-1.5 tracking-tight">Consolidation</h3>
+                  <p className="text-xs font-bold text-yellow-400 mb-3 uppercase tracking-wider">Shared Cargo, Split Costs</p>
+                  <p className="text-xs text-green-100/90 leading-relaxed font-medium">
+                    Sending a care package to family or moving business stock? We group your cargo into master shipments so you pay the lowest rates.
+                  </p>
                 </div>
-                <div className="flex-1 flex flex-col justify-between">
-                  <div>
-                    <h3 className="text-xl font-bold mb-2 text-gray-900">Consolidated Shipping</h3>
-                    <p className="text-sm text-gray-600 mb-1">Starts at <strong className="text-gray-900">$4.50/kg</strong></p>
-                    <p className="text-xs text-gray-400 line-through">$8.99/kg</p>
-                  </div>
-                  <div className="mt-8 space-y-3">
-                    <Button variant="secondary" size="sm" href="#get-address" className="w-full shadow-soft hover:shadow-soft-md">
-                      Select Hub
-                    </Button>
-                    <a href="#send" className="block text-center text-sm font-medium text-green-600 hover:text-green-700 transition-smooth">
-                      Learn More
-                    </a>
-                  </div>
+                <div className="flex-1 flex items-end justify-center mb-20">
+                  <img 
+                    src="/consolidation.svg" 
+                    alt="Consolidation" 
+                    className="w-full h-40 object-contain transform group-hover:scale-105 transition-transform duration-500 ease-out" 
+                  />
+                </div>
+                <div>
+                  <Button variant="secondary" size="sm" href="#get-address" className="w-full shadow-soft hover:shadow-soft-md">
+                    Get Started
+                  </Button>
                 </div>
               </div>
 
               {/* Card 2 */}
-              <div className="bg-white rounded-2xl p-6 flex flex-col shadow-card hover:shadow-card transition-smooth border border-gray-100 relative group">
-                <span className="absolute top-4 right-4 badge badge-red text-xs">
-                  Popular
-                </span>
-                <div className="mt-2 mb-6 rounded-xl overflow-hidden border border-gray-100">
-                  <img src="/screenshot-4.png" alt="Secure Storage" className="w-full h-48 object-cover" />
+              <div className="bg-gradient-to-b from-[#24963f] to-[#0c4e25] rounded-3xl p-6 flex flex-col justify-between h-[500px] shadow-card hover:shadow-card transition-smooth relative group text-white">
+                <div>
+                  <h3 className="text-2xl font-display font-black text-white mb-1.5 tracking-tight">Secure Storage</h3>
+                  <p className="text-xs font-bold text-yellow-400 mb-3 uppercase tracking-wider">Your Inventory, Securely Handled</p>
+                  <p className="text-xs text-green-100/90 leading-relaxed font-medium">
+                    Access flexible, climate-controlled warehousing in our regional hubs. Monitor your stock levels and manage local distribution seamlessly.
+                  </p>
                 </div>
-                <div className="flex-1 flex flex-col justify-between">
-                  <div>
-                    <h3 className="text-xl font-bold mb-2 text-gray-900">Secure Storage</h3>
-                    <p className="text-sm text-gray-600 mb-1">Starts at <strong className="text-gray-900">Free</strong></p>
-                    <p className="text-xs text-gray-400">First 30 days</p>
-                  </div>
-                  <div className="mt-8 space-y-3">
-                    <Button variant="secondary" size="sm" href="#get-address" className="w-full shadow-soft hover:shadow-soft-md">
-                      Select Hub
-                    </Button>
-                    <a href="#storage" className="block text-center text-sm font-medium text-green-600 hover:text-green-700 transition-smooth">
-                      Learn More
-                    </a>
-                  </div>
+                <div className="flex-1 flex items-end justify-center mb-20">
+                  <img 
+                    src="/secure_storage.svg" 
+                    alt="Secure Storage" 
+                    className="w-full h-40 object-contain transform group-hover:scale-105 transition-transform duration-500 ease-out" 
+                  />
+                </div>
+                <div>
+                  <Button variant="secondary" size="sm" href="#get-address" className="w-full shadow-soft hover:shadow-soft-md">
+                    Get Started
+                  </Button>
                 </div>
               </div>
 
               {/* Card 3 */}
-              <div className="bg-white rounded-2xl p-6 flex flex-col shadow-card hover:shadow-card transition-smooth border border-gray-100 relative group">
-                <span className="absolute top-4 right-4 badge badge-yellow text-xs">
-                  Assisted
-                </span>
-                <div className="mt-2 mb-6 rounded-xl overflow-hidden border border-gray-100">
-                  <img src="/screenshot-2.jpg" alt="Assisted Sourcing" className="w-full h-48 object-cover" />
+              <div className="bg-gradient-to-b from-[#24963f] to-[#0c4e25] rounded-3xl p-6 flex flex-col justify-between h-[500px] shadow-card hover:shadow-card transition-smooth relative group text-white">
+                <div>
+                  <h3 className="text-2xl font-display font-black text-white mb-1.5 tracking-tight">Assisted Sourcing</h3>
+                  <p className="text-xs font-bold text-yellow-400 mb-3 uppercase tracking-wider">Buy Worldwide, Pay Locally</p>
+                  <p className="text-xs text-green-100/90 leading-relaxed font-medium">
+                    Paste any link from Amazon, Alibaba, or global stores. We handle the payment barrier, verify the quality, and buy it for you.
+                  </p>
                 </div>
-                <div className="flex-1 flex flex-col justify-between">
-                  <div>
-                    <h3 className="text-xl font-bold mb-2 text-gray-900">Assisted Sourcing</h3>
-                    <p className="text-sm text-gray-600 mb-1">Starts at <strong className="text-gray-900">5% fee</strong></p>
-                    <p className="text-xs text-gray-400 line-through">10% standard</p>
-                  </div>
-                  <div className="mt-8 space-y-3">
-                    <Button variant="secondary" size="sm" href="#get-address" className="w-full shadow-soft hover:shadow-soft-md">
-                      Select Hub
-                    </Button>
-                    <a href="#procurement" className="block text-center text-sm font-medium text-green-600 hover:text-green-700 transition-smooth">
-                      Learn More
-                    </a>
-                  </div>
+                <div className="flex-1 flex items-end justify-center mb-20">
+                  <img 
+                    src="/assisted_sourcing.svg" 
+                    alt="Assisted Sourcing" 
+                    className="w-full h-40 object-contain transform group-hover:scale-105 transition-transform duration-500 ease-out" 
+                  />
+                </div>
+                <div>
+                  <Button variant="secondary" size="sm" href="#get-address" className="w-full shadow-soft hover:shadow-soft-md">
+                    Get Started
+                  </Button>
                 </div>
               </div>
 
               {/* Card 4 */}
-              <div className="bg-white rounded-2xl p-6 flex flex-col shadow-card hover:shadow-card transition-smooth border border-gray-100 relative group">
-                <span className="absolute top-4 right-4 badge badge-green text-xs">
-                  Fast Speed
-                </span>
-                <div className="mt-2 mb-6 rounded-xl overflow-hidden border border-gray-100">
-                  <img src="/screenshot-3.jpg" alt="Express Forwarding" className="w-full h-48 object-cover" />
+              <div className="bg-gradient-to-b from-[#24963f] to-[#0c4e25] rounded-3xl p-6 flex flex-col justify-between h-[500px] shadow-card hover:shadow-card transition-smooth relative group text-white">
+                <div>
+                  <h3 className="text-2xl font-display font-black text-white mb-1.5 tracking-tight">Express Forwarding</h3>
+                  <p className="text-xs font-bold text-yellow-400 mb-3 uppercase tracking-wider">Next-Flight Delivery Velocity</p>
+                  <p className="text-xs text-green-100/90 leading-relaxed font-medium">
+                    Urgent electronics, critical documents, or high-value samples? Skip the cargo lines and route your packages onto the next available flight.
+                  </p>
                 </div>
-                <div className="flex-1 flex flex-col justify-between">
-                  <div>
-                    <h3 className="text-xl font-bold mb-2 text-gray-900">Express Forwarding</h3>
-                    <p className="text-sm text-gray-600 mb-1">Starts at <strong className="text-gray-900">$8.50/kg</strong></p>
-                    <p className="text-xs text-gray-400 line-through">$14.99/kg</p>
-                  </div>
-                  <div className="mt-8 space-y-3">
-                    <Button variant="secondary" size="sm" href="#get-address" className="w-full shadow-soft hover:shadow-soft-md">
-                      Select Hub
-                    </Button>
-                    <a href="#receive" className="block text-center text-sm font-medium text-green-600 hover:text-green-700 transition-smooth">
-                      Learn More
-                    </a>
-                  </div>
+                <div className="flex-1 flex items-end justify-center mb-20">
+                  <img 
+                    src="/express_forwarding.svg" 
+                    alt="Express Forwarding" 
+                    className="w-full h-40 object-contain transform group-hover:scale-105 transition-transform duration-500 ease-out" 
+                  />
+                </div>
+                <div>
+                  <Button variant="secondary" size="sm" href="#get-address" className="w-full shadow-soft hover:shadow-soft-md">
+                    Get Started
+                  </Button>
                 </div>
               </div>
 
@@ -583,7 +547,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full lg:w-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-5 w-full lg:w-auto">
               <div className="bg-green-950 p-6 rounded-2xl border border-white/10 text-center flex flex-col items-center justify-center shadow-soft-lg gap-3">
                 <Shield className="w-8 h-8 text-yellow-400" />
                 <span className="text-xl font-bold text-yellow-400">100%</span>
@@ -604,14 +568,13 @@ export default function Home() {
 
               <div className="bg-green-950 p-6 rounded-2xl border border-white/10 text-center flex flex-col items-center justify-center shadow-soft-lg gap-3">
                 <Zap className="w-8 h-8 text-yellow-400" />
-                <span className="text-xl font-bold text-yellow-400">24-Hour</span>
+                <span className="text-xl font-bold text-yellow-400">24 Hours</span>
                 <span className="text-[10px] uppercase font-bold text-gray-400 mt-1 leading-tight">Outbound Dispatch</span>
               </div>
             </div>
           </div>
         </section>
 
-        {/* 9. Checkout Flyer Section */}
         <section id="get-address" className="py-20 px-6 md:px-12 max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             
