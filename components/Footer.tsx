@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Input } from "./Input";
 import Button from "./Button";
+import { useTranslation } from "../lib/i18n/LanguageContext";
 
 // Simple SVG icon components
 const InstagramIcon = () => (
@@ -13,7 +14,7 @@ const InstagramIcon = () => (
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.92-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
   </svg>
 );
 
@@ -53,11 +54,12 @@ const FacebookIcon = () => (
 export default function Footer() {
   const [phone, setPhone] = useState("");
   const [emailMode, setEmailMode] = useState(false);
+  const { t } = useTranslation();
 
   const handleSubscribe = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     alert(
-      `Subscribed successfully with ${phone || "email"}! Check your messages for 60% off.`,
+      t("footer.subscribeSuccess", { value: phone || "email" })
     );
   };
 
@@ -68,12 +70,10 @@ export default function Footer() {
         {/* Left Column: Sign Up and Wordmark */}
         <div className="lg:col-span-5 space-y-6">
           <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-white">
-            Get Your Hub Address
+            {t("footer.title")}
           </h3>
           <p className="text-sm text-gray-300 leading-relaxed max-w-md">
-            Contact us to receive your unique Kassongo shipping addresses in
-            major global trade hubs. Start consolidating and forwarding your
-            shipments today.
+            {t("footer.description")}
           </p>
 
           <form
@@ -82,7 +82,7 @@ export default function Footer() {
           >
             <Input
               type={emailMode ? "email" : "tel"}
-              placeholder={emailMode ? "Your email" : "Phone number"}
+              placeholder={emailMode ? t("footer.emailPlaceholder") : t("footer.phonePlaceholder")}
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               required
@@ -105,7 +105,7 @@ export default function Footer() {
             }}
             className="text-xs font-semibold text-gray-300 hover:text-white transition-colors underline"
           >
-            {emailMode ? "Use phone instead" : "Use email instead"}
+            {emailMode ? t("footer.usePhone") : t("footer.useEmail")}
           </button>
 
           {/* Wordmark Logo */}
@@ -118,7 +118,7 @@ export default function Footer() {
               className="w-8 h-8 transition-smooth"
             />
               <span className="font-bold italic text-2xl tracking-tight text-white">
-                kassongo
+                {t("header.logo")}
               </span>
             </div>
             {/* Socials */}
@@ -155,7 +155,7 @@ export default function Footer() {
         <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-10">
           <div className="space-y-3">
             <h4 className="font-bold text-sm uppercase tracking-wider text-white">
-              Services
+              {t("footer.links.services")}
             </h4>
             <ul className="space-y-2 text-sm text-gray-300">
               <li>
@@ -163,7 +163,7 @@ export default function Footer() {
                   href="/#services"
                   className="hover:text-white transition-colors"
                 >
-                  Consolidated Shipping
+                  {t("footer.links.consolidated")}
                 </a>
               </li>
               <li>
@@ -171,7 +171,7 @@ export default function Footer() {
                   href="/#services"
                   className="hover:text-white transition-colors"
                 >
-                  Secure Warehousing
+                  {t("footer.links.warehousing")}
                 </a>
               </li>
               <li>
@@ -179,7 +179,7 @@ export default function Footer() {
                   href="/#services"
                   className="hover:text-white transition-colors"
                 >
-                  Assisted Sourcing
+                  {t("footer.links.sourcing")}
                 </a>
               </li>
               <li>
@@ -187,7 +187,7 @@ export default function Footer() {
                   href="/#services"
                   className="hover:text-white transition-colors"
                 >
-                  Express Forwarding
+                  {t("footer.links.forwarding")}
                 </a>
               </li>
             </ul>
@@ -195,7 +195,7 @@ export default function Footer() {
 
           <div className="space-y-3">
             <h4 className="font-bold text-sm uppercase tracking-wider text-white">
-              Company
+              {t("footer.links.company")}
             </h4>
             <ul className="space-y-2 text-sm text-gray-300">
               <li>
@@ -203,7 +203,7 @@ export default function Footer() {
                   href="/#about"
                   className="hover:text-white transition-colors"
                 >
-                  About Us
+                  {t("footer.links.aboutUs")}
                 </a>
               </li>
               <li>
@@ -211,7 +211,7 @@ export default function Footer() {
                   href="/#how-it-works"
                   className="hover:text-white transition-colors"
                 >
-                  How It Works
+                  {t("footer.links.howItWorks")}
                 </a>
               </li>
               <li>
@@ -219,7 +219,7 @@ export default function Footer() {
                   href="/contact"
                   className="hover:text-white transition-colors"
                 >
-                  Contact
+                  {t("footer.links.contact")}
                 </a>
               </li>
               <li>
@@ -227,7 +227,7 @@ export default function Footer() {
                   href="#careers"
                   className="hover:text-white transition-colors"
                 >
-                  Careers
+                  {t("footer.links.careers")}
                 </a>
               </li>
             </ul>
@@ -235,7 +235,7 @@ export default function Footer() {
 
           <div className="space-y-3 col-span-2 md:col-span-1">
             <h4 className="font-bold text-sm uppercase tracking-wider text-white">
-              Support
+              {t("footer.links.support")}
             </h4>
             <ul className="space-y-2 text-sm text-gray-300">
               <li>
@@ -243,22 +243,22 @@ export default function Footer() {
                   href="/#get-address"
                   className="hover:text-white transition-colors"
                 >
-                  Get Started
+                  {t("common.getStarted")}
                 </a>
               </li>
               <li>
                 <a href="/faq" className="hover:text-white transition-colors">
-                  FAQ
+                  {t("common.faq")}
                 </a>
               </li>
               <li>
                 <a href="/contact" className="hover:text-white transition-colors">
-                  Contact Us
+                  {t("common.contactUs")}
                 </a>
               </li>
               <li>
                 <a href="/prohibited-items" className="hover:text-white transition-colors">
-                  Prohibited Items
+                  {t("common.prohibitedItems")}
                 </a>
               </li>
             </ul>
@@ -269,21 +269,21 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-green-800 relative z-10 flex flex-col md:flex-row justify-between gap-6 text-xs text-gray-400">
         <p>
-          © {new Date().getFullYear()} Kassongo Express LLC. All rights reserved.
+          {t("footer.allRightsReserved", { year: new Date().getFullYear() })}
         </p>
 
         <div className="flex flex-wrap gap-x-6 gap-y-2">
           <a href="/privacy-policy" className="hover:text-white transition-colors">
-            Privacy Policy
+            {t("common.privacyPolicy")}
           </a>
           <a href="/terms-and-conditions" className="hover:text-white transition-colors">
-            Terms & Conditions
+            {t("common.termsConditions")}
           </a>
           <a href="/prohibited-items" className="hover:text-white transition-colors">
-            Prohibited Items
+            {t("common.prohibitedItems")}
           </a>
           <a href="/faq" className="hover:text-white transition-colors">
-            FAQs
+            {t("common.faq")}
           </a>
         </div>
       </div>
@@ -292,7 +292,7 @@ export default function Footer() {
       <div className="mx-auto pt-5 relative z-0">
         <div className="w-full text-center flex flex-col items-center leading-[0.85]">
           <span className="font-display font-black text-[10vw] md:text-[6vw] lg:text-[12vw] tracking-tighter uppercase text-green-700">
-            Kassongo
+            {t("header.logo")}
           </span>
           <span className="font-display font-black text-[10vw] md:text-[6vw] lg:text-[12vw] tracking-tighter uppercase text-green-700">
             Mail

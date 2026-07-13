@@ -5,37 +5,51 @@ import { Shield, Scale, Package as PackageIcon, Zap, Flame, CheckCircle, Globe, 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Button from "../components/Button";
+import { useTranslation } from "../lib/i18n/LanguageContext";
 
 export default function Home() {
   const [activeThumb, setActiveThumb] = useState(0);
   const [selectedHub, setSelectedHub] = useState<"us" | "uk" | "china">("us");
+  const { t } = useTranslation();
 
   const hubDetails = {
     us: {
-      name: "US Trade Hub (New York & Houston)",
+      name: t("home.mailbox.us.name"),
       price: "$4.50",
       originalPrice: "$8.99",
-      features: ["Daily departures to Africa/Europe", "30 Days Free Storage", "Sales tax-free shopping address"],
+      features: [
+        t("home.mailbox.us.feat1"),
+        t("home.mailbox.us.feat2"),
+        t("home.mailbox.us.feat3")
+      ],
     },
     uk: {
-      name: "UK Trade Hub (London Heathrow)",
+      name: t("home.mailbox.uk.name"),
       price: "$5.20",
       originalPrice: "$9.99",
-      features: ["Bi-weekly air freight dispatches", "VAT reclaim assistance", "Fast customs clearance processing"],
+      features: [
+        t("home.mailbox.uk.feat1"),
+        t("home.mailbox.uk.feat2"),
+        t("home.mailbox.uk.feat3")
+      ],
     },
     china: {
-      name: "China Trade Hub (Guangzhou & Yiwu)",
+      name: t("home.mailbox.china.name"),
       price: "$3.80",
       originalPrice: "$7.50",
-      features: ["Direct factory pickup consolidation", "Sourcing team inspection standard", "Ocean & Air shipping choices"],
+      features: [
+        t("home.mailbox.china.feat1"),
+        t("home.mailbox.china.feat2"),
+        t("home.mailbox.china.feat3")
+      ],
     }
   };
 
   const thumbs = [
-    { src: "/screenshot-1.jpg", title: "Consolidation Hub" },
-    { src: "/screenshot-4.png", title: "Storage Depot" },
-    { src: "/screenshot-2.jpg", title: "Global Transit" },
-    { src: "/screenshot-3.jpg", title: "Sourcing Map" }
+    { src: "/screenshot-1.jpg", title: t("home.howItWorks.thumbs.cHub") },
+    { src: "/screenshot-4.png", title: t("home.howItWorks.thumbs.sDepot") },
+    { src: "/screenshot-2.jpg", title: t("home.howItWorks.thumbs.gTransit") },
+    { src: "/screenshot-3.jpg", title: t("home.howItWorks.thumbs.sMap") }
   ];
 
   return (
@@ -62,18 +76,18 @@ export default function Home() {
                 {/* Badge */}
                 <div className="inline-flex items-center gap-2 bg-green-900 text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide shadow-soft">
                   <Zap className="w-3 h-3 text-yellow-400" />
-                  <span>Trusted Freight Forwarding</span>
+                  <span>{t("home.hero.badge")}</span>
                 </div>
 
                 {/* Main Headline */}
                 <div className="space-y-4">
                   <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-black leading-[0.95] tracking-tight text-gray-900">
-                    Ship Smarter.<br />
-                    <span className="text-green-800">Ship Faster.</span><br />
-                    <span className="text-yellow-400">Ship Global.</span>
+                    {t("home.hero.title1")}<br />
+                    <span className="text-green-800">{t("home.hero.title2")}</span><br />
+                    <span className="text-yellow-400">{t("home.hero.title3")}</span>
                   </h1>
                   <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-xl">
-                    Your worldwide freight forwarding partner. Consolidate, store, and ship from the US, UK, and China to anywhere in the world.
+                    {t("home.hero.subtitle")}
                   </p>
                 </div>
 
@@ -86,7 +100,7 @@ export default function Home() {
                     className="shadow-soft-lg hover:shadow-soft-xl transition-all"
                   >
                     <PackageIcon className="w-5 h-5" />
-                    Get Free Address
+                    {t("home.hero.btnAddress")}
                   </Button>
                   <Button 
                     variant="secondary" 
@@ -95,7 +109,7 @@ export default function Home() {
                     className="shadow-soft hover:shadow-soft-md transition-all"
                   >
                     <Send className="w-5 h-5" />
-                    Contact Us
+                    {t("home.hero.btnContact")}
                   </Button>
                 </div>
 
@@ -103,15 +117,15 @@ export default function Home() {
                 <div className="flex flex-wrap items-center gap-6 pt-4">
                   <div className="flex items-center gap-2">
                     <Shield className="w-5 h-5 text-green-600" />
-                    <span className="text-sm font-semibold text-gray-700">Fully Insured</span>
+                    <span className="text-sm font-semibold text-gray-700">{t("home.hero.indicators.insured")}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Truck className="w-5 h-5 text-green-600" />
-                    <span className="text-sm font-semibold text-gray-700">Real-time Tracking</span>
+                    <span className="text-sm font-semibold text-gray-700">{t("home.hero.indicators.tracking")}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600" />
-                    <span className="text-sm font-semibold text-gray-700">30 Days Free Storage</span>
+                    <span className="text-sm font-semibold text-gray-700">{t("home.hero.indicators.storage")}</span>
                   </div>
                 </div>
 
@@ -119,15 +133,15 @@ export default function Home() {
                 <div className="grid grid-cols-3 gap-6 pt-8 border-t border-gray-200">
                   <div>
                     <div className="text-3xl md:text-4xl font-display font-black text-green-800 mb-1">60+</div>
-                    <div className="text-xs font-bold uppercase text-gray-500 tracking-wide">Global Hubs</div>
+                    <div className="text-xs font-bold uppercase text-gray-500 tracking-wide">{t("home.hero.stats.hubs")}</div>
                   </div>
                   <div>
                     <div className="text-3xl md:text-4xl font-display font-black text-green-800 mb-1">21+</div>
-                    <div className="text-xs font-bold uppercase text-gray-500 tracking-wide">Carriers</div>
+                    <div className="text-xs font-bold uppercase text-gray-500 tracking-wide">{t("home.hero.stats.carriers")}</div>
                   </div>
                   <div>
                     <div className="text-3xl md:text-4xl font-display font-black text-green-800 mb-1">1M+</div>
-                    <div className="text-xs font-bold uppercase text-gray-500 tracking-wide">Members</div>
+                    <div className="text-xs font-bold uppercase text-gray-500 tracking-wide">{t("home.hero.stats.members")}</div>
                   </div>
                 </div>
 
@@ -145,9 +159,9 @@ export default function Home() {
                   />
                   
                   {/* Floating Badge on Image */}
-                  <div className="absolute top-4 right-4 bg-yellow-400 text-gray-900 px-4 py-2 rounded-xl shadow-soft-lg">
-                    <div className="text-xs font-bold uppercase tracking-wide">Starting at</div>
-                    <div className="text-2xl font-black">$3.80<span className="text-sm font-semibold">/kg</span></div>
+                  <div className="absolute top-4 right-4 bg-yellow-400 text-gray-900 px-4 py-2 rounded-xl shadow-soft-lg text-right">
+                    <div className="text-xs font-bold uppercase tracking-wide">{t("common.startingAt")}</div>
+                    <div className="text-2xl font-black">$3.80<span className="text-sm font-semibold">{t("common.kg")}</span></div>
                   </div>
                 </div>
 
@@ -161,7 +175,7 @@ export default function Home() {
         <section id="how-it-works" className="py-20 px-6 md:px-12 bg-white">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight mb-16 text-center text-gray-900">
-              How It Works
+              {t("home.howItWorks.title")}
             </h2>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -169,11 +183,11 @@ export default function Home() {
               {/* Left: Cheetah World Graphic */}
               <div className="relative flex items-center justify-center">
                 <div className="w-full max-w-md aspect-square relative">
-                  {/* Cheetah World Image - blends naturally with background */}
+                  {/* Cheetah World Image */}
                   <div className="absolute inset-0 flex items-center justify-center p-8">
                     <img 
                       src="/CheetahWorld.png" 
-                      alt="Kassongo Global Network" 
+                      alt={t("home.howItWorks.networkAlt")} 
                       className="w-auto h-700 object-contain opacity-80"
                     />
                   </div>
@@ -191,10 +205,10 @@ export default function Home() {
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-2">
                       <span className="inline-flex items-center justify-center w-8 h-8 bg-green-900 text-white rounded-full text-sm font-bold">1</span>
-                      <h3 className="text-xl font-bold text-gray-900">Get Your Address</h3>
+                      <h3 className="text-xl font-bold text-gray-900">{t("home.howItWorks.step1.title")}</h3>
                     </div>
                     <p className="text-sm text-gray-600 leading-relaxed">
-                      Sign up to receive your unique Kassongo Mail shipping addresses in major global trade hubs
+                      {t("home.howItWorks.step1.desc")}
                     </p>
                   </div>
                 </div>
@@ -210,10 +224,10 @@ export default function Home() {
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-2">
                       <span className="inline-flex items-center justify-center w-8 h-8 bg-green-900 text-white rounded-full text-sm font-bold">2</span>
-                      <h3 className="text-xl font-bold text-gray-900">Shop & Source</h3>
+                      <h3 className="text-xl font-bold text-gray-900">{t("home.howItWorks.step2.title")}</h3>
                     </div>
                     <p className="text-sm text-gray-600 leading-relaxed">
-                      Buy from any supplier or factory and input your unique Kassongo address at checkout
+                      {t("home.howItWorks.step2.desc")}
                     </p>
                   </div>
                 </div>
@@ -229,10 +243,10 @@ export default function Home() {
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-2">
                       <span className="inline-flex items-center justify-center w-8 h-8 bg-green-900 text-white rounded-full text-sm font-bold">3</span>
-                      <h3 className="text-xl font-bold text-gray-900">Consolidate & Save</h3>
+                      <h3 className="text-xl font-bold text-gray-900">{t("home.howItWorks.step3.title")}</h3>
                     </div>
                     <p className="text-sm text-gray-600 leading-relaxed">
-                      We hold your items in our secure storage, combine them into one optimized shipment to slash your costs, and forward them safely to you. Customs Handled.
+                      {t("home.howItWorks.step3.desc")}
                     </p>
                   </div>
                 </div>
@@ -247,7 +261,7 @@ export default function Home() {
         <section className="py-20 px-6 md:px-12 bg-gray-50">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight mb-16 text-center text-gray-900">
-              Global Storage & Forwarding Solutions
+              {t("home.solutions.title")}
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -257,22 +271,22 @@ export default function Home() {
                 <div className="w-16 h-16 bg-green-900 rounded-2xl flex items-center justify-center mb-6 shadow-soft">
                   <Send className="w-8 h-8 text-yellow-400" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-gray-900">Send</h3>
+                <h3 className="text-2xl font-bold mb-4 text-gray-900">{t("home.solutions.send.title")}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed mb-4">
-                  Get a global address instantly. Buy from Alibaba, Amazon, or 1688 and let us handle everything. We securely store, combine, and forward your boxes to save you money.
+                  {t("home.solutions.send.desc")}
                 </p>
                 <ul className="space-y-2 text-xs text-gray-500">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-green-600" />
-                    <span>Instant address generation</span>
+                    <span>{t("home.solutions.send.f1")}</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-green-600" />
-                    <span>Buy from any supplier</span>
+                    <span>{t("home.solutions.send.f2")}</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-green-600" />
-                    <span>30 days free storage</span>
+                    <span>{t("home.solutions.send.f3")}</span>
                   </li>
                 </ul>
               </div>
@@ -282,22 +296,22 @@ export default function Home() {
                 <div className="w-16 h-16 bg-green-900 rounded-2xl flex items-center justify-center mb-6 shadow-soft">
                   <Inbox className="w-8 h-8 text-yellow-400" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-gray-900">Receive</h3>
+                <h3 className="text-2xl font-bold mb-4 text-gray-900">{t("home.solutions.receive.title")}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed mb-4">
-                  Send packages worldwide, effortlessly. Drop off your package and we'll ship it anywhere with full tracking and insurance included.
+                  {t("home.solutions.receive.desc")}
                 </p>
                 <ul className="space-y-2 text-xs text-gray-500">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-green-600" />
-                    <span>Worldwide delivery</span>
+                    <span>{t("home.solutions.receive.f1")}</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-green-600" />
-                    <span>Real-time tracking</span>
+                    <span>{t("home.solutions.receive.f2")}</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-green-600" />
-                    <span>Full insurance coverage</span>
+                    <span>{t("home.solutions.receive.f3")}</span>
                   </li>
                 </ul>
               </div>
@@ -307,22 +321,22 @@ export default function Home() {
                 <div className="w-16 h-16 bg-green-900 rounded-2xl flex items-center justify-center mb-6 shadow-soft">
                   <Warehouse className="w-8 h-8 text-yellow-400" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-gray-900">Storage</h3>
+                <h3 className="text-2xl font-bold mb-4 text-gray-900">{t("home.solutions.storage.title")}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed mb-4">
-                  Secure storage, smarter shipping. We hold your inventory safely until you're ready to ship. Customs Handled.
+                  {t("home.solutions.storage.desc")}
                 </p>
                 <ul className="space-y-2 text-xs text-gray-500">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-green-600" />
-                    <span>Climate-controlled facilities</span>
+                    <span>{t("home.solutions.storage.f1")}</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-green-600" />
-                    <span>24/7 security monitoring</span>
+                    <span>{t("home.solutions.storage.f2")}</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-green-600" />
-                    <span>Flexible storage duration</span>
+                    <span>{t("home.solutions.storage.f3")}</span>
                   </li>
                 </ul>
               </div>
@@ -347,10 +361,10 @@ export default function Home() {
                 {/* Content */}
                 <div className="flex-1 text-center md:text-left">
                   <h3 className="text-2xl md:text-3xl font-bold mb-3 text-gray-900">
-                    Convenient Service Access via Local Bus Stations
+                    {t("home.bus.title")}
                   </h3>
                   <p className="text-sm md:text-base text-gray-600 leading-relaxed">
-                    No need to travel to a distant main cargo hub. Easily drop off your outbound parcels or pick up your international arrivals right at your nearest trusted local bus station terminal.
+                    {t("home.bus.desc")}
                   </p>
                 </div>
 
@@ -358,7 +372,7 @@ export default function Home() {
                 <div className="flex-shrink-0">
                   <div className="bg-green-900 text-white px-6 py-4 rounded-2xl shadow-soft text-center">
                     <div className="text-3xl font-black mb-1">60+</div>
-                    <div className="text-xs font-bold uppercase tracking-wide">Locations</div>
+                    <div className="text-xs font-bold uppercase tracking-wide">{t("home.bus.locations")}</div>
                   </div>
                 </div>
 
@@ -369,12 +383,12 @@ export default function Home() {
 
         {/* 5. Partner Logo Marquee */}
         <section className="bg-white py-6 border-y border-gray-100 overflow-hidden">
-          <p className="text-center text-[10px] uppercase font-bold tracking-widest text-gray-400 mb-5">We offer assisted sourcing from</p>
+          <p className="text-center text-[10px] uppercase font-bold tracking-widest text-gray-400 mb-5">{t("home.partners.headline")}</p>
           <div className="animate-marquee">
             <div className="flex items-center gap-16 px-8">
               {[...Array(3)].map((_, si) => (
                 <div key={si} className="flex items-center gap-16">
-                  {/* Amazon — use .webp */}
+                  {/* Amazon */}
                   <div className="flex items-center justify-center grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100">
                     <img src="/Amazon_logo.svg.webp" alt="Amazon" style={{ height: "30px", width: "auto" }} className="object-contain" />
                   </div>
@@ -386,7 +400,7 @@ export default function Home() {
                   <div className="flex items-center justify-center grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100">
                     <img src="/EBay_logo.svg" alt="eBay" style={{ height: "30px", width: "auto" }} className="object-contain" />
                   </div>
-                  {/* AliExpress — PNG, bigger */}
+                  {/* AliExpress */}
                   <div className="flex items-center justify-center grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100">
                     <img src="/aliexpress-logo-5a8f.png" alt="AliExpress" style={{ height: "100px", width: "auto" }} className="object-contain" />
                   </div>
@@ -406,11 +420,11 @@ export default function Home() {
                   <div className="flex items-center justify-center grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100">
                     <img src="/taobao-new-flat-design.svg" alt="Taobao" style={{ height: "32px", width: "auto" }} className="object-contain" />
                   </div>
-                  {/* Jumia — PNG, bigger */}
+                  {/* Jumia */}
                   <div className="flex items-center justify-center grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100">
                     <img src="/Jumia-Logo-2012.png" alt="Jumia" style={{ height: "50px", width: "auto" }} className="object-contain" />
                   </div>
-                  {/* Swappa — webp, bigger */}
+                  {/* Swappa */}
                   <div className="flex items-center justify-center grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100">
                     <img src="/Logo_swappa_footer.svg.webp" alt="Swappa" style={{ height: "50px", width: "auto" }} className="object-contain" />
                   </div>
@@ -424,7 +438,7 @@ export default function Home() {
         <section id="services" className="py-24 px-6 md:px-12 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight mb-16 text-center text-gray-900">
-              Find Your Service
+              {t("home.services.title")}
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -432,10 +446,10 @@ export default function Home() {
               {/* Card 1 */}
               <div className="bg-gradient-to-b from-[#24963f] to-[#0c4e25] rounded-3xl p-6 flex flex-col justify-between h-[500px] shadow-card hover:shadow-card transition-smooth relative group text-white">
                 <div>
-                  <h3 className="text-2xl font-display font-black text-white mb-1.5 tracking-tight">Consolidation</h3>
-                  <p className="text-xs font-bold text-yellow-400 mb-3 uppercase tracking-wider">Shared Cargo, Split Costs</p>
+                  <h3 className="text-2xl font-display font-black text-white mb-1.5 tracking-tight">{t("home.services.c1.title")}</h3>
+                  <p className="text-xs font-bold text-yellow-400 mb-3 uppercase tracking-wider">{t("home.services.c1.badge")}</p>
                   <p className="text-xs text-green-100/90 leading-relaxed font-medium">
-                    Sending a care package to family or moving business stock? We group your cargo into master shipments so you pay the lowest rates.
+                    {t("home.services.c1.desc")}
                   </p>
                 </div>
                 <div className="flex-1 flex items-end justify-center mb-20">
@@ -447,7 +461,7 @@ export default function Home() {
                 </div>
                 <div>
                   <Button variant="secondary" size="sm" href="#get-address" className="w-full shadow-soft hover:shadow-soft-md">
-                    Get Started
+                    {t("common.getStartedButton")}
                   </Button>
                 </div>
               </div>
@@ -455,10 +469,10 @@ export default function Home() {
               {/* Card 2 */}
               <div className="bg-gradient-to-b from-[#24963f] to-[#0c4e25] rounded-3xl p-6 flex flex-col justify-between h-[500px] shadow-card hover:shadow-card transition-smooth relative group text-white">
                 <div>
-                  <h3 className="text-2xl font-display font-black text-white mb-1.5 tracking-tight">Secure Storage</h3>
-                  <p className="text-xs font-bold text-yellow-400 mb-3 uppercase tracking-wider">Your Inventory, Securely Handled</p>
+                  <h3 className="text-2xl font-display font-black text-white mb-1.5 tracking-tight">{t("home.services.c2.title")}</h3>
+                  <p className="text-xs font-bold text-yellow-400 mb-3 uppercase tracking-wider">{t("home.services.c2.badge")}</p>
                   <p className="text-xs text-green-100/90 leading-relaxed font-medium">
-                    Access flexible, climate-controlled warehousing in our regional hubs. Monitor your stock levels and manage local distribution seamlessly.
+                    {t("home.services.c2.desc")}
                   </p>
                 </div>
                 <div className="flex-1 flex items-end justify-center mb-20">
@@ -470,7 +484,7 @@ export default function Home() {
                 </div>
                 <div>
                   <Button variant="secondary" size="sm" href="#get-address" className="w-full shadow-soft hover:shadow-soft-md">
-                    Get Started
+                    {t("common.getStartedButton")}
                   </Button>
                 </div>
               </div>
@@ -478,10 +492,10 @@ export default function Home() {
               {/* Card 3 */}
               <div className="bg-gradient-to-b from-[#24963f] to-[#0c4e25] rounded-3xl p-6 flex flex-col justify-between h-[500px] shadow-card hover:shadow-card transition-smooth relative group text-white">
                 <div>
-                  <h3 className="text-2xl font-display font-black text-white mb-1.5 tracking-tight">Assisted Sourcing</h3>
-                  <p className="text-xs font-bold text-yellow-400 mb-3 uppercase tracking-wider">Buy Worldwide, Pay Locally</p>
+                  <h3 className="text-2xl font-display font-black text-white mb-1.5 tracking-tight">{t("home.services.c3.title")}</h3>
+                  <p className="text-xs font-bold text-yellow-400 mb-3 uppercase tracking-wider">{t("home.services.c3.badge")}</p>
                   <p className="text-xs text-green-100/90 leading-relaxed font-medium">
-                    Paste any link from Amazon, Alibaba, or global stores. We handle the payment barrier, verify the quality, and buy it for you.
+                    {t("home.services.c3.desc")}
                   </p>
                 </div>
                 <div className="flex-1 flex items-end justify-center mb-20">
@@ -493,7 +507,7 @@ export default function Home() {
                 </div>
                 <div>
                   <Button variant="secondary" size="sm" href="#get-address" className="w-full shadow-soft hover:shadow-soft-md">
-                    Get Started
+                    {t("common.getStartedButton")}
                   </Button>
                 </div>
               </div>
@@ -501,10 +515,10 @@ export default function Home() {
               {/* Card 4 */}
               <div className="bg-gradient-to-b from-[#24963f] to-[#0c4e25] rounded-3xl p-6 flex flex-col justify-between h-[500px] shadow-card hover:shadow-card transition-smooth relative group text-white">
                 <div>
-                  <h3 className="text-2xl font-display font-black text-white mb-1.5 tracking-tight">Express Forwarding</h3>
-                  <p className="text-xs font-bold text-yellow-400 mb-3 uppercase tracking-wider">Next-Flight Delivery Velocity</p>
+                  <h3 className="text-2xl font-display font-black text-white mb-1.5 tracking-tight">{t("home.services.c4.title")}</h3>
+                  <p className="text-xs font-bold text-yellow-400 mb-3 uppercase tracking-wider">{t("home.services.c4.badge")}</p>
                   <p className="text-xs text-green-100/90 leading-relaxed font-medium">
-                    Urgent electronics, critical documents, or high-value samples? Skip the cargo lines and route your packages onto the next available flight.
+                    {t("home.services.c4.desc")}
                   </p>
                 </div>
                 <div className="flex-1 flex items-end justify-center mb-20">
@@ -516,7 +530,7 @@ export default function Home() {
                 </div>
                 <div>
                   <Button variant="secondary" size="sm" href="#get-address" className="w-full shadow-soft hover:shadow-soft-md">
-                    Get Started
+                    {t("common.getStartedButton")}
                   </Button>
                 </div>
               </div>
@@ -529,8 +543,8 @@ export default function Home() {
         <section className="bg-green-900 text-white py-20 px-6 text-center">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight tracking-tight">
-              We made global shipping,<br />
-              like, <span className="text-yellow-400">ridiculously easy.</span>
+              {t("home.banner.title1")}<br />
+              {t("home.banner.title2")}<span className="text-yellow-400">{t("home.banner.highlight")}</span>
             </h2>
           </div>
         </section>
@@ -540,10 +554,10 @@ export default function Home() {
           <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
             <div className="max-w-xl text-left">
               <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-                Consolidated for quality, speed, &amp; security.
+                {t("home.standards.title")}
               </h2>
               <p className="text-sm md:text-base text-gray-100 leading-relaxed">
-                We physically verify all inbound supplier packages at our hub terminals to guarantee accuracy, protect fragile goods, verify invoices, and filter out customs hazards.
+                {t("home.standards.desc")}
               </p>
             </div>
 
@@ -551,30 +565,31 @@ export default function Home() {
               <div className="bg-green-950 p-6 rounded-2xl border border-white/10 text-center flex flex-col items-center justify-center shadow-soft-lg gap-3">
                 <Shield className="w-8 h-8 text-yellow-400" />
                 <span className="text-xl font-bold text-yellow-400">100%</span>
-                <span className="text-[10px] uppercase font-bold text-gray-400 mt-1 leading-tight">Tracked Security</span>
+                <span className="text-[10px] uppercase font-bold text-gray-400 mt-1 leading-tight">{t("home.standards.s1")}</span>
               </div>
 
               <div className="bg-green-950 p-6 rounded-2xl border border-white/10 text-center flex flex-col items-center justify-center shadow-soft-lg gap-3">
                 <Scale className="w-8 h-8 text-yellow-400" />
-                <span className="text-xl font-bold text-yellow-400">Zero</span>
-                <span className="text-[10px] uppercase font-bold text-gray-400 mt-1 leading-tight">Hidden Fees</span>
+                <span className="text-xl font-bold text-yellow-400">{t("home.standards.s2")}</span>
+                <span className="text-[10px] uppercase font-bold text-gray-400 mt-1 leading-tight">{t("home.standards.s2_desc")}</span>
               </div>
 
               <div className="bg-green-950 p-6 rounded-2xl border border-white/10 text-center flex flex-col items-center justify-center shadow-soft-lg gap-3">
                 <PackageIcon className="w-8 h-8 text-yellow-400" />
-                <span className="text-xl font-bold text-yellow-400">30 Days</span>
-                <span className="text-[10px] uppercase font-bold text-gray-400 mt-1 leading-tight">Free Storage</span>
+                <span className="text-xl font-bold text-yellow-400">{t("home.standards.s3")}</span>
+                <span className="text-[10px] uppercase font-bold text-gray-400 mt-1 leading-tight">{t("home.standards.s3_desc")}</span>
               </div>
 
               <div className="bg-green-950 p-6 rounded-2xl border border-white/10 text-center flex flex-col items-center justify-center shadow-soft-lg gap-3">
                 <Zap className="w-8 h-8 text-yellow-400" />
-                <span className="text-xl font-bold text-yellow-400">24 Hours</span>
-                <span className="text-[10px] uppercase font-bold text-gray-400 mt-1 leading-tight">Outbound Dispatch</span>
+                <span className="text-xl font-bold text-yellow-400">{t("home.standards.s4")}</span>
+                <span className="text-[10px] uppercase font-bold text-gray-400 mt-1 leading-tight">{t("home.standards.s4_desc")}</span>
               </div>
             </div>
           </div>
         </section>
 
+        {/* 9. Mailbox & Form Section */}
         <section id="get-address" className="py-20 px-6 md:px-12 max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             
@@ -598,7 +613,7 @@ export default function Home() {
               <div className="bg-white rounded-3xl overflow-hidden shadow-soft-xl flex flex-col border border-gray-200">
                 <div className="bg-gradient-to-r from-green-600 to-yellow-400 py-3 px-4 text-center border-b border-gray-200 font-bold uppercase text-xs tracking-wider text-white flex items-center justify-center gap-2">
                   <Flame className="w-4 h-4" />
-                  <span>Limited Time Offer: Save up to 60% on first cargo dispatch</span>
+                  <span>{t("common.limitedTimeOffer")}</span>
                   <Flame className="w-4 h-4" />
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 bg-gray-50">
@@ -607,30 +622,32 @@ export default function Home() {
                       <img src={thumbs[activeThumb].src} alt={thumbs[activeThumb].title} className="w-full h-full object-cover" />
                     </div>
                     <div className="text-center mt-4">
-                      <span className="text-[10px] uppercase font-bold text-gray-500">Visualizer Model {activeThumb + 1}</span>
+                      <span className="text-[10px] uppercase font-bold text-gray-500">
+                        {t("home.mailbox.flyer.model", { value: activeThumb + 1 })}
+                      </span>
                     </div>
                   </div>
                   <div className="p-6 flex flex-col justify-between bg-gray-50">
                     <div className="space-y-4 text-xs font-semibold text-gray-700">
                       <div className="flex items-center gap-2">
                         <Shield className="w-4 h-4 text-green-600" />
-                        <span>Full Cargo Insurance Standard</span>
+                        <span>{t("home.mailbox.flyer.f1")}</span>
                       </div>
                       <div className="flex items-center gap-2">
                         <Zap className="w-4 h-4 text-green-600" />
-                        <span>WhatsApp Status Alerts</span>
+                        <span>{t("home.mailbox.flyer.f2")}</span>
                       </div>
                       <div className="flex items-center gap-2">
                         <Globe className="w-4 h-4 text-green-600" />
-                        <span>Consolidated multi-order handling</span>
+                        <span>{t("home.mailbox.flyer.f3")}</span>
                       </div>
                       <div className="flex items-center gap-2">
                         <Zap className="w-4 h-4 text-green-600" />
-                        <span>Cheetah Speed customs release</span>
+                        <span>{t("home.mailbox.flyer.f4")}</span>
                       </div>
                     </div>
                     <div className="mt-8 bg-white border border-gray-200 rounded-xl p-3 text-center shadow-soft font-bold text-xs text-gray-900">
-                      Standard Hub Verification
+                      {t("home.mailbox.flyer.standardVerify")}
                     </div>
                   </div>
                 </div>
@@ -640,15 +657,15 @@ export default function Home() {
             {/* Hub Selector Form */}
             <div className="lg:col-span-5 bg-white border border-gray-200 rounded-3xl p-6 md:p-8 shadow-soft-xl">
               <div className="flex items-center gap-2 mb-4 text-green-600 text-xs font-bold">
-                <span>★★★★★</span> <span>4.9/5.0 Rated (15,000+ members)</span>
+                <span>★★★★★</span> <span>{t("home.mailbox.rating")}</span>
               </div>
-              <h2 className="text-3xl font-display font-bold tracking-tight mb-2 text-gray-900">Kassongo Mailbox</h2>
+              <h2 className="text-3xl font-display font-bold tracking-tight mb-2 text-gray-900">{t("home.mailbox.title")}</h2>
               <p className="text-xs md:text-sm leading-relaxed text-gray-600 mb-6">
-                Create your global shopping mailbox profiles. Instantly receive your addresses in trade hubs and forward cargo with ease.
+                {t("home.mailbox.desc")}
               </p>
 
               <div className="mb-6">
-                <span className="text-xs font-bold uppercase text-gray-700 block mb-2">Select Sourcing Hub Address:</span>
+                <span className="text-xs font-bold uppercase text-gray-700 block mb-2">{t("home.mailbox.selectHub")}</span>
                 <div className="grid grid-cols-3 gap-2">
                   {(["us", "uk", "china"] as const).map((hub) => {
                     const flagCode = hub === "china" ? "cn" : hub === "uk" ? "gb" : "us";
@@ -673,10 +690,10 @@ export default function Home() {
               </div>
 
               <div className="bg-gray-50 border border-gray-200 rounded-2xl p-4 mb-6 shadow-soft">
-                <span className="text-[10px] font-bold uppercase text-gray-500 block mb-1">Estimated Sourcing Tariff</span>
+                <span className="text-[10px] font-bold uppercase text-gray-500 block mb-1">{t("home.mailbox.estimatedTariff")}</span>
                 <div className="flex items-baseline gap-2">
-                  <span className="text-3xl font-display font-bold text-gray-900">{hubDetails[selectedHub].price}/kg</span>
-                  <span className="text-sm line-through text-gray-400 font-bold">{hubDetails[selectedHub].originalPrice}/kg</span>
+                  <span className="text-3xl font-display font-bold text-gray-900">{hubDetails[selectedHub].price}{t("common.kg")}</span>
+                  <span className="text-sm line-through text-gray-400 font-bold">{hubDetails[selectedHub].originalPrice}{t("common.kg")}</span>
                 </div>
                 <div className="mt-3 pt-3 border-t border-gray-200 space-y-1">
                   {hubDetails[selectedHub].features.map((feat) => (
@@ -687,8 +704,8 @@ export default function Home() {
                 </div>
               </div>
 
-              <Button variant="secondary" size="lg" className="w-full text-center py-4" onClick={() => alert("Registration setup complete!")}>
-                Get My Hub Address Now
+              <Button variant="secondary" size="lg" className="w-full text-center py-4" onClick={() => alert(t("home.mailbox.registrationAlert"))}>
+                {t("home.mailbox.btnGetAddress")}
               </Button>
             </div>
 
@@ -709,28 +726,28 @@ export default function Home() {
                 <div className="flex items-center gap-2">
                   <span className="text-green-400 tracking-tight">★★★★★</span>
                   <span className="text-xs font-bold text-gray-200">
-                    <strong className="text-white">4.9</strong> rating from <strong className="text-white">15,000+</strong> verified accounts
+                    <strong className="text-white">4.9</strong> {t("home.downloads.ratingText")}
                   </span>
                 </div>
 
                 {/* Heading */}
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold leading-tight tracking-tight">
-                  See what all the hype is about.
+                  {t("home.downloads.title")}
                 </h2>
 
                 {/* Checklist */}
                 <ul className="space-y-3 font-semibold text-sm">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-green-400" />
-                    <span>30-day cargo forwarding guarantee</span>
+                    <span>{t("home.downloads.f1")}</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-green-400" />
-                    <span>Operationally verified and speed tested</span>
+                    <span>{t("home.downloads.f2")}</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-green-400" />
-                    <span>Direct terminal customs handling</span>
+                    <span>{t("home.downloads.f3")}</span>
                   </li>
                 </ul>
 
@@ -743,7 +760,7 @@ export default function Home() {
                   >
                     <img src="/Apple_logo_black.svg" alt="Apple" className="w-6 h-7 object-contain shrink-0 invert" />
                     <div className="flex flex-col leading-tight">
-                      <span className="text-[10px] font-normal text-gray-300 tracking-wide">Download on the</span>
+                      <span className="text-[10px] font-normal text-gray-300 tracking-wide">{t("home.downloads.btnAppStore")}</span>
                       <span className="text-base font-semibold tracking-tight">App Store</span>
                     </div>
                   </a>
@@ -755,7 +772,7 @@ export default function Home() {
                   >
                     <img src="/Google_Play_2022_icon.svg.webp" alt="Google Play" className="w-7 h-7 object-contain shrink-0" />
                     <div className="flex flex-col leading-tight">
-                      <span className="text-[10px] font-normal text-gray-300 tracking-wide">GET IT ON</span>
+                      <span className="text-[10px] font-normal text-gray-300 tracking-wide">{t("home.downloads.btnGooglePlay")}</span>
                       <span className="text-base font-semibold tracking-tight">Google Play</span>
                     </div>
                   </a>
@@ -763,7 +780,7 @@ export default function Home() {
 
               </div>
 
-              {/* Graphic area (spans 5 columns) */}
+              {/* Graphic area */}
               <div className="lg:col-span-5 h-80 w-full self-end relative border-t lg:border-t-0 lg:border-l border-gray-700 bg-green-950 overflow-hidden flex items-center justify-center p-6">
                 <div className="absolute inset-0 bg-gradient-to-tr from-green-600/15 to-yellow-400/15 opacity-60"></div>
                 <img src="/screenshot-2.jpg" alt="Cargo Sourcing Transit" className="max-w-[90%] max-h-[90%] object-contain rounded-2xl border border-gray-700 shadow-soft-xl" />
@@ -779,17 +796,16 @@ export default function Home() {
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight mb-6 text-gray-900">
-                International Sourcing Unlocked
+                {t("home.unlocked.title")}
               </h2>
               <p className="text-sm md:text-base leading-relaxed text-gray-700 mb-8">
-                In today's global marketplace, managing international procurement across multiple suppliers, continents, and customs zones is a logistical bottleneck. Traditional shipping leaves businesses vulnerable to fragmented tracking, exorbitant transit markups, and excessive clearance friction.
-                Kassongo Express rewrites the rules of global trade. We are an asset-light, digitally driven global storage, freight consolidation, and freight forwarding network designed to give you absolute control.
+                {t("home.unlocked.desc")}
               </p>
             </div>
 
             <div className="space-y-5">
               <h3 className="font-bold uppercase tracking-wider text-gray-600 text-xs text-center">
-                We offer Assisted sourcing from..
+                {t("home.partners.headline")}
               </h3>
               <div className="grid grid-cols-3 gap-3">
                 {[

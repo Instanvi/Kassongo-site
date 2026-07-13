@@ -4,8 +4,10 @@ import { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { useTranslation } from "../../lib/i18n/LanguageContext";
 
 interface FAQItem {
+  key?: string;
   question: string;
   answer: string;
   category: string;
@@ -14,11 +16,13 @@ interface FAQItem {
 const faqData: FAQItem[] = [
   // Getting Started
   {
+    key: "q1",
     category: "Getting Started",
     question: "What is Kassongo Express?",
     answer: "Kassongo Express is a global freight forwarding and package consolidation service that provides you with personalized shipping addresses in major trade hubs worldwide. We receive, store, consolidate, and forward your packages from international suppliers to your doorstep, helping you save money on shipping costs."
   },
   {
+    key: "q2",
     category: "Getting Started",
     question: "How do I sign up?",
     answer: "Signing up is simple! Click the 'Get Started' button on our homepage, fill out the registration form with your details, choose your membership plan, and complete the payment. Once registered, you'll receive your unique shipping addresses for different countries via email within 24 hours."
@@ -36,11 +40,13 @@ const faqData: FAQItem[] = [
 
   // Shipping Addresses
   {
+    key: "q3",
     category: "Shipping Addresses",
     question: "How do shipping addresses work?",
     answer: "After registration, you'll receive personalized suite numbers at our warehouse locations in countries like the USA, UK, China, Turkey, and more. Use these addresses when shopping online from any supplier. When your packages arrive at our warehouse, we'll notify you and hold them for consolidation."
   },
   {
+    key: "q4",
     category: "Shipping Addresses",
     question: "Can I use my Kassongo address for any online store?",
     answer: "Yes! You can use your Kassongo addresses to shop from Amazon, eBay, AliExpress, Alibaba, Shein, Temu, and thousands of other online retailers. Just use your personalized suite number as the shipping address during checkout."
@@ -58,11 +64,13 @@ const faqData: FAQItem[] = [
 
   // Pricing & Fees
   {
+    key: "q5",
     category: "Pricing & Fees",
     question: "What are your membership plans?",
     answer: "We offer three membership tiers: Free Plan (pay-as-you-go with storage starting day 7), Gold Member (monthly fee with storage starting day 30), and Platinum Member (monthly fee with storage starting day 45 plus additional perks like free consolidation and priority handling)."
   },
   {
+    key: "q6",
     category: "Pricing & Fees",
     question: "How is shipping cost calculated?",
     answer: "Shipping costs are based on the actual weight or volumetric weight (whichever is greater) of your package, the destination country, and the carrier service you choose (economy, standard, or express). You can use our shipping calculator to get an estimate before finalizing your shipment."
@@ -90,6 +98,7 @@ const faqData: FAQItem[] = [
 
   // Package Consolidation
   {
+    key: "q7",
     category: "Package Consolidation",
     question: "What is package consolidation?",
     answer: "Package consolidation is when we combine multiple packages into one shipment. This significantly reduces shipping costs since you pay for one shipment instead of multiple individual packages. We'll remove excess packaging, combine items carefully, and repack everything securely."
@@ -117,6 +126,7 @@ const faqData: FAQItem[] = [
 
   // Customs & Duties
   {
+    key: "q8",
     category: "Customs & Duties",
     question: "Who is responsible for customs duties and taxes?",
     answer: "You (the customer) are solely responsible for all customs duties, import taxes, and fees charged by your destination country. These charges are in addition to our shipping fees and are determined by your local customs authorities."
@@ -144,11 +154,13 @@ const faqData: FAQItem[] = [
 
   // Prohibited Items
   {
+    key: "q9",
     category: "Prohibited Items",
     question: "What items are prohibited?",
     answer: "Prohibited items include: all pharmaceuticals and drugs, firearms and weapons, explosives and flammable materials, perishable foods, live animals, cash and currency, tobacco and alcohol, counterfeit goods, and any items illegal in origin or destination countries. See our Terms & Conditions for the complete list."
   },
   {
+    key: "q10",
     category: "Prohibited Items",
     question: "Can I ship prescription medications?",
     answer: "No, absolutely not. Cross-border pharmaceuticals of any kind are strictly prohibited, including prescription medications, over-the-counter drugs, vitamins, and supplements."
@@ -171,9 +183,10 @@ const faqData: FAQItem[] = [
 
   // Shipping & Delivery
   {
+    key: "q11",
     category: "Shipping & Delivery",
     question: "Which carriers do you use?",
-    answer: "We partner with major international carriers including FedEx, DHL, UPS, USPS, and regional carriers. You can choose your preferred carrier based on speed, cost, and service features when submitting your shipment request."
+    answer: "We partner with major international carriers including FedEx, DHL, UPS, USPS and regional carriers. You can choose your preferred carrier based on speed, cost, and service features when submitting your shipment request."
   },
   {
     category: "Shipping & Delivery",
@@ -186,6 +199,7 @@ const faqData: FAQItem[] = [
     answer: "We ship to most countries worldwide except for restricted destinations including: Cuba, Iran, North Korea, Syria, Russia, Belarus, and others subject to international sanctions. See our Terms & Conditions for the complete list."
   },
   {
+    key: "q12",
     category: "Shipping & Delivery",
     question: "Can I track my shipment?",
     answer: "Yes! Once your package ships from our warehouse, you'll receive a tracking number via email. You can track your shipment directly on the carrier's website or through your Kassongo dashboard."
@@ -203,6 +217,7 @@ const faqData: FAQItem[] = [
 
   // Insurance & Claims
   {
+    key: "q13",
     category: "Insurance & Claims",
     question: "Is my package automatically insured?",
     answer: "All shipments include basic coverage up to $100 USD. For packages valued over $100, we strongly recommend purchasing additional insurance to cover the full declared value."
@@ -230,11 +245,13 @@ const faqData: FAQItem[] = [
 
   // Security & Privacy
   {
+    key: "q14",
     category: "Security & Privacy",
     question: "Can Kassongo open my packages?",
     answer: "Yes, for legal protection of the company and customers, Kassongo reserves the right to open and inspect all items delivered in your name without prior notice. This helps ensure compliance with shipping regulations and identify prohibited items."
   },
   {
+    key: "q15",
     category: "Security & Privacy",
     question: "How is my personal information protected?",
     answer: "We use industry-standard encryption and security measures to protect your personal and payment information. We never share your data with third parties except as required for shipping and customs purposes. See our Privacy Policy for details."
@@ -310,11 +327,43 @@ const categories = [
 ];
 
 export default function FAQPage() {
+  const { t } = useTranslation();
   const [selectedCategory, setSelectedCategory] = useState<string>("Getting Started");
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const [searchQuery, setSearchQuery] = useState("");
 
-  const filteredFAQs = faqData.filter(faq => {
+  const getCategoryLabel = (catName: string) => {
+    switch (catName) {
+      case "Getting Started": return t("faq.categories.gettingStarted");
+      case "Shipping Addresses": return t("faq.categories.shippingAddresses");
+      case "Pricing & Fees": return t("faq.categories.pricingFees");
+      case "Package Consolidation": return t("faq.categories.consolidation");
+      case "Customs & Duties": return t("faq.categories.customs");
+      case "Prohibited Items": return t("faq.categories.prohibited");
+      case "Shipping & Delivery": return t("faq.categories.shipping");
+      case "Insurance & Claims": return t("faq.categories.insurance");
+      case "Security & Privacy": return t("faq.categories.security");
+      case "Account Management": return t("faq.categories.account");
+      case "Common Issues": return t("faq.categories.commonIssues");
+      default: return catName;
+    }
+  };
+
+  // Resolve localized FAQData dynamically based on the current locale
+  const localizedFAQData = faqData.map(faq => {
+    if (faq.key) {
+      const questionTranslation = t(`faq.items.${faq.key}.q`);
+      const answerTranslation = t(`faq.items.${faq.key}.a`);
+      return {
+        ...faq,
+        question: questionTranslation && questionTranslation !== `faq.items.${faq.key}.q` ? questionTranslation : faq.question,
+        answer: answerTranslation && answerTranslation !== `faq.items.${faq.key}.a` ? answerTranslation : faq.answer,
+      };
+    }
+    return faq;
+  });
+
+  const filteredFAQs = localizedFAQData.filter(faq => {
     const matchesCategory = selectedCategory === "All" || faq.category === selectedCategory;
     const matchesSearch = searchQuery === "" || 
       faq.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -336,17 +385,17 @@ export default function FAQPage() {
         <section className="relative bg-white py-16 px-6 border-b border-gray-200">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-display font-bold tracking-tight text-gray-900 mb-4">
-              Frequently Asked Questions
+              {t("faq.hero.title")}
             </h1>
             <p className="text-base text-gray-600 leading-relaxed max-w-2xl mx-auto mb-8">
-              Find answers to common questions about Kassongo Express shipping, consolidation, customs, and more.
+              {t("faq.hero.subtitle")}
             </p>
             
             {/* Search Bar */}
             <div className="max-w-2xl mx-auto">
               <input
                 type="text"
-                placeholder="Search for answers..."
+                placeholder={t("faq.hero.searchPlaceholder")}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full px-5 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 text-base placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-green-600 focus:border-green-600 transition-all"
@@ -363,7 +412,7 @@ export default function FAQPage() {
               {/* Category Sidebar */}
               <div className="lg:col-span-1">
                 <div className="sticky top-24 space-y-1">
-                  <h3 className="font-semibold text-sm text-gray-700 mb-3 px-3">Categories</h3>
+                  <h3 className="font-semibold text-sm text-gray-700 mb-3 px-3">{t("faq.sidebar.title")}</h3>
                   {categories.map((category) => {
                     const count = faqData.filter(faq => faq.category === category.name).length;
                     return (
@@ -379,7 +428,7 @@ export default function FAQPage() {
                             : "text-gray-700 hover:bg-gray-100"
                         }`}
                       >
-                        <span className="font-medium">{category.name}</span>
+                        <span className="font-medium">{getCategoryLabel(category.name)}</span>
                         <span className={`text-xs font-medium px-2 py-0.5 rounded ${
                           selectedCategory === category.name
                             ? "bg-white/20 text-white"
@@ -396,13 +445,13 @@ export default function FAQPage() {
               {/* FAQ List */}
               <div className="lg:col-span-3">
                 <div className="mb-6">
-                  <h2 className="text-xl font-bold text-gray-900">{selectedCategory}</h2>
-                  <p className="text-sm text-gray-500 mt-1">{filteredFAQs.length} questions</p>
+                  <h2 className="text-xl font-bold text-gray-900">{getCategoryLabel(selectedCategory)}</h2>
+                  <p className="text-sm text-gray-500 mt-1">{filteredFAQs.length} {t("faq.list.questionsCount")}</p>
                 </div>
 
                 {filteredFAQs.length === 0 ? (
                   <div className="text-center py-12 bg-gray-50 rounded-lg">
-                    <p className="text-gray-600">No questions found matching your search.</p>
+                    <p className="text-gray-600">{t("faq.list.noResults")}</p>
                   </div>
                 ) : (
                   <div className="space-y-3">
@@ -446,17 +495,17 @@ export default function FAQPage() {
         <section className="py-16 px-6 bg-gray-50 border-t border-gray-200">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl font-bold text-gray-900 mb-3">
-              Still Have Questions?
+              {t("faq.list.stillHaveQuestions")}
             </h2>
             <p className="text-base text-gray-600 mb-6">
-              Can't find what you're looking for? Our support team is here to help.
+              {t("faq.list.cantFind")}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <a
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-green-900 text-white font-semibold rounded-lg hover:bg-green-800 transition-all"
               >
-                Contact Support
+                {t("faq.list.contactSupport")}
               </a>
               <a
                 href="mailto:support@kassongo.com"
