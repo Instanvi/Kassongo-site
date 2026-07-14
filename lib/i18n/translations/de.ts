@@ -46,7 +46,318 @@ export const de = {
       howItWorks: "So funktioniert es",
       contact: "Kontakt",
       careers: "Karriere",
+      blog: "Blog",
       support: "Support",
+    }
+  },
+
+  blog: {
+    hero: {
+      title: "Einblicke & Leitfäden zur Frachtspedition",
+      subtitle: "Expertenwissen zu internationalem Versand, Zoll und globaler Logistik"
+    },
+    search: {
+      placeholder: "Artikel durchsuchen..."
+    },
+    categories: {
+      all: "Alle",
+      guides: "Leitfäden",
+      routes: "Routen",
+      customs: "Zoll",
+      tips: "Tipps",
+      industry: "Branche"
+    },
+    noResults: {
+      title: "Keine Artikel gefunden",
+      desc: "Passen Sie Ihre Suche oder Filter an, um zu finden, wonach Sie suchen",
+      button: "Filter zurücksetzen"
+    },
+    readMore: "Weiterlesen",
+    cta: {
+      title: "Bereit zum Versand?",
+      subtitle: "Professionelle Speditionsdienstleistungen mit vollständiger Compliance-Unterstützung",
+      button: "Angebot einholen"
+    },
+    article: {
+      notFound: {
+        title: "Artikel nicht gefunden",
+        desc: "Der gesuchte Artikel existiert nicht oder wurde verschoben.",
+        button: "Zurück zum Blog"
+      },
+      proTip: "Profi-Tipp",
+      warning: "Wichtiger Hinweis",
+      tags: "Tags",
+      authorMore: "{{name}} schreibt über internationale Logistik, Zollvorschriften und hilft Unternehmen dabei, sich im globalen Handel zurechtzufinden. Haben Sie eine Frage? Kontaktieren Sie uns über unsere Kontaktseite.",
+      relatedTitle: "Verwandte Artikel",
+      ctaButton: "Versandangebot einholen",
+      share: {
+        copy: "Link kopieren",
+        bookmark: "Lesezeichen setzen",
+        print: "Artikel drucken",
+        email: "Per E-Mail teilen"
+      }
+    },
+    authorBios: {
+      marcus: "Leiter Compliance & Sicherheit",
+      aisha: "Regionaldirektorin, Afrika & Naher Osten",
+      james: "Senior Logistikingenieur",
+      sarah: "Zoll- und Handelsspezialistin"
+    },
+    tags: {
+      electronics: "Elektronik",
+      lithiumBatteries: "Lithiumbatterien",
+      iata: "IATA",
+      china: "China",
+      cameroon: "Kamerun",
+      africaTrade: "Afrikahandel",
+      aes: "AES-Anmeldung",
+      customs: "Zoll",
+      documentation: "Dokumentation",
+      airFreight: "Luftfracht",
+      oceanFreight: "Seefracht",
+      comparison: "Vergleich",
+      demurrage: "Standgeld",
+      detention: "Überliegezeit",
+      fees: "Gebühren",
+      usa: "USA",
+      europe: "Europa",
+      transatlantic: "Transatlantik",
+      duties: "Zölle",
+      taxes: "Steuern",
+      consolidation: "Konsolidierung",
+      costSavings: "Kosteneinsparung",
+      efficiency: "Effizienz",
+      incoterms: "Incoterms",
+      tradeTerms: "Handelsbedingungen",
+      contracts: "Verträge",
+      future: "Zukunft",
+      technology: "Technologie",
+      ai: "KI & Automatisierung",
+      packaging: "Verpackung",
+      fragile: "Zerbrechliche Artikel",
+      protection: "Schutz",
+      turkey: "Türkei",
+      istanbul: "Istanbul",
+      tradeHub: "Handelsdrehkreuz"
+    },
+    authors: {
+      marcus: {
+        name: "Marcus Thompson",
+        bio: "Marcus Thompson ist Kassongos Leiter für Compliance & Sicherheit und spezialisiert auf IATA-Gefahrgutvorschriften, Lithiumbatterie-Konformität und internationale Versandstandards. Mit über 12 Jahren Erfahrung in der Spedition stellt Marcus sicher, dass jede Sendung den globalen Sicherheitsanforderungen entspricht."
+      },
+      aisha: {
+        name: "Aisha Okonkwo",
+        bio: "Aisha Okonkwo ist Regionaldirektorin für Afrika & Naher Osten bei Kassongo Express. Sie verwaltet Handelskorridore zwischen China, Kamerun, Kenia und den VAE. Mit fundierten Kenntnissen der afrikanischen Zollvorschriften und Importverfahren hilft Aisha Unternehmen, komplexe grenzüberschreitende Logistik zu bewältigen."
+      },
+      james: {
+        name: "James Chen",
+        bio: "James Chen ist Senior Logistikingenieur bei Kassongo mit Expertise in Lieferkettenoptimierung, Incoterms und der Abwicklung hochwertiger Fracht. Er entwirft effiziente Versandrouten und Konsolidierungsstrategien für Unternehmen jeder Größe."
+      },
+      sarah: {
+        name: "Sarah Müller",
+        bio: "Sarah Müller ist Zoll- und Handelsspezialistin mit Expertise in EU-US-Handelsvorschriften, AES-Dokumentation, Zollberechnung und Tarifeinstufung. Sie hilft Kunden, sich in den Komplexitäten der internationalen Handels-Compliance zurechtzufinden."
+      }
+    },
+    articles: {
+      electronics: {
+        title: "Wie man Elektronik mit Lithiumbatterien international versendet",
+        excerpt: "Vollständiger Leitfaden zum grenzüberschreitenden Versand von Smartphones, Laptops und batteriebetriebenen Geräten. Lernen Sie IATA-Vorschriften, Verpackungsanforderungen und Zolldokumentation.",
+        intro: "Der internationale Versand von Elektronik gehört zu den häufigsten Anfragen bei Kassongo Express — und ist zugleich einer der am stärksten regulierten Bereiche. Zwischen IATA-Einschränkungen für Lithiumbatterien, transporterspezifischen Regeln und Importkontrollen des Ziellandes gibt es viel zu beachten. Dieser Leitfaden deckt alles ab, was Sie wissen müssen, um Elektronik sicher, legal und kosteneffizient zu versenden.",
+        h2_regulations: "Lithiumbatterie-Vorschriften verstehen",
+        p_regulations: "Lithiumbatterien treiben alles an, von Smartphones über Laptops bis hin zu Elektrorollern. Sie werden jedoch von der International Air Transport Association (IATA) als Gefahrgut eingestuft, da sie bei Beschädigung, Kurzschluss oder extremen Temperaturen Brandrisiken bergen. Diese Einstufung beeinflusst, wie Sie Ihre Sendung verpacken, kennzeichnen und deklarieren.",
+        warn_loose: "Lose Lithiumbatterien (nicht in Geräten verbaut) sind auf Passagierflugzeugen verboten und auf Frachtflügen stark eingeschränkt. Powerbanks über 100Wh erfordern eine spezielle Handhabungsdokumentation. Deklarieren Sie Elektronik immer korrekt — nicht deklarierte Batterien können zu Beschlagnahmung, Geldstrafen oder strafrechtlicher Verfolgung führen.",
+        h3_allowed: "Welche Elektronik ist erlaubt?",
+        ul_allowed_1: "Smartphones, Tablets und Laptops mit eingebauten Batterien (in der Regel erlaubt)",
+        ul_allowed_2: "Bluetooth-Kopfhörer und kabellose Ohrhörer (mit ordnungsgemäßer Verpackung erlaubt)",
+        ul_allowed_3: "Smartwatches und Fitness-Tracker (meist unproblematisch, Batteriedaten angeben)",
+        ul_allowed_4: "Spielekonsolen und Controller (auf herausnehmbare Batteriefächer prüfen)",
+        h3_packing: "Schritt-für-Schritt-Verpackungsanleitung",
+        ol_packing_1: "Schalten Sie alle Geräte vollständig aus. Versenden Sie Elektronik nicht im Ruhezustand.",
+        ol_packing_2: "Wickeln Sie jedes Gerät einzeln in antistatische Luftpolsterfolie, mindestens 5 cm dick.",
+        ol_packing_3: "Verpacken Sie Geräte, wenn möglich, in der Originalverpackung oder verwenden Sie einen stabilen Wellpappkarton mit 5 cm Polsterung auf allen Seiten.",
+        ol_packing_4: "Legen Sie eine ausgedruckte Handelsrechnung bei, die jedes Gerät, seine Modellnummer, Seriennummer und den deklarierten Wert auflistet.",
+        ol_packing_5: "Kennzeichnen Sie den äußeren Karton mit 'LITHIUMBATTERIEN — VORSICHTIG BEHANDELN', wenn Geräte mit fest verbauten Batterien versendet werden.",
+        tip_photos: "Machen Sie Fotos Ihrer Artikel vor dem Verpacken und laden Sie diese zu Ihrer Kassongo-Sendungsanfrage hoch. Dies schafft eine digitale Aufzeichnung, die Sie bei Beschädigung oder Verlust während des Transports schützt.",
+        h2_checklist: "Checkliste vor dem Versand",
+        check_1: "Überprüfen Sie, ob das Zielland den Import Ihres spezifischen Elektronikmodells erlaubt",
+        check_2: "Prüfen Sie die Wattstunden-Bewertung der Batterie (bei den meisten Transporteuren unter 100Wh erforderlich)",
+        check_3: "Besorgen Sie alle erforderlichen Importgenehmigungen (manche Länder verlangen eine Vorregistrierung)",
+        check_4: "Bereiten Sie die Handelsrechnung mit korrekten HS-Codes und deklarierten Werten vor",
+        check_5: "Schließen Sie eine zusätzliche Versicherung ab, wenn der Gesamtwert 100 USD übersteigt",
+        check_6: "Bestätigen Sie, dass der Transporteur Lithiumbatterie-Sendungen auf Ihrer gewählten Route akzeptiert",
+        h2_mistakes: "Häufige Fehler, die zu vermeiden sind",
+        p_mistakes: "Der teuerste Fehler beim Elektronikversand ist die Annahme, dass Ihr Paket 'einfach durchkommt'. Zollbeamte weltweit sind darauf geschult, nicht deklarierte Batterien, falsche Werte und verbotene Modelle zu erkennen. Ein einziger Fehler kann zu Beschlagnahmung, Vernichtung oder Rücksendung auf Ihre Kosten führen. Im Zweifelsfall kontaktieren Sie den Kassongo-Support vor dem Versand — unser Compliance-Team überprüft jedes Paket, bevor es unser Hub verlässt.",
+        cta: "Bereit, Ihre Elektronik zu versenden? Holen Sie sich Ihre persönliche Hub-Adresse und lassen Sie unser Compliance-Team die Papierarbeit übernehmen.",
+        imageAlt: "Elektronik wird mit antistatischen Materialien für den internationalen Versand verpackt"
+      },
+      chinacameroon: {
+        title: "Versand von China nach Kamerun: Vollständiger Leitfaden 2026",
+        excerpt: "Alles, was Sie über den Import von Waren aus China nach Kamerun wissen müssen — Versandmethoden, Kosten, Zollanforderungen und Abfertigungsverfahren.",
+        intro: "Der Handelskorridor China-Kamerun ist einer der geschäftigsten in Afrika, mit Waren im Wert von Milliarden Dollar, die jedes Jahr zwischen diesen Ländern bewegt werden. Ob Sie ein kleines Unternehmen sind, das Waren importiert, eine Privatperson, die persönliche Artikel kauft, oder ein E-Commerce-Verkäufer, der Produkte beschafft — das Verständnis des Versandprozesses kann Ihnen Tausende Francs und Wochen an Verzögerungen ersparen.",
+        h2_methods: "Vergleich der Versandmethoden",
+        p_methods: "Sie haben drei Hauptoptionen, um Waren von China nach Kamerun zu bringen: Express-Luftfracht, Standard-Luftfracht und Seefracht. Jede hat unterschiedliche Kosten-, Geschwindigkeits- und Volumenprofile.",
+        h3_express: "Express-Luftfracht (3–7 Tage)",
+        ul_express_1: "Am besten für: Dringende Sendungen unter 100 kg, hochwertige Elektronik, Muster",
+        ul_express_2: "Transporteure: DHL, FedEx, UPS — Haus-zu-Haus mit Sendungsverfolgung",
+        ul_express_3: "Kosten: Höchster Preis pro kg, aber keine versteckten Gebühren oder Zollabfertigungsüberraschungen",
+        h3_standard: "Standard-Luftfracht (7–14 Tage)",
+        ol_standard_1: "Versand an Kassongos Hub-Adresse in Guangzhou oder Yiwu",
+        ol_standard_2: "Wir konsolidieren mit anderer nach Kamerun bestimmter Fracht",
+        ol_standard_3: "Luftfracht zum internationalen Flughafen Douala",
+        ol_standard_4: "Zollabfertigung und Zustellung an Ihre Adresse",
+        warn_formm: "Die kamerunische Zollbehörde verlangt ordnungsgemäße Dokumentation und Deklaration für alle kommerziellen Importe. Nichteinhaltung führt zu Beschlagnahmung oder Rücksendung. Kassongos Kamerun-Team kann bei der Dokumentation vor dem Versand und der Zollabfertigung behilflich sein.",
+        h2_docs: "Erforderliche Dokumentation",
+        p_docs: "Kamerunische Importvorschriften sind streng, aber vorhersehbar, wenn Sie sich richtig vorbereiten. Hier ist, was Sie benötigen:",
+        check_1: "Handelsrechnung mit korrekten HS-Codes und deklarierten Werten",
+        check_2: "Packliste, die genau mit den Rechnungspositionen übereinstimmt",
+        check_3: "Ursprungszeugnis (falls für bestimmte Waren erforderlich)",
+        check_4: "Einfuhrgenehmigung oder Lizenz (für regulierte Produkte)",
+        check_5: "Konformitätsbescheinigungen (Elektronik, Chemikalien usw.)",
+        tip_consolidate: "Konsolidieren Sie mehrere Bestellungen zu einer Sendung über Kassongos Guangzhou-Hub. Dies reduziert die Kosten pro kg um 40–60 % und vereinfacht die Zollabfertigung, da alle Artikel unter einer einzigen Zollerklärung ankommen.",
+        cta: "Importieren Sie von China nach Kamerun? Holen Sie sich Ihre kostenlose Guangzhou-Hub-Adresse und sparen Sie bei jeder Sendung.",
+        imageAlt: "Schiffscontainer im Hafen von Guangzhou mit nach Kamerun bestimmter Fracht"
+      },
+      aes: {
+        title: "AES-Dokumentation für hochwertige Sendungen",
+        excerpt: "Erfahren Sie, wann und wie Sie AES-Dokumentation (Automated Export System) für Sendungen im Wert von über 2.500 USD aus den Vereinigten Staaten einreichen.",
+        intro: "Wenn Sie hochwertige Fracht aus den Vereinigten Staaten versenden, müssen Sie die AES-Anmeldeanforderungen (Automated Export System) verstehen. Diese verpflichtende Dokumentation gewährleistet die Einhaltung der US-Exportvorschriften und hilft dem Zoll, internationale Handelsströme zu verfolgen.",
+        h2_what: "Was ist die AES-Anmeldung?",
+        p_what: "Das Automated Export System (AES) ist ein elektronisches Anmeldesystem, das von der US-Zoll- und Grenzschutzbehörde verwaltet wird. Es erfasst Exporttransaktionsdaten und gewährleistet die Einhaltung der Exportkontrollgesetze.",
+        h2_when: "Wann ist AES erforderlich?",
+        p_when: "Die AES-Anmeldung ist verpflichtend für:",
+        ol_when_1: "Sendungen im Wert von über 2.500 USD (pro Schedule-B-Warenart)",
+        ol_when_2: "Jede Sendung, die unabhängig vom Wert eine Exportlizenz erfordert",
+        ol_when_3: "Artikel, die den Export Administration Regulations (EAR) oder International Traffic in Arms Regulations (ITAR) unterliegen",
+        tip: "Kassongo kann gegen eine zusätzliche Gebühr bei der AES-Anmeldung helfen. Kontaktieren Sie unser Compliance-Team vor dem Versand hochwertiger Fracht, um sicherzustellen, dass alle Dokumente korrekt vorbereitet sind.",
+        h2_how: "Wie man AES anmeldet",
+        p_how: "Sie benötigen eine gültige US-Arbeitgeber-Identifikationsnummer (EIN), um AES anzumelden. Nach der Anmeldung erhalten Sie eine Internal Transaction Number (ITN), die auf Ihrer Handelsrechnung und den Versanddokumenten angegeben werden muss.",
+        cta: "Benötigen Sie Hilfe bei der AES-Dokumentation? Unsere Compliance-Spezialisten können Sie durch den Prozess führen.",
+        imageAlt: "US-Zollexportdokumentationsformular"
+      },
+      airVsOcean: {
+        title: "Luftfracht vs. Seefracht: Was ist die richtige Wahl für Sie?",
+        excerpt: "Vergleich von Luft- und Seefracht für internationale Fracht — Kosten, Geschwindigkeit, Umweltauswirkungen und beste Anwendungsfälle für jede Methode.",
+        intro: "Die Wahl zwischen Luft- und Seefracht ist eine der wichtigsten Entscheidungen im internationalen Versand. Jede Transportart hat unterschiedliche Vor- und Nachteile in Bezug auf Kosten, Geschwindigkeit, Kapazität und Umweltauswirkungen.",
+        h2_comparison: "Wichtige Unterschiede",
+        p_comparison: "Hier ist ein detaillierter Vergleich, der Ihnen bei der Entscheidung hilft:",
+        h3_air: "Vorteile der Luftfracht",
+        ul_air_1: "Geschwindigkeit: 3-7 Tage für die meisten internationalen Routen",
+        ul_air_2: "Zuverlässigkeit: Feste Zeitpläne, weniger wetterbedingte Störungen",
+        ul_air_3: "Sicherheit: Geringeres Diebstahlrisiko, bessere Sendungsverfolgung",
+        ul_air_4: "Am besten für: Hochwertige Güter, dringende Sendungen, verderbliche Waren, Muster",
+        h3_ocean: "Vorteile der Seefracht",
+        ul_ocean_1: "Kosten: 5-10x günstiger pro kg als Luftfracht",
+        ul_ocean_2: "Kapazität: Geeignet für große Volumen und übergroße Fracht",
+        ul_ocean_3: "Umwelt: Geringerer CO2-Fußabdruck pro Einheit",
+        ul_ocean_4: "Am besten für: Massengüter, schwere Maschinen, Möbel, nicht dringendes Inventar",
+        tip: "Erwägen Sie die Konsolidierung mehrerer Sendungen, um Luftfrachtpreise nahe an Seefrachtraten zu erhalten. Kassongos Konsolidierungsservice kann Ihre Versandkosten um 40-60 % senken.",
+        h2_decide: "Wie man sich entscheidet",
+        p_decide: "Berechnen Sie Ihre gesamten Anlandekosten einschließlich Fracht, Versicherung, Lagerung und Opportunitätskosten der Bestandsverzögerung. Bei margenstarken Produkten oder dringenden Bestellungen ist Luftfracht trotz höherer Anfangskosten oft finanziell sinnvoll.",
+        cta: "Erhalten Sie sofortige Angebote für Luft- und Seefracht mit unserem Versandrechner.",
+        imageAlt: "Vergleichsillustration von Flugzeug und Frachtschiff"
+      },
+      demurrage: {
+        title: "Standgeld- und Überliegegebühren vermeiden",
+        excerpt: "Erfahren Sie, wie Sie kostspielige Standgeld- und Überliegegebühren beim Seefrachtversand vermeiden. Praktische Tipps für rechtzeitige Frachtabholung.",
+        intro: "Standgeld- und Überliegegebühren gehören zu den frustrierendsten versteckten Kosten in der Seefracht. Diese Gebühren können Ihrer Versandrechnung Hunderte oder Tausende von Dollar hinzufügen, wenn Sie Ihre Fracht nicht rechtzeitig abholen.",
+        h2_what: "Was sind diese Gebühren?",
+        p_what: "Standgeld wird berechnet, wenn Sie Frachtcontainer über die erlaubte Freizeit hinaus (typischerweise 3-5 Tage) am Hafenterminal belassen. Überliegegebühr wird berechnet, wenn Sie den Container der Reederei über die Freizeit für das Entladen hinaus (typischerweise 5-7 Tage) behalten.",
+        warn: "Standgeld- und Überliegegebühren fallen täglich an und können schnell die ursprünglichen Versandkosten übersteigen. In manchen Fällen können die Gebühren 100-300 USD pro Container und Tag erreichen.",
+        h2_tips: "5 Wege, diese Gebühren zu vermeiden",
+        ol_tips_1: "Bereiten Sie die Zolldokumentation vor, bevor die Fracht ankommt, damit die Abfertigung sofort erfolgt",
+        ol_tips_2: "Halten Sie einen Logistikpartner oder Zollmakler bereit, um Ihre Sendung zu bearbeiten",
+        ol_tips_3: "Organisieren Sie Transport/Abholung im Voraus — warten Sie nicht, bis die Fracht ankommt",
+        ol_tips_4: "Überwachen Sie die Schiffsverfolgung genau, damit Sie die genauen Ankunftsdaten kennen",
+        ol_tips_5: "Erwägen Sie die Nutzung einer Container Freight Station (CFS) für konsolidierte Fracht, um die Freizeit zu verlängern",
+        tip: "Kassongos Konsolidierungsservice beinhaltet verlängerte kostenlose Lagerung in unseren Lagerhäusern, wodurch das Standgeldrisiko für kleinere Sendungen entfällt.",
+        cta: "Versenden Sie mit Zuversicht — unser Team übernimmt die Zollabfertigung und koordiniert die Abholung, um Gebühren zu vermeiden.",
+        imageAlt: "Gestapelte Schiffscontainer am Hafenterminal mit Zeituhr-Überlagerung"
+      },
+      usaEurope: {
+        title: "Versandleitfaden USA nach Europa",
+        excerpt: "Vollständiger Leitfaden zum Versand von den Vereinigten Staaten in europäische Länder — Transitzeiten, Transporteuroptionen und Zollüberlegungen.",
+        intro: "Die transatlantische Versandroute zwischen den USA und Europa ist eine der effizientesten und etabliertesten Handelsrouten der Welt. Ob Sie ins Vereinigte Königreich, nach Deutschland, Frankreich oder andere EU-Länder versenden, Sie haben zuverlässige Optionen für schnelle, kosteneffiziente Zustellung.",
+        h2_options: "Versandoptionen",
+        p_options: "Express-Transporteure wie DHL, FedEx und UPS bieten 2-5-tägige Zustellung mit Haus-zu-Haus-Service und inkludierter Zollabfertigung. Standard-Luftfracht dauert 5-10 Tage und ist wirtschaftlicher für Sendungen über 50 kg. Seefracht dauert 15-30 Tage und ist ideal für palettierte Fracht oder Vollcontainer.",
+        h2_customs: "Zoll- und Mehrwertsteuerüberlegungen",
+        p_customs: "Alle in die EU eintretenden Sendungen unterliegen der Mehrwertsteuer (typischerweise 19-25 % je nach Land) und können je nach HS-Code-Einstufung Zollgebühren anfallen. Der Empfänger ist für diese Gebühren verantwortlich, es sei denn, Sie vereinbaren Delivered Duty Paid (DDP)-Versand.",
+        cta: "Holen Sie sich Ihre kostenlose USA-Hub-Adresse und beginnen Sie mit Zuversicht nach Europa zu versenden.",
+        imageAlt: "Eiffelturm und Freiheitsstatue als Symbol für USA-Europa-Versand"
+      },
+      customsDuties: {
+        title: "Zölle und Importsteuern verstehen",
+        excerpt: "Was sind Zölle, wer zahlt sie, und wie man Importsteuern beim internationalen Versand berechnet.",
+        intro: "Zölle und Importsteuern sind Gebühren, die von Zielländern erhoben werden, wenn Waren internationale Grenzen überschreiten. Das Verständnis dieser Kosten ist für genaue Budgetierung und die Vermeidung unerwarteter Gebühren unerlässlich.",
+        h2_what: "Was sind Zölle?",
+        p_what: "Zölle sind Steuern, die von Regierungen auf importierte Waren erhoben werden. Die Sätze variieren je nach Produktkategorie (HS-Code), Herkunftsland und Ziel. Manche Länder erheben auch Mehrwertsteuer, GST oder Umsatzsteuer auf importierte Artikel.",
+        h2_who: "Wer ist verantwortlich?",
+        p_who: "Sofern Sie nicht Delivered Duty Paid (DDP)-Versand vereinbaren, zahlt der Empfänger alle Zölle und Steuern. Speditionsunternehmen wie Kassongo beinhalten diese Gebühren nicht in Versandangeboten, da sie von den Zollbehörden des Ziellandes bestimmt werden.",
+        tip: "Nutzen Sie Online-Zollrechner oder konsultieren Sie einen Zollmakler, um Kosten vor dem Versand abzuschätzen. Die Angabe genauer Werte auf Handelsrechnungen hilft, Verzögerungen und Strafen zu vermeiden.",
+        cta: "Benötigen Sie Hilfe bei der Zollnavigation? Kontaktieren Sie unser Compliance-Team für Beratung.",
+        imageAlt: "Zollbeamter überprüft Frachtdokumentation"
+      },
+      consolidation: {
+        title: "Wie Paketkonsolidierung Ihnen Geld spart",
+        excerpt: "Entdecken Sie, wie das Kombinieren mehrerer Pakete zu einer Sendung Ihre internationalen Versandkosten um 40-60 % senken kann.",
+        intro: "Paketkonsolidierung ist eine der effektivsten Möglichkeiten, internationale Versandkosten zu senken. Anstatt für den separaten Versand mehrerer kleiner Pakete zu bezahlen, kombinieren Sie diese zu einer Sendung und zahlen nur einmal Versandgebühren.",
+        h2_how: "Wie Konsolidierung funktioniert",
+        p_how: "Wenn Sie bei mehreren Lieferanten oder Online-Shops einkaufen, kommt jedes Paket separat an Ihrer Kassongo-Hub-Adresse an. Wir bewahren sie in sicherer Lagerung auf und kombinieren sie dann zu einer optimierten Sendung, wenn Sie bereit sind. Wir entfernen überschüssige Verpackung, verpacken Artikel sicher neu und versenden alles gemeinsam.",
+        h2_benefits: "Vorteile der Konsolidierung",
+        ul_benefits_1: "Sparen Sie 40-60 % bei den Versandkosten im Vergleich zu einzelnen Paketen",
+        ul_benefits_2: "Reduzieren Sie die Komplexität der Zollabfertigung — eine Sendung bedeutet eine Zollanmeldung",
+        ul_benefits_3: "Geringeres Risiko verlorener Artikel — alles reist gemeinsam mit einer Sendungsnummer",
+        ul_benefits_4: "Effizientere Verpackung reduziert Volumengewichtsgebühren",
+        tip: "Platinum-Mitglieder erhalten unbegrenzte kostenlose Konsolidierung. Free- und Gold-Mitglieder zahlen eine kleine Gebühr pro Konsolidierung, die immer noch weit günstiger ist als der separate Versand von Paketen.",
+        cta: "Beginnen Sie noch heute mit der Konsolidierung Ihrer Sendungen — melden Sie sich für Ihre kostenlose Hub-Adresse an.",
+        imageAlt: "Mehrere kleine Kartons werden zu einem größeren Versandpaket konsolidiert"
+      },
+      incoterms: {
+        title: "Incoterms 2026: Ein praktischer Leitfaden",
+        excerpt: "Verstehen Sie internationale Handelsbedingungen wie FOB, CIF, DDP und EXW — wer für Versand, Versicherung und Zollabfertigung zahlt.",
+        intro: "Incoterms (International Commercial Terms) sind standardisierte Handelsdefinitionen, die von der Internationalen Handelskammer veröffentlicht werden. Sie klären die Verantwortlichkeiten zwischen Käufern und Verkäufern bei internationalen Transaktionen.",
+        h2_what: "Was sind Incoterms?",
+        p_what: "Incoterms definieren, wer für den Versand zahlt, wer die Versicherung organisiert, wo das Risiko vom Verkäufer auf den Käufer übergeht und wer die Zollabfertigung übernimmt. Gängige Begriffe umfassen EXW (Ex Works), FOB (Free on Board), CIF (Cost, Insurance & Freight) und DDP (Delivered Duty Paid).",
+        h2_common: "Häufigste Incoterms",
+        p_common: "EXW bedeutet, dass der Käufer alles ab dem Lager des Verkäufers übernimmt. FOB bedeutet, dass der Verkäufer zum Hafen liefert und der Käufer die Seefracht übernimmt. CIF beinhaltet Seefracht und Versicherung. DDP bedeutet, dass der Verkäufer alle Kosten einschließlich Zölle trägt und bis zur Haustür des Käufers liefert.",
+        cta: "Benötigen Sie Hilfe beim Verständnis Ihres Versandangebots? Kontaktieren Sie unser Team für eine Aufschlüsselung.",
+        imageAlt: "Internationaler Versandvertrag mit Incoterms-Terminologie"
+      },
+      future: {
+        title: "Die Zukunft der Spedition: KI, Automatisierung und Nachhaltigkeit",
+        excerpt: "Entdecken Sie aufkommende Trends in der globalen Logistik — künstliche Intelligenz, Blockchain-Tracking, grüner Versand und digitaler Zoll.",
+        intro: "Die Speditionsbranche durchläuft einen raschen Wandel, angetrieben durch Technologie und Nachhaltigkeitsanforderungen. KI-gestützte Routenoptimierung, Blockchain-basierte Sendungsverfolgung und CO2-neutrale Versandoptionen verändern die Art und Weise, wie Waren global bewegt werden.",
+        h2_trends: "Wichtige Trends im Blick",
+        p_trends: "Maschinelle Lernalgorithmen sagen jetzt Zollverzögerungen voraus und schlagen in Echtzeit alternative Routen vor. Blockchain bietet unveränderliche Verfolgungsaufzeichnungen. Digitale Zollplattformen eliminieren Papierdokumentation. Elektrische Frachtflugzeuge und CO2-Ausgleichsprogramme adressieren Umweltbedenken.",
+        cta: "Erleben Sie die Zukunft der Spedition mit Kassongos digital-first Plattform.",
+        imageAlt: "KI-gestütztes Lagerhaus mit autonomen Robotern und digitalen Verfolgungssystemen"
+      },
+      fragile: {
+        title: "Wie man zerbrechliche Artikel für den internationalen Versand verpackt",
+        excerpt: "Professionelle Verpackungstechniken zum Schutz von Glas, Keramik, Elektronik und empfindlichen Waren während des internationalen Transports.",
+        intro: "Zerbrechliche Artikel erfordern beim internationalen Versand besondere Sorgfalt. Richtige Verpackung kann den Unterschied ausmachen, ob Artikel unversehrt oder in Stücken ankommen.",
+        h2_steps: "5-Schritte-Verpackungsprozess",
+        ol_steps_1: "Wickeln Sie jeden zerbrechlichen Artikel einzeln in Luftpolsterfolie (mindestens 3 Lagen)",
+        ol_steps_2: "Verwenden Sie einen stabilen doppelwandigen Wellpappkarton, der mindestens 8 cm größer als der Artikel auf allen Seiten ist",
+        ol_steps_3: "Füllen Sie den Boden mit Verpackungschips oder zerknülltem Papier (8 cm Schicht)",
+        ol_steps_4: "Platzieren Sie eingewickelte Artikel in der Mitte und stellen Sie sicher, dass sie die Kartonwände nicht berühren",
+        ol_steps_5: "Füllen Sie den verbleibenden Raum mit Verpackungsmaterial und versiegeln Sie mit stabilem Klebeband",
+        tip: "Schließen Sie immer eine zusätzliche Versicherung für zerbrechliche, wertvolle Artikel ab. Der Basisschutz deckt Glas, Keramik oder Antiquitäten möglicherweise nicht vollständig ab.",
+        cta: "Versenden Sie zerbrechliche Artikel mit Zuversicht — unser Team bietet professionelle Verpackungsdienste.",
+        imageAlt: "Zerbrechliches Glasgeschirr wird für den sicheren Versand in Luftpolsterfolie gewickelt"
+      },
+      turkey: {
+        title: "Die Türkei als strategisches Handelsdrehkreuz: Das Tor Istanbul",
+        excerpt: "Warum die Türkei zum bevorzugten Konsolidierungshub für Handelsrouten nach Afrika, Nahost und Zentralasien wird.",
+        intro: "Die geografische Lage der Türkei an der Kreuzung von Europa, Asien und Afrika macht sie zu einem idealen Konsolidierungshub für Unternehmen, die mehrere Regionen bedienen. Istanbuls moderne Flughäfen und Häfen bieten schnelle, kosteneffiziente Verbindungen zu aufstrebenden Märkten.",
+        h2_why: "Warum die Türkei wählen?",
+        p_why: "Die Türkei bietet visumfreie oder visa-on-arrival Einreise für viele afrikanische und nahöstliche Länder, vereinfachte Zollverfahren für den Re-Export und wettbewerbsfähige Lagerkosten. Der Flughafen Istanbul wickelt mehr Fracht ab als viele europäische Hubs, mit schnelleren Bearbeitungszeiten.",
+        h2_advantages: "Strategische Vorteile",
+        ul_advantages_1: "4 Stunden Flugzeit zu den meisten nahöstlichen und afrikanischen Hauptstädten",
+        ul_advantages_2: "Freihandelsabkommen mit vielen Zielländern reduzieren Zölle",
+        ul_advantages_3: "Der türkische Zoll erlaubt temporäre Lagerung und Konsolidierung ohne Einfuhrzoll",
+        cta: "Holen Sie sich Ihre Türkei-Hub-Adresse und erschließen Sie schnelleren Versand nach Afrika und in den Nahen Osten.",
+        imageAlt: "Bosporus-Brücke Istanbul verbindet Europa und Asien"
+      }
     }
   },
   home: {
@@ -625,5 +936,166 @@ export const de = {
     noticeTitle: "Geltende Vertragssprache",
     noticeDesc: "Aus rechtlichen Gruenden sind unsere Allgemeinen Geschaeftsbedingungen und die Datenschutzerklaerung im Volltext in englischer Sprache verfasst. Bitte wenden Sie sich bei Fragen an unseren Support.",
     lastUpdated: "Zuletzt aktualisiert am"
+  },
+
+  about: {
+    hero: {
+      badge: "Globale Spedition",
+      title1: "Globale Logistik",
+      title2: "neu definieren.",
+      subtitle: "Kassongo Express ist ein asset-leichtes, digital getriebenes Netzwerk fuer Frachtkonsolidierung und -weiterleitung, das Ihnen absolute Kontrolle ueber den internationalen Versand gibt.",
+      btnContact: "Kontakt aufnehmen",
+      btnTeam: "Team kennenlernen",
+      imageAlt: "Kassongo Globale Operationen"
+    },
+    stats: {
+      hubs: "Globale Standorte",
+      members: "Aktive Mitglieder",
+      carriers: "Logistikpartner",
+      countries: "Bediente Laender"
+    },
+    tabs: {
+      mission: "Mission",
+      vision: "Vision",
+      values: "Werte"
+    },
+    mission: {
+      title: "Unsere Mission",
+      desc: "Den globalen Handel demokratisieren, indem wir internationalen Frachttransport fuer Unternehmen und Privatpersonen weltweit zugaenglich, erschwinglich und transparent machen. Wir beseitigen die logistischen Engpaesse, die Tracking fragmentieren, Kosten in die Hoehe treiben und Zollreibungen verursachen.",
+      point1: "Personalisierte Lieferadressen in wichtigen Handelszentren an ueber 60 Standorten bereitstellen",
+      point2: "Pakete mit Echtzeit-Tracking und vollstaendiger Versicherung konsolidieren, lagern und weiterleiten",
+      point3: "Zollabfertigung und Compliance uebernehmen, damit Sie sich nie um Papierkram kuemmern muessen",
+      imageAlt: "Mission Grafik"
+    },
+    vision: {
+      title: "Unsere Vision",
+      desc: "Bis 2028 strebt Kassongo Express an, die vertrauenswuerdigste digitale Frachtplattform der Welt zu werden — jeden grossen Handelskorridor mit nahtloser, KI-optimierter Logistik zu verbinden, die dem Absender die volle Kontrolle gibt.",
+      goal1: "Auf ueber 100 globale Standorte erweitern",
+      goal2: "Mehr als 5 Millionen aktive Mitglieder bedienen",
+      imageAlt: "Vision Grafik"
+    },
+    values: {
+      title: "Wofuer wir stehen",
+      subtitle: "Diese Kernprinzipien leiten jede Entscheidung, die wir treffen, und jedes Paket, das wir bearbeiten.",
+      trust: {
+        title: "Vertrauen zuerst",
+        desc: "Wir inspizieren jedes Paket, pruefen jede Rechnung und schuetzen jede Sendung mit branchenueblicher Verschluesselung und Versicherung."
+      },
+      speed: {
+        title: "Geschwindigkeit zaehlt",
+        desc: "Vom Versand innerhalb von 24 Stunden bis zur Express-Weiterleitung mit dem naechsten Flug optimieren wir jede Route fuer die schnellstmoegliche Lieferung."
+      },
+      transparency: {
+        title: "Keine versteckten Gebuehren",
+        desc: "Was Sie sehen, bezahlen Sie. Keine ueberraschenden Zuschlaege, keine Zollaufschlaege, keine versteckten Lagerkosten."
+      },
+      access: {
+        title: "Globaler Zugang",
+        desc: "Wir glauben, dass jeder, ueberall, global einkaufen und lokal empfangen koennen sollte — ohne Grenzen oder Barrieren."
+      }
+    },
+    operate: {
+      title: "Wie wir arbeiten",
+      subtitle: "Ein optimierter Drei-Schritte-Prozess, der Ihnen von der Abholung bis zur Lieferung die volle Kontrolle gibt.",
+      step1: {
+        title: "Empfang & Pruefung",
+        desc: "Ihre Pakete kommen in unseren sicheren Hubs an, wo wir jeden Artikel fotografieren, wiegen und gegen Ihre Rechnung pruefen."
+      },
+      step2: {
+        title: "Konsolidierung & Lagerung",
+        desc: "Wir lagern Ihre Artikel in klimatisierten Einrichtungen, fassen mehrere Bestellungen zu einer optimierten Sendung zusammen und entfernen ueberfluessige Verpackungen, um Kosten zu senken."
+      },
+      step3: {
+        title: "Weiterleitung & Tracking",
+        desc: "Waehlen Sie Ihren Traeger und Ihre Geschwindigkeit. Wir kümmern uns um die Zolldokumentation, bieten Echtzeit-Tracking und liefern an Ihre Tuer — vollstaendig versichert."
+      }
+    },
+    hubs: {
+      title: "Globale Praesenz",
+      subtitle: "Strategisch positionierte Standorte in den verkehrsreichsten Handelskorridoren der Welt, mit lokalen Teams, die die Zolllandschaft in- und auswendig kennen.",
+      us: {
+        name: "Vereinigte Staaten — New York & Houston",
+        feat1: "Taegliche Abfluege nach Afrika & Europa",
+        feat2: "Verkaufssteuerfreie Einkaufsadressen"
+      },
+      uk: {
+        name: "Vereinigtes Koenigreich — London Heathrow",
+        feat1: "Zweiwöchentliche Luftfrachtsendungen",
+        feat2: "Unterstuetzung bei der Mehrwertsteuer-Rueckforderung"
+      },
+      china: {
+        name: "China — Guangzhou & Yiwu",
+        feat1: "Direkte Werksabholung und Konsolidierung",
+        feat2: "See- und Luftfrachtoptionen"
+      },
+      turkey: {
+        name: "Tuerkei — Istanbul",
+        feat1: "Brueckenknoten fuer den EU-MENA-Korridor",
+        feat2: "Schnelle Zollabfertigung"
+      },
+      mapAlt: "Karte des globalen Hub-Netzwerks"
+    },
+    timeline: {
+      title: "Unsere Reise",
+      subtitle: "Von einem einzigen Lager zu einem globalen Netzwerk — so hat sich Kassongo Express entwickelt.",
+      m1: { title: "Gruendung in New York", desc: "Gestartet mit einem einzigen Konsolidierungs-Hub in New York, das grenzueberschreitende Kaeufer aus Westafrika bedient." },
+      m2: { title: "UK-Hub-Eroeffnung", desc: "Eroeffnung der London Heathrow-Anlage zur Bedienung europaeischer und Commonwealth-Handelsrouten." },
+      m3: { title: "China-Expansion", desc: "Hinzufuegung der Hubs Guangzhou und Yiwu, um direkte Werksbeschaffung und Fertigungsversorgungsketten zu erschliessen." },
+      m4: { title: "1 Million Mitglieder", desc: "Ueberschreitung der Million registrierter Mitglieder in ueber 80 Laendern, mit mehr als 21 Traegerpartnerschaften." },
+      m5: { title: "Digitale Plattform", desc: "Einfuehrung von KI-gestuetzter Routenoptimierung, Echtzeit-Tracking-Dashboard und WhatsApp-Statusbenachrichtigungen." },
+      m6: { title: "60+ Standorte", desc: "Expansion auf ueber 60 globale Standorte einschliesslich Tuerkei, VAE und Suedafrika, mit Zugang zu Busbahnhof-Terminals." }
+    },
+    team: {
+      title: "Lernen Sie das Team kennen",
+      subtitle: "Die Menschen hinter den Paketen — ein vielfaeltiges Team aus Logistikveteranen, Ingenieuren und Kundenerfolgs-Champions.",
+      roles: {
+        ceo: "Geschaeftsfuehrer",
+        coo: "Betriebsleiter",
+        cto: "Technischer Leiter",
+        headLogistics: "Leiter Globale Logistik"
+      }
+    },
+    why: {
+      title: "Warum Kassongo Express?",
+      subtitle: "Wir haben nicht einfach einen weiteren Spediteur gebaut. Wir haben den gebaut, den wir uns gewuenscht haetten.",
+      items: {
+        speed: { title: "24h Versand", desc: "Pakete werden innerhalb von 24 Stunden nach Konsolidierungsanfrage versandt — kein Lager-Limbo." },
+        security: { title: "100% geprueft", desc: "Jedes eingehende Paket wird physisch geprueft, fotografiert und der Zustand protokolliert." },
+        price: { title: "Faire Preise", desc: "Konsolidierung senkt Versandkosten um bis zu 60%. Nie versteckte Gebuehren." },
+        coverage: { title: "Globale Reichweite", desc: "Versand in ueber 150 Laender von Standorten in den USA, UK, China, Tuerkei und darueber hinaus." },
+        tracking: { title: "Echtzeit-Tracking", desc: "Verfolgen Sie jedes Paket vom Wareneingang bis zur Haustuer auf jedem Geraet." },
+        support: { title: "Menschlicher Support", desc: "Echte Menschen, echte Antworten. Unser Support-Team antwortet garantiert innerhalb von 24 Stunden." }
+      }
+    },
+    faq: {
+      title: "Ueber Kassongo",
+      subtitle: "Haeufige Fragen darueber, wer wir sind und wie wir arbeiten.",
+      a1: {
+        q: "Ist Kassongo Express eine Reederei?",
+        a: "Wir sind ein Frachtweiterleitungs- und Paketkonsolidierungsdienst — kein Traeger. Wir arbeiten mit FedEx, DHL, UPS, USPS und regionalen Traegern zusammen, um Ihre Pakete zu bewegen, waehrend wir die Konsolidierung, Lagerung, Zollabfertigung und Koordination uebernehmen."
+      },
+      a2: {
+        q: "Wo befindet sich Ihr Hauptsitz?",
+        a: "Unser Hauptsitz ist in New York, USA. Wir betreiben auch grosse Standorte in London (UK), Guangzhou und Yiwu (China) sowie Istanbul (Tuerkei), mit lokalen Teams an jedem Standort."
+      },
+      a3: {
+        q: "Wie unterscheidet sich Kassongo von anderen Spediteuren?",
+        a: "Wir kombinieren digital-first Tools (Echtzeit-Tracking, KI-Routing, WhatsApp-Benachrichtigungen) mit physischen Hub-Operationen, die jedes Paket pruefen. Zusaetzlich macht unser Busbahnhof-Terminal-Netzwerk Abgabe und Abholung auch in abgelegenen Gebieten zugaenglich."
+      },
+      a4: {
+        q: "Arbeiten Sie mit Unternehmen oder nur Privatpersonen?",
+        a: "Beides. Wir bedienen Einzelkaeufer, kleine Unternehmen, die Bestaende beschaffen, E-Commerce-Verkaeufer und Unternehmenskunden mit Hochvolumen-Konsolidierungsbedarf. Mitgliedschaftsstufen reichen von kostenlos bis Platinum."
+      },
+      a5: {
+        q: "Wie kann ich dem Kassongo-Team beitreten?",
+        a: "Wir suchen staendig nach Logistikspezialisten, Software-Ingenieuren und Kundenservice-Champions. Besuchen Sie unsere Karriereseite oder senden Sie Ihren Lebenslauf an careers@kassongo.com."
+      }
+    },
+    cta: {
+      title: "Bereit, intelligenter zu versenden?",
+      subtitle: "Schliessen Sie sich ueber einer Million Mitgliedern an, die Kassongo Express fuer ihre globalen Frachtbeduerfnisse vertrauen. Holen Sie sich noch heute Ihre kostenlose Hub-Adresse.",
+      btnContact: "Kontakt aufnehmen",
+      btnFaq: "FAQ lesen"
+    }
   }
 };

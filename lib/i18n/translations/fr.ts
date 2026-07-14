@@ -46,7 +46,318 @@ export const fr = {
       howItWorks: "Comment ça marche",
       contact: "Contact",
       careers: "Carrières",
+      blog: "Blog",
       support: "Support",
+    }
+  },
+
+  blog: {
+    hero: {
+      title: "Perspectives et guides sur le transit de fret",
+      subtitle: "Conseils d'experts sur l'expédition internationale, la douane et la logistique mondiale"
+    },
+    search: {
+      placeholder: "Rechercher des articles..."
+    },
+    categories: {
+      all: "Tous",
+      guides: "Guides",
+      routes: "Routes",
+      customs: "Douane",
+      tips: "Astuces",
+      industry: "Industrie"
+    },
+    noResults: {
+      title: "Aucun article trouvé",
+      desc: "Essayez d'ajuster votre recherche ou vos filtres pour trouver ce que vous cherchez",
+      button: "Effacer les filtres"
+    },
+    readMore: "Lire la suite",
+    cta: {
+      title: "Prêt à expédier ?",
+      subtitle: "Obtenez des services professionnels de transit de fret avec un support de conformité complet",
+      button: "Obtenir un devis"
+    },
+    article: {
+      notFound: {
+        title: "Article introuvable",
+        desc: "L'article que vous recherchez n'existe pas ou a été déplacé.",
+        button: "Retour au blog"
+      },
+      proTip: "Astuce de pro",
+      warning: "Avertissement important",
+      tags: "Étiquettes",
+      authorMore: "{{name}} écrit sur la logistique internationale, les réglementations douanières, et aide les entreprises à naviguer dans le commerce mondial. Une question ? Contactez-nous via notre page de contact.",
+      relatedTitle: "Articles connexes",
+      ctaButton: "Obtenir un devis d'expédition",
+      share: {
+        copy: "Copier le lien",
+        bookmark: "Ajouter aux favoris",
+        print: "Imprimer l'article",
+        email: "Partager par e-mail"
+      }
+    },
+    authorBios: {
+      marcus: "Responsable Conformité & Sécurité",
+      aisha: "Directrice régionale, Afrique & Moyen-Orient",
+      james: "Ingénieur logistique senior",
+      sarah: "Spécialiste douane et commerce"
+    },
+    tags: {
+      electronics: "Électronique",
+      lithiumBatteries: "Batteries au lithium",
+      iata: "IATA",
+      china: "Chine",
+      cameroon: "Cameroun",
+      africaTrade: "Commerce Afrique",
+      aes: "Déclaration AES",
+      customs: "Douane",
+      documentation: "Documentation",
+      airFreight: "Fret aérien",
+      oceanFreight: "Fret maritime",
+      comparison: "Comparaison",
+      demurrage: "Surestaries",
+      detention: "Immobilisation",
+      fees: "Frais",
+      usa: "États-Unis",
+      europe: "Europe",
+      transatlantic: "Transatlantique",
+      duties: "Droits de douane",
+      taxes: "Taxes",
+      consolidation: "Consolidation",
+      costSavings: "Économies de coûts",
+      efficiency: "Efficacité",
+      incoterms: "Incoterms",
+      tradeTerms: "Conditions commerciales",
+      contracts: "Contrats",
+      future: "Avenir",
+      technology: "Technologie",
+      ai: "IA et automatisation",
+      packaging: "Emballage",
+      fragile: "Articles fragiles",
+      protection: "Protection",
+      turkey: "Turquie",
+      istanbul: "Istanbul",
+      tradeHub: "Plaque tournante commerciale"
+    },
+    authors: {
+      marcus: {
+        name: "Marcus Thompson",
+        bio: "Marcus Thompson est le responsable Conformité et Sécurité de Kassongo, spécialisé dans les réglementations IATA sur les marchandises dangereuses, la conformité des batteries au lithium et les normes d'expédition internationales. Avec plus de 12 ans d'expérience dans le transit de fret, Marcus veille à ce que chaque envoi respecte les exigences de sécurité mondiales."
+      },
+      aisha: {
+        name: "Aisha Okonkwo",
+        bio: "Aisha Okonkwo est directrice régionale pour l'Afrique et le Moyen-Orient chez Kassongo Express. Elle gère les corridors commerciaux entre la Chine, le Cameroun, le Kenya et les Émirats arabes unis. Grâce à sa connaissance approfondie des réglementations douanières africaines et des procédures d'importation, Aisha aide les entreprises à naviguer dans une logistique transfrontalière complexe."
+      },
+      james: {
+        name: "James Chen",
+        bio: "James Chen est ingénieur logistique senior chez Kassongo, spécialisé dans l'optimisation de la chaîne d'approvisionnement, les Incoterms et la gestion de fret de grande valeur. Il conçoit des itinéraires d'expédition efficaces et des stratégies de consolidation pour des entreprises de toutes tailles."
+      },
+      sarah: {
+        name: "Sarah Müller",
+        bio: "Sarah Müller est spécialiste en douane et commerce, experte des réglementations commerciales UE-États-Unis, de la documentation AES, du calcul des droits de douane et de la classification tarifaire. Elle aide les clients à naviguer dans les complexités de la conformité au commerce international."
+      }
+    },
+    articles: {
+      electronics: {
+        title: "Comment expédier des appareils électroniques avec batteries au lithium à l'international",
+        excerpt: "Guide complet pour expédier des smartphones, ordinateurs portables et appareils à batterie à travers les frontières. Découvrez les réglementations IATA, les exigences d'emballage et la documentation douanière.",
+        intro: "L'expédition internationale d'appareils électroniques est l'une des demandes les plus courantes que nous traitons chez Kassongo Express — et aussi l'une des plus réglementées. Entre les restrictions IATA sur les batteries au lithium, les règles spécifiques aux transporteurs et les contrôles d'importation du pays de destination, il y a beaucoup à bien faire. Ce guide couvre tout ce que vous devez savoir pour expédier des appareils électroniques en toute sécurité, légalement et à moindre coût.",
+        h2_regulations: "Comprendre les réglementations sur les batteries au lithium",
+        p_regulations: "Les batteries au lithium alimentent tout, des smartphones aux ordinateurs portables en passant par les trottinettes électriques. Mais elles sont également classées comme marchandises dangereuses par l'Association du transport aérien international (IATA), car elles présentent des risques d'incendie en cas d'endommagement, de court-circuit ou d'exposition à des températures extrêmes. Cette classification affecte la manière dont vous emballez, étiquetez et déclarez votre envoi.",
+        warn_loose: "Les batteries au lithium détachées (non installées dans des appareils) sont interdites sur les avions de passagers et fortement restreintes sur les vols cargo. Les batteries externes de plus de 100 Wh nécessitent une documentation de manutention spéciale. Déclarez toujours l'électronique avec précision — les batteries non déclarées peuvent entraîner la saisie du colis, des amendes ou des poursuites pénales.",
+        h3_allowed: "Quels appareils électroniques sont autorisés ?",
+        ul_allowed_1: "Smartphones, tablettes et ordinateurs portables avec batteries intégrées (généralement autorisés)",
+        ul_allowed_2: "Écouteurs Bluetooth et écouteurs sans fil (autorisés avec un emballage adéquat)",
+        ul_allowed_3: "Montres connectées et trackers de fitness (généralement acceptés, déclarez les caractéristiques de la batterie)",
+        ul_allowed_4: "Consoles de jeux et manettes (vérifiez la présence de compartiments à batterie amovibles)",
+        h3_packing: "Guide d'emballage étape par étape",
+        ol_packing_1: "Éteignez complètement tous les appareils. N'expédiez pas d'appareils électroniques en mode veille.",
+        ol_packing_2: "Enveloppez chaque appareil individuellement dans du papier bulle antistatique, d'au moins 5 cm d'épaisseur.",
+        ol_packing_3: "Placez les appareils dans leur emballage d'origine si disponible, ou utilisez une boîte en carton ondulé robuste avec 5 cm de rembourrage sur tous les côtés.",
+        ol_packing_4: "Incluez une facture commerciale imprimée listant chaque appareil, son numéro de modèle, son numéro de série et sa valeur déclarée.",
+        ol_packing_5: "Étiquetez la boîte extérieure avec « BATTERIES AU LITHIUM — MANIPULER AVEC PRÉCAUTION » si vous expédiez des appareils avec des batteries non amovibles.",
+        tip_photos: "Prenez des photos de vos articles avant l'emballage et téléchargez-les sur votre demande d'expédition Kassongo. Cela crée un enregistrement numérique qui vous protège en cas de dommage ou de perte pendant le transport.",
+        h2_checklist: "Liste de contrôle avant expédition",
+        check_1: "Vérifiez que le pays de destination autorise l'importation de votre modèle d'appareil électronique spécifique",
+        check_2: "Vérifiez la puissance en watts-heure de la batterie (doit être inférieure à 100 Wh pour la plupart des transporteurs)",
+        check_3: "Obtenez tous les permis d'importation requis (certains pays exigent un pré-enregistrement)",
+        check_4: "Préparez la facture commerciale avec des codes SH exacts et des valeurs déclarées",
+        check_5: "Souscrivez une assurance supplémentaire si la valeur totale dépasse 100 USD",
+        check_6: "Confirmez que le transporteur accepte les envois de batteries au lithium sur votre itinéraire choisi",
+        h2_mistakes: "Erreurs courantes à éviter",
+        p_mistakes: "L'erreur la plus coûteuse dans l'expédition d'électronique est de supposer que votre colis « passera tout simplement ». Les inspecteurs des douanes du monde entier sont formés pour repérer les batteries non déclarées, les valeurs incorrectes et les modèles interdits. Une seule erreur peut entraîner la saisie, la destruction ou le renvoi à vos frais. En cas de doute, contactez le support Kassongo avant l'expédition — notre équipe de conformité examine chaque colis avant qu'il ne quitte notre hub.",
+        cta: "Prêt à expédier votre électronique ? Obtenez votre adresse de hub personnalisée et laissez notre équipe de conformité gérer la paperasse.",
+        imageAlt: "Appareils électroniques emballés avec des matériaux antistatiques pour l'expédition internationale"
+      },
+      chinacameroon: {
+        title: "Expédition Chine-Cameroun : Guide complet 2026",
+        excerpt: "Tout ce que vous devez savoir sur l'importation de marchandises de Chine vers le Cameroun — méthodes d'expédition, coûts, exigences douanières et dédouanement.",
+        intro: "Le corridor commercial Chine-Cameroun est l'un des plus actifs d'Afrique, avec des milliards de dollars de marchandises circulant entre ces pays chaque année. Que vous soyez une petite entreprise important des stocks, un particulier achetant des articles personnels, ou un vendeur e-commerce s'approvisionnant en produits, comprendre le processus d'expédition peut vous faire économiser des milliers de francs et des semaines de retard.",
+        h2_methods: "Comparaison des méthodes d'expédition",
+        p_methods: "Vous avez trois options principales pour acheminer des marchandises de Chine vers le Cameroun : le fret aérien express, le fret aérien standard et le fret maritime. Chacune présente des profils de coût, de vitesse et de volume différents.",
+        h3_express: "Fret aérien express (3 à 7 jours)",
+        ul_express_1: "Idéal pour : envois urgents de moins de 100 kg, électronique de grande valeur, échantillons",
+        ul_express_2: "Transporteurs : DHL, FedEx, UPS — porte-à-porte avec suivi",
+        ul_express_3: "Coût : le plus élevé par kg, mais sans frais cachés ni surprises de courtage douanier",
+        h3_standard: "Fret aérien standard (7 à 14 jours)",
+        ol_standard_1: "Expédiez vers l'adresse du hub Kassongo à Guangzhou ou Yiwu",
+        ol_standard_2: "Nous consolidons avec d'autres marchandises à destination du Cameroun",
+        ol_standard_3: "Fret aérien vers l'aéroport international de Douala",
+        ol_standard_4: "Dédouanement et livraison du dernier kilomètre à votre adresse",
+        warn_formm: "La douane camerounaise exige une documentation et une déclaration appropriées pour toutes les importations commerciales. Le non-respect entraînera une saisie ou un retour. L'équipe Kassongo Cameroun peut aider à la documentation et au dédouanement avant expédition.",
+        h2_docs: "Documentation requise",
+        p_docs: "Les réglementations d'importation camerounaises sont strictes mais prévisibles si vous vous préparez correctement. Voici ce dont vous avez besoin :",
+        check_1: "Facture commerciale avec codes SH exacts et valeurs déclarées",
+        check_2: "Liste de colisage correspondant exactement aux articles de la facture",
+        check_3: "Certificat d'origine (si requis pour certains produits)",
+        check_4: "Permis ou licence d'importation (pour les produits réglementés)",
+        check_5: "Certificats de conformité aux normes (électronique, produits chimiques, etc.)",
+        tip_consolidate: "Consolidez plusieurs commandes en un seul envoi via le hub de Guangzhou de Kassongo. Cela réduit les coûts par kg de 40 à 60 % et simplifie le dédouanement puisque tous les articles arrivent sous une seule déclaration douanière.",
+        cta: "Vous importez de Chine vers le Cameroun ? Obtenez votre adresse gratuite du hub de Guangzhou et commencez à économiser sur chaque envoi.",
+        imageAlt: "Conteneurs d'expédition au port de Guangzhou avec cargaison à destination du Cameroun"
+      },
+      aes: {
+        title: "Documentation AES pour les envois de grande valeur",
+        excerpt: "Découvrez quand et comment déposer la documentation AES (Automated Export System) pour les envois d'une valeur supérieure à 2 500 $ depuis les États-Unis.",
+        intro: "Si vous expédiez du fret de grande valeur depuis les États-Unis, vous devrez comprendre les exigences de déclaration AES (Automated Export System). Cette documentation obligatoire assure la conformité avec les réglementations d'exportation américaines et aide les douanes à suivre les flux commerciaux internationaux.",
+        h2_what: "Qu'est-ce que la déclaration AES ?",
+        p_what: "L'Automated Export System (AES) est un système de déclaration électronique maintenu par les douanes américaines. Il capture les données de transaction d'exportation et assure la conformité avec les lois de contrôle des exportations.",
+        h2_when: "Quand l'AES est-elle requise ?",
+        p_when: "La déclaration AES est obligatoire pour :",
+        ol_when_1: "Les envois d'une valeur supérieure à 2 500 USD (par article de la Schedule B)",
+        ol_when_2: "Tout envoi nécessitant une licence d'exportation, quelle que soit sa valeur",
+        ol_when_3: "Les articles soumis aux Export Administration Regulations (EAR) ou aux International Traffic in Arms Regulations (ITAR)",
+        tip: "Kassongo peut aider avec la déclaration AES moyennant des frais supplémentaires. Contactez notre équipe de conformité avant d'expédier du fret de grande valeur pour vous assurer que toute la documentation est correctement préparée.",
+        h2_how: "Comment déposer une déclaration AES",
+        p_how: "Vous aurez besoin d'un numéro d'identification d'employeur (EIN) américain valide pour déposer une déclaration AES. Une fois déposée, vous recevrez un numéro de transaction interne (ITN) qui doit figurer sur votre facture commerciale et vos documents d'expédition.",
+        cta: "Besoin d'aide avec la documentation AES ? Nos spécialistes de la conformité peuvent vous guider tout au long du processus.",
+        imageAlt: "Formulaire de documentation d'exportation des douanes américaines"
+      },
+      airVsOcean: {
+        title: "Fret aérien contre fret maritime : lequel vous convient ?",
+        excerpt: "Comparez le fret aérien et maritime pour le fret international — coûts, vitesse, impact environnemental et meilleurs cas d'usage pour chaque méthode.",
+        intro: "Choisir entre le fret aérien et le fret maritime est l'une des décisions les plus importantes dans l'expédition internationale. Chaque mode présente des avantages et des compromis distincts en termes de coût, de vitesse, de capacité et d'impact environnemental.",
+        h2_comparison: "Différences clés",
+        p_comparison: "Voici une comparaison détaillée pour vous aider à décider :",
+        h3_air: "Avantages du fret aérien",
+        ul_air_1: "Vitesse : 3 à 7 jours pour la plupart des itinéraires internationaux",
+        ul_air_2: "Fiabilité : horaires fixes, moins de perturbations météorologiques",
+        ul_air_3: "Sécurité : risque de vol plus faible, meilleur suivi",
+        ul_air_4: "Idéal pour : marchandises de grande valeur, envois urgents, produits périssables, échantillons",
+        h3_ocean: "Avantages du fret maritime",
+        ul_ocean_1: "Coût : 5 à 10 fois moins cher par kg que le fret aérien",
+        ul_ocean_2: "Capacité : adapté aux gros volumes et au fret hors norme",
+        ul_ocean_3: "Environnement : empreinte carbone plus faible par unité",
+        ul_ocean_4: "Idéal pour : marchandises en vrac, machinerie lourde, meubles, inventaire non urgent",
+        tip: "Envisagez de consolider plusieurs envois pour obtenir des tarifs de fret aérien proches des tarifs maritimes. Le service de consolidation de Kassongo peut réduire vos coûts d'expédition de 40 à 60 %.",
+        h2_decide: "Comment décider",
+        p_decide: "Calculez votre coût total à destination, incluant le fret, l'assurance, le stockage et le coût d'opportunité du retard d'inventaire. Pour les produits à forte marge ou les commandes urgentes, le fret aérien est souvent financièrement judicieux malgré des coûts initiaux plus élevés.",
+        cta: "Obtenez des devis instantanés pour le fret aérien et maritime avec notre calculateur d'expédition.",
+        imageAlt: "Illustration comparative d'un avion et d'un navire cargo"
+      },
+      demurrage: {
+        title: "Éviter les frais de surestaries et d'immobilisation",
+        excerpt: "Apprenez à éviter les frais coûteux de surestaries et d'immobilisation lors de l'expédition par fret maritime. Conseils pratiques pour un enlèvement de cargaison en temps voulu.",
+        intro: "Les frais de surestaries et d'immobilisation figurent parmi les coûts cachés les plus frustrants du fret maritime. Ces frais peuvent ajouter des centaines, voire des milliers de dollars à votre facture d'expédition si vous ne récupérez pas votre cargaison à temps.",
+        h2_what: "Que sont ces frais ?",
+        p_what: "Les surestaries sont facturées lorsque vous laissez des conteneurs de fret au terminal portuaire au-delà du temps gratuit autorisé (généralement 3 à 5 jours). L'immobilisation est facturée lorsque vous conservez le conteneur de la compagnie maritime au-delà du temps gratuit pour le déchargement (généralement 5 à 7 jours).",
+        warn: "Les frais de surestaries et d'immobilisation s'accumulent quotidiennement et peuvent rapidement dépasser le coût d'expédition initial. Dans certains cas, les frais peuvent atteindre 100 à 300 $ par conteneur et par jour.",
+        h2_tips: "5 façons d'éviter ces frais",
+        ol_tips_1: "Préparez la documentation douanière avant l'arrivée de la cargaison pour un dédouanement immédiat",
+        ol_tips_2: "Ayez un partenaire logistique ou un courtier en douane prêt à traiter votre envoi",
+        ol_tips_3: "Organisez le transport/l'enlèvement à l'avance — n'attendez pas l'arrivée de la cargaison",
+        ol_tips_4: "Surveillez de près le suivi du navire pour connaître les dates d'arrivée exactes",
+        ol_tips_5: "Envisagez d'utiliser une Container Freight Station (CFS) pour la cargaison consolidée afin de prolonger le temps gratuit",
+        tip: "Le service de consolidation de Kassongo comprend un stockage gratuit prolongé dans nos entrepôts, éliminant le risque de surestaries pour les envois plus petits.",
+        cta: "Expédiez en toute confiance — notre équipe gère le dédouanement et coordonne l'enlèvement pour éviter les frais.",
+        imageAlt: "Conteneurs d'expédition empilés au terminal portuaire avec une horloge en surimpression"
+      },
+      usaEurope: {
+        title: "Guide d'expédition des États-Unis vers l'Europe",
+        excerpt: "Guide complet d'expédition des États-Unis vers les pays européens — délais de transit, options de transporteur et considérations douanières.",
+        intro: "La route d'expédition transatlantique entre les États-Unis et l'Europe est l'une des routes commerciales les plus efficaces et les plus établies au monde. Que vous expédiiez vers le Royaume-Uni, l'Allemagne, la France ou d'autres pays de l'UE, vous disposez d'options fiables pour une livraison rapide et rentable.",
+        h2_options: "Options d'expédition",
+        p_options: "Les transporteurs express comme DHL, FedEx et UPS offrent une livraison en 2 à 5 jours avec service porte-à-porte et dédouanement inclus. Le fret aérien standard prend 5 à 10 jours et est plus économique pour les envois de plus de 50 kg. Le fret maritime prend 15 à 30 jours et est idéal pour la cargaison palettisée ou les conteneurs complets.",
+        h2_customs: "Considérations douanières et TVA",
+        p_customs: "Tous les envois entrant dans l'UE sont soumis à la TVA (généralement 19 à 25 % selon le pays) et peuvent entraîner des droits de douane basés sur la classification du code SH. Le destinataire est responsable de ces frais, sauf si vous organisez une livraison Delivered Duty Paid (DDP).",
+        cta: "Obtenez votre adresse gratuite du hub américain et commencez à expédier vers l'Europe en toute confiance.",
+        imageAlt: "Tour Eiffel et Statue de la Liberté représentant l'expédition USA-Europe"
+      },
+      customsDuties: {
+        title: "Comprendre les droits de douane et les taxes à l'importation",
+        excerpt: "Que sont les droits de douane, qui les paie et comment calculer les taxes à l'importation lors d'une expédition internationale.",
+        intro: "Les droits de douane et les taxes à l'importation sont des frais imposés par les pays de destination lorsque les marchandises traversent les frontières internationales. Comprendre ces coûts est essentiel pour une budgétisation précise et pour éviter des frais imprévus.",
+        h2_what: "Que sont les droits de douane ?",
+        p_what: "Les droits de douane sont des taxes prélevées par les gouvernements sur les marchandises importées. Les taux varient selon la catégorie de produit (code SH), le pays d'origine et la destination. Certains pays facturent également la TVA, la TPS ou la taxe de vente sur les articles importés.",
+        h2_who: "Qui est responsable ?",
+        p_who: "Sauf si vous organisez une livraison Delivered Duty Paid (DDP), le destinataire paie tous les droits de douane et taxes. Les transitaires comme Kassongo n'incluent pas ces frais dans les devis d'expédition car ils sont déterminés par les autorités douanières de destination.",
+        tip: "Utilisez des calculateurs de droits en ligne ou consultez un courtier en douane pour estimer les coûts avant l'expédition. Déclarer des valeurs précises sur les factures commerciales aide à éviter les retards et les pénalités.",
+        cta: "Besoin d'aide pour naviguer dans les douanes ? Contactez notre équipe de conformité pour des conseils.",
+        imageAlt: "Agent des douanes vérifiant la documentation de cargaison"
+      },
+      consolidation: {
+        title: "Comment la consolidation de colis vous fait économiser de l'argent",
+        excerpt: "Découvrez comment combiner plusieurs colis en un seul envoi peut réduire vos coûts d'expédition internationale de 40 à 60 %.",
+        intro: "La consolidation de colis est l'un des moyens les plus efficaces de réduire les coûts d'expédition internationale. Au lieu de payer pour expédier plusieurs petits colis séparément, vous les combinez en un seul envoi et payez un seul jeu de frais d'expédition.",
+        h2_how: "Comment fonctionne la consolidation",
+        p_how: "Lorsque vous achetez auprès de plusieurs fournisseurs ou boutiques en ligne, chaque colis arrive séparément à votre adresse du hub Kassongo. Nous les conservons dans un stockage sécurisé, puis les combinons en un seul envoi optimisé lorsque vous êtes prêt. Nous retirons l'emballage excédentaire, remballons les articles en toute sécurité et expédions le tout ensemble.",
+        h2_benefits: "Avantages de la consolidation",
+        ul_benefits_1: "Économisez 40 à 60 % sur les coûts d'expédition par rapport aux colis individuels",
+        ul_benefits_2: "Réduisez la complexité du dédouanement — un envoi signifie une seule déclaration en douane",
+        ul_benefits_3: "Risque réduit d'articles perdus — tout voyage ensemble avec un seul numéro de suivi",
+        ul_benefits_4: "Un emballage plus efficace réduit les frais de poids volumétrique",
+        tip: "Les membres Platinum bénéficient d'une consolidation gratuite illimitée. Les membres Free et Gold paient de petits frais par consolidation, ce qui reste bien moins cher que d'expédier les colis séparément.",
+        cta: "Commencez à consolider vos envois dès aujourd'hui — inscrivez-vous pour obtenir votre adresse de hub gratuite.",
+        imageAlt: "Plusieurs petites boîtes consolidées en un seul colis d'expédition plus grand"
+      },
+      incoterms: {
+        title: "Incoterms 2026 : un guide pratique",
+        excerpt: "Comprenez les termes du commerce international comme FOB, CIF, DDP et EXW — qui paie l'expédition, l'assurance et le dédouanement.",
+        intro: "Les Incoterms (International Commercial Terms) sont des définitions commerciales normalisées publiées par la Chambre de commerce internationale. Ils clarifient les responsabilités entre acheteurs et vendeurs dans les transactions internationales.",
+        h2_what: "Que sont les Incoterms ?",
+        p_what: "Les Incoterms définissent qui paie l'expédition, qui organise l'assurance, où le risque passe du vendeur à l'acheteur, et qui gère le dédouanement. Les termes courants incluent EXW (Ex Works), FOB (Free on Board), CIF (Cost, Insurance & Freight) et DDP (Delivered Duty Paid).",
+        h2_common: "Incoterms les plus courants",
+        p_common: "EXW signifie que l'acheteur gère tout depuis l'entrepôt du vendeur. FOB signifie que le vendeur livre au port et que l'acheteur gère le fret maritime. CIF inclut le fret maritime et l'assurance. DDP signifie que le vendeur paie tous les coûts, y compris les droits de douane, et livre à la porte de l'acheteur.",
+        cta: "Besoin d'aide pour comprendre votre devis d'expédition ? Contactez notre équipe pour une répartition détaillée.",
+        imageAlt: "Contrat d'expédition international avec terminologie Incoterms"
+      },
+      future: {
+        title: "L'avenir du transit de fret : IA, automatisation et durabilité",
+        excerpt: "Explorez les tendances émergentes de la logistique mondiale — intelligence artificielle, suivi par blockchain, expédition verte et douane numérique.",
+        intro: "L'industrie du transit de fret connaît une transformation rapide, portée par la technologie et les exigences de durabilité. L'optimisation d'itinéraires alimentée par l'IA, le suivi basé sur la blockchain et les options d'expédition neutres en carbone remodèlent la manière dont les marchandises circulent à l'échelle mondiale.",
+        h2_trends: "Tendances clés à surveiller",
+        p_trends: "Les algorithmes d'apprentissage automatique prédisent désormais les retards douaniers et suggèrent des itinéraires alternatifs en temps réel. La blockchain fournit des enregistrements de suivi immuables. Les plateformes douanières numériques éliminent la documentation papier. Les avions cargo électriques et les programmes de compensation carbone répondent aux préoccupations environnementales.",
+        cta: "Découvrez l'avenir du transit de fret avec la plateforme numérique de Kassongo.",
+        imageAlt: "Entrepôt alimenté par l'IA avec robots autonomes et systèmes de suivi numériques"
+      },
+      fragile: {
+        title: "Comment emballer les articles fragiles pour l'expédition internationale",
+        excerpt: "Techniques d'emballage professionnelles pour protéger le verre, la céramique, l'électronique et les marchandises délicates pendant le transit international.",
+        intro: "Les articles fragiles nécessitent un soin particulier lors de l'expédition internationale. Un emballage adéquat peut faire la différence entre des articles arrivant intacts ou en morceaux.",
+        h2_steps: "Processus d'emballage en 5 étapes",
+        ol_steps_1: "Enveloppez chaque article fragile individuellement dans du papier bulle (au moins 3 couches)",
+        ol_steps_2: "Utilisez une boîte en carton ondulé robuste à double paroi, d'au moins 8 cm plus grande que l'article de chaque côté",
+        ol_steps_3: "Remplissez le fond avec des chips de calage ou du papier froissé (couche de 8 cm)",
+        ol_steps_4: "Placez les articles emballés au centre, en veillant à ce qu'ils ne touchent pas les parois de la boîte",
+        ol_steps_5: "Remplissez l'espace restant avec du matériel de calage et scellez avec du ruban adhésif renforcé",
+        tip: "Souscrivez toujours une assurance supplémentaire pour les articles fragiles et précieux. La couverture de base peut ne pas protéger entièrement le verre, la céramique ou les antiquités.",
+        cta: "Expédiez des articles fragiles en toute confiance — notre équipe fournit des services d'emballage professionnels.",
+        imageAlt: "Verrerie fragile emballée dans du papier bulle pour une expédition sécurisée"
+      },
+      turkey: {
+        title: "La Turquie comme plaque tournante commerciale stratégique : la porte d'Istanbul",
+        excerpt: "Pourquoi la Turquie devient le hub de consolidation privilégié pour les routes commerciales vers l'Afrique, le Moyen-Orient et l'Asie centrale.",
+        intro: "La position géographique de la Turquie au carrefour de l'Europe, de l'Asie et de l'Afrique en fait un hub de consolidation idéal pour les entreprises desservant plusieurs régions. Les aéroports et ports modernes d'Istanbul offrent des connexions rapides et rentables vers les marchés émergents.",
+        h2_why: "Pourquoi choisir la Turquie ?",
+        p_why: "La Turquie offre un accès sans visa ou avec visa à l'arrivée pour de nombreux pays africains et moyen-orientaux, des procédures douanières simplifiées pour la réexportation, et des coûts d'entreposage compétitifs. L'aéroport d'Istanbul traite plus de fret que de nombreux hubs européens, avec des délais de traitement plus rapides.",
+        h2_advantages: "Avantages stratégiques",
+        ul_advantages_1: "4 heures de vol vers la plupart des capitales du Moyen-Orient et d'Afrique",
+        ul_advantages_2: "Des accords de libre-échange avec de nombreux pays de destination réduisent les tarifs douaniers",
+        ul_advantages_3: "La douane turque autorise le stockage temporaire et la consolidation sans droits d'importation",
+        cta: "Obtenez votre adresse de hub en Turquie et débloquez une expédition plus rapide vers l'Afrique et le Moyen-Orient.",
+        imageAlt: "Le pont du Bosphore d'Istanbul reliant l'Europe et l'Asie"
+      }
     }
   },
   home: {
@@ -652,5 +963,166 @@ export const fr = {
     noticeTitle: "Avis juridique / Langue",
     noticeDesc: "À des fins juridiques, nos conditions générales et notre politique de confidentialité complètes sont rédigées en anglais. Veuillez nous contacter si vous avez besoin de clarifications.",
     lastUpdated: "Dernière mise à jour"
+  },
+
+  about: {
+    hero: {
+      badge: "Transport de fret mondial",
+      title1: "Redéfinir la logistique",
+      title2: "globale.",
+      subtitle: "Kassongo Express est un réseau léger en actifs et axé sur le numérique de consolidation et de réexpédition de fret, conçu pour vous donner un contrôle absolu sur l'expédition internationale.",
+      btnContact: "Nous contacter",
+      btnTeam: "Rencontrer l'équipe",
+      imageAlt: "Opérations mondiales Kassongo"
+    },
+    stats: {
+      hubs: "Hubs mondiaux",
+      members: "Membres actifs",
+      carriers: "Partenaires transporteurs",
+      countries: "Pays desservis"
+    },
+    tabs: {
+      mission: "Mission",
+      vision: "Vision",
+      values: "Valeurs"
+    },
+    mission: {
+      title: "Notre mission",
+      desc: "Démocratiser le commerce mondial en rendant le fret international accessible, abordable et transparent pour les entreprises et les particuliers du monde entier. Nous éliminons les goulots d'étranglement logistiques qui fragmentent le suivi, gonflent les coûts et créent des frictions douanières.",
+      point1: "Fournir des adresses d'expédition personnalisées dans les principaux hubs commerciaux dans plus de 60 emplacements",
+      point2: "Consolider, stocker et réexpédier les colis avec suivi en temps réel et assurance complète",
+      point3: "Gérer le dédouanement et la conformité pour que vous n'ayez jamais à vous soucier de la paperasse",
+      imageAlt: "Graphique de mission"
+    },
+    vision: {
+      title: "Notre vision",
+      desc: "D'ici 2028, Kassongo Express vise à devenir la plateforme de fret numérique la plus fiable au monde — connectant chaque grand corridor commercial avec une logistique transparente et optimisée par l'IA qui donne à l'expéditeur un contrôle total.",
+      goal1: "Étendre à plus de 100 hubs mondiaux",
+      goal2: "Servir plus de 5 millions de membres actifs",
+      imageAlt: "Graphique de vision"
+    },
+    values: {
+      title: "Nos valeurs fondamentales",
+      subtitle: "Ces principes directeurs guident chaque décision que nous prenons et chaque colis que nous traitons.",
+      trust: {
+        title: "La confiance d'abord",
+        desc: "Nous inspectons chaque colis, vérifions chaque facture et protégeons chaque envoi avec un chiffrement et une assurance conformes aux normes de l'industrie."
+      },
+      speed: {
+        title: "La rapidité compte",
+        desc: "De l'expédition sortante en 24 heures à la réexpédition express sur le prochain vol, nous optimisons chaque itinéraire pour la livraison la plus rapide possible."
+      },
+      transparency: {
+        title: "Zéro frais cachés",
+        desc: "Ce que vous voyez est ce que vous payez. Pas de suppléments surprises, pas de majorations douanières, pas de frais de stockage cachés."
+      },
+      access: {
+        title: "Accès mondial",
+        desc: "Nous croyons que n'importe qui, n'importe où, devrait pouvoir faire ses achats dans le monde entier et les recevoir localement — sans frontières ni barrières."
+      }
+    },
+    operate: {
+      title: "Comment nous opérons",
+      subtitle: "Un processus en trois étapes simplifié qui vous donne le contrôle de l'enlèvement à la livraison.",
+      step1: {
+        title: "Réception et inspection",
+        desc: "Vos colis arrivent dans nos hubs sécurisés où nous photographions, pesons et vérifions chaque article par rapport à votre facture."
+      },
+      step2: {
+        title: "Consolidation et stockage",
+        desc: "Nous conservons vos articles dans des installations climatisées, regroupons plusieurs commandes en un seul envoi optimisé et retirons les emballages excédentaires pour réduire les coûts."
+      },
+      step3: {
+        title: "Réexpédition et suivi",
+        desc: "Choisissez votre transporteur et votre vitesse. Nous gérons la documentation douanière, fournissons un suivi en temps réel et livrons à votre porte — entièrement assuré."
+      }
+    },
+    hubs: {
+      title: "Présence mondiale",
+      subtitle: "Des hubs stratégiquement situés dans les corridors commerciaux les plus fréquentés au monde, avec des équipes locales qui connaissent le paysage douanier sur le bout des doigts.",
+      us: {
+        name: "États-Unis — New York & Houston",
+        feat1: "Départs quotidiens vers l'Afrique et l'Europe",
+        feat2: "Adresses d'achat exonérées de taxe sur les ventes"
+      },
+      uk: {
+        name: "Royaume-Uni — Londres Heathrow",
+        feat1: "Envois de fret aérien bihebdomadaires",
+        feat2: "Assistance à la récupération de la TVA"
+      },
+      china: {
+        name: "Chine — Guangzhou & Yiwu",
+        feat1: "Consolidation avec ramassage direct en usine",
+        feat2: "Options d'expédition maritime et aérienne"
+      },
+      turkey: {
+        name: "Turquie — Istanbul",
+        feat1: "Hub pont pour le corridor UE-MENA",
+        feat2: "Dédouanement rapide"
+      },
+      mapAlt: "Carte du réseau de hubs mondiaux"
+    },
+    timeline: {
+      title: "Notre parcours",
+      subtitle: "D'un seul entrepôt à un réseau mondial — voici comment Kassongo Express a évolué.",
+      m1: { title: "Fondé à New York", desc: "Démarré avec un seul hub de consolidation à New York, desservant les acheteurs transfrontaliers d'Afrique de l'Ouest." },
+      m2: { title: "Lancement du hub UK", desc: "Ouverture de l'installation de Londres Heathrow pour desservir les routes commerciales européennes et du Commonwealth." },
+      m3: { title: "Expansion en Chine", desc: "Ajout des hubs de Guangzhou et Yiwu pour accéder à l'approvisionnement direct en usine et aux chaînes d'approvisionnement manufacturières." },
+      m4: { title: "1 million de membres", desc: "Dépassement du million de membres inscrits dans plus de 80 pays, avec 21+ partenariats de transporteurs." },
+      m5: { title: "Plateforme numérique", desc: "Lancement de l'optimisation d'itinéraire par IA, du tableau de bord de suivi en temps réel et des alertes de statut WhatsApp." },
+      m6: { title: "60+ hubs", desc: "Expansion à plus de 60 hubs mondiaux incluant la Turquie, les Émirats arabes unis et l'Afrique du Sud, avec accès aux terminaux de gares routières." }
+    },
+    team: {
+      title: "Rencontrez l'équipe",
+      subtitle: "Les personnes derrière les colis — une équipe diversifiée de vétérans de la logistique, d'ingénieurs et de champions du service client.",
+      roles: {
+        ceo: "Directeur général",
+        coo: "Directeur des opérations",
+        cto: "Directeur technique",
+        headLogistics: "Responsable de la logistique mondiale"
+      }
+    },
+    why: {
+      title: "Pourquoi Kassongo Express ?",
+      subtitle: "Nous n'avons pas simplement créé un autre transitaire. Nous avons construit celui que nous aurions voulu voir exister.",
+      items: {
+        speed: { title: "Expédition en 24h", desc: "Les colis partent dans les 24 heures suivant la demande de consolidation — pas de limbo dans l'entrepôt." },
+        security: { title: "Inspection 100%", desc: "Chaque colis entrant est physiquement vérifié, photographié et son état est enregistré." },
+        price: { title: "Tarifs équitables", desc: "La consolidation réduit les coûts d'expédition jusqu'à 60%. Aucun frais caché, jamais." },
+        coverage: { title: "Couverture mondiale", desc: "Expédiez vers plus de 150 pays depuis des hubs aux États-Unis, au Royaume-Uni, en Chine, en Turquie et au-delà." },
+        tracking: { title: "Suivi en temps réel", desc: "Suivez chaque colis de la réception à l'entrepôt jusqu'à la livraison à votre porte, sur n'importe quel appareil." },
+        support: { title: "Support humain", desc: "De vraies personnes, de vraies réponses. Notre équipe de support répond dans les 24 heures, garanti." }
+      }
+    },
+    faq: {
+      title: "À propos de Kassongo",
+      subtitle: "Questions courantes sur qui nous sommes et comment nous travaillons.",
+      a1: {
+        q: "Kassongo Express est-il une compagnie maritime ?",
+        a: "Nous sommes un service de réexpédition de fret et de consolidation de colis — pas un transporteur. Nous collaborons avec FedEx, DHL, UPS, USPS et des transporteurs régionaux pour déplacer vos colis, tandis que nous gérons la consolidation, le stockage, les douanes et la coordination."
+      },
+      a2: {
+        q: "Où se trouvent vos sièges sociaux ?",
+        a: "Notre siège social est à New York, États-Unis. Nous exploitons également des hubs majeurs à Londres (Royaume-Uni), Guangzhou et Yiwu (Chine), et Istanbul (Turquie), avec des équipes locales à chaque emplacement."
+      },
+      a3: {
+        q: "En quoi Kassongo est-il différent des autres transitaires ?",
+        a: "Nous combinons des outils numériques de premier ordre (suivi en temps réel, routage IA, alertes WhatsApp) avec des opérations physiques de hubs qui inspectent chaque colis. De plus, notre réseau de terminaux de gares routières rend le dépôt et le retrait accessibles même dans les zones reculées."
+      },
+      a4: {
+        q: "Travaillez-vous avec des entreprises ou uniquement des particuliers ?",
+        a: "Les deux. Nous desservons les acheteurs individuels, les petites entreprises qui approvisionnent des stocks, les vendeurs en ligne et les clients entreprise avec des besoins de consolidation à fort volume. Les formules d'adhésion vont du gratuit au Platinum."
+      },
+      a5: {
+        q: "Comment rejoindre l'équipe Kassongo ?",
+        a: "Nous recherchons toujours des spécialistes de la logistique, des ingénieurs logiciels et des champions du service client. Consultez notre page Carrières ou envoyez votre CV à careers@kassongo.com."
+      }
+    },
+    cta: {
+      title: "Prêt à expédier plus intelligemment ?",
+      subtitle: "Rejoignez plus d'un million de membres qui font confiance à Kassongo Express pour leurs besoins de fret mondiaux. Obtenez votre adresse de hub gratuite dès aujourd'hui.",
+      btnContact: "Nous contacter",
+      btnFaq: "Lire la FAQ"
+    }
   }
 };

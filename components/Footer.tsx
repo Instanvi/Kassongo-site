@@ -200,7 +200,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-gray-300">
               <li>
                 <a
-                  href="/#about"
+                  href="/about-us"
                   className="hover:text-white transition-colors"
                 >
                   {t("footer.links.aboutUs")}
@@ -224,10 +224,10 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#careers"
+                  href="/blog"
                   className="hover:text-white transition-colors"
                 >
-                  {t("footer.links.careers")}
+                  {t("footer.links.blog")}
                 </a>
               </li>
             </ul>

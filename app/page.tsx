@@ -550,153 +550,123 @@ export default function Home() {
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
               {/* Card 1 */}
               <div className="rounded-3xl h-[500px] shadow-card hover:shadow-card transition-smooth relative group overflow-hidden flex flex-col">
-                {/* Top half - gradient */}
-                <div className="bg-gradient-to-b from-[#24963f] to-[#0c4e25] rounded-t-3xl p-6 pb-16 text-white flex-1 flex flex-col">
+                <div className="bg-gradient-to-b from-[#24963f] to-[#0c4e25] rounded-t-3xl p-6 pb-4 text-white flex flex-col items-center text-center" style={{ height: '50%' }}>
                   <h3 className="text-2xl font-display font-black text-white mb-1.5 tracking-tight">
                     {t("home.services.c1.title")}
                   </h3>
-                  <p className="text-xs font-bold text-yellow-400 mb-3 uppercase tracking-wider">
-                    {t("home.services.c1.badge")}
-                  </p>
-                  <p className="text-xs text-green-100/90 leading-relaxed font-medium">
-                    {t("home.services.c1.desc")}
-                  </p>
+                  <div className="flex-1 flex items-end justify-center w-full">
+                    <img
+                      src="/consolidation.svg"
+                      alt="Consolidation"
+                      className="w-full h-32 object-contain drop-shadow-xl transform group-hover:scale-105 transition-transform duration-500 ease-out"
+                    />
+                  </div>
                 </div>
-
-                {/* Bottom half - white */}
-                <div className="bg-white rounded-b-3xl p-6 pt-16 flex flex-col justify-end">
-                  <Button
-                    variant="secondary"
-                    size="sm"
-                    href="#get-address"
-                    className="w-full shadow-soft hover:shadow-soft-md"
-                  >
+                <div className="bg-white rounded-b-3xl p-6 flex-1 flex flex-col justify-between">
+                  <div>
+                    <p className="text-xs font-bold text-[#24963f] mb-3 uppercase tracking-wider">
+                      {t("home.services.c1.badge")}
+                    </p>
+                    <p className="text-xs text-gray-600 leading-relaxed font-medium">
+                      {t("home.services.c1.desc")}
+                    </p>
+                  </div>
+                  <Button variant="secondary" size="sm" href="#get-address" className="w-full shadow-soft hover:shadow-soft-md mt-4">
                     {t("common.getStartedButton")}
                   </Button>
-                </div>
-
-                {/* Image floating over the seam */}
-                <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex items-center justify-center px-6 pointer-events-none">
-                  <img
-                    src="/consolidation.svg"
-                    alt="Consolidation"
-                    className="w-full h-40 object-contain drop-shadow-xl transform group-hover:scale-105 transition-transform duration-500 ease-out pointer-events-auto"
-                  />
                 </div>
               </div>
 
               {/* Card 2 */}
               <div className="rounded-3xl h-[500px] shadow-card hover:shadow-card transition-smooth relative group overflow-hidden flex flex-col">
-                {/* Top half - gradient */}
-                <div className="bg-gradient-to-b from-[#24963f] to-[#0c4e25] rounded-t-3xl p-6 pb-16 text-white flex-1 flex flex-col">
+                <div className="bg-gradient-to-b from-[#24963f] to-[#0c4e25] rounded-t-3xl p-6 pb-4 text-white flex flex-col items-center text-center" style={{ height: '50%' }}>
                   <h3 className="text-2xl font-display font-black text-white mb-1.5 tracking-tight">
                     {t("home.services.c2.title")}
                   </h3>
-                  <p className="text-xs font-bold text-yellow-400 mb-3 uppercase tracking-wider">
-                    {t("home.services.c2.badge")}
-                  </p>
-                  <p className="text-xs text-green-100/90 leading-relaxed font-medium">
-                    {t("home.services.c2.desc")}
-                  </p>
+                  <div className="flex-1 flex items-end justify-center w-full">
+                    <img
+                      src="/secure_storage.svg"
+                      alt="Secure Storage"
+                      className="w-full h-32 object-contain drop-shadow-xl transform group-hover:scale-105 transition-transform duration-500 ease-out"
+                    />
+                  </div>
                 </div>
-
-                {/* Bottom half - white */}
-                <div className="bg-white rounded-b-3xl p-6 pt-16 flex flex-col justify-end">
-                  <Button
-                    variant="secondary"
-                    size="sm"
-                    href="#get-address"
-                    className="w-full shadow-soft hover:shadow-soft-md"
-                  >
+                <div className="bg-white rounded-b-3xl p-6 flex-1 flex flex-col justify-between">
+                  <div>
+                    <p className="text-xs font-bold text-[#24963f] mb-3 uppercase tracking-wider">
+                      {t("home.services.c2.badge")}
+                    </p>
+                    <p className="text-xs text-gray-600 leading-relaxed font-medium">
+                      {t("home.services.c2.desc")}
+                    </p>
+                  </div>
+                  <Button variant="secondary" size="sm" href="#get-address" className="w-full shadow-soft hover:shadow-soft-md mt-4">
                     {t("common.getStartedButton")}
                   </Button>
-                </div>
-
-                {/* Image floating over the seam */}
-                <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex items-center justify-center px-6 pointer-events-none">
-                  <img
-                    src="/secure_storage.svg"
-                    alt="Secure Storage"
-                    className="w-full h-40 object-contain drop-shadow-xl transform group-hover:scale-105 transition-transform duration-500 ease-out pointer-events-auto"
-                  />
                 </div>
               </div>
 
               {/* Card 3 */}
               <div className="rounded-3xl h-[500px] shadow-card hover:shadow-card transition-smooth relative group overflow-hidden flex flex-col">
-                {/* Top half - gradient */}
-                <div className="bg-gradient-to-b from-[#24963f] to-[#0c4e25] rounded-t-3xl p-6 pb-16 text-white flex-1 flex flex-col">
+                <div className="bg-gradient-to-b from-[#24963f] to-[#0c4e25] rounded-t-3xl p-6 pb-4 text-white flex flex-col items-center text-center" style={{ height: '50%' }}>
                   <h3 className="text-2xl font-display font-black text-white mb-1.5 tracking-tight">
                     {t("home.services.c3.title")}
                   </h3>
-                  <p className="text-xs font-bold text-yellow-400 mb-3 uppercase tracking-wider">
-                    {t("home.services.c3.badge")}
-                  </p>
-                  <p className="text-xs text-green-100/90 leading-relaxed font-medium">
-                    {t("home.services.c3.desc")}
-                  </p>
+                  <div className="flex-1 flex items-end justify-center w-full">
+                    <img
+                      src="/assisted_sourcing.svg"
+                      alt="Assisted Sourcing"
+                      className="w-full h-32 object-contain drop-shadow-xl transform group-hover:scale-105 transition-transform duration-500 ease-out"
+                    />
+                  </div>
                 </div>
-
-                {/* Bottom half - white */}
-                <div className="bg-white rounded-b-3xl p-6 pt-16 flex flex-col justify-end">
-                  <Button
-                    variant="secondary"
-                    size="sm"
-                    href="#get-address"
-                    className="w-full shadow-soft hover:shadow-soft-md"
-                  >
+                <div className="bg-white rounded-b-3xl p-6 flex-1 flex flex-col justify-between">
+                  <div>
+                    <p className="text-xs font-bold text-[#24963f] mb-3 uppercase tracking-wider">
+                      {t("home.services.c3.badge")}
+                    </p>
+                    <p className="text-xs text-gray-600 leading-relaxed font-medium">
+                      {t("home.services.c3.desc")}
+                    </p>
+                  </div>
+                  <Button variant="secondary" size="sm" href="#get-address" className="w-full shadow-soft hover:shadow-soft-md mt-4">
                     {t("common.getStartedButton")}
                   </Button>
-                </div>
-
-                {/* Image floating over the seam */}
-                <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex items-center justify-center px-6 pointer-events-none">
-                  <img
-                    src="/assisted_sourcing.svg"
-                    alt="Assisted Sourcing"
-                    className="w-full h-40 object-contain drop-shadow-xl transform group-hover:scale-105 transition-transform duration-500 ease-out pointer-events-auto"
-                  />
                 </div>
               </div>
 
               {/* Card 4 */}
               <div className="rounded-3xl h-[500px] shadow-card hover:shadow-card transition-smooth relative group overflow-hidden flex flex-col">
-                {/* Top half - gradient */}
-                <div className="bg-gradient-to-b from-[#24963f] to-[#0c4e25] rounded-t-3xl p-6 pb-16 text-white flex-1 flex flex-col">
+                <div className="bg-gradient-to-b from-[#24963f] to-[#0c4e25] rounded-t-3xl p-6 pb-4 text-white flex flex-col items-center text-center" style={{ height: '50%' }}>
                   <h3 className="text-2xl font-display font-black text-white mb-1.5 tracking-tight">
                     {t("home.services.c4.title")}
                   </h3>
-                  <p className="text-xs font-bold text-yellow-400 mb-3 uppercase tracking-wider">
-                    {t("home.services.c4.badge")}
-                  </p>
-                  <p className="text-xs text-green-100/90 leading-relaxed font-medium">
-                    {t("home.services.c4.desc")}
-                  </p>
+                  <div className="flex-1 flex items-end justify-center w-full">
+                    <img
+                      src="/express_forwarding.svg"
+                      alt="Express Forwarding"
+                      className="w-full h-32 object-contain drop-shadow-xl transform group-hover:scale-105 transition-transform duration-500 ease-out"
+                    />
+                  </div>
                 </div>
-
-                {/* Bottom half - white */}
-                <div className="bg-white rounded-b-3xl p-6 pt-16 flex flex-col justify-end">
-                  <Button
-                    variant="secondary"
-                    size="sm"
-                    href="#get-address"
-                    className="w-full shadow-soft hover:shadow-soft-md"
-                  >
+                <div className="bg-white rounded-b-3xl p-6 flex-1 flex flex-col justify-between">
+                  <div>
+                    <p className="text-xs font-bold text-[#24963f] mb-3 uppercase tracking-wider">
+                      {t("home.services.c4.badge")}
+                    </p>
+                    <p className="text-xs text-gray-600 leading-relaxed font-medium">
+                      {t("home.services.c4.desc")}
+                    </p>
+                  </div>
+                  <Button variant="secondary" size="sm" href="#get-address" className="w-full shadow-soft hover:shadow-soft-md mt-4">
                     {t("common.getStartedButton")}
                   </Button>
                 </div>
-
-                {/* Image floating over the seam */}
-                <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex items-center justify-center px-6 pointer-events-none">
-                  <img
-                    src="/express_forwarding.svg"
-                    alt="Express Forwarding"
-                    className="w-full h-40 object-contain drop-shadow-xl transform group-hover:scale-105 transition-transform duration-500 ease-out pointer-events-auto"
-                  />
-                </div>
               </div>
+
             </div>
           </div>
         </section>
@@ -1125,6 +1095,7 @@ export default function Home() {
               {[
                 { code: "cn", label: "China" },
                 { code: "ca", label: "Canada" },
+                { code: "cm", label: "Cameroon" },
                 { code: "us", label: "USA" },
                 { code: "ng", label: "Nigeria" },
                 { code: "fr", label: "France" },

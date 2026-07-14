@@ -19,7 +19,7 @@ export default function Header() {
   const navItems = [
     { label: t("common.howItWorks"), href: isHomepage ? "#how-it-works" : "/#how-it-works" },
     { label: t("common.services"), href: isHomepage ? "#services" : "/#services" },
-    { label: t("common.about"), href: isHomepage ? "#about" : "/#about" },
+    { label: t("common.about"), href:"/about-us" },
     { label: t("common.standards"), href: isHomepage ? "#standards" : "/#standards" },
   ];
 
@@ -41,7 +41,6 @@ export default function Header() {
             </span>
           </a>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
               <a
