@@ -994,7 +994,7 @@ export default function Home() {
               <div className="lg:col-span-5 self-end relative overflow-hidden flex items-center">
                 <div className="relative z-10 flex items-center justify-center">
                   <img
-                    src="/mobileMockup.webp"
+                    src="/mobileMockup.png"
                     alt="Kassongo Mobile App"
                     className="h-130 w-full object-contain drop-shadow-3xl"
                   />
