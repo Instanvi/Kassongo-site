@@ -258,6 +258,16 @@ export default function Footer() {
                   {t("common.prohibitedItems")}
                 </a>
               </li>
+              <li>
+                <a href="/tools/duty-calculator" className="hover:text-white transition-colors">
+                  {t("common.dutyCalculator")}
+                </a>
+              </li>
+              <li>
+                <a href="/tools/hs-lookup" className="hover:text-white transition-colors">
+                  {t("common.hsLookup")}
+                </a>
+              </li>
             </ul>
           </div>
         </div>

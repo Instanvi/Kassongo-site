@@ -21,6 +21,9 @@ export const fr = {
     limitedTimeOffer: "Offre temporaire : Économisez jusqu'à 60 % sur votre premier envoi",
     startingAt: "À partir de",
     kg: "/kg",
+    tools: "Outils de commerce",
+    dutyCalculator: "Calculateur de taxes",
+    hsLookup: "Recherche de Code SH",
   },
   header: {
     logo: "kassongo",

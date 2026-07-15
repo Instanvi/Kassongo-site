@@ -21,6 +21,9 @@ export const en = {
     limitedTimeOffer: "Limited Time Offer: Save up to 60% on first cargo dispatch",
     startingAt: "Starting at",
     kg: "/kg",
+    tools: "Trade Tools",
+    dutyCalculator: "Duty Calculator",
+    hsLookup: "HS Lookup",
   },
   header: {
     logo: "kassongo",

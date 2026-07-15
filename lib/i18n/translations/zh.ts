@@ -21,6 +21,9 @@ export const zh = {
     limitedTimeOffer: "限时优惠：首单货运立享高达 40% 的运费减免",
     startingAt: "低至",
     kg: "/公斤",
+    tools: "贸易工具",
+    dutyCalculator: "关税计算器",
+    hsLookup: "商品编码查询",
   },
   header: {
     logo: "kassongo",

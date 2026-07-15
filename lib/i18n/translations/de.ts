@@ -21,6 +21,9 @@ export const de = {
     limitedTimeOffer: "Befristetes Angebot: Bis zu 40 Prozent Rabatt auf Ihre erste Sendung",
     startingAt: "Ab",
     kg: "/kg",
+    tools: "Handelswerkzeuge",
+    dutyCalculator: "Zollrechner",
+    hsLookup: "HS-Code-Suche",
   },
   header: {
     logo: "kassongo",

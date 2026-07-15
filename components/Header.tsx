@@ -19,6 +19,7 @@ export default function Header() {
   const navItems = [
     { label: t("common.howItWorks"), href: isHomepage ? "#how-it-works" : "/#how-it-works" },
     { label: t("common.services"), href: isHomepage ? "#services" : "/#services" },
+    { label: t("common.tools"), href: "/tools" },
     { label: t("common.about"), href:"/about-us" },
     { label: t("common.standards"), href: isHomepage ? "#standards" : "/#standards" },
   ];
@@ -31,7 +32,7 @@ export default function Header() {
           {/* Logo */}
           <a href="/" className="flex items-center gap-2 group">
             <img
-              src="/kassongo-logo1.svg"
+              src="/kassongo-logo3.svg"
               alt="Kassongo"
               style={{ height: "32px", width: "auto" }} 
               className="w-8 h-8 transition-smooth"
