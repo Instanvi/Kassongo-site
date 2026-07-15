@@ -112,14 +112,11 @@ export default function Footer() {
           <div className="pt-8">
             <div className="flex items-center gap-3 mb-4">
             <img
-              src="/kassongo.svg"
+              src="/kassongo-logo.svg"
               alt="Kassongo"
               style={{ height: "32px", width: "auto" }} 
               className="w-8 h-8 transition-smooth"
             />
-              <span className="font-bold italic text-2xl tracking-tight text-white">
-                {t("header.logo")}
-              </span>
             </div>
             {/* Socials */}
             <div className="flex gap-3">

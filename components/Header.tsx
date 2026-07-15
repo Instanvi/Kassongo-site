@@ -31,14 +31,11 @@ export default function Header() {
           {/* Logo */}
           <a href="/" className="flex items-center gap-2 group">
             <img
-              src="/kassongo.svg"
+              src="/kassongo-logo1.svg"
               alt="Kassongo"
               style={{ height: "32px", width: "auto" }} 
               className="w-8 h-8 transition-smooth"
             />
-            <span className="font-bold text-lg text-gray-900">
-              {t("header.logo")}
-            </span>
           </a>
 
           <nav className="hidden md:flex items-center gap-8">
