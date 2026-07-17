@@ -36,6 +36,7 @@ const DEFAULT_RATES: Record<string, number> = {
   NGN: 1520.0, // Nigerian Naira
   KES: 131.0,  // Kenyan Shilling
   ZAR: 18.2,   // South African Rand
+  GHS: 14.5,   // Ghanaian Cedi
 };
 
 const CURRENCY_SYMBOLS: Record<string, string> = {
@@ -47,6 +48,7 @@ const CURRENCY_SYMBOLS: Record<string, string> = {
   NGN: "₦",
   KES: "KSh",
   ZAR: "R",
+  GHS: "GH¢",
 };
 
 const formatCurrency = (val: number, curr: string) => {
@@ -354,6 +356,7 @@ export default function DutyCalculatorPage() {
                         <option value="NGN">NGN (₦)</option>
                         <option value="KES">KES (KSh)</option>
                         <option value="ZAR">ZAR (R)</option>
+                        <option value="GHS">GHS (GH¢)</option>
                       </select>
                     </div>
                     <p className="text-[10px] text-gray-400 mt-1.5 leading-relaxed">
@@ -493,6 +496,7 @@ export default function DutyCalculatorPage() {
                     <option value="NGN">NGN (₦)</option>
                     <option value="KES">KES (KSh)</option>
                     <option value="ZAR">ZAR (R)</option>
+                    <option value="GHS">GHS (GH¢)</option>
                   </select>
                           {/* Math breakdown grids */}
                 <div className="space-y-4">
@@ -519,24 +523,17 @@ export default function DutyCalculatorPage() {
 
                   {/* Details calculations table */}
                   <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden divide-y divide-gray-50 shadow-sm">
-                    <div className="flex items-center justify-between p-4 text-sm text-gray-600">
-                      <span className="flex items-center gap-2">
-                        <Percent className="w-4 h-4 text-gray-400" />
-                        <span>Customs Duty ({calc.rate.dutyRate}%)</span>
-                      </span>
-                      <span className="font-bold text-gray-900 font-mono">
-                        {CURRENCY_SYMBOLS[displayCurrency] || displayCurrency} {formatCurrency(dutyDisplay, displayCurrency)}
-                      </span>
-                    </div>
-                    <div className="flex items-center justify-between p-4 text-sm text-gray-600">
-                      <span className="flex items-center gap-2">
-                        <Percent className="w-4 h-4 text-gray-400" />
-                        <span>VAT / Tax ({calc.rate.vatRate}%)</span>
-                      </span>
-                      <span className="font-bold text-gray-900 font-mono">
-                        {CURRENCY_SYMBOLS[displayCurrency] || displayCurrency} {formatCurrency(vatDisplay, displayCurrency)}
-                      </span>
-                    </div>
+                    {calc.fees.map((fee, idx) => (
+                      <div key={idx} className="flex items-center justify-between p-4 text-sm text-gray-600">
+                        <span className="flex items-center gap-2">
+                          <Percent className="w-4 h-4 text-gray-400" />
+                          <span>{fee.name} ({fee.rateLabel})</span>
+                        </span>
+                        <span className="font-bold text-gray-900 font-mono">
+                          {CURRENCY_SYMBOLS[displayCurrency] || displayCurrency} {formatCurrency(fee.amount * displayRate, displayCurrency)}
+                        </span>
+                      </div>
+                    ))}
                     <div className="flex items-center justify-between p-4 bg-gray-50/20">
                       <span className="text-sm font-semibold text-gray-700">Total Duties & Taxes</span>
                       <span className="font-bold text-gray-955 text-base font-mono">

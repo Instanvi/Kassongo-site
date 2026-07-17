@@ -150,122 +150,88 @@ export default function Footer() {
 
         {/* Right Columns: Nav Links */}
         <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-10">
+          {/* Column 2: Products */}
           <div className="space-y-3">
             <h4 className="font-bold text-sm uppercase tracking-wider text-white">
-              {t("footer.links.services")}
+              {t("footer.links.products") || "Products"}
             </h4>
             <ul className="space-y-2 text-sm text-gray-300">
               <li>
-                <a
-                  href="/#services"
-                  className="hover:text-white transition-colors"
-                >
-                  {t("footer.links.consolidated")}
+                <a href="/products/checkout" className="hover:text-white transition-colors">
+                  {t("footer.links.checkout") || "Checkout"}
                 </a>
               </li>
               <li>
-                <a
-                  href="/#services"
-                  className="hover:text-white transition-colors"
-                >
-                  {t("footer.links.warehousing")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/#services"
-                  className="hover:text-white transition-colors"
-                >
-                  {t("footer.links.sourcing")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/#services"
-                  className="hover:text-white transition-colors"
-                >
-                  {t("footer.links.forwarding")}
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div className="space-y-3">
-            <h4 className="font-bold text-sm uppercase tracking-wider text-white">
-              {t("footer.links.company")}
-            </h4>
-            <ul className="space-y-2 text-sm text-gray-300">
-              <li>
-                <a
-                  href="/about-us"
-                  className="hover:text-white transition-colors"
-                >
-                  {t("footer.links.aboutUs")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/#how-it-works"
-                  className="hover:text-white transition-colors"
-                >
-                  {t("footer.links.howItWorks")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/contact"
-                  className="hover:text-white transition-colors"
-                >
-                  {t("footer.links.contact")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/blog"
-                  className="hover:text-white transition-colors"
-                >
-                  {t("footer.links.blog")}
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div className="space-y-3 col-span-2 md:col-span-1">
-            <h4 className="font-bold text-sm uppercase tracking-wider text-white">
-              {t("footer.links.support")}
-            </h4>
-            <ul className="space-y-2 text-sm text-gray-300">
-              <li>
-                <a
-                  href="/#get-address"
-                  className="hover:text-white transition-colors"
-                >
-                  {t("common.getStarted")}
-                </a>
-              </li>
-              <li>
-                <a href="/faq" className="hover:text-white transition-colors">
-                  {t("common.faq")}
-                </a>
-              </li>
-              <li>
-                <a href="/contact" className="hover:text-white transition-colors">
-                  {t("common.contactUs")}
-                </a>
-              </li>
-              <li>
-                <a href="/prohibited-items" className="hover:text-white transition-colors">
-                  {t("common.prohibitedItems")}
-                </a>
-              </li>
-              <li>
-                <a href="/tools/duty-calculator" className="hover:text-white transition-colors">
-                  {t("common.dutyCalculator")}
+                <a href="/products/landed-cost" className="hover:text-white transition-colors">
+                  {t("footer.links.landedCost") || "Landed Cost"}
                 </a>
               </li>
               <li>
                 <a href="/tools/hs-lookup" className="hover:text-white transition-colors">
-                  {t("common.hsLookup")}
+                  {t("common.hsLookup") || "HS Lookup"}
+                </a>
+              </li>
+              <li>
+                <a href="/products/plugins" className="hover:text-white transition-colors">
+                  {t("footer.links.plugins") || "Plugins"}
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 3: Solutions */}
+          <div className="space-y-3">
+            <h4 className="font-bold text-sm uppercase tracking-wider text-white">
+              {t("footer.links.solutions") || "Solutions"}
+            </h4>
+            <ul className="space-y-2 text-sm text-gray-300">
+              <li>
+                <a href="/solutions/assisted-sourcing" className="hover:text-white transition-colors">
+                  {t("footer.links.sourcing") || "Assisted Sourcing"}
+                </a>
+              </li>
+              <li>
+                <a href="/solutions/express-forwarding" className="hover:text-white transition-colors">
+                  {t("footer.links.forwarding") || "Express Forwarding"}
+                </a>
+              </li>
+              <li>
+                <a href="/solutions/secure-warehousing" className="hover:text-white transition-colors">
+                  {t("footer.links.warehousing") || "Secure Warehousing"}
+                </a>
+              </li>
+              <li>
+                <a href="/solutions/consolidation" className="hover:text-white transition-colors">
+                  {t("footer.links.consolidation") || "Consolidation"}
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 4: The Company */}
+          <div className="space-y-3 text-sm text-gray-300">
+            <h4 className="font-bold text-sm uppercase tracking-wider text-white">
+              {t("footer.links.company") || "The Company"}
+            </h4>
+            <ul className="space-y-2">
+              <li>
+                <a href="/about-us" className="hover:text-white transition-colors">
+                  {t("footer.links.aboutUs") || "About Us"}
+                </a>
+              </li>
+              <li>
+                <a href="/contact" className="hover:text-white transition-colors">
+                  {t("common.contactUs") || "Contact Us"}
+                </a>
+              </li>
+              <li>
+                <a href="/company/careers" className="hover:text-white transition-colors">
+                  {t("footer.links.careers") || "Careers"}
+                </a>
+              </li>
+              <li>
+                <a href="/blog" className="hover:text-white transition-colors">
+                  {t("footer.links.newsroom") || "Newsroom"}
                 </a>
               </li>
             </ul>

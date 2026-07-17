@@ -212,7 +212,7 @@ export default function HSLookupPage() {
             {/* Right Column: Code Digits Detail Panel */}
             <div className="lg:col-span-5">
               {selectedHS ? (
-                <div className="bg-white/90 backdrop-blur-md rounded-3xl border border-gray-150 shadow-xl overflow-hidden animate-in fade-in slide-in-from-bottom-2 duration-300 sticky top-24">
+                <div className="bg-white/90 backdrop-blur-md rounded-3xl border border-gray-200 shadow-xl overflow-hidden animate-in fade-in slide-in-from-bottom-2 duration-300 sticky top-24">
                   {/* Top color header */}
                   <div className="bg-gradient-to-r from-green-950 to-green-900 p-6 text-white space-y-1">
                     <div className="flex items-center justify-between">
@@ -331,6 +331,47 @@ export default function HSLookupPage() {
               )}
             </div>
 
+          </div>
+
+          {/* Zonos Classify AI integration highlights */}
+          <div className="bg-gray-50 rounded-3xl p-8 border border-gray-200 shadow-soft space-y-8">
+            <div className="text-center max-w-2xl mx-auto space-y-2">
+              <span className="text-[10px] font-bold text-green-900 bg-green-50 px-2 py-1 rounded-full uppercase tracking-wider">AI Classification Engine</span>
+              <h3 className="text-xl md:text-2xl font-display font-black text-gray-900">What sets our Classify engine apart</h3>
+              <p className="text-xs text-gray-500 leading-relaxed">
+                Powered by state-of-the-art machine learning, our classification engine processes thousands of products instantly with high customs compliance.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-soft space-y-2">
+                <span className="text-xs font-bold text-gray-900 block">AI Justifications</span>
+                <p className="text-[11px] text-gray-500 leading-relaxed">
+                  Generate a complete, customs-ready rationale for any classification—citing governing headings, WCO notes, and why alternatives were ruled out.
+                </p>
+              </div>
+
+              <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-soft space-y-2">
+                <span className="text-xs font-bold text-gray-900 block">Classify Ultra</span>
+                <p className="text-[11px] text-gray-500 leading-relaxed">
+                  Uses AI to enrich sparse product data (material, form, and intended use) before assigning a code, preventing misleading names from causing errors.
+                </p>
+              </div>
+
+              <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-soft space-y-2">
+                <span className="text-xs font-bold text-gray-900 block">Image & URL Lookup</span>
+                <p className="text-[11px] text-gray-500 leading-relaxed">
+                  Classify from a photo or a product page URL. Our system reads visual cues, descriptions, and specifications without manual data entry.
+                </p>
+              </div>
+
+              <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-soft space-y-2">
+                <span className="text-xs font-bold text-gray-900 block">Bulk Classification</span>
+                <p className="text-[11px] text-gray-500 leading-relaxed">
+                  Automate classification for your entire catalog at a speed of 50,000+ items per hour, supporting over 100 languages.
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Bottom Call to Action Portal */}

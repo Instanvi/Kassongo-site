@@ -11,6 +11,12 @@ export interface TariffRate {
   notes?: string;
 }
 
+export interface FeeItem {
+  name: string;
+  rateLabel: string;
+  amount: number; // In USD (base currency)
+}
+
 // Common trade route tariffs (exact database matching)
 export const TARIFF_RATES: TariffRate[] = [
   // Electronics: Laptops (8471.30)
@@ -117,8 +123,14 @@ export function calculateDuty(
   origin: string,
   destination: string,
   hsCode: string,
-  cifValue: number
-): { duty: number; vat: number; total: number; rate: TariffRate } {
+  cifValue: number // In USD
+): { 
+  duty: number; 
+  vat: number; 
+  total: number; 
+  fees: FeeItem[];
+  rate: TariffRate;
+} {
   // 1. Try to find exact match in static database
   let dbRate = TARIFF_RATES.find(
     (r) => r.origin === origin && r.destination === destination && r.hsCode === hsCode
@@ -166,12 +178,82 @@ export function calculateDuty(
     }
   }
 
-  // 4. Determine VAT Rate
-  const vatRate = VAT_RATES[destination] !== undefined ? VAT_RATES[destination] : 15;
-
+  // 4. Zone-specific tax calculations
+  const fees: FeeItem[] = [];
   const duty = (cifValue * dutyRate) / 100;
-  const vatBase = cifValue + duty; // VAT is calculated on CIF + Customs Duty
-  const vat = (vatBase * vatRate) / 100;
+  fees.push({ name: "Customs Duty", rateLabel: `${dutyRate}%`, amount: duty });
+
+  let vatRate = VAT_RATES[destination] !== undefined ? VAT_RATES[destination] : 15;
+  let vat = 0;
+
+  if (destination === "CM") {
+    // CEMAC Region (Cameroon)
+    const sgs = cifValue * 0.0095; // SGS Fee (0.95%)
+    const tci = cifValue * 0.01;   // Communal Integration Tax (1%)
+    const ohada = cifValue * 0.0005; // OHADA Levy (0.05%)
+    
+    fees.push({ name: "SGS Inspection Fee", rateLabel: "0.95%", amount: sgs });
+    fees.push({ name: "Communal Integration Tax (TCI)", rateLabel: "1%", amount: tci });
+    fees.push({ name: "OHADA Development Levy", rateLabel: "0.05%", amount: ohada });
+
+    const vatBase = cifValue + duty + sgs + tci;
+    vat = vatBase * 0.1925; // 19.25% VAT
+    fees.push({ name: "Import VAT", rateLabel: "19.25%", amount: vat });
+  } else if (destination === "NG") {
+    // ECOWAS Region (Nigeria)
+    const ciss = cifValue * 0.01;   // CISS Fee (1%)
+    const etls = cifValue * 0.005;  // ETLS Levy (0.5%)
+    const port = duty * 0.07;       // Port Development Levy (7% of Customs Duty)
+
+    fees.push({ name: "CISS Inspection Fee", rateLabel: "1%", amount: ciss });
+    fees.push({ name: "ECOWAS Levy (ETLS)", rateLabel: "0.5%", amount: etls });
+    fees.push({ name: "Port Development Levy", rateLabel: "7% of Duty", amount: port });
+
+    const vatBase = cifValue + duty + ciss + etls + port;
+    vat = vatBase * 0.075; // 7.5% VAT
+    fees.push({ name: "Import VAT", rateLabel: "7.5%", amount: vat });
+  } else if (destination === "GH") {
+    // ECOWAS Region (Ghana - matching Auto Duty Checker)
+    const sil = cifValue * 0.02;      // Special Import Levy (2%)
+    const exim = cifValue * 0.0075;   // Exim Bank Levy (0.75%)
+    const au = cifValue * 0.002;      // Africa Union Import Levy (0.2%)
+    
+    const getfund = (cifValue + duty) * 0.025; // GETFund (2.5%)
+    const nhil = (cifValue + duty) * 0.025;    // NHIL (2.5%)
+    const covid = (cifValue + duty) * 0.01;    // COVID-19 Levy (1%)
+
+    fees.push({ name: "Special Import Levy", rateLabel: "2%", amount: sil });
+    fees.push({ name: "Ghana Exim Bank Levy", rateLabel: "0.75%", amount: exim });
+    fees.push({ name: "Africa Union Import Levy", rateLabel: "0.2%", amount: au });
+    fees.push({ name: "GETFund Levy", rateLabel: "2.5%", amount: getfund });
+    fees.push({ name: "National Health Insurance (NHIL)", rateLabel: "2.5%", amount: nhil });
+    fees.push({ name: "COVID-19 Health Recovery Levy", rateLabel: "1%", amount: covid });
+
+    const vatBase = cifValue + duty + getfund + nhil + covid;
+    vat = vatBase * 0.15; // 15% VAT
+    fees.push({ name: "Import VAT", rateLabel: "15%", amount: vat });
+  } else if (destination === "KE") {
+    // EAC Region (Kenya)
+    const idf = cifValue * 0.035; // IDF Fee (3.5%)
+    const rdl = cifValue * 0.02;  // RDL Levy (2%)
+
+    fees.push({ name: "Import Declaration Fee (IDF)", rateLabel: "3.5%", amount: idf });
+    fees.push({ name: "Railway Development Levy (RDL)", rateLabel: "2%", amount: rdl });
+
+    const vatBase = cifValue + duty + idf + rdl;
+    vat = vatBase * 0.16; // 16% VAT
+    fees.push({ name: "Import VAT", rateLabel: "16%", amount: vat });
+  } else {
+    // Standard default case (US, UK, Europe, etc.)
+    const vatBase = cifValue + duty;
+    vat = (vatBase * vatRate) / 100;
+    if (vatRate > 0) {
+      fees.push({ name: "Import VAT / GST", rateLabel: `${vatRate}%`, amount: vat });
+    }
+  }
+
+  // Calculate sum totals
+  const totalFees = fees.reduce((sum, f) => sum + f.amount, 0);
 
   const destCurrency = getCurrencyForCountry(destination);
 
@@ -188,29 +270,25 @@ export function calculateDuty(
   return {
     duty: Math.round(duty * 100) / 100,
     vat: Math.round(vat * 100) / 100,
-    total: Math.round((duty + vat) * 100) / 100,
+    total: Math.round(totalFees * 100) / 100,
+    fees,
     rate,
   };
 }
 
 export function getCurrencyForCountry(countryCode: string): string {
-  // Mapping for our target currencies
   const mapping: Record<string, string> = {
-    // CEMAC (XAF)
     CM: "XAF", GA: "XAF", GQ: "XAF", TD: "XAF", CF: "XAF", CG: "XAF",
-    // West Africa (XOF / mapped to XAF for currency conversion purposes as they are pegged 1:1)
     BJ: "XAF", BF: "XAF", CI: "XAF", GW: "XAF", ML: "XAF", NE: "XAF", SN: "XAF", TG: "XAF",
-    // Major currencies
     US: "USD",
     CN: "CNY",
     GB: "GBP",
+    GH: "GHS", // Mapped to GHS (Ghanaian Cedi)
     DE: "EUR", FR: "EUR", IT: "EUR", ES: "EUR", NL: "EUR", BE: "EUR", AT: "EUR", FI: "EUR", PT: "EUR", IE: "EUR",
     CH: "EUR",
-    // African currencies
     NG: "NGN",
     KE: "KES",
     ZA: "ZAR",
-    GH: "NGN", // Fallback to NGN or USD
     EG: "USD",
   };
 
