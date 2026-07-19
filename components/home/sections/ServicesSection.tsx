@@ -8,21 +8,25 @@ const services = [
     key: "c1",
     image: "/consolidation.svg",
     alt: "Consolidation",
+    href: "/solutions/consolidation",
   },
   {
     key: "c2",
     image: "/secure_storage.svg",
     alt: "Secure Storage",
+    href: "/solutions/secure-warehousing",
   },
   {
     key: "c3",
     image: "/assisted_sourcing.svg",
     alt: "Assisted Sourcing",
+    href: "/solutions/assisted-sourcing",
   },
   {
     key: "c4",
     image: "/express_forwarding.svg",
     alt: "Express Forwarding",
+    href: "/solutions/express-forwarding",
   },
 ];
 
@@ -69,7 +73,7 @@ export default function ServicesSection() {
                 <Button
                   variant="secondary"
                   size="sm"
-                  href="#get-address"
+                  href={service.href}
                   className="w-full shadow-soft hover:shadow-soft-md mt-3"
                 >
                   {t("common.getStartedButton")}

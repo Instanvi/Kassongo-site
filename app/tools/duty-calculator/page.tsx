@@ -232,10 +232,6 @@ export default function DutyCalculatorPage() {
           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-green-900/5 to-transparent"></div>
 
           <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10">
-            <div className="inline-flex items-center gap-2 bg-green-900 text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide shadow-soft">
-              <Calculator className="w-3.5 h-3.5 text-yellow-400" />
-              <span>Free Trade Tool</span>
-            </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-black leading-[0.95] tracking-tight text-gray-900">
               Import Duty <span className="text-green-800">Calculator</span>
             </h1>
