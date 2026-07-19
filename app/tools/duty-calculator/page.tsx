@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import CountrySelector from "../../../components/tools/CountrySelector";
 import HSCodeSearch from "../../../components/tools/HSCodeSearch";
+import DocumentScanner from "../../../components/tools/DocumentScanner";
 import { calculateDuty, getTradeAgreements, getCurrencyForCountry } from "../../../lib/tariff-data";
 import { getCountryByCode } from "../../../lib/countries";
 import Header from "../../../components/Header";
@@ -98,26 +99,55 @@ export default function DutyCalculatorPage() {
           return;
         }
 
-        const res = await fetch("https://open.er-api.com/v6/latest/USD");
-        if (!res.ok) throw new Error("Rates fetch failed");
-        const data = await res.json();
-        
-        if (data && data.rates) {
-          const newRates = { ...DEFAULT_RATES };
-          // Safely merge our target currencies if they exist in the response
-          Object.keys(DEFAULT_RATES).forEach((curr) => {
-            if (data.rates[curr]) {
-              newRates[curr] = data.rates[curr];
+        // Try multiple exchange rate APIs in order of preference
+        const apis = [
+          "https://api.exchangerate-api.com/v4/latest/USD",
+          "https://open.er-api.com/v6/latest/USD",
+        ];
+
+        let fetchSuccess = false;
+        for (const apiUrl of apis) {
+          try {
+            const res = await fetch(apiUrl, {
+              method: 'GET',
+              headers: {
+                'Accept': 'application/json',
+              },
+            });
+            
+            if (!res.ok) continue;
+            
+            const data = await res.json();
+            
+            if (data && data.rates) {
+              const newRates = { ...DEFAULT_RATES };
+              // Safely merge our target currencies if they exist in the response
+              Object.keys(DEFAULT_RATES).forEach((curr) => {
+                if (data.rates[curr]) {
+                  newRates[curr] = data.rates[curr];
+                }
+              });
+              
+              setRates(newRates);
+              localStorage.setItem("KASSONGO_EXCHANGE_RATES", JSON.stringify(newRates));
+              localStorage.setItem("KASSONGO_RATES_TIMESTAMP", now.toString());
+              setRatesUpdated(new Date(now).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
+              fetchSuccess = true;
+              break;
             }
-          });
-          
-          setRates(newRates);
-          localStorage.setItem("KASSONGO_EXCHANGE_RATES", JSON.stringify(newRates));
-          localStorage.setItem("KASSONGO_RATES_TIMESTAMP", now.toString());
-          setRatesUpdated(new Date(now).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
+          } catch (apiErr) {
+            // Continue to next API
+            continue;
+          }
+        }
+
+        if (!fetchSuccess) {
+          // Use fallback rates silently
+          console.info("Using fallback exchange rates");
         }
       } catch (err) {
-        console.warn("Failed to fetch live exchange rates, using fallback rates:", err);
+        // Silently use fallback rates - no need to alarm the user
+        console.info("Using fallback exchange rates");
       } finally {
         setRatesLoading(false);
       }
@@ -314,6 +344,27 @@ export default function DutyCalculatorPage() {
                     <span>{destCountry?.name}</span>
                   </span>
                 </div>
+
+                {/* Document Scanner - Auto-fill from uploaded documents */}
+                <DocumentScanner
+                  label="📄 Quick Fill: Upload Invoice/Packing List (Optional)"
+                  onDataExtracted={(data) => {
+                    // Auto-fill extracted data into form fields
+                    if (data.hsCode) {
+                      setHSCode(data.hsCode);
+                      if (data.productDescription) {
+                        setHSDescription(data.productDescription);
+                      }
+                    }
+                    if (data.cifValue) {
+                      setCifValue(data.cifValue.toString());
+                    }
+                    if (data.currency) {
+                      setInputCurrency(data.currency);
+                    }
+                    // Note: Origin/destination already set in Step 1, but could validate here
+                  }}
+                />
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* HS Search Component */}

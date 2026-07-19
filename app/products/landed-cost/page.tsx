@@ -30,10 +30,6 @@ export default function LandedCostPage() {
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <div className="space-y-6">
-                <div className="inline-flex items-center gap-2 bg-green-905 text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide shadow-soft">
-                  <Calculator className="w-3.5 h-3.5 text-yellow-400" />
-                  <span>Kassongo Landed Cost</span>
-                </div>
                 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-black leading-[0.95] tracking-tight text-gray-900">
                   Calculate landed costs<br />
@@ -110,7 +106,6 @@ export default function LandedCostPage() {
         <section className="bg-gray-55 py-20 px-6 border-y border-gray-200">
           <div className="max-w-7xl mx-auto space-y-12">
             <div className="text-center max-w-2xl mx-auto space-y-3">
-              <span className="text-xs font-bold uppercase tracking-wider text-green-800 bg-green-50 px-3 py-1 rounded-full">Benefits</span>
               <h2 className="text-3xl md:text-4xl font-display font-black text-gray-900">Why businesses choose Landed Cost</h2>
               <p className="text-gray-500 text-sm md:text-base leading-relaxed">
                 International shipping should not drain your profits. Every unexpected duty invoice, complaints about surprise fees, and time spent on tax compliance costs money.
@@ -191,7 +186,6 @@ export default function LandedCostPage() {
         <section className="bg-white py-20 px-6">
           <div className="max-w-4xl mx-auto space-y-12">
             <div className="text-center space-y-3">
-              <span className="text-xs font-bold uppercase tracking-wider text-green-800 bg-green-50 px-3 py-1 rounded-full">How it works</span>
               <h2 className="text-2xl md:text-3xl font-display font-black text-gray-900">
                 From quote to delivery, we have you covered
               </h2>
@@ -201,7 +195,7 @@ export default function LandedCostPage() {
               {[
                 { 
                   step: "01", 
-                  title: "Calculate at checkout—automatically", 
+                  title: "Calculate at checkout automatically", 
                   desc: "When a customer enters a shipping destination, Landed Cost instantly calculates duties, taxes, and carrier fees in real time. The shopper sees the complete cost before they pay—no surprises, no hidden charges."
                 },
                 { 
@@ -223,22 +217,6 @@ export default function LandedCostPage() {
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-        
-        {/* CTA section */}
-        <section className="bg-green-950 text-white py-16 px-6 text-center relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-green-900 to-green-950"></div>
-          <div className="max-w-2xl mx-auto relative z-10 space-y-6">
-            <h2 className="text-3xl md:text-4xl font-display font-black">Want to calculate quotes in real-time?</h2>
-            <p className="text-green-200/80 text-sm md:text-base leading-relaxed">
-              Integrate Landed Cost API or store plugins and eliminate shipping surprise charges forever.
-            </p>
-            <div className="pt-2">
-              <Button variant="secondary" size="lg" href="/contact" className="mx-auto shadow-lg">
-                Talk to an Expert
-              </Button>
             </div>
           </div>
         </section>

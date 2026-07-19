@@ -105,7 +105,7 @@ export default function HSLookupPage() {
                   onClick={() => { setSelectedCategory(null); setQuery(""); setSelectedHS(null); }}
                   className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all shrink-0 snap-start cursor-pointer ${
                     !selectedCategory && !query
-                      ? "bg-green-905 text-white"
+                      ? "bg-green-900 text-white"
                       : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                   }`}
                 >
@@ -121,7 +121,7 @@ export default function HSLookupPage() {
                     }}
                     className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all shrink-0 snap-start cursor-pointer ${
                       selectedCategory === cat
-                        ? "bg-green-905 text-white"
+                        ? "bg-green-900 text-white"
                         : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                     }`}
                   >
@@ -159,7 +159,7 @@ export default function HSLookupPage() {
                   >
                     <div className="space-y-2">
                       <div className="flex items-start justify-between">
-                        <span className="inline-flex items-center px-2 py-0.5 bg-green-55 text-green-900 text-xs font-bold font-mono rounded">
+                        <span className="inline-flex items-center px-2 py-0.5 bg-green-50 text-green-900 text-xs font-bold font-mono rounded">
                           <Tag className="w-3 h-3 mr-1" />
                           {item.code}
                         </span>
@@ -214,7 +214,7 @@ export default function HSLookupPage() {
               {selectedHS ? (
                 <div className="bg-white/90 backdrop-blur-md rounded-3xl border border-gray-200 shadow-xl overflow-hidden animate-in fade-in slide-in-from-bottom-2 duration-300 sticky top-24">
                   {/* Top color header */}
-                  <div className="bg-gradient-to-r from-green-950 to-green-900 p-6 text-white space-y-1">
+                  <div className="bg-gradient-to-r from-green-900 to-green-900 p-6 text-white space-y-1">
                     <div className="flex items-center justify-between">
                       <span className="text-[10px] font-bold text-green-200 uppercase tracking-wide">
                         Selected Commodity
@@ -234,7 +234,7 @@ export default function HSLookupPage() {
                   <div className="p-6 space-y-6">
                     <div className="space-y-1">
                       <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider block">Description</span>
-                      <h3 className="text-lg font-bold text-gray-950 leading-snug">
+                      <h3 className="text-lg font-bold text-gray-900 leading-snug">
                         {selectedHS.description}
                       </h3>
                     </div>
@@ -248,7 +248,7 @@ export default function HSLookupPage() {
                       <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider block">Classification Hierarchy</span>
                       
                       <div className="flex items-center gap-3 bg-gray-50/50 p-3 rounded-xl border border-gray-100">
-                        <div className="w-9 h-9 bg-green-50 rounded-lg flex items-center justify-center font-mono font-bold text-green-950 text-xs shrink-0">
+                        <div className="w-9 h-9 bg-green-50 rounded-lg flex items-center justify-center font-mono font-bold text-green-900 text-xs shrink-0">
                           Ch
                         </div>
                         <div>
@@ -260,7 +260,7 @@ export default function HSLookupPage() {
                       </div>
 
                       <div className="flex items-center gap-3 bg-gray-50/50 p-3 rounded-xl border border-gray-100">
-                        <div className="w-9 h-9 bg-green-50 rounded-lg flex items-center justify-center font-mono font-bold text-green-950 text-xs shrink-0">
+                        <div className="w-9 h-9 bg-green-50 rounded-lg flex items-center justify-center font-mono font-bold text-green-900 text-xs shrink-0">
                           Hd
                         </div>
                         <div>
@@ -272,7 +272,7 @@ export default function HSLookupPage() {
                       </div>
 
                       <div className="flex items-center gap-3 bg-gray-50/50 p-3 rounded-xl border border-gray-100">
-                        <div className="w-9 h-9 bg-green-50 rounded-lg flex items-center justify-center font-mono font-bold text-green-950 text-xs shrink-0">
+                        <div className="w-9 h-9 bg-green-50 rounded-lg flex items-center justify-center font-mono font-bold text-green-900 text-xs shrink-0">
                           Sub
                         </div>
                         <div>
@@ -317,7 +317,7 @@ export default function HSLookupPage() {
                   </div>
                 </div>
               ) : (
-                <div className="bg-gray-55/40 border border-dashed border-gray-250 rounded-3xl p-8 text-center space-y-4 sticky top-24">
+                <div className="bg-gray-50/40 border border-dashed border-gray-250 rounded-3xl p-8 text-center space-y-4 sticky top-24">
                   <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto shadow-sm">
                     <Info className="w-5 h-5 text-gray-400" />
                   </div>
@@ -333,49 +333,9 @@ export default function HSLookupPage() {
 
           </div>
 
-          {/* Zonos Classify AI integration highlights */}
-          <div className="bg-gray-50 rounded-3xl p-8 border border-gray-200 shadow-soft space-y-8">
-            <div className="text-center max-w-2xl mx-auto space-y-2">
-              <span className="text-[10px] font-bold text-green-900 bg-green-50 px-2 py-1 rounded-full uppercase tracking-wider">AI Classification Engine</span>
-              <h3 className="text-xl md:text-2xl font-display font-black text-gray-900">What sets our Classify engine apart</h3>
-              <p className="text-xs text-gray-500 leading-relaxed">
-                Powered by state-of-the-art machine learning, our classification engine processes thousands of products instantly with high customs compliance.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-soft space-y-2">
-                <span className="text-xs font-bold text-gray-900 block">AI Justifications</span>
-                <p className="text-[11px] text-gray-500 leading-relaxed">
-                  Generate a complete, customs-ready rationale for any classification—citing governing headings, WCO notes, and why alternatives were ruled out.
-                </p>
-              </div>
-
-              <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-soft space-y-2">
-                <span className="text-xs font-bold text-gray-900 block">Classify Ultra</span>
-                <p className="text-[11px] text-gray-500 leading-relaxed">
-                  Uses AI to enrich sparse product data (material, form, and intended use) before assigning a code, preventing misleading names from causing errors.
-                </p>
-              </div>
-
-              <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-soft space-y-2">
-                <span className="text-xs font-bold text-gray-900 block">Image & URL Lookup</span>
-                <p className="text-[11px] text-gray-500 leading-relaxed">
-                  Classify from a photo or a product page URL. Our system reads visual cues, descriptions, and specifications without manual data entry.
-                </p>
-              </div>
-
-              <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-soft space-y-2">
-                <span className="text-xs font-bold text-gray-900 block">Bulk Classification</span>
-                <p className="text-[11px] text-gray-500 leading-relaxed">
-                  Automate classification for your entire catalog at a speed of 50,000+ items per hour, supporting over 100 languages.
-                </p>
-              </div>
-            </div>
-          </div>
 
           {/* Bottom Call to Action Portal */}
-          <div className="bg-green-950 text-white rounded-3xl p-8 md:p-12 text-center relative overflow-hidden shadow-soft-xl">
+          <div className="bg-green-900 text-white rounded-3xl p-8 md:p-12 text-center relative overflow-hidden shadow-soft-xl">
             <div className="absolute top-0 left-0 w-64 h-64 bg-green-900 rounded-full blur-3xl opacity-20 -ml-20 -mt-20"></div>
             <h2 className="text-2xl md:text-3xl font-display font-bold mb-3 relative z-10">
               Need to Estimate Landed Costs?

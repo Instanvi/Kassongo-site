@@ -40,7 +40,7 @@ export default function HowItWorksSection() {
             <div className="w-full max-w-md aspect-square relative">
               <div className="absolute inset-0 flex items-center justify-center p-8">
                 <img
-                  src="/CheetahWorld.webp"
+                  src="/boxes-hero.svg"
                   alt={t("home.howItWorks.networkAlt")}
                   className="w-auto h-700 object-contain opacity-80"
                 />

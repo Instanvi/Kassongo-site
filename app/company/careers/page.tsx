@@ -143,7 +143,7 @@ export default function CareersPage() {
         </section>
         
         {/* CTA section */}
-        <section className="bg-green-950 text-white py-16 px-6 text-center relative overflow-hidden">
+        <section className="bg-green-900 text-white py-16 px-6 text-center relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-green-900 to-green-950"></div>
           <div className="max-w-2xl mx-auto relative z-10 space-y-6">
             <h2 className="text-3xl md:text-4xl font-display font-black">Don't see a matching role?</h2>

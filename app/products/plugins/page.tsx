@@ -32,10 +32,6 @@ export default function PluginsPage() {
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <div className="space-y-6">
-                <div className="inline-flex items-center gap-2 bg-green-905 text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide shadow-soft">
-                  <Puzzle className="w-3.5 h-3.5 text-yellow-400" />
-                  <span>Become a Partner</span>
-                </div>
                 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-black leading-[0.95] tracking-tight text-gray-900">
                   Become a<br />
@@ -89,7 +85,6 @@ export default function PluginsPage() {
         <section id="ecosystem" className="bg-gray-50 py-20 px-6 border-t border-gray-200">
           <div className="max-w-7xl mx-auto space-y-12">
             <div className="text-center max-w-2xl mx-auto space-y-3">
-              <span className="text-xs font-bold uppercase tracking-wider text-green-805 bg-green-50 px-3 py-1 rounded-full">Ecosystem</span>
               <h2 className="text-3xl md:text-4xl font-display font-black text-gray-900">A Preferred E-commerce Partner Ecosystem</h2>
               <p className="text-gray-500 text-sm leading-relaxed">
                 We bring together technology, carriers, and agencies to power shipping and compliance for leading retail brands.
@@ -218,22 +213,7 @@ export default function PluginsPage() {
             </div>
           </div>
         </section>
-        
-        {/* Referral Box */}
-        <section className="bg-white py-16 px-6">
-          <div className="max-w-4xl mx-auto bg-green-50/50 rounded-3xl p-8 border border-green-100 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 shadow-soft">
-            <div className="space-y-2">
-              <h3 className="text-lg font-bold text-gray-900">Have a Client for Kassongo?</h3>
-              <p className="text-xs text-gray-500 max-w-md">
-                Submit a client referral, and one of our dedicated partner managers will reach out to support their shipping and custom clearance setup.
-              </p>
-            </div>
-            <Button variant="primary" href="mailto:partnerships@kassongo.com" className="flex items-center gap-2 text-xs py-3">
-              <Mail className="w-4 h-4" />
-              <span>Submit Lead</span>
-            </Button>
-          </div>
-        </section>
+      
       </main>
 
       <Footer />

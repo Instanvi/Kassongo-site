@@ -70,7 +70,7 @@ export default function HeroSection() {
                 <div className="text-xs font-bold uppercase text-gray-500 tracking-wide">{t("home.hero.stats.carriers")}</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-display font-black text-green-800 mb-1">1M+</div>
+                <div className="text-3xl md:text-4xl font-display font-black text-green-800 mb-1">2k+</div>
                 <div className="text-xs font-bold uppercase text-gray-500 tracking-wide">{t("home.hero.stats.members")}</div>
               </div>
             </div>

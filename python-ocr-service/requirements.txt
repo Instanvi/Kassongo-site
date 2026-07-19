@@ -1,0 +1,16 @@
+# Python OCR Service Dependencies
+
+# FastAPI and server
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20
+
+# OCR and Image Processing
+pytesseract==0.3.13
+Pillow==11.1.0
+opencv-python==4.10.0.84
+numpy==2.2.3
+PyMuPDF==1.25.2
+
+# Utilities
+python-dateutil==2.9.0.post0

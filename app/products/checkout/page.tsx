@@ -17,6 +17,7 @@ import {
 import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
 import Button from "../../../components/Button";
+import PartnerMarquee from "@/components/home/sections/PartnerMarquee";
 
 export default function CheckoutPage() {
   return (
@@ -30,12 +31,7 @@ export default function CheckoutPage() {
           
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              <div className="space-y-6">
-                <div className="inline-flex items-center gap-2 bg-green-900 text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide shadow-soft">
-                  <Sparkles className="w-3.5 h-3.5 text-yellow-400" />
-                  <span>Kassongo Checkout Solution</span>
-                </div>
-                
+              <div className="space-y-6">              
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-black leading-[0.95] tracking-tight text-gray-900">
                   Sell more, stress less with a <span className="text-green-800">global checkout.</span>
                 </h1>
@@ -45,12 +41,12 @@ export default function CheckoutPage() {
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 pt-2">
-                  <Button variant="primary" size="lg" href="/contact" className="shadow-soft-lg transition-all">
-                    <span>Book a demo</span>
+                  <Button variant="primary" size="lg" href="/tools/duty-calculator" className="shadow-soft-lg transition-all">
+                    <span>Try duty calculator</span>
                     <ArrowRight className="w-4 h-4" />
                   </Button>
-                  <Button variant="secondary" size="lg" href="/tools/duty-calculator">
-                    Try duty calculator
+                  <Button variant="secondary" size="lg" href="/contact">
+                    Book a demo
                   </Button>
                 </div>
               </div>
@@ -93,7 +89,7 @@ export default function CheckoutPage() {
                     <div className="space-y-2 border-t border-white/10 pt-4 text-sm text-green-100">
                       <div className="flex justify-between">
                         <span>Cart Total</span>
-                        <span>$120.00</span>
+                        <span>$120</span>
                       </div>
                       <div className="flex justify-between text-yellow-400 font-semibold">
                         <span>Duties & Taxes (Cameroon CEMAC)</span>
@@ -111,25 +107,12 @@ export default function CheckoutPage() {
           </div>
         </section>
 
-        {/* Brand Banner */}
-        <section className="bg-gray-50 py-10 px-6 border-y border-gray-150">
-          <div className="max-w-7xl mx-auto text-center space-y-4">
-            <p className="text-xs font-bold uppercase tracking-wider text-gray-400">Trusted by Global Brands</p>
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all">
-              <span className="font-display font-black text-xl text-gray-800">Traxxas</span>
-              <span className="font-display font-black text-xl text-gray-800">LMC Truck</span>
-              <span className="font-display font-black text-xl text-gray-800">Origin</span>
-              <span className="font-display font-black text-xl text-gray-800">Galco</span>
-              <span className="font-display font-black text-xl text-gray-800">Marco</span>
-            </div>
-          </div>
-        </section>
+                <PartnerMarquee />
 
         {/* Why Choose Checkout Features */}
         <section className="bg-white py-20 px-6">
           <div className="max-w-7xl mx-auto space-y-16">
             <div className="text-center max-w-3xl mx-auto space-y-4">
-              <span className="text-xs font-bold uppercase tracking-wider text-green-800 bg-green-50 px-3 py-1 rounded-full">Checkout features</span>
               <h2 className="text-3xl md:text-5xl font-display font-black text-gray-900 tracking-tight">Why merchants choose Checkout</h2>
               <p className="text-gray-500 text-sm md:text-base leading-relaxed">
                 Checkout was built to solve international ecommerce challenges, where trust is hard to earn. From the first moment a shopper lands on your site to the moment their order arrives, every part of our system works together to create a localized, low-friction experience while keeping you in control.
@@ -206,25 +189,12 @@ export default function CheckoutPage() {
           </div>
         </section>
 
-        {/* Quote section */}
-        <section className="bg-gray-50 py-20 px-6 border-t border-gray-105">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
-            <p className="text-xl md:text-2xl font-display font-medium text-gray-800 leading-relaxed italic">
-              "Sales have grown, and our warehouse and manual processes have been drastically reduced. Additionally, we don't receive nearly as many customer service emails or calls complaining about where a package is. Zonos has lowered the cost of manual processes."
-            </p>
-            <div className="flex flex-col items-center gap-1">
-              <span className="font-bold text-gray-900 text-sm">Galco Industrial Electronics</span>
-              <span className="text-xs text-gray-400">E-commerce Division</span>
-            </div>
-          </div>
-        </section>
-        
         {/* Simple tech stack section */}
         <section className="bg-white py-20 px-6">
           <div className="max-w-4xl mx-auto text-center space-y-12">
             <h2 className="text-2xl md:text-3xl font-display font-black text-gray-900">Simplify your tech stack</h2>
             <p className="text-sm text-gray-500 max-w-2xl mx-auto leading-relaxed">
-              Zonos eliminates multi-app complexity by consolidating a localized checkout experience, international payment processing, fraud screening, tax compliance, shipping label creation, and commercial invoice management into one streamlined product.
+              Kassongo eliminates multi-app complexity by consolidating a localized checkout experience, international payment processing, fraud screening, tax compliance, shipping label creation, and commercial invoice management into one streamlined product.
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs font-bold text-gray-700">
               <div className="p-4 border border-gray-100 rounded-2xl shadow-soft">International Payments</div>
@@ -234,22 +204,7 @@ export default function CheckoutPage() {
             </div>
           </div>
         </section>
-        
-        {/* CTA section */}
-        <section className="bg-green-950 text-white py-16 px-6 text-center relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-green-900 to-green-950"></div>
-          <div className="max-w-2xl mx-auto relative z-10 space-y-6">
-            <h2 className="text-3xl md:text-4xl font-display font-black">Control your international experience</h2>
-            <p className="text-green-200/80 text-sm md:text-base leading-relaxed">
-              Activate Kassongo Checkout to expand your brand to new markets safely with localized payments and guaranteed customs calculations.
-            </p>
-            <div className="pt-2">
-              <Button variant="secondary" size="lg" href="/contact" className="mx-auto shadow-lg">
-                Book a demo
-              </Button>
-            </div>
-          </div>
-        </section>
+
       </main>
 
       <Footer />
