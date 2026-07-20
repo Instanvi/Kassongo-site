@@ -28,7 +28,7 @@ export default function HowItWorksSection() {
   ];
 
   return (
-    <section id="how-it-works" className="py-20 px-6 md:px-12 bg-white">
+    <section id="how-it-works" className="py-10 px-6 md:px-12 bg-white">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight mb-16 text-center text-gray-900">
           {t("home.howItWorks.title")}
@@ -38,11 +38,11 @@ export default function HowItWorksSection() {
           {/* Left: Cheetah World Graphic */}
           <div className="relative flex items-center justify-center">
             <div className="w-full max-w-md aspect-square relative">
-              <div className="absolute inset-0 flex items-center justify-center p-8">
+              <div className="absolute inset-0 flex items-center justify-center">
                 <img
-                  src="/boxes-hero.svg"
+                  src="/boxes-logo.svg"
                   alt={t("home.howItWorks.networkAlt")}
-                  className="w-auto h-700 object-contain opacity-80"
+                  className="w-auto h-200 object-contain opacity-80"
                 />
               </div>
             </div>

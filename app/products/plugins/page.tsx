@@ -33,9 +33,9 @@ const caseStudies = [
   {
     partner: "DHL",
     logo: "/DHL-Logo.wine.svg",
-    logoH: "h-10",
+    logoH: "h-8",
     desc: "DHL Express integrated Kassongo's real-time duty estimation API into their cross-border e-commerce platform. This allows DHL customers to see accurate landed costs upfront — including customs duties, VAT, and handling fees — before checkout, reducing cart abandonment and improving delivery predictability across 220+ countries.",
-    metric: "50+ countries covered",
+    metric: "220+ countries covered",
     category: "Carrier Partner",
   },
   {
@@ -51,7 +51,7 @@ const caseStudies = [
     logo: "/brandbird-alibaba-logotype.svg",
     logoH: "h-5",
     desc: "Alibaba.com integrated Kassongo's HS code classification and duty calculator into their B2B trade platform. This partnership helps Alibaba's 200,000+ suppliers provide instant, accurate import duty quotes to global buyers — eliminating pricing surprises and accelerating purchase decisions for wholesale cross-border transactions.",
-    metric: "1K+ suppliers enabled",
+    metric: "200K+ suppliers enabled",
     category: "Technology Partner",
   },
   {
@@ -62,6 +62,14 @@ const caseStudies = [
     metric: "99.2% customs clearance rate",
     category: "Carrier Partner",
   },
+];
+
+// E-commerce integration cards with logos
+const integrations = [
+  { name: "Shopify", desc: "1-Click App installation", status: "Certified App", logo: "/shopify.svg", logoH: "h-5" },
+  { name: "WooCommerce", desc: "WordPress extension", status: "Active Plugin", logo: "/woo.svg", logoH: "h-5" },
+  { name: "Wix Commerce", desc: "Site app store integration", status: "Active Plugin", logo: "/wix.svg", logoH: "h-5" },
+  { name: "Custom API", desc: "REST & GraphQL protocols", status: "Developer Ready", logo: "/api.svg", logoH: "h-5" },
 ];
 
 export default function PluginsPage() {
@@ -148,13 +156,19 @@ export default function PluginsPage() {
                   <h3 className="font-display font-black text-lg text-gray-950">E-commerce Integrations</h3>
 
                   <div className="grid grid-cols-2 gap-4">
-                    {[
-                      { name: "Shopify", desc: "1-Click App installation", status: "Certified App" },
-                      { name: "WooCommerce", desc: "WordPress extension", status: "Active Plugin" },
-                      { name: "Wix Commerce", desc: "Site app store integration", status: "Active Plugin" },
-                      { name: "Custom API", desc: "REST & GraphQL protocols", status: "Developer Ready" },
-                    ].map((plugin) => (
-                      <div key={plugin.name} className="bg-white rounded-2xl p-4 border border-gray-100 shadow-soft flex flex-col justify-between h-28">
+                    {integrations.map((plugin) => (
+                      <div key={plugin.name} className="bg-white rounded-2xl p-4 border border-gray-100 shadow-soft flex flex-col justify-between h-32">
+                        <div className="flex items-center justify-between">
+                          <img
+                            src={plugin.logo}
+                            alt={plugin.name}
+                            className={`${plugin.logoH} w-auto object-contain`}
+                            onError={(e) => {
+                              // Fallback if logo doesn't load
+                              (e.target as HTMLImageElement).style.display = "none";
+                            }}
+                          />
+                        </div>
                         <div>
                           <p className="text-sm font-bold text-gray-950">{plugin.name}</p>
                           <p className="text-[10px] text-gray-400 mt-1 leading-snug">{plugin.desc}</p>
@@ -173,26 +187,17 @@ export default function PluginsPage() {
 
         {/* ===== JOIN PARTNERS APPLICATION FORM ===== */}
         <section id="apply" className="relative py-20 md:py-28 px-6 overflow-hidden">
+          {/* Solid dark gradient background — NO image */}
           <div className="absolute inset-0 bg-gradient-to-br from-green-950 via-gray-900 to-green-950"></div>
-
-          {/* Animated smoke layer */}
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="smoke-blob smoke-blob-1"></div>
-            <div className="smoke-blob smoke-blob-2"></div>
-            <div className="smoke-blob smoke-blob-3"></div>
-          </div>
-
-          {/* Static radial highlight, kept on top of the smoke for a crisp focal point */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(36,150,63,0.15),_transparent_50%)]"></div>
 
-          {/* subtle grain so the blur doesn't look plasticky */}
-          <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay" style={{
-            backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")"
-          }}></div>
-          
           <div className="max-w-3xl mx-auto relative z-10">
             {/* Header */}
             <div className="text-center mb-10">
+              <div className="inline-flex items-center gap-2 bg-green-600/20 border border-green-500/30 rounded-full px-4 py-1.5 mb-4">
+                <Building2 className="w-4 h-4 text-green-400" />
+                <span className="text-xs font-bold text-green-400 uppercase tracking-wider">Partner Application</span>
+              </div>
               <h2 className="text-3xl md:text-4xl font-display font-black text-white tracking-tight mb-3">
                 Apply to Join Our Partner Network
               </h2>
@@ -507,10 +512,14 @@ export default function PluginsPage() {
           </div>
         </section>
 
-        {/* Partner Case Studies */}
+        {/* ===== REAL PARTNER CASE STUDIES ===== */}
         <section className="bg-gray-50 py-20 px-6 border-t border-gray-200">
           <div className="max-w-7xl mx-auto space-y-12">
             <div className="text-center max-w-2xl mx-auto space-y-3">
+              <div className="inline-flex items-center gap-2 bg-green-50 border border-green-100 rounded-full px-4 py-1.5 mb-2">
+                <CheckCircle2 className="w-3.5 h-3.5 text-green-600" />
+                <span className="text-[10px] font-bold text-green-700 uppercase tracking-wider">Success Stories</span>
+              </div>
               <h2 className="text-2xl md:text-3xl font-display font-black text-gray-900">Partner Case Studies</h2>
               <p className="text-gray-500 text-sm leading-relaxed">
                 See how leading global brands have grown with Kassongo's partner ecosystem.

@@ -177,7 +177,7 @@ export default function AboutPage() {
                             </div>
                             <div className="text-center">
                                 <div className="text-3xl md:text-4xl font-display font-black text-yellow-400 mb-1">
-                                    1M+
+                                    2k+
                                 </div>
                                 <div className="text-xs font-bold uppercase text-white/70 tracking-wide">
                                     {t("about.stats.members")}

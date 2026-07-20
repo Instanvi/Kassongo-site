@@ -47,7 +47,7 @@ export default function ToolsPortalPage() {
                   <Calculator className="w-7 h-7" />
                 </div>
                 <div>
-                  <h2 className="text-2xl font-display font-bold text-gray-950 mb-3">
+                  <h2 className="text-2xl font-display font-bold text-gray-900 mb-3">
                     {t("common.dutyCalculator")}
                   </h2>
                   <p className="text-gray-600 leading-relaxed text-sm">
@@ -88,7 +88,7 @@ export default function ToolsPortalPage() {
                   <BookOpen className="w-7 h-7" />
                 </div>
                 <div>
-                  <h2 className="text-2xl font-display font-bold text-gray-950 mb-3">
+                  <h2 className="text-2xl font-display font-bold text-gray-900 mb-3">
                     {t("common.hsLookup")}
                   </h2>
                   <p className="text-gray-600 leading-relaxed text-sm">
@@ -125,7 +125,7 @@ export default function ToolsPortalPage() {
 
         {/* CTA Help */}
         <section className="py-16 px-6 max-w-5xl mx-auto">
-          <div className="bg-green-950 text-white rounded-3xl p-8 md:p-12 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 shadow-soft-xl">
+          <div className="bg-green-900 text-white rounded-3xl p-8 md:p-12 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 shadow-soft-xl">
             <div className="absolute top-0 right-0 w-64 h-64 bg-green-900 rounded-full blur-3xl opacity-30 -mr-20 -mt-20"></div>
             <div className="space-y-4 max-w-xl text-center md:text-left relative z-10">
               <h3 className="text-2xl md:text-3xl font-display font-bold">
