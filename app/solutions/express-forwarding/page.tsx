@@ -1,12 +1,8 @@
 "use client";
 
-import React from "react";
 import { 
-  Truck, 
   Plane, 
-  MapPin, 
   ArrowRight,
-  Sparkles, 
   Clock,
   CheckCircle2,
   Navigation
@@ -14,8 +10,39 @@ import {
 import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
 import Button from "../../../components/Button";
+import NetworkCountriesGrid from "../../../components/network/NetworkCountriesGrid";
+import FAQComponent from "@/components/FAQComponent";
+import TestimonialSlider from "@/components/TestimonialSlider";
 
 export default function ExpressForwardingPage() {
+
+  const faqs = [
+    {
+      question: "What's the difference between air and ocean freight?",
+      answer: "Air freight is faster (3-6 days) but more expensive per kg. Ocean freight is economical for larger shipments but takes 28-40 days. We help you choose based on urgency and budget.",
+    },
+    {
+      question: "Do you handle customs clearance?",
+      answer: "Yes, our express forwarding service includes complete customs documentation, clearance, and port delivery. We prepare all required paperwork and coordinate with customs authorities.",
+    },
+    {
+      question: "Can I track my shipment in real-time?",
+      answer: "Absolutely. You'll receive GPS tracking updates at every stage: departure, customs clearance, and final delivery. Access tracking through your dashboard or mobile app.",
+    },
+    {
+      question: "What items can be shipped via express forwarding?",
+      answer: "We handle most commercial goods including electronics, machinery, consumer products, and industrial equipment. Prohibited items include hazardous materials, weapons, and restricted pharmaceuticals.",
+    },
+    {
+      question: "How are shipping costs calculated?",
+      answer: "Costs depend on weight, volume, origin, destination, and transport mode (air/ocean). We provide transparent quotes upfront with no hidden fees. Volume discounts apply for regular shippers.",
+    },
+    {
+      question: "What happens if my shipment is delayed?",
+      answer: "We proactively monitor all shipments and notify you immediately of any delays. Our team works with carriers to resolve issues quickly and keep you informed throughout the process.",
+    },
+  ];
+
   return (
     <div className="flex flex-col min-h-screen bg-white text-gray-900 font-sans antialiased overflow-x-hidden selection:bg-green-100 selection:text-gray-900">
       <Header />
@@ -166,6 +193,18 @@ export default function ExpressForwardingPage() {
             </div>
           </div>
         </section>
+
+        {/* Testimonials Section */}
+        <TestimonialSlider />
+
+        {/* FAQ Section */}
+        <FAQComponent
+          title="Express Forwarding FAQs"
+          subtitle="Common questions about our air and ocean freight services"
+          faqs={faqs}
+        />
+
+        <NetworkCountriesGrid />
       </main>
 
       <Footer />

@@ -15,8 +15,37 @@ import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
 import Button from "../../../components/Button";
 import PartnerMarquee from "@/components/home/sections/PartnerMarquee";
+import FAQComponent from "@/components/FAQComponent";
+import TestimonialSlider from "@/components/TestimonialSlider";
 
 export default function AssistedSourcingPage() {
+  const faqs = [
+    {
+      question: "How does the escrow payment system work?",
+      answer: "You transfer funds to Kassongo's secure escrow account. We hold the payment until our inspectors verify product quality at the factory. Only then do we release funds to the supplier. If quality fails, you get a full refund.",
+    },
+    {
+      question: "What kind of products can you source?",
+      answer: "We specialize in electronics, machinery, consumer goods, and industrial equipment from China, Turkey, and Europe. We handle both bulk orders and sample procurement.",
+    },
+    {
+      question: "How long does the sourcing process take?",
+      answer: "Sample procurement takes 2-3 weeks. Bulk orders with inspection take 4-6 weeks from order placement to port delivery. Rush orders can be arranged for an additional fee.",
+    },
+    {
+      question: "What's included in a factory inspection?",
+      answer: "Our inspectors verify product specifications, conduct functional tests, check packaging quality, count carton quantities, and document the loading process with photos and video.",
+    },
+    {
+      question: "Do you handle customs clearance?",
+      answer: "Yes. Goods are delivered to our consolidation center where we handle all customs documentation, clearance, and final delivery to your location.",
+    },
+    {
+      question: "What if I'm not satisfied with the supplier quotes?",
+      answer: "There's no commitment until you approve a quote. We typically present 3-5 verified supplier options with competitive pricing so you can choose the best fit.",
+    },
+  ];
+
   return (
     <div className="flex flex-col min-h-screen bg-white text-gray-900 font-sans antialiased overflow-x-hidden selection:bg-green-100 selection:text-gray-900">
       <Header />
@@ -149,6 +178,16 @@ export default function AssistedSourcingPage() {
             </div>
           </div>
         </section>
+
+        {/* Testimonials Section */}
+        <TestimonialSlider />
+
+        {/* FAQ Section */}
+        <FAQComponent
+          title="Assisted Sourcing FAQs"
+          subtitle="Common questions about our supplier verification and procurement services"
+          faqs={faqs}
+        />
       </main>
 
       <Footer />

@@ -18,8 +18,39 @@ import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
 import Button from "../../../components/Button";
 import PartnerMarquee from "@/components/home/sections/PartnerMarquee";
+import FAQComponent from "@/components/FAQComponent";
+import TestimonialSlider from "@/components/TestimonialSlider";
+import NetworkCountriesGrid from "../../../components/network/NetworkCountriesGrid";
 
 export default function CheckoutPage() {
+
+  const faqs = [
+    {
+      question: "How does the duty and tax calculation work?",
+      answer: "Our system automatically calculates duties and taxes based on the destination country, product category (HS codes), and order value. We guarantee the quoted amount—if customs charges more, we cover the difference.",
+    },
+    {
+      question: "Which payment methods are supported?",
+      answer: "We support Mobile Money (MTN, Orange, Airtel), local bank cards, international credit/debit cards, and digital wallets. Payment options are automatically filtered based on the customer's location.",
+    },
+    {
+      question: "Can I use my existing shipping carriers?",
+      answer: "Yes! Kassongo Checkout integrates with your preferred carriers and respects your negotiated rates. We simply provide the technology to calculate accurate international shipping costs.",
+    },
+    {
+      question: "How do you handle fraud protection?",
+      answer: "We use machine learning models trained on international transaction data to flag high-risk orders. Our fraud guarantee covers approved transactions—if a fraudulent order passes our screening, we cover the loss.",
+    },
+    {
+      question: "What happens if a restricted item is in the cart?",
+      answer: "Our system scans product data at checkout and automatically identifies items restricted in the destination country. We notify customers and remove those items, allowing them to complete their purchase with compliant products.",
+    },
+    {
+      question: "How long does integration take?",
+      answer: "Most Shopify and WooCommerce stores are live within 2-3 days. Custom integrations via our API typically take 1-2 weeks depending on your tech stack.",
+    },
+  ];
+
   return (
     <div className="flex flex-col min-h-screen bg-white text-gray-900 font-sans antialiased overflow-x-hidden selection:bg-green-100 selection:text-gray-900">
       <Header />
@@ -204,6 +235,19 @@ export default function CheckoutPage() {
             </div>
           </div>
         </section>
+
+        {/* Testimonials Section */}
+        <TestimonialSlider />
+
+        {/* FAQ Section */}
+        <FAQComponent
+          title="Checkout FAQs"
+          subtitle="Common questions about our international checkout solution"
+          faqs={faqs}
+        />
+
+        {/* Network Countries Grid */}
+        <NetworkCountriesGrid />
 
       </main>
 

@@ -1,192 +1,232 @@
 "use client";
 
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export interface DropdownItem {
   label: string;
   href: string;
+  description?: string;
   icon?: React.ReactNode;
+  colorBg?: string;
+  hoverBorder?: string;
 }
 
-interface DropdownMenuProps {
-  trigger: React.ReactNode;
-  items: DropdownItem[];
-  align?: "left" | "right";
-  isOpen: boolean;
-  onOpen: () => void;
-  onClose: () => void;
+export interface NavSection {
+  id: string;
+  label: string;
+  href?: string;
+  items?: DropdownItem[];
 }
 
-export default function DropdownMenu({ trigger, items, align = "left", isOpen, onOpen, onClose }: DropdownMenuProps) {
-  const [activeIndex, setActiveIndex] = useState(-1);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const triggerRef = useRef<HTMLButtonElement>(null);
-  const itemsRef = useRef<(HTMLAnchorElement | null)[]>([]);
-  const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const justNavigated = useRef(false);
+interface StripeNavMenuProps {
+  sections: NavSection[];
+}
 
-  const scheduleClose = useCallback(() => {
-    if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
-    closeTimeoutRef.current = setTimeout(() => {
-      onClose();
-      setActiveIndex(-1);
-    }, 200);
-  }, [onClose]);
+export default function StripeNavMenu({ sections }: StripeNavMenuProps) {
+  const [activeTab, setActiveTab] = useState<string | null>(null);
+  const [prevTab, setPrevTab] = useState<string | null>(null);
+  const [leftOffset, setLeftOffset] = useState<number>(0);
+  const navRef = useRef<HTMLDivElement>(null);
+  const buttonRefs = useRef<{ [key: string]: HTMLElement | null }>({});
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  const cancelClose = useCallback(() => {
-    if (closeTimeoutRef.current) {
-      clearTimeout(closeTimeoutRef.current);
-      closeTimeoutRef.current = null;
+  const activeIndex = sections.findIndex((s) => s.id === activeTab);
+  const prevIndex = sections.findIndex((s) => s.id === prevTab);
+  const direction = activeIndex >= prevIndex ? 1 : -1;
+
+  const handleMouseEnter = (id: string) => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    if (activeTab !== id) {
+      setPrevTab(activeTab);
+      setActiveTab(id);
     }
-  }, []);
-
-  // Close on click outside
-  useEffect(() => {
-    function handleClickOutside(e: MouseEvent) {
-      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
-        onClose();
-        setActiveIndex(-1);
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [onClose]);
-
-  // Keyboard navigation
-  useEffect(() => {
-    if (!isOpen) return;
-    function handleKeyDown(e: KeyboardEvent) {
-      switch (e.key) {
-        case "Escape":
-          onClose();
-          setActiveIndex(-1);
-          triggerRef.current?.focus();
-          break;
-        case "ArrowDown":
-          e.preventDefault();
-          setActiveIndex((prev) => {
-            const next = prev < items.length - 1 ? prev + 1 : 0;
-            itemsRef.current[next]?.focus();
-            return next;
-          });
-          break;
-        case "ArrowUp":
-          e.preventDefault();
-          setActiveIndex((prev) => {
-            const next = prev > 0 ? prev - 1 : items.length - 1;
-            itemsRef.current[next]?.focus();
-            return next;
-          });
-          break;
-        case "Home":
-          e.preventDefault();
-          setActiveIndex(0);
-          itemsRef.current[0]?.focus();
-          break;
-        case "End":
-          e.preventDefault();
-          setActiveIndex(items.length - 1);
-          itemsRef.current[items.length - 1]?.focus();
-          break;
-      }
-    }
-    document.addEventListener("keydown", handleKeyDown);
-    return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [isOpen, items.length, onClose]);
-
-  // Handle item click - let browser navigate first, then close dropdown
-  const handleItemClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    // Don't prevent default - let the browser navigate
-    // Just mark that we navigated so mouseleave doesn't interfere
-    justNavigated.current = true;
-    cancelClose();
-
-    // Close dropdown after a small delay to let navigation start
-    setTimeout(() => {
-      onClose();
-      setActiveIndex(-1);
-      justNavigated.current = false;
-    }, 50);
   };
 
-  // Toggle on trigger click
-  const handleTriggerClick = () => {
-    if (isOpen) {
-      onClose();
-      setActiveIndex(-1);
-    } else {
-      onOpen();
+  const handleMouseLeave = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => {
+      setPrevTab(activeTab);
+      setActiveTab(null);
+    }, 200);
+  };
+
+  useEffect(() => {
+    if (activeTab && buttonRefs.current[activeTab] && navRef.current) {
+      const navRect = navRef.current.getBoundingClientRect();
+      const btnRect = buttonRefs.current[activeTab]!.getBoundingClientRect();
+      const center = btnRect.left - navRect.left + btnRect.width / 2;
+      setLeftOffset(center);
     }
+  }, [activeTab]);
+
+  const activeSection = sections.find((s) => s.id === activeTab && s.items && s.items.length > 0);
+
+  const contentVariants = {
+    enter: (dir: number) => ({
+      x: dir > 0 ? 24 : -24,
+      opacity: 0,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+    },
+    exit: (dir: number) => ({
+      x: dir > 0 ? -24 : 24,
+      opacity: 0,
+    }),
   };
 
   return (
-    <div ref={containerRef} className="relative">
-      <button
-        ref={triggerRef}
-        type="button"
-        onClick={handleTriggerClick}
-        onMouseEnter={() => { cancelClose(); onOpen(); }}
-        onMouseLeave={scheduleClose}
-        aria-expanded={isOpen}
-        aria-haspopup="menu"
-        className={`flex items-center gap-1.5 text-sm font-medium transition-all py-2 px-3 rounded-xl cursor-pointer bg-transparent border-none outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 ${
-          isOpen ? "text-green-800 bg-green-50/60" : "text-gray-600 hover:text-gray-900 hover:bg-gray-50/60"
-        }`}
-      >
-        {trigger}
-        <ChevronDown
-          className={`w-3.5 h-3.5 text-gray-400 transition-transform duration-300 ease-out ${isOpen ? "rotate-180" : ""}`}
-        />
-      </button>
+    <div
+      ref={navRef}
+      className="relative flex items-center gap-1.5"
+      onMouseLeave={handleMouseLeave}
+    >
+      {/* Nav Tab Buttons */}
+      {sections.map((section) => {
+        const isSelected = activeTab === section.id;
+        const hasItems = section.items && section.items.length > 0;
 
-      {/* Dropdown Panel - use visibility instead of pointer-events to avoid blocking clicks */}
-      <div
-        onMouseEnter={cancelClose}
-        onMouseLeave={() => {
-          if (!justNavigated.current) {
-            scheduleClose();
-          }
-        }}
-        className={`absolute top-full mt-2 w-64 bg-white rounded-2xl border border-gray-100 shadow-soft-xl z-50 overflow-hidden transition-all duration-200 ease-out origin-top ${
-          align === "right" ? "right-0" : "left-0"
-        } ${
-          isOpen
-            ? "opacity-100 translate-y-0 scale-100 visible"
-            : "opacity-0 -translate-y-2 scale-[0.98] invisible"
-        }`}
-        role="menu"
-        aria-orientation="vertical"
-      >
-        <div className="p-2">
-          {items.map((item, idx) => (
+        if (!hasItems && section.href) {
+          return (
             <a
-              key={item.href}
-              ref={(el) => { itemsRef.current[idx] = el; }}
-              href={item.href}
-              role="menuitem"
-              tabIndex={isOpen ? 0 : -1}
-              onClick={handleItemClick}
-              onMouseEnter={() => setActiveIndex(idx)}
-              style={{ transitionDelay: isOpen ? `${idx * 30}ms` : "0ms" }}
-              className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm transition-all duration-150 ${
-                activeIndex === idx
-                  ? "bg-green-50 text-green-900 translate-x-0.5"
-                  : "text-gray-700 hover:bg-gray-50 hover:text-gray-900"
-              } ${
-                isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1"
-              }`}
+              key={section.id}
+              ref={(el) => { buttonRefs.current[section.id] = el; }}
+              href={section.href}
+              onMouseEnter={() => handleMouseEnter(section.id)}
+              className="relative px-3.5 py-2 text-sm font-semibold text-gray-600 hover:text-gray-900 transition-colors rounded-xl flex items-center gap-1 cursor-pointer"
             >
-              {item.icon && (
-                <span className={`shrink-0 transition-colors duration-150 ${activeIndex === idx ? "text-green-600" : "text-gray-400"}`}>
-                  {item.icon}
-                </span>
+              {isSelected && (
+                <motion.div
+                  layoutId="stripe-hover-pill"
+                  className="absolute inset-0 bg-gradient-to-r from-emerald-50 via-teal-50 to-emerald-50 border border-emerald-200/60 rounded-xl -z-10 shadow-xs"
+                  transition={{ type: "spring", stiffness: 450, damping: 35 }}
+                />
               )}
-              <span className="font-semibold truncate">{item.label}</span>
+              <span>{section.label}</span>
             </a>
-          ))}
-        </div>
-      </div>
+          );
+        }
+
+        return (
+          <button
+            key={section.id}
+            ref={(el) => { buttonRefs.current[section.id] = el; }}
+            type="button"
+            onMouseEnter={() => handleMouseEnter(section.id)}
+            onClick={() => {
+              if (activeTab === section.id) setActiveTab(null);
+              else handleMouseEnter(section.id);
+            }}
+            className={`relative px-3.5 py-2 text-sm font-semibold transition-colors rounded-xl flex items-center gap-1.5 cursor-pointer border-none bg-transparent outline-none ${
+              isSelected ? "text-emerald-950 font-bold" : "text-gray-600 hover:text-gray-900"
+            }`}
+          >
+            {isSelected && (
+              <motion.div
+                layoutId="stripe-hover-pill"
+                className="absolute inset-0 bg-gradient-to-r from-emerald-50 via-green-50 to-teal-50 border border-emerald-200/70 rounded-xl -z-10 shadow-xs"
+                transition={{ type: "spring", stiffness: 450, damping: 35 }}
+              />
+            )}
+            <span>{section.label}</span>
+            <ChevronDown
+              className={`w-3.5 h-3.5 text-gray-400 transition-transform duration-200 ${
+                isSelected ? "rotate-180 text-emerald-700" : ""
+              }`}
+            />
+          </button>
+        );
+      })}
+
+      {/* Single Persistent Morphing Dropdown Panel */}
+      <AnimatePresence>
+        {activeSection && (
+          <motion.div
+            initial={{ opacity: 0, y: 10, scale: 0.96 }}
+            animate={{ opacity: 1, y: 0, scale: 1, left: leftOffset }}
+            exit={{ opacity: 0, y: 8, scale: 0.96 }}
+            transition={{
+              left: { type: "spring", stiffness: 400, damping: 35 },
+              opacity: { duration: 0.15 },
+              y: { duration: 0.15 },
+              scale: { duration: 0.15 },
+            }}
+            onMouseEnter={() => {
+              if (timeoutRef.current) clearTimeout(timeoutRef.current);
+            }}
+            onMouseLeave={handleMouseLeave}
+            className="absolute top-full mt-2.5 z-50 origin-top -translate-x-1/2 pointer-events-auto"
+          >
+            {/* Floating Card Container with Dynamic Colors */}
+            <motion.div
+              layout
+              transition={{
+                layout: { type: "spring", stiffness: 400, damping: 35 },
+              }}
+              className="relative bg-white/95 backdrop-blur-2xl border border-gray-200/90 rounded-2xl shadow-soft-2xl ring-1 ring-black/5 overflow-hidden p-3 min-w-[320px] max-w-[440px]"
+            >
+              {/* Top Pointer Arrow */}
+              <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3.5 h-3.5 bg-white rotate-45 border-l border-t border-gray-200/90 shadow-xs z-20" />
+
+              {/* Inner Tab Items */}
+              <AnimatePresence custom={direction} mode="popLayout">
+                <motion.div
+                  key={activeSection.id}
+                  custom={direction}
+                  variants={contentVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{ duration: 0.18, ease: "easeOut" }}
+                  className="grid gap-1.5"
+                >
+                  {activeSection.items?.map((item) => (
+                    <a
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setActiveTab(null)}
+                      className={`group flex items-center gap-3.5 p-2.5 rounded-xl transition-all duration-200 text-left cursor-pointer border border-transparent ${
+                        item.hoverBorder || "hover:border-gray-200/60 hover:bg-gray-50/70"
+                      }`}
+                    >
+                      {item.icon && (
+                        <div
+                          className={`p-2.5 rounded-xl transition-all duration-200 shrink-0 shadow-xs ${
+                            item.colorBg || "bg-emerald-100/70 text-emerald-700 group-hover:bg-emerald-600 group-hover:text-white"
+                          }`}
+                        >
+                          {item.icon}
+                        </div>
+                      )}
+                      <span className="text-sm font-semibold text-gray-800 group-hover:text-gray-950 transition-colors truncate">
+                        {item.label}
+                      </span>
+                    </a>
+                  ))}
+                </motion.div>
+              </AnimatePresence>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
+  );
+}
+
+// Fallback DropdownMenu export
+export function DropdownMenu({ trigger, items }: any) {
+  return (
+    <StripeNavMenu
+      sections={[
+        {
+          id: "default",
+          label: typeof trigger === "string" ? trigger : "Menu",
+          items: items,
+        },
+      ]}
+    />
   );
 }

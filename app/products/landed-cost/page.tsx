@@ -16,8 +16,35 @@ import {
 import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
 import Button from "../../../components/Button";
+import FAQComponent from "@/components/FAQComponent";
+import TestimonialSlider from "@/components/TestimonialSlider";
+import NetworkCountriesGrid from "../../../components/network/NetworkCountriesGrid";
 
 export default function LandedCostPage() {
+
+  const faqs = [
+    {
+      question: "What is a landed cost guarantee?",
+      answer: "When we calculate duties and taxes at checkout, we guarantee that amount. If customs charges more than we quoted, Kassongo pays the difference—you never absorb unexpected fees.",
+    },
+    {
+      question: "How accurate are your HS code classifications?",
+      answer: "We use a combination of AI and human customs experts to classify products. Our classification accuracy rate is 99.4%, and any misclassification is covered by our guarantee.",
+    },
+    {
+      question: "Do you support de minimis thresholds?",
+      answer: "Yes, our engine automatically applies de minimis rules (duty-free thresholds) for every country. For example, shipments under $800 to the USA are automatically marked as duty-free.",
+    },
+    {
+      question: "Can I use landed cost without your checkout product?",
+      answer: "Absolutely. Landed Cost is available as a standalone API that can be integrated into any e-commerce platform or custom application.",
+    },
+    {
+      question: "What happens if a shipment is delayed at customs?",
+      answer: "We provide pre-clearance documents and commercial invoices optimized for fast customs processing. If a delay occurs due to duty calculation issues, we work directly with customs to resolve it.",
+    },
+  ];
+
   return (
     <div className="flex flex-col min-h-screen bg-white text-gray-900 font-sans antialiased overflow-x-hidden selection:bg-green-100 selection:text-gray-900">
       <Header />
@@ -220,6 +247,19 @@ export default function LandedCostPage() {
             </div>
           </div>
         </section>
+
+        {/* Testimonials Section */}
+        <TestimonialSlider />
+
+        {/* FAQ Section */}
+        <FAQComponent
+          title="Landed Cost FAQs"
+          subtitle="Everything you need to know about duty and tax calculations"
+          faqs={faqs}
+        />
+
+        {/* Network Countries Grid */}
+        <NetworkCountriesGrid />
       </main>
 
       <Footer />

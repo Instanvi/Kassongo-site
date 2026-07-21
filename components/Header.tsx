@@ -2,9 +2,9 @@
 
 import { useState, useCallback } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { Menu, X, ChevronDown, ShoppingCart, Package, Search, Plug, Truck, Warehouse, Users, Box, Building2, Phone, Newspaper, Briefcase } from "lucide-react";
+import { Menu, X, ChevronDown, ShoppingCart, Package, Search, Plug, Truck, Warehouse, Users, Box, Building2, Phone, Newspaper, Briefcase, Calculator } from "lucide-react";
 import Button from "./Button";
-import DropdownMenu, { DropdownItem } from "./DropdownMenu";
+import StripeNavMenu, { DropdownItem, NavSection } from "./DropdownMenu";
 import { useTranslation } from "../lib/i18n/LanguageContext";
 
 // ============================================
@@ -38,7 +38,11 @@ function MobileDropdown({ title, items, isOpen, onToggle, onNavigate }: MobileDr
               onClick={() => onNavigate(item.href)}
               className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-all text-left cursor-pointer bg-transparent border-none"
             >
-              {item.icon && <span className="text-gray-400 shrink-0">{item.icon}</span>}
+              {item.icon && (
+                <span className={`p-1.5 rounded-lg shrink-0 ${item.colorBg || "text-gray-400 bg-gray-100"}`}>
+                  {item.icon}
+                </span>
+              )}
               <span className="font-medium">{item.label}</span>
             </button>
           ))}
@@ -55,20 +59,9 @@ export default function Header() {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileOpenDropdown, setMobileOpenDropdown] = useState<string | null>(null);
   const pathname = usePathname();
   const { locale, setLocale, t } = useTranslation();
-
-  const isHomepage = pathname === "/";
-
-  const handleOpen = useCallback((name: string) => {
-    setOpenDropdown(name);
-  }, []);
-
-  const handleClose = useCallback(() => {
-    setOpenDropdown(null);
-  }, []);
 
   const handleMobileNavigate = useCallback((href: string) => {
     setIsMenuOpen(false);
@@ -77,31 +70,133 @@ export default function Header() {
   }, [router]);
 
   const productsItems: DropdownItem[] = [
-    { label: t("footer.links.checkout") || "Checkout", href: "/products/checkout", icon: <ShoppingCart className="w-4 h-4" /> },
-    { label: t("footer.links.landedCost") || "Landed Cost", href: "/products/landed-cost", icon: <Package className="w-4 h-4" /> },
-    { label: t("common.hsLookup") || "HS Lookup", href: "/tools/hs-lookup", icon: <Search className="w-4 h-4" /> },
-    { label: t("footer.links.plugins") || "Plugins", href: "/products/plugins", icon: <Plug className="w-4 h-4" /> },
+    {
+      label: t("footer.links.checkout") || "Checkout",
+      href: "/products/checkout",
+      icon: <ShoppingCart className="w-4 h-4" />,
+      colorBg: "bg-emerald-100/80 text-emerald-700 group-hover:bg-emerald-600 group-hover:text-white",
+      hoverBorder: "hover:border-emerald-200/80 hover:bg-emerald-50/50",
+    },
+    {
+      label: t("footer.links.landedCost") || "Landed Cost",
+      href: "/products/landed-cost",
+      icon: <Package className="w-4 h-4" />,
+      colorBg: "bg-blue-100/80 text-blue-700 group-hover:bg-blue-600 group-hover:text-white",
+      hoverBorder: "hover:border-blue-200/80 hover:bg-blue-50/50",
+    },
+    {
+      label: t("footer.links.plugins") || "Plugins",
+      href: "/products/plugins",
+      icon: <Plug className="w-4 h-4" />,
+      colorBg: "bg-purple-100/80 text-purple-700 group-hover:bg-purple-600 group-hover:text-white",
+      hoverBorder: "hover:border-purple-200/80 hover:bg-purple-50/50",
+    },
   ];
 
   const solutionsItems: DropdownItem[] = [
-    { label: t("footer.links.sourcing") || "Assisted Sourcing", href: "/solutions/assisted-sourcing", icon: <Users className="w-4 h-4" /> },
-    { label: t("footer.links.forwarding") || "Express Forwarding", href: "/solutions/express-forwarding", icon: <Truck className="w-4 h-4" /> },
-    { label: t("footer.links.warehousing") || "Secure Warehousing", href: "/solutions/secure-warehousing", icon: <Warehouse className="w-4 h-4" /> },
-    { label: t("footer.links.consolidation") || "Consolidation", href: "/solutions/consolidation", icon: <Box className="w-4 h-4" /> },
+    {
+      label: t("footer.links.sourcing") || "Assisted Sourcing",
+      href: "/solutions/assisted-sourcing",
+      icon: <Users className="w-4 h-4" />,
+      colorBg: "bg-amber-100/80 text-amber-700 group-hover:bg-amber-600 group-hover:text-white",
+      hoverBorder: "hover:border-amber-200/80 hover:bg-amber-50/50",
+    },
+    {
+      label: t("footer.links.forwarding") || "Express Forwarding",
+      href: "/solutions/express-forwarding",
+      icon: <Truck className="w-4 h-4" />,
+      colorBg: "bg-cyan-100/80 text-cyan-700 group-hover:bg-cyan-600 group-hover:text-white",
+      hoverBorder: "hover:border-cyan-200/80 hover:bg-cyan-50/50",
+    },
+    {
+      label: t("footer.links.warehousing") || "Secure Warehousing",
+      href: "/solutions/secure-warehousing",
+      icon: <Warehouse className="w-4 h-4" />,
+      colorBg: "bg-indigo-100/80 text-indigo-700 group-hover:bg-indigo-600 group-hover:text-white",
+      hoverBorder: "hover:border-indigo-200/80 hover:bg-indigo-50/50",
+    },
+    {
+      label: t("footer.links.consolidation") || "Consolidation",
+      href: "/solutions/consolidation",
+      icon: <Box className="w-4 h-4" />,
+      colorBg: "bg-teal-100/80 text-teal-700 group-hover:bg-teal-600 group-hover:text-white",
+      hoverBorder: "hover:border-teal-200/80 hover:bg-teal-50/50",
+    },
+  ];
+
+  const toolsItems: DropdownItem[] = [
+    {
+      label: t("common.hsLookup") || "HS Lookup",
+      href: "/tools/hs-lookup",
+      icon: <Search className="w-4 h-4" />,
+      colorBg: "bg-emerald-100/80 text-emerald-700 group-hover:bg-emerald-600 group-hover:text-white",
+      hoverBorder: "hover:border-emerald-200/80 hover:bg-emerald-50/50",
+    },
+    {
+      label: t("common.dutyCalculator") || "Duty Calculator",
+      href: "/tools/duty-calculator",
+      icon: <Calculator className="w-4 h-4" />,
+      colorBg: "bg-orange-100/80 text-orange-700 group-hover:bg-orange-600 group-hover:text-white",
+      hoverBorder: "hover:border-orange-200/80 hover:bg-orange-50/50",
+    },
   ];
 
   const companyItems: DropdownItem[] = [
-    { label: t("footer.links.aboutUs") || "About Us", href: "/about-us", icon: <Building2 className="w-4 h-4" /> },
-    { label: t("common.contactUs") || "Contact Us", href: "/contact", icon: <Phone className="w-4 h-4" /> },
-    { label: t("footer.links.careers") || "Careers", href: "/company/careers", icon: <Briefcase className="w-4 h-4" /> },
-    { label: t("footer.links.newsroom") || "Newsroom", href: "/company/newsroom", icon: <Newspaper className="w-4 h-4" /> },
+    {
+      label: t("footer.links.aboutUs") || "About Us",
+      href: "/about-us",
+      icon: <Building2 className="w-4 h-4" />,
+      colorBg: "bg-blue-100/80 text-blue-700 group-hover:bg-blue-600 group-hover:text-white",
+      hoverBorder: "hover:border-blue-200/80 hover:bg-blue-50/50",
+    },
+    {
+      label: t("common.contactUs") || "Contact Us",
+      href: "/contact",
+      icon: <Phone className="w-4 h-4" />,
+      colorBg: "bg-emerald-100/80 text-emerald-700 group-hover:bg-emerald-600 group-hover:text-white",
+      hoverBorder: "hover:border-emerald-200/80 hover:bg-emerald-50/50",
+    },
+    {
+      label: t("footer.links.careers") || "Careers",
+      href: "/company/careers",
+      icon: <Briefcase className="w-4 h-4" />,
+      colorBg: "bg-purple-100/80 text-purple-700 group-hover:bg-purple-600 group-hover:text-white",
+      hoverBorder: "hover:border-purple-200/80 hover:bg-purple-50/50",
+    },
+    {
+      label: t("footer.links.newsroom") || "Newsroom",
+      href: "/company/newsroom",
+      icon: <Newspaper className="w-4 h-4" />,
+      colorBg: "bg-rose-100/80 text-rose-700 group-hover:bg-rose-600 group-hover:text-white",
+      hoverBorder: "hover:border-rose-200/80 hover:bg-rose-50/50",
+    },
   ];
 
-  const toolsLink = { label: t("common.tools") || "Tools", href: "/tools" };
+  const navSections: NavSection[] = [
+    {
+      id: "products",
+      label: t("footer.links.products") || "Products",
+      items: productsItems,
+    },
+    {
+      id: "solutions",
+      label: t("footer.links.solutions") || "Solutions",
+      items: solutionsItems,
+    },
+    {
+      id: "tools",
+      label: t("common.tools") || "Trade Tools",
+      items: toolsItems,
+    },
+    {
+      id: "company",
+      label: t("footer.links.company") || "Company",
+      items: companyItems,
+    },
+  ];
 
   const languages = [
     { code: "en" as const, flag: "us", label: "English (US)" },
-    { code: "uk" as const, flag: "gb", label: "English (UK)" },
     { code: "fr" as const, flag: "fr", label: "Français" },
     { code: "de" as const, flag: "de", label: "Deutsch" },
     { code: "zh" as const, flag: "cn", label: "简体中文" },
@@ -122,35 +217,9 @@ export default function Header() {
             />
           </a>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-2">
-            <DropdownMenu
-              trigger={t("footer.links.products") || "Products"}
-              items={productsItems}
-              isOpen={openDropdown === "products"}
-              onOpen={() => handleOpen("products")}
-              onClose={handleClose}
-            />
-            <DropdownMenu
-              trigger={t("footer.links.solutions") || "Solutions"}
-              items={solutionsItems}
-              isOpen={openDropdown === "solutions"}
-              onOpen={() => handleOpen("solutions")}
-              onClose={handleClose}
-            />
-            <a
-              href={toolsLink.href}
-              className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-smooth px-3 py-2 rounded-xl hover:bg-gray-50/60"
-            >
-              {toolsLink.label}
-            </a>
-            <DropdownMenu
-              trigger={t("footer.links.company") || "Company"}
-              items={companyItems}
-              isOpen={openDropdown === "company"}
-              onOpen={() => handleOpen("company")}
-              onClose={handleClose}
-            />
+          {/* Desktop Navigation (Stripe / Zonos Morphing Menu) */}
+          <nav className="hidden md:flex items-center">
+            <StripeNavMenu sections={navSections} />
           </nav>
 
           {/* Actions */}
@@ -162,8 +231,8 @@ export default function Header() {
                 onClick={() => setIsLangOpen(!isLangOpen)}
                 className="flex items-center gap-2 px-3 py-1.5 bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-xl text-xs font-bold text-gray-700 transition-all cursor-pointer"
               >
-                <span className={`fi fi-${locale === "en" ? "us" : locale === "zh" ? "cn" : locale === "de" ? "de" : locale === "uk" ? "gb" : "fr"} rounded-sm`} style={{ width: "1.1rem", height: "0.825rem", display: "inline-block", backgroundSize: "cover" }} />
-                <span>{locale === "uk" ? "UK" : locale.toUpperCase()}</span>
+                <span className={`fi fi-${locale === "en" ? "us" : locale === "zh" ? "cn" : locale === "de" ? "de" : "fr"} rounded-sm`} style={{ width: "1.1rem", height: "0.825rem", display: "inline-block", backgroundSize: "cover" }} />
+                <span>{locale.toUpperCase()}</span>
               </button>
               {isLangOpen && (
                 <>
@@ -223,13 +292,13 @@ export default function Header() {
                 onToggle={() => setMobileOpenDropdown(mobileOpenDropdown === "solutions" ? null : "solutions")}
                 onNavigate={handleMobileNavigate}
               />
-              <button
-                type="button"
-                onClick={() => handleMobileNavigate(toolsLink.href)}
-                className="px-4 py-3 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-smooth border-b border-gray-100 text-left cursor-pointer bg-transparent border-none"
-              >
-                {toolsLink.label}
-              </button>
+              <MobileDropdown
+                title={t("common.tools") || "Trade Tools"}
+                items={toolsItems}
+                isOpen={mobileOpenDropdown === "tools"}
+                onToggle={() => setMobileOpenDropdown(mobileOpenDropdown === "tools" ? null : "tools")}
+                onNavigate={handleMobileNavigate}
+              />
               <MobileDropdown
                 title={t("footer.links.company") || "Company"}
                 items={companyItems}
@@ -259,7 +328,6 @@ export default function Header() {
                         className={`px-2 py-1 rounded-lg border text-[10px] font-bold flex items-center gap-1 transition-all ${locale === lang.code ? "bg-green-900 text-white border-green-900" : "bg-white border-gray-200 text-gray-700"}`}
                       >
                         <span className={`fi fi-${lang.flag} rounded-sm`} style={{ width: "0.85rem", height: "0.64rem", display: "inline-block", backgroundSize: "cover" }} />
-                        <span>{lang.code === "en" ? "US" : lang.code === "uk" ? "UK" : lang.code.toUpperCase()}</span>
                       </button>
                     ))}
                   </div>

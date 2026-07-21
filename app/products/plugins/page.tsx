@@ -18,6 +18,8 @@ import Button from "../../../components/Button";
 import { Input } from "../../../components/Input";
 import { Select } from "../../../components/Select";
 import CountrySelector from "../../../components/tools/CountrySelector";
+import FAQComponent from "@/components/FAQComponent";
+import TestimonialSlider from "@/components/TestimonialSlider";
 import toast, { Toaster } from "react-hot-toast";
 
 // 5 Real Partner Case Studies
@@ -73,6 +75,33 @@ const integrations = [
 ];
 
 export default function PluginsPage() {
+  const faqs = [
+    {
+      question: "How long does it take to become a partner?",
+      answer: "Once you submit your application, our partnerships team reviews it within 48 hours. Approval typically takes 3-5 business days. After approval, you'll receive onboarding materials and API credentials.",
+    },
+    {
+      question: "Are there any upfront costs to join?",
+      answer: "No. Partnership enrollment is free. We operate on revenue sharing models and integration fees depend on your partnership tier and volume.",
+    },
+    {
+      question: "Can I integrate Kassongo without technical expertise?",
+      answer: "Yes! If you use Shopify, WooCommerce, or Wix, we offer 1-click app installations with no coding required. For custom integrations, our API is well-documented with SDKs in multiple languages.",
+    },
+    {
+      question: "What kind of support do partners receive?",
+      answer: "All partners get access to our dedicated partner portal, technical documentation, sandbox environment, and priority support from our integration team via email and Slack.",
+    },
+    {
+      question: "Can I white-label Kassongo services?",
+      answer: "Yes, certain partnership tiers allow white-labeling of our duty calculator, checkout widgets, and shipping labels. Contact our partnerships team for details.",
+    },
+    {
+      question: "How do revenue sharing models work?",
+      answer: "Revenue sharing varies by partner type. Technology partners typically receive referral commissions, while Carrier and Fulfillment partners participate in transaction-based revenue splits. Details are negotiated during onboarding.",
+    },
+  ];
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -561,6 +590,16 @@ export default function PluginsPage() {
             </div>
           </div>
         </section>
+
+        {/* Testimonials Section */}
+        <TestimonialSlider />
+
+        {/* FAQ Section */}
+        <FAQComponent
+          title="Partner Program FAQs"
+          subtitle="Common questions about joining our partner ecosystem"
+          faqs={faqs}
+        />
 
       </main>
 

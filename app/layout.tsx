@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "flag-icons/css/flag-icons.min.css";
 import { cookies } from "next/headers";
-import { LanguageProvider, Locale } from "../lib/i18n/LanguageContext";
+import { Locale } from "../lib/i18n/LanguageContext";
+import ClientLayout from "../components/ClientLayout";
 
 export const metadata: Metadata = {
   title: "Kassongo Express - Global Storage & Forwarding Solutions",
@@ -28,10 +29,10 @@ export default async function RootLayout({
         className="min-h-full flex flex-col bg-[#fdfbf2] text-[#002c17]"
         suppressHydrationWarning
       >
-        <LanguageProvider initialLocale={initialLocale}>
+        <ClientLayout initialLocale={initialLocale}>
           {children}
-        </LanguageProvider>
+        </ClientLayout>
       </body>
     </html>
   );
-}
+}

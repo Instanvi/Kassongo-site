@@ -14,6 +14,7 @@ import {
 import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
 import Button from "../../../components/Button";
+import NetworkCountriesGrid from "../../../components/network/NetworkCountriesGrid";
 
 export default function ConsolidationPage() {
   return (
@@ -153,6 +154,9 @@ export default function ConsolidationPage() {
             </div>
           </div>
         </section>
+
+        {/* Network Countries Grid */}
+        <NetworkCountriesGrid />
       </main>
 
       <Footer />
