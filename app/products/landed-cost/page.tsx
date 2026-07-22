@@ -214,12 +214,12 @@ export default function LandedCostPage() {
         </section>
 
         <TestimonialSlider />
+        <NetworkCountriesGrid />
         <FAQComponent
           title={t("products.landedCost.faq.title")}
           subtitle={t("products.landedCost.faq.subtitle")}
           faqs={faqs}
         />
-        <NetworkCountriesGrid />
       </main>
 
       <Footer />
