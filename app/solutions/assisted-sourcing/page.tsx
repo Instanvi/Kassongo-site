@@ -86,7 +86,7 @@ export default function AssistedSourcingPage() {
               <div className="relative flex items-center justify-center">
                 <div className="relative w-full overflow-hidden rounded-2xl shadow-soft-xl border border-gray-100">
                   <img
-                    src="/solutions/image1.svg"
+                    src="/solutions/image1.webp"
                     alt={t("solutions.secureWarehousing.hero.imageAlt")}
                     className="w-full h-auto object-cover"
                   />

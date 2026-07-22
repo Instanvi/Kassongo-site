@@ -58,7 +58,7 @@ export const GLOBAL_TESTIMONIALS_DATA: ITestimonial[] = [
     author: "Jean-Baptiste Koffi",
     role: "Founder & MD",
     company: "Abidjan Import-Export",
-    rating: 5,
+    rating: 4,
     location: "Côte d'Ivoire",
     color: "teal",
   },
