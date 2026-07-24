@@ -92,7 +92,7 @@ export default function Header() {
       hoverBorder: "hover:border-purple-200/80 hover:bg-purple-50/50",
     },
     {
-      label: t("footer.links.kassongoCapital") || "Kassongo Capital",
+      label: t("footer.links.kassongoCapital") || "Capital",
       href: "/products/kassongo-capital",
       icon: <Sparkles className="w-4 h-4" />,
       colorBg: "bg-teal-100/80 text-teal-700 group-hover:bg-teal-600 group-hover:text-white",

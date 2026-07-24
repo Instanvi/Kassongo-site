@@ -178,7 +178,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="/products/kassongo-capital" className="hover:text-white transition-colors">
-                  {t("footer.links.kassongoCapital") || "Kassongo Capital"}
+                  {t("footer.links.kassongoCapital") || "Capital"}
                 </a>
               </li>
             </ul>

@@ -424,11 +424,11 @@ export default function ImportToolsPage() {
             freight: parseFloat(freightCost) || 0,
             insurance: parseFloat(insuranceCost) || 0,
             importBreakdown: {
-                dutyRate: parseFloat(mockCalc.rate.dutyRate),
+                dutyRate: mockCalc.rate.dutyRate,
                 dutyAmount: mockCalc.duty,
                 specialDutyRate: 0,
                 specialDutyAmount: 0,
-                vatRate: parseFloat(mockCalc.rate.vatRate),
+                vatRate: mockCalc.rate.vatRate,
                 vatAmount: mockCalc.vat,
                 bescAmount: 0,
                 additionalLevies: mockCalc.fees.map(f => ({ name: f.name, amount: f.amount })),

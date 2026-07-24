@@ -43,7 +43,7 @@ export const en = {
       checkout: "Checkout",
       landedCost: "Landed Cost",
       plugins: "Plugins",
-      kassongoCapital: "Kassongo Capital",
+      kassongoCapital: "Capital",
       solutions: "Solutions",
       sourcing: "Assisted Sourcing",
       forwarding: "Express Forwarding",
