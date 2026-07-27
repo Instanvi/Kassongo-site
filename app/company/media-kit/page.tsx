@@ -20,7 +20,7 @@ export default function MediaKitPage() {
         { name: "Icon Logo", file: "/kassongo.svg", format: "SVG", size: "4 KB", darkBg: false },
     ];
 
-    // Color Palette based on globals.css
+    // Color Palette
     const brandColors = [
         { name: "Emerald Green (Primary)", hex: "#10b981", variable: "--color-green", category: "Primary Accent" },
         { name: "Strong Green", hex: "#059669", variable: "--color-green-strong", category: "Brand Green" },
@@ -32,7 +32,7 @@ export default function MediaKitPage() {
         { name: "Off Black", hex: "#111827", variable: "--color-off-black", category: "Dark Neutral" },
     ];
 
-    // Typography styles configured in global.css
+    // Typography styles 
     const typographyEntries = [
         { family: "Retail Display", usage: "Headings (d1 through d6 classes)", weights: "Regular (400) · Medium (500) · Semibold (600) · Bold (700) · Black (900)" },
         { family: "Retail Text", usage: "Body text & descriptions (.body-1 to .body-5)", weights: "Light (300) · Regular (400) · Medium (500) · Semibold (600) · Bold (700)" },
