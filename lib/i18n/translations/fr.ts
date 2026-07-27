@@ -1587,6 +1587,156 @@ export const fr = {
       },
     },
     kassongoCapital: {
+      apply: {
+        meta: {
+          title: "Demande de Capital Commercial - Kassongo Capital",
+          description: "Demandez un financement conforme à la Shariah pour votre entreprise de commerce international"
+        },
+        header: {
+          backButton: "Retour à Kassongo Capital",
+          badge: "Financement Conforme Shariah",
+          title: "Demande de Capital Commercial",
+          subtitle: "Complétez votre demande en 4 étapes simples. Obtenez des solutions de financement éthiques adaptées pour développer votre entreprise de commerce international."
+        },
+        steps: {
+          personal: "Infos Personnelles",
+          business: "Détails de l'Entreprise",
+          financing: "Financement",
+          documents: "Documents"
+        },
+        stepLabels: {
+          step: "Étape"
+        },
+        personalInfo: {
+          title: "Informations Personnelles",
+          subtitle: "Parlez-nous de vous",
+          firstName: "Prénom",
+          firstNamePlaceholder: "Jean",
+          lastName: "Nom de famille",
+          lastNamePlaceholder: "Dupont",
+          email: "Adresse e-mail",
+          emailPlaceholder: "jean.dupont@exemple.com",
+          phone: "Numéro de téléphone",
+          phonePlaceholder: "+33 1 23 45 67 89",
+          country: "Pays",
+          countryPlaceholder: "Sélectionnez votre pays"
+        },
+        businessInfo: {
+          title: "Informations sur l'Entreprise",
+          subtitle: "Parlez-nous de votre entreprise",
+          businessName: "Nom de l'Entreprise",
+          businessNamePlaceholder: "Votre Entreprise SARL",
+          businessType: "Type d'Entreprise",
+          businessTypePlaceholder: "Sélectionnez le Type",
+          businessTypes: {
+            soleProprietor: "Entrepreneur Individuel",
+            llc: "SARL",
+            corporation: "Société Anonyme",
+            partnership: "Société de Personnes",
+            other: "Autre"
+          },
+          yearEstablished: "Année de Création",
+          yearEstablishedPlaceholder: "2020",
+          taxId: "Numéro SIRET / TVA",
+          taxIdPlaceholder: "12345678901234",
+          website: "Site Web",
+          websitePlaceholder: "https://votreentreprise.com"
+        },
+        financingDetails: {
+          title: "Détails du Financement",
+          subtitle: "Spécifiez vos besoins de financement",
+          financingType: "Type de Financement",
+          financingTypes: {
+            inventory: "Financement de l'Inventaire",
+            inventoryDesc: "Murabaha pour l'inventaire",
+            logistics: "Financement Logistique",
+            logisticsDesc: "Qard Hassan pour la logistique",
+            lease: "Location d'Équipement",
+            leaseDesc: "Ijarah pour l'équipement"
+          },
+          requestedAmount: "Montant Demandé",
+          requestedAmountPlaceholder: "50000",
+          term: "Période de Remboursement",
+          termOptions: {
+            days30: "30 Jours",
+            days60: "60 Jours",
+            days90: "90 Jours",
+            days120: "120 Jours"
+          },
+          purpose: "Objectif du Financement",
+          purposePlaceholder: "Décrivez comment vous prévoyez d'utiliser les fonds...",
+          monthlyRevenue: "Revenu Mensuel",
+          monthlyRevenuePlaceholder: "Sélectionnez la Tranche",
+          revenueRanges: {
+            range1: "$0 - $10 000",
+            range2: "$10 000 - $50 000",
+            range3: "$50 000 - $100 000",
+            range4: "$100 000 - $500 000",
+            range5: "$500 000+"
+          },
+          hasCollateral: "Avez-vous une garantie ?",
+          hasCollateralPlaceholder: "Sélectionnez une Option",
+          collateralOptions: {
+            yes: "Oui",
+            no: "Non"
+          },
+          additionalComments: "Commentaires Supplémentaires",
+          additionalCommentsPlaceholder: "Toute information supplémentaire que vous souhaitez partager..."
+        },
+        documents: {
+          title: "Documents Requis",
+          subtitle: "Téléchargez les documents justificatifs",
+          requirements: {
+            title: "Exigences des Documents",
+            format: "Tous les documents doivent être au format PDF, JPEG ou PNG",
+            size: "Taille maximale du fichier : 5 Mo par document",
+            clarity: "Les documents doivent être clairs et lisibles"
+          },
+          businessLicense: "Licence Commerciale ou Enregistrement",
+          financialStatements: "États Financiers (6-12 derniers mois)",
+          tradingHistory: "Historique Commercial ou Factures",
+          required: "Obligatoire",
+          optional: "Facultatif",
+          uploadButton: "Choisir un Fichier",
+          noFileChosen: "Aucun fichier choisi",
+          clearFile: "Supprimer"
+        },
+        validation: {
+          firstNameRequired: "Le prénom est obligatoire",
+          lastNameRequired: "Le nom de famille est obligatoire",
+          emailRequired: "L'e-mail est obligatoire",
+          emailInvalid: "Format d'e-mail invalide",
+          phoneRequired: "Le numéro de téléphone est obligatoire",
+          countryRequired: "Le pays est obligatoire",
+          businessNameRequired: "Le nom de l'entreprise est obligatoire",
+          businessTypeRequired: "Le type d'entreprise est obligatoire",
+          yearEstablishedRequired: "L'année de création est obligatoire",
+          requestedAmountRequired: "Le montant est obligatoire",
+          purposeRequired: "L'objectif est obligatoire",
+          monthlyRevenueRequired: "Le revenu mensuel est obligatoire"
+        },
+        navigation: {
+          next: "Continuer",
+          previous: "Retour",
+          submit: "Soumettre la Demande",
+          submitting: "Envoi en cours..."
+        },
+        success: {
+          title: "Demande Soumise !",
+          subtitle: "Merci d'avoir fait une demande à Kassongo Capital. Notre équipe examinera votre demande et vous contactera dans les 2-3 jours ouvrables.",
+          nextSteps: {
+            title: "Prochaines Étapes",
+            step1: "Notre équipe examine votre demande et vos documents",
+            step2: "Nous effectuons une évaluation préliminaire du crédit",
+            step3: "Vous recevrez une décision ou une demande d'informations supplémentaires",
+            step4: "Après approbation, les fonds sont décaissés selon les conditions convenues"
+          },
+          actions: {
+            backHome: "Retour à l'Accueil",
+            learnMore: "En Savoir Plus"
+          }
+        }
+      },
       hero: {
         badge: "Kassongo Capital",
         title: "Financement Conforme Shariah",

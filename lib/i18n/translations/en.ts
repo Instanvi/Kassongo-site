@@ -68,6 +68,158 @@ export const en = {
     }
   },
 
+  kassongoCapital: {
+    apply: {
+      meta: {
+        title: "Apply for Trade Capital - Kassongo Capital",
+        description: "Apply for Shariah-compliant financing for your international trade business"
+      },
+      header: {
+        backButton: "Back to Kassongo Capital",
+        badge: "Shariah-Compliant Financing",
+        title: "Apply for Trade Capital",
+        subtitle: "Complete your application in 4 simple steps. Get ethical financing solutions tailored to grow your international trade business."
+      },
+      steps: {
+        personal: "Personal Info",
+        business: "Business Details",
+        financing: "Financing",
+        documents: "Documents"
+      },
+      stepLabels: {
+        step: "Step"
+      },
+      personalInfo: {
+        title: "Personal Information",
+        subtitle: "Tell us about yourself",
+        firstName: "First Name",
+        firstNamePlaceholder: "John",
+        lastName: "Last Name",
+        lastNamePlaceholder: "Doe",
+        email: "Email Address",
+        emailPlaceholder: "john.doe@example.com",
+        phone: "Phone Number",
+        phonePlaceholder: "+1 (555) 123-4567",
+        country: "Country",
+        countryPlaceholder: "Select your country"
+      },
+      businessInfo: {
+        title: "Business Information",
+        subtitle: "Tell us about your company",
+        businessName: "Business Name",
+        businessNamePlaceholder: "Your Company LLC",
+        businessType: "Business Type",
+        businessTypePlaceholder: "Select Type",
+        businessTypes: {
+          soleProprietor: "Sole Proprietor",
+          llc: "LLC",
+          corporation: "Corporation",
+          partnership: "Partnership",
+          other: "Other"
+        },
+        yearEstablished: "Year Established",
+        yearEstablishedPlaceholder: "2020",
+        taxId: "Tax ID / EIN",
+        taxIdPlaceholder: "12-3456789",
+        website: "Website",
+        websitePlaceholder: "https://yourcompany.com"
+      },
+      financingDetails: {
+        title: "Financing Details",
+        subtitle: "Specify your financing needs",
+        financingType: "Type of Financing",
+        financingTypes: {
+          inventory: "Inventory Financing",
+          inventoryDesc: "Murabaha for inventory",
+          logistics: "Logistics Financing",
+          logisticsDesc: "Qard Hassan for logistics",
+          lease: "Equipment Lease",
+          leaseDesc: "Ijarah for equipment"
+        },
+        requestedAmount: "Requested Amount",
+        requestedAmountPlaceholder: "50000",
+        term: "Repayment Term",
+        termOptions: {
+          days30: "30 Days",
+          days60: "60 Days",
+          days90: "90 Days",
+          days120: "120 Days"
+        },
+        purpose: "Purpose of Financing",
+        purposePlaceholder: "Describe how you plan to use the funds...",
+        monthlyRevenue: "Monthly Revenue",
+        monthlyRevenuePlaceholder: "Select Range",
+        revenueRanges: {
+          range1: "$0 - $10,000",
+          range2: "$10,000 - $50,000",
+          range3: "$50,000 - $100,000",
+          range4: "$100,000 - $500,000",
+          range5: "$500,000+"
+        },
+        hasCollateral: "Do you have collateral?",
+        hasCollateralPlaceholder: "Select Option",
+        collateralOptions: {
+          yes: "Yes",
+          no: "No"
+        },
+        additionalComments: "Additional Comments",
+        additionalCommentsPlaceholder: "Any additional information you'd like to share..."
+      },
+      documents: {
+        title: "Required Documents",
+        subtitle: "Upload supporting documentation",
+        requirements: {
+          title: "Document Requirements",
+          format: "All documents must be in PDF, JPEG, or PNG format",
+          size: "Maximum file size: 5MB per document",
+          clarity: "Documents must be clear and legible"
+        },
+        businessLicense: "Business License or Registration",
+        financialStatements: "Financial Statements (Last 6-12 months)",
+        tradingHistory: "Trading History or Invoices",
+        required: "Required",
+        optional: "Optional",
+        uploadButton: "Choose File",
+        noFileChosen: "No file chosen",
+        clearFile: "Remove"
+      },
+      validation: {
+        firstNameRequired: "First name is required",
+        lastNameRequired: "Last name is required",
+        emailRequired: "Email is required",
+        emailInvalid: "Invalid email format",
+        phoneRequired: "Phone number is required",
+        countryRequired: "Country is required",
+        businessNameRequired: "Business name is required",
+        businessTypeRequired: "Business type is required",
+        yearEstablishedRequired: "Year established is required",
+        requestedAmountRequired: "Amount is required",
+        purposeRequired: "Purpose is required",
+        monthlyRevenueRequired: "Monthly revenue is required"
+      },
+      navigation: {
+        next: "Continue",
+        previous: "Back",
+        submit: "Submit Application",
+        submitting: "Submitting..."
+      },
+      success: {
+        title: "Application Submitted!",
+        subtitle: "Thank you for applying to Kassongo Capital. Our team will review your application and contact you within 2-3 business days.",
+        nextSteps: {
+          title: "What Happens Next",
+          step1: "Our team reviews your application and documents",
+          step2: "We conduct a preliminary credit assessment",
+          step3: "You'll receive a decision or request for additional information",
+          step4: "Upon approval, funds are disbursed according to the agreed terms"
+        },
+        actions: {
+          backHome: "Back to Home",
+          learnMore: "Learn More"
+        }
+      }
+    }
+  },
   blog: {
     hero: {
       title: "Freight Forwarding Insights & Guides",

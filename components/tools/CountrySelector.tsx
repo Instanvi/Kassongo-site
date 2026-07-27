@@ -116,33 +116,27 @@ export default function CountrySelector({
 
   return (
     <div ref={containerRef} className="relative w-full">
-      {label && (
-        <label className="block text-xs font-bold uppercase text-gray-500 tracking-wider mb-2">
-          {label}
-        </label>
-      )}
-
       {/* Selector Trigger Button */}
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className={`w-full flex items-center gap-3 px-4 py-3.5 bg-white border rounded-xl text-left transition-all ${
-          isOpen ? "border-green-700 ring-2 ring-green-50" : "border-gray-200 hover:border-gray-300"
-        } shadow-xs cursor-pointer`}
+        className={`w-full flex items-center gap-3 px-4 py-3 bg-gray-50 border rounded-xl text-left transition-all ${
+          isOpen ? "border-green-600 ring-2 ring-green-600/20 bg-white" : "border-gray-200 hover:border-gray-300"
+        } text-sm cursor-pointer focus:outline-none focus:ring-2 focus:ring-green-600 focus:bg-white`}
       >
         {selectedCountry ? (
           <>
             <span
               className={`fi fi-${selectedCountry.flag} rounded-sm shadow-xs`}
               style={{
-                width: "1.5rem",
-                height: "1.125rem",
+                width: "1.25rem",
+                height: "0.9375rem",
                 display: "inline-block",
                 backgroundSize: "cover",
                 flexShrink: 0,
               }}
             />
-            <span className="flex-1 font-semibold text-gray-900 truncate">{selectedCountry.name}</span>
+            <span className="flex-1 text-gray-900 truncate">{selectedCountry.name}</span>
           </>
         ) : (
           <>
@@ -170,7 +164,7 @@ export default function CountrySelector({
             <div className="w-12 h-1.5 bg-gray-200 rounded-full mx-auto my-3 cursor-pointer" onClick={() => setIsOpen(false)} />
             
             <div className="flex items-center justify-between px-4 pb-3 border-b border-gray-100">
-              <span className="font-display font-bold text-gray-900">{label}</span>
+              <span className="font-display font-bold text-gray-900">Select Country</span>
               <button
                 type="button"
                 onClick={() => { setIsOpen(false); setSearchQuery(""); }}

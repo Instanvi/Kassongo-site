@@ -1586,6 +1586,156 @@ export const de = {
       },
     },
     kassongoCapital: {
+      apply: {
+        meta: {
+          title: "Handelskapital beantragen - Kassongo Capital",
+          description: "Beantragen Sie Scharia-konforme Finanzierung für Ihr internationales Handelsgeschäft"
+        },
+        header: {
+          backButton: "Zurück zu Kassongo Capital",
+          badge: "Scharia-konforme Finanzierung",
+          title: "Handelskapital beantragen",
+          subtitle: "Füllen Sie Ihren Antrag in 4 einfachen Schritten aus. Erhalten Sie ethische Finanzierungslösungen, die auf das Wachstum Ihres internationalen Handelsgeschäfts zugeschnitten sind."
+        },
+        steps: {
+          personal: "Persönliche Infos",
+          business: "Unternehmensdetails",
+          financing: "Finanzierung",
+          documents: "Dokumente"
+        },
+        stepLabels: {
+          step: "Schritt"
+        },
+        personalInfo: {
+          title: "Persönliche Informationen",
+          subtitle: "Erzählen Sie uns von sich",
+          firstName: "Vorname",
+          firstNamePlaceholder: "Max",
+          lastName: "Nachname",
+          lastNamePlaceholder: "Mustermann",
+          email: "E-Mail-Adresse",
+          emailPlaceholder: "max.mustermann@beispiel.de",
+          phone: "Telefonnummer",
+          phonePlaceholder: "+49 30 12345678",
+          country: "Land",
+          countryPlaceholder: "Wählen Sie Ihr Land"
+        },
+        businessInfo: {
+          title: "Unternehmensinformationen",
+          subtitle: "Erzählen Sie uns von Ihrem Unternehmen",
+          businessName: "Unternehmensname",
+          businessNamePlaceholder: "Ihre Firma GmbH",
+          businessType: "Unternehmensform",
+          businessTypePlaceholder: "Typ auswählen",
+          businessTypes: {
+            soleProprietor: "Einzelunternehmer",
+            llc: "GmbH",
+            corporation: "AG",
+            partnership: "Personengesellschaft",
+            other: "Andere"
+          },
+          yearEstablished: "Gründungsjahr",
+          yearEstablishedPlaceholder: "2020",
+          taxId: "Steuernummer / USt-IdNr.",
+          taxIdPlaceholder: "DE123456789",
+          website: "Webseite",
+          websitePlaceholder: "https://ihrefirma.de"
+        },
+        financingDetails: {
+          title: "Finanzierungsdetails",
+          subtitle: "Geben Sie Ihren Finanzierungsbedarf an",
+          financingType: "Art der Finanzierung",
+          financingTypes: {
+            inventory: "Lagerfinanzierung",
+            inventoryDesc: "Murabaha für Lagerbestand",
+            logistics: "Logistikfinanzierung",
+            logisticsDesc: "Qard Hassan für Logistik",
+            lease: "Geräteleasing",
+            leaseDesc: "Ijarah für Ausrüstung"
+          },
+          requestedAmount: "Gewünschter Betrag",
+          requestedAmountPlaceholder: "50000",
+          term: "Rückzahlungsfrist",
+          termOptions: {
+            days30: "30 Tage",
+            days60: "60 Tage",
+            days90: "90 Tage",
+            days120: "120 Tage"
+          },
+          purpose: "Zweck der Finanzierung",
+          purposePlaceholder: "Beschreiben Sie, wie Sie die Mittel verwenden möchten...",
+          monthlyRevenue: "Monatlicher Umsatz",
+          monthlyRevenuePlaceholder: "Bereich auswählen",
+          revenueRanges: {
+            range1: "$0 - $10.000",
+            range2: "$10.000 - $50.000",
+            range3: "$50.000 - $100.000",
+            range4: "$100.000 - $500.000",
+            range5: "$500.000+"
+          },
+          hasCollateral: "Haben Sie Sicherheiten?",
+          hasCollateralPlaceholder: "Option auswählen",
+          collateralOptions: {
+            yes: "Ja",
+            no: "Nein"
+          },
+          additionalComments: "Zusätzliche Anmerkungen",
+          additionalCommentsPlaceholder: "Weitere Informationen, die Sie mitteilen möchten..."
+        },
+        documents: {
+          title: "Erforderliche Dokumente",
+          subtitle: "Laden Sie unterstützende Dokumente hoch",
+          requirements: {
+            title: "Dokumentenanforderungen",
+            format: "Alle Dokumente müssen im PDF-, JPEG- oder PNG-Format vorliegen",
+            size: "Maximale Dateigröße: 5 MB pro Dokument",
+            clarity: "Dokumente müssen klar und lesbar sein"
+          },
+          businessLicense: "Gewerbeschein oder Handelsregisterauszug",
+          financialStatements: "Finanzberichte (Letzte 6-12 Monate)",
+          tradingHistory: "Handelshistorie oder Rechnungen",
+          required: "Erforderlich",
+          optional: "Optional",
+          uploadButton: "Datei auswählen",
+          noFileChosen: "Keine Datei ausgewählt",
+          clearFile: "Entfernen"
+        },
+        validation: {
+          firstNameRequired: "Vorname ist erforderlich",
+          lastNameRequired: "Nachname ist erforderlich",
+          emailRequired: "E-Mail ist erforderlich",
+          emailInvalid: "Ungültiges E-Mail-Format",
+          phoneRequired: "Telefonnummer ist erforderlich",
+          countryRequired: "Land ist erforderlich",
+          businessNameRequired: "Unternehmensname ist erforderlich",
+          businessTypeRequired: "Unternehmensform ist erforderlich",
+          yearEstablishedRequired: "Gründungsjahr ist erforderlich",
+          requestedAmountRequired: "Betrag ist erforderlich",
+          purposeRequired: "Zweck ist erforderlich",
+          monthlyRevenueRequired: "Monatlicher Umsatz ist erforderlich"
+        },
+        navigation: {
+          next: "Weiter",
+          previous: "Zurück",
+          submit: "Antrag einreichen",
+          submitting: "Wird gesendet..."
+        },
+        success: {
+          title: "Antrag eingereicht!",
+          subtitle: "Vielen Dank für Ihre Bewerbung bei Kassongo Capital. Unser Team wird Ihren Antrag prüfen und Sie innerhalb von 2-3 Werktagen kontaktieren.",
+          nextSteps: {
+            title: "Nächste Schritte",
+            step1: "Unser Team prüft Ihren Antrag und Ihre Dokumente",
+            step2: "Wir führen eine vorläufige Kreditprüfung durch",
+            step3: "Sie erhalten eine Entscheidung oder eine Anfrage nach zusätzlichen Informationen",
+            step4: "Nach Genehmigung werden die Mittel gemäß den vereinbarten Bedingungen ausgezahlt"
+          },
+          actions: {
+            backHome: "Zurück zur Startseite",
+            learnMore: "Mehr erfahren"
+          }
+        }
+      },
       hero: {
         badge: "Kassongo Capital",
         title: "Zinsfreie Handelsfinanzierung",
@@ -1697,4 +1847,4 @@ export const de = {
       }
     },
   },
-};
+};

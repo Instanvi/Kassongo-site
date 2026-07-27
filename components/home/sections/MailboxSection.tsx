@@ -8,10 +8,10 @@ import { useTranslation } from "../../../lib/i18n/LanguageContext";
 type HubKey = "us" | "uk" | "china";
 
 const thumbs = [
-  { src: "/screenshot-1.jpg", title: "home.howItWorks.thumbs.cHub" },
-  { src: "/screenshot-4.png", title: "home.howItWorks.thumbs.sDepot" },
-  { src: "/screenshot-2.jpg", title: "home.howItWorks.thumbs.gTransit" },
-  { src: "/screenshot-3.jpg", title: "home.howItWorks.thumbs.sMap" },
+  { src: "/image1.svg", title: "home.howItWorks.thumbs.cHub" },
+  { src: "/image2.svg", title: "home.howItWorks.thumbs.sDepot" },
+  { src: "/image3.svg", title: "home.howItWorks.thumbs.gTransit" },
+  { src: "/image4.svg", title: "home.howItWorks.thumbs.sMap" },
 ];
 
 const hubs: { key: HubKey; flag: string; label: string }[] = [

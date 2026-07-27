@@ -1584,6 +1584,156 @@ export const zh = {
       },
     },
     kassongoCapital: {
+      apply: {
+        meta: {
+          title: "申请贸易资金 - Kassongo Capital",
+          description: "为您的国际贸易业务申请符合伊斯兰教法的融资"
+        },
+        header: {
+          backButton: "返回 Kassongo Capital",
+          badge: "符合伊斯兰教法的融资",
+          title: "申请贸易资金",
+          subtitle: "通过4个简单步骤完成您的申请。获得专为发展您的国际贸易业务量身定制的道德融资解决方案。"
+        },
+        steps: {
+          personal: "个人信息",
+          business: "企业详情",
+          financing: "融资",
+          documents: "文件"
+        },
+        stepLabels: {
+          step: "步骤"
+        },
+        personalInfo: {
+          title: "个人信息",
+          subtitle: "告诉我们关于您的信息",
+          firstName: "名字",
+          firstNamePlaceholder: "张",
+          lastName: "姓氏",
+          lastNamePlaceholder: "三",
+          email: "电子邮件地址",
+          emailPlaceholder: "zhangsan@example.com",
+          phone: "电话号码",
+          phonePlaceholder: "+86 138 0000 0000",
+          country: "国家",
+          countryPlaceholder: "选择您的国家"
+        },
+        businessInfo: {
+          title: "企业信息",
+          subtitle: "告诉我们关于您公司的信息",
+          businessName: "企业名称",
+          businessNamePlaceholder: "您的公司有限责任公司",
+          businessType: "企业类型",
+          businessTypePlaceholder: "选择类型",
+          businessTypes: {
+            soleProprietor: "个体经营者",
+            llc: "有限责任公司",
+            corporation: "股份有限公司",
+            partnership: "合伙企业",
+            other: "其他"
+          },
+          yearEstablished: "成立年份",
+          yearEstablishedPlaceholder: "2020",
+          taxId: "税号 / 统一社会信用代码",
+          taxIdPlaceholder: "91110000000000000X",
+          website: "网站",
+          websitePlaceholder: "https://yourcompany.com"
+        },
+        financingDetails: {
+          title: "融资详情",
+          subtitle: "指定您的融资需求",
+          financingType: "融资类型",
+          financingTypes: {
+            inventory: "库存融资",
+            inventoryDesc: "库存的Murabaha",
+            logistics: "物流融资",
+            logisticsDesc: "物流的Qard Hassan",
+            lease: "设备租赁",
+            leaseDesc: "设备的Ijarah"
+          },
+          requestedAmount: "申请金额",
+          requestedAmountPlaceholder: "50000",
+          term: "还款期限",
+          termOptions: {
+            days30: "30天",
+            days60: "60天",
+            days90: "90天",
+            days120: "120天"
+          },
+          purpose: "融资目的",
+          purposePlaceholder: "描述您计划如何使用资金...",
+          monthlyRevenue: "月收入",
+          monthlyRevenuePlaceholder: "选择范围",
+          revenueRanges: {
+            range1: "$0 - $10,000",
+            range2: "$10,000 - $50,000",
+            range3: "$50,000 - $100,000",
+            range4: "$100,000 - $500,000",
+            range5: "$500,000+"
+          },
+          hasCollateral: "您有抵押品吗？",
+          hasCollateralPlaceholder: "选择选项",
+          collateralOptions: {
+            yes: "是",
+            no: "否"
+          },
+          additionalComments: "其他意见",
+          additionalCommentsPlaceholder: "您想分享的任何其他信息..."
+        },
+        documents: {
+          title: "所需文件",
+          subtitle: "上传支持文件",
+          requirements: {
+            title: "文件要求",
+            format: "所有文件必须为PDF、JPEG或PNG格式",
+            size: "每个文件最大大小：5MB",
+            clarity: "文件必须清晰易读"
+          },
+          businessLicense: "营业执照或注册证明",
+          financialStatements: "财务报表（最近6-12个月）",
+          tradingHistory: "贸易历史或发票",
+          required: "必填",
+          optional: "可选",
+          uploadButton: "选择文件",
+          noFileChosen: "未选择文件",
+          clearFile: "删除"
+        },
+        validation: {
+          firstNameRequired: "名字为必填项",
+          lastNameRequired: "姓氏为必填项",
+          emailRequired: "电子邮件为必填项",
+          emailInvalid: "无效的电子邮件格式",
+          phoneRequired: "电话号码为必填项",
+          countryRequired: "国家为必填项",
+          businessNameRequired: "企业名称为必填项",
+          businessTypeRequired: "企业类型为必填项",
+          yearEstablishedRequired: "成立年份为必填项",
+          requestedAmountRequired: "金额为必填项",
+          purposeRequired: "目的为必填项",
+          monthlyRevenueRequired: "月收入为必填项"
+        },
+        navigation: {
+          next: "继续",
+          previous: "返回",
+          submit: "提交申请",
+          submitting: "提交中..."
+        },
+        success: {
+          title: "申请已提交！",
+          subtitle: "感谢您向Kassongo Capital提交申请。我们的团队将审核您的申请，并在2-3个工作日内与您联系。",
+          nextSteps: {
+            title: "下一步",
+            step1: "我们的团队审核您的申请和文件",
+            step2: "我们进行初步信用评估",
+            step3: "您将收到决定或要求提供额外信息",
+            step4: "批准后，资金将根据商定的条款发放"
+          },
+          actions: {
+            backHome: "返回首页",
+            learnMore: "了解更多"
+          }
+        }
+      },
       hero: {
         badge: "卡松戈资本",
         title: "无利息贸易融资",
