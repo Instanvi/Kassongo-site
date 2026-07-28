@@ -224,7 +224,7 @@ export default function Header() {
           {/* Logo */}
           <a href="/" className="flex items-center gap-2 group">
             <img
-              src="/kassongo1.svg"
+              src="/kassongo.svg"
               alt="Kassongo"
               style={{ height: "32px", width: "auto" }}
               className="w-8 h-8 transition-smooth"
