@@ -17,6 +17,7 @@ import {
   Loader2,
 } from "lucide-react";
 import VehicleSelector from "./VehicleSelector";
+import { useTranslation } from "../../lib/i18n/LanguageContext";
 
 interface TariffCountry {
   name: string;
@@ -144,6 +145,7 @@ export default function LandedCostCalculator({
   onClearSharedProduct,
   initialEstimateToken,
 }: LandedCostCalculatorProps) {
+  const { t } = useTranslation();
   const formRef = useRef<HTMLDivElement>(null);
 
   // Core configuration states
@@ -373,11 +375,11 @@ export default function LandedCostCalculator({
   // Execute Calculation API
   const handleCalculate = async () => {
     if (items.length === 0) {
-      setCalcError("Please add at least one cargo item to estimate.");
+      setCalcError(t("importTools.errAddAtLeastOne"));
       return;
     }
     if (!originCountryCode || !destinationCountryCode) {
-      setCalcError("Please select both origin and destination countries.");
+      setCalcError(t("importTools.errSelectOriginDest"));
       return;
     }
 
@@ -385,12 +387,12 @@ export default function LandedCostCalculator({
     for (let i = 0; i < items.length; i++) {
       const it = items[i];
       if (!it.title || !it.hsCode) {
-        setCalcError(`Item ${i + 1} is missing a description or HS code.`);
+        setCalcError(t("importTools.errMissingDescHs", { index: i + 1 }));
         return;
       }
       // If VIN is present and it is import, value is optional. Otherwise, value is required!
       if ((!it.vin || mode === "export") && (!it.valueUsd || it.valueUsd <= 0)) {
-        setCalcError(`Item ${i + 1} needs a declared USD value (or input a valid vehicle VIN).`);
+        setCalcError(t("importTools.errMissingValue", { index: i + 1 }));
         return;
       }
     }
@@ -437,7 +439,7 @@ export default function LandedCostCalculator({
         window.history.replaceState({}, "", url.toString());
       }
     } catch (err: any) {
-      setCalcError(err.message || "Customs valuation calculation failed. Verify details.");
+      setCalcError(err.message || t("importTools.errCalculationFailed"));
     } finally {
       setCalcLoading(false);
     }
@@ -450,9 +452,9 @@ export default function LandedCostCalculator({
       {/* Mode Selector and Reset Button */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h2 className="text-xl font-bold text-gray-900">Customs Cost Calculator</h2>
+          <h2 className="text-xl font-bold text-gray-900">{t("importTools.calcTitle")}</h2>
           <p className="text-xs text-gray-500">
-            Estimate custom clearance duties, port charges, VAT, and shipping levies.
+            {t("importTools.calcSubtitle")}
           </p>
         </div>
 
@@ -470,7 +472,7 @@ export default function LandedCostCalculator({
               }`}
             >
               <Ship className="w-4 h-4" />
-              <span>IMPORT</span>
+              <span>{t("importTools.import")}</span>
             </button>
             <button
               onClick={() => {
@@ -484,7 +486,7 @@ export default function LandedCostCalculator({
               }`}
             >
               <Plane className="w-4 h-4" />
-              <span>EXPORT</span>
+              <span>{t("importTools.export")}</span>
             </button>
           </div>
 
@@ -493,7 +495,7 @@ export default function LandedCostCalculator({
             className="text-xs font-bold text-green-900 hover:text-green-850 border border-green-200 px-3.5 py-2 rounded-xl transition-all cursor-pointer flex items-center gap-1 bg-white hover:bg-green-50/20"
           >
             <RefreshCw className="w-3 h-3" />
-            <span>Reset</span>
+            <span>{t("importTools.reset")}</span>
           </button>
         </div>
       </div>
@@ -505,7 +507,7 @@ export default function LandedCostCalculator({
           {/* Origin Selector */}
           <div className="space-y-2">
             <label className="block text-xs font-bold uppercase text-gray-500 tracking-wider">
-              Origin / Dispatch Country
+              {t("importTools.originDispatchCountry")}
             </label>
             {mode === "export" ? (
               <select
@@ -515,7 +517,7 @@ export default function LandedCostCalculator({
                 className="w-full px-4 py-3 bg-white border border-slate-200/60 rounded-xl text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-green-600 cursor-pointer disabled:bg-gray-100"
               >
                 <option value="">
-                  {configuredCountriesLoading ? "Loading configured..." : "Select Origin (Configured)..."}
+                  {configuredCountriesLoading ? t("importTools.loadingConfigured") : t("importTools.selectOriginConfigured")}
                 </option>
                 {configuredCountries.map((c) => (
                   <option key={c.countryCode} value={c.countryCode}>
@@ -531,7 +533,7 @@ export default function LandedCostCalculator({
                 className="w-full px-4 py-3 bg-white border border-slate-200/60 rounded-xl text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-green-600 cursor-pointer disabled:bg-gray-100"
               >
                 <option value="">
-                  {allCountriesLoading ? "Loading countries..." : "Select Origin Country..."}
+                  {allCountriesLoading ? t("importTools.loadingCountries") : t("importTools.selectOriginCountry")}
                 </option>
                 {allCountries.map((c) => (
                   <option key={c.countryCode || c.alpha2 || ""} value={c.countryCode || c.alpha2 || ""}>
@@ -545,7 +547,7 @@ export default function LandedCostCalculator({
           {/* Destination Selector */}
           <div className="space-y-2">
             <label className="block text-xs font-bold uppercase text-gray-500 tracking-wider">
-              Destination / Import Country
+              {t("importTools.destinationImportCountry")}
             </label>
             {mode === "import" ? (
               <select
@@ -555,7 +557,7 @@ export default function LandedCostCalculator({
                 className="w-full px-4 py-3 bg-white border border-slate-200/60 rounded-xl text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-green-600 cursor-pointer disabled:bg-gray-100"
               >
                 <option value="">
-                  {configuredCountriesLoading ? "Loading configured..." : "Select Destination (Configured)..."}
+                  {configuredCountriesLoading ? t("importTools.loadingConfigured") : t("importTools.selectDestinationConfigured")}
                 </option>
                 {configuredCountries.map((c) => (
                   <option key={c.countryCode} value={c.countryCode}>
@@ -571,7 +573,7 @@ export default function LandedCostCalculator({
                 className="w-full px-4 py-3 bg-white border border-slate-200/60 rounded-xl text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-green-600 cursor-pointer disabled:bg-gray-100"
               >
                 <option value="">
-                  {allCountriesLoading ? "Loading countries..." : "Select Destination Country..."}
+                  {allCountriesLoading ? t("importTools.loadingCountries") : t("importTools.selectDestinationCountry")}
                 </option>
                 {allCountries.map((c) => (
                   <option key={c.countryCode || c.alpha2 || ""} value={c.countryCode || c.alpha2 || ""}>
@@ -588,7 +590,7 @@ export default function LandedCostCalculator({
           {mode === "import" && (
             <div className="space-y-2">
               <label className="block text-xs font-bold uppercase text-gray-500 tracking-wider">
-                Port of Arrival <span className="text-gray-300 font-normal">(Optional)</span>
+                {t("importTools.portOfArrival")} <span className="text-gray-300 font-normal">({t("kassongoCapital.apply.documents.optional")})</span>
               </label>
               <select
                 value={port}
@@ -597,7 +599,7 @@ export default function LandedCostCalculator({
                 className="w-full px-4 py-3 bg-white border border-slate-200/60 rounded-xl text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-green-600 cursor-pointer disabled:bg-gray-100"
               >
                 <option value="">
-                  {portsLoading ? "Loading ports..." : "Apply Global / All Port Levies"}
+                  {portsLoading ? t("importTools.loadingPorts") : t("importTools.applyGlobalPortLevies")}
                 </option>
                 {ports.map((p) => (
                   <option key={p} value={p}>
@@ -610,7 +612,7 @@ export default function LandedCostCalculator({
 
           <div className="space-y-2">
             <label className="block text-xs font-bold uppercase text-gray-500 tracking-wider">
-              Container Cargo Type
+              {t("importTools.containerCargoType")}
             </label>
             <div className="flex gap-3">
               <button
@@ -623,7 +625,7 @@ export default function LandedCostCalculator({
                 }`}
               >
                 <Container className="w-4 h-4" />
-                <span>Full Container (FCL)</span>
+                <span>{t("importTools.fullContainerFcl")}</span>
               </button>
               <button
                 type="button"
@@ -635,7 +637,7 @@ export default function LandedCostCalculator({
                 }`}
               >
                 <Boxes className="w-4 h-4" />
-                <span>Loose Cargo (LCL)</span>
+                <span>{t("importTools.looseCargoLcl")}</span>
               </button>
             </div>
           </div>
@@ -651,9 +653,9 @@ export default function LandedCostCalculator({
             className="w-4.5 h-4.5 text-green-900 rounded border-gray-300 focus:ring-green-600 cursor-pointer"
           />
           <label htmlFor="cooCalculator" className="text-xs font-bold text-gray-700 cursor-pointer select-none">
-            Certificate of Origin Available
+            {t("importTools.cooAvailable")}
             <span className="block text-[10px] text-gray-400 font-normal mt-0.5">
-              Toggles preferential tariff agreements if available under trade route rules.
+              {t("importTools.cooDesc")}
             </span>
           </label>
         </div>
@@ -662,7 +664,7 @@ export default function LandedCostCalculator({
         <div className="space-y-4 pt-2">
           <div className="flex items-center justify-between border-b border-gray-100 pb-2">
             <span className="text-xs font-black text-gray-500 uppercase tracking-wider">
-              Customs Declarations ({items.length})
+              {t("importTools.customsDeclarations", { count: items.length })}
             </span>
             <button
               type="button"
@@ -670,16 +672,16 @@ export default function LandedCostCalculator({
               className="text-xs font-bold text-green-900 hover:text-green-800 bg-green-50 hover:bg-green-100/60 border border-green-200 px-3.5 py-2 rounded-xl transition-all cursor-pointer flex items-center gap-1"
             >
               <Plus className="w-3.5 h-3.5" />
-              <span>Add Item</span>
+              <span>{t("importTools.addItem")}</span>
             </button>
           </div>
 
           {items.length === 0 && (
             <div className="text-center py-10 bg-gray-50/50 rounded-2xl border border-dashed border-gray-200">
               <Package className="w-10 h-10 text-gray-300 mx-auto mb-2" />
-              <p className="text-sm font-semibold text-gray-400">No items configured yet.</p>
+              <p className="text-sm font-semibold text-gray-400">{t("importTools.noItemsConfigured")}</p>
               <p className="text-[10px] text-gray-400 mt-0.5">
-                Click "Add Item" to add standard commodities or vehicle valuations.
+                {t("importTools.noItemsDesc")}
               </p>
             </div>
           )}
@@ -695,7 +697,7 @@ export default function LandedCostCalculator({
             >
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-black text-gray-400 uppercase">
-                  Item #{idx + 1} Declaration
+                  {t("importTools.itemDeclarationHeader", { index: idx + 1 })}
                 </span>
                 <button
                   type="button"
@@ -726,8 +728,8 @@ export default function LandedCostCalculator({
                   }}
                   placeholder={
                     tariffApiAvailable
-                      ? "Search product keyword or paste 6-digit HS code..."
-                      : "Type 6-digit HS Code manually..."
+                      ? t("importTools.searchPlaceholder")
+                      : t("importTools.typeHsCodeManual")
                   }
                   className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-300 rounded-xl text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-green-600"
                 />
@@ -737,12 +739,12 @@ export default function LandedCostCalculator({
                     {itemSearching && (
                       <div className="px-4 py-3 flex items-center gap-2 text-xs text-gray-500">
                         <Loader2 className="w-3.5 h-3.5 animate-spin" />
-                        <span>Searching tariff table...</span>
+                        <span>{t("importTools.searchingTariffTable")}</span>
                       </div>
                     )}
                     {itemError && <div className="px-4 py-3 text-xs text-red-600 font-semibold">{itemError}</div>}
                     {!itemSearching && !itemError && itemResults.length === 0 && itemQuery.length >= 2 && (
-                      <div className="px-4 py-3 text-xs text-gray-500">No matching HS code found.</div>
+                      <div className="px-4 py-3 text-xs text-gray-500">{t("importTools.noMatchingHsCode")}</div>
                     )}
                     {itemResults.map((match) => (
                       <button
@@ -782,7 +784,7 @@ export default function LandedCostCalculator({
               <div className="flex items-center justify-between p-3 bg-gray-50 rounded-xl border border-gray-100">
                 <div className="flex items-center gap-2">
                   <Car className="w-4 h-4 text-gray-500" />
-                  <span className="text-xs font-bold text-gray-700">This item is a vehicle / car</span>
+                  <span className="text-xs font-bold text-gray-700">{t("importTools.isVehicleToggle")}</span>
                 </div>
                 <button
                   type="button"
@@ -813,7 +815,7 @@ export default function LandedCostCalculator({
                 {(!item.isCar || !item.vin || mode === "export") && (
                   <div className="space-y-1">
                     <label className="block text-[10px] font-bold text-gray-500 uppercase tracking-wider">
-                      Declared FOB Value (USD)
+                      {t("importTools.declaredFobValueUsd")}
                     </label>
                     <input
                       type="number"
@@ -830,7 +832,7 @@ export default function LandedCostCalculator({
                 )}
                 <div className="space-y-1">
                   <label className="block text-[10px] font-bold text-gray-500 uppercase tracking-wider">
-                    Weight (kg) <span className="text-gray-300 font-normal">(Optional)</span>
+                    {t("importTools.weightKgOptional").split(" (")[0]} <span className="text-gray-300 font-normal">({t("kassongoCapital.apply.documents.optional")})</span>
                   </label>
                   <input
                     type="number"
@@ -851,7 +853,7 @@ export default function LandedCostCalculator({
         {/* Currency Display Configuration */}
         <div className="space-y-2">
           <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider">
-            Conversion Display Currency
+            {t("importTools.conversionDisplayCurrency")}
           </label>
           <div className="flex gap-2 flex-wrap">
             {Object.keys(currencySymbols)
@@ -871,7 +873,7 @@ export default function LandedCostCalculator({
                 </button>
               ))}
           </div>
-          {ratesLoading && <span className="text-[10px] text-gray-400 mt-1 block">Updating rates...</span>}
+          {ratesLoading && <span className="text-[10px] text-gray-400 mt-1 block">{t("importTools.updatingRates")}</span>}
         </div>
 
         {/* Calculator Submission Panel */}
@@ -891,12 +893,12 @@ export default function LandedCostCalculator({
           {calcLoading ? (
             <>
               <RefreshCw className="w-4 h-4 animate-spin" />
-              <span>Computing land costs...</span>
+              <span>{t("importTools.computingLandedCosts")}</span>
             </>
           ) : (
             <>
               <Calculator className="w-4 h-4" />
-              <span>Calculate Landed Duty Fees</span>
+              <span>{t("importTools.calculateLandedDutyFees")}</span>
             </>
           )}
         </button>

@@ -1710,7 +1710,8 @@ export const zh = {
           yearEstablishedRequired: "成立年份为必填项",
           requestedAmountRequired: "金额为必填项",
           purposeRequired: "目的为必填项",
-          monthlyRevenueRequired: "月收入为必填项"
+          monthlyRevenueRequired: "月收入为必填项",
+          errorTryAgain: "发生错误。请重试。"
         },
         navigation: {
           next: "继续",
@@ -1732,6 +1733,11 @@ export const zh = {
             backHome: "返回首页",
             learnMore: "了解更多"
           }
+        },
+        trustBadges: {
+          shariah: "符合伊斯兰教法",
+          secure: "安全申请",
+          fast: "快速审批"
         }
       },
       hero: {

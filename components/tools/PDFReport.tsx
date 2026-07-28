@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { useTranslation } from "../../lib/i18n/LanguageContext";
 
 interface CustomsEstimateLine {
   name: string;
@@ -64,8 +65,37 @@ export default function PDFReport({
   xafToDisplay,
   formatCurrency,
 }: PDFReportProps) {
+  const { t, locale } = useTranslation();
   const isImport = estimate.mode === "import";
   const vehicleItem = estimate.items.find((it) => it.isCar);
+
+  const getFuelTypeTranslation = (f: string) => {
+    if (!f) return "N/A";
+    const key = f.toLowerCase();
+    const resolved = t(`importTools.fuelTypes.${key}`);
+    return resolved.startsWith("importTools.fuelTypes.") ? f : resolved;
+  };
+
+  const getBodyStyleTranslation = (b: string) => {
+    if (!b) return "N/A";
+    const key = b.toLowerCase();
+    const resolved = t(`importTools.bodyStyles.${key}`);
+    return resolved.startsWith("importTools.bodyStyles.") ? b : resolved;
+  };
+
+  const getConditionTranslation = (c: string) => {
+    if (!c) return "N/A";
+    const key = c.toLowerCase();
+    const resolved = t(`importTools.conditions.${key}`);
+    return resolved.startsWith("importTools.conditions.") ? c : resolved;
+  };
+
+  const getRegionTranslation = (r: string) => {
+    if (!r) return "N/A";
+    const key = r.toLowerCase().replace(" ", "_");
+    const resolved = t(`importTools.regions.${key}`);
+    return resolved.startsWith("importTools.regions.") ? r : resolved;
+  };
 
   // Exchange rate base display
   const exchangeRateStr = `1 USD = ${formatCurrency(xafToDisplay(600), displayCurrency)} ${displayCurrency}`;
@@ -95,14 +125,25 @@ export default function PDFReport({
 
   const dutyPayableDisplay = xafToDisplay(estimate.total);
 
-  const timestamp = new Date().toLocaleString("en-US", {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: true,
+  const dateLocaleMap: Record<string, string> = {
+    en: "en-US",
+    fr: "fr-FR",
+    de: "de-DE",
+    zh: "zh-CN",
+    uk: "en-US",
+  };
+  const activeDateLocale = dateLocaleMap[locale] || "en-US";
+
+  const timestamp = t("importTools.generatedTimestamp", {
+    timestamp: new Date().toLocaleString(activeDateLocale, {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: true,
+    })
   });
 
   const qrDataUrl = typeof window !== "undefined" && estimate.previewToken
@@ -129,13 +170,13 @@ export default function PDFReport({
         
         <div className="space-y-1">
           <h1 className="text-2xl font-black tracking-tight text-green-950 uppercase">
-            {isImport ? "Customs Import Duty Certificate" : "Customs Export Duty Certificate"}
+            {isImport ? t("importTools.customsImportDutyCertificate") : t("importTools.customsExportDutyCertificate")}
           </h1>
           <p className="text-xs text-gray-600 font-semibold">
-            Official Landed Cost Estimate Report
+            {t("importTools.officialLandedCostReport")}
           </p>
           <p className="text-[10px] text-gray-500 font-medium">
-            Generated: {timestamp}
+            {timestamp}
           </p>
         </div>
       </div>
@@ -143,14 +184,14 @@ export default function PDFReport({
       {/* 2. Summary of Results Block */}
       <div className="mt-8 space-y-2">
         <h2 className="text-sm font-bold bg-green-950 text-white px-4 py-2.5 uppercase tracking-wider">
-          Summary of Results
+          {t("importTools.summaryOfResults")}
         </h2>
         <table className="w-full border-collapse border-2 border-green-950 text-center text-sm font-semibold">
           <thead>
             <tr className="bg-green-100 text-green-950 text-xs uppercase font-black">
-              <th className="border border-green-300 py-3">MSRP / FOB Value (USD)</th>
-              {isImport && <th className="border border-green-300 py-3">Customs Value (CIF) ({displayCurrency})</th>}
-              <th className="border border-green-300 py-3">Total Duty Payable ({displayCurrency})</th>
+              <th className="border border-green-300 py-3">{t("importTools.msrpFobValueUsd")}</th>
+              {isImport && <th className="border border-green-300 py-3">{t("importTools.customsValueCifDisplay", { currency: displayCurrency })}</th>}
+              <th className="border border-green-300 py-3">{t("importTools.totalDutyPayableDisplay", { currency: displayCurrency })}</th>
             </tr>
           </thead>
           <tbody>
@@ -173,41 +214,41 @@ export default function PDFReport({
       {vehicleItem && (
         <div className="mt-8 space-y-2">
           <h2 className="text-sm font-bold bg-green-950 text-white px-4 py-2.5 uppercase tracking-wider">
-            Vehicle Information
+            {t("importTools.vehicleInformation")}
           </h2>
           <table className="w-full border-collapse border-2 border-green-950 text-xs">
             <tbody>
               <tr>
-                <td className="border border-gray-300 p-3 font-bold bg-gray-50 w-1/4">Year:</td>
+                <td className="border border-gray-300 p-3 font-bold bg-gray-50 w-1/4">{t("importTools.yearLabel")}</td>
                 <td className="border border-gray-300 p-3 w-1/4">{vehicleItem.year || "N/A"}</td>
-                <td className="border border-gray-300 p-3 font-bold bg-gray-50 w-1/4">Make:</td>
+                <td className="border border-gray-300 p-3 font-bold bg-gray-50 w-1/4">{t("importTools.makeLabel")}</td>
                 <td className="border border-gray-300 p-3 w-1/4 uppercase">{vehicleItem.make || "N/A"}</td>
               </tr>
               <tr>
-                <td className="border border-gray-300 p-3 font-bold bg-gray-50">Model:</td>
+                <td className="border border-gray-300 p-3 font-bold bg-gray-50">{t("importTools.modelLabel")}</td>
                 <td className="border border-gray-300 p-3 uppercase">{vehicleItem.model || "N/A"}</td>
-                <td className="border border-gray-300 p-3 font-bold bg-gray-50">Special Feature / Trim:</td>
+                <td className="border border-gray-300 p-3 font-bold bg-gray-50">{t("importTools.trimLabel")}</td>
                 <td className="border border-gray-300 p-3 uppercase">{vehicleItem.trim || "N/A"}</td>
               </tr>
               <tr>
-                <td className="border border-gray-300 p-3 font-bold bg-gray-50">Engine Capacity:</td>
+                <td className="border border-gray-300 p-3 font-bold bg-gray-50">{t("importTools.engineLabel")}</td>
                 <td className="border border-gray-300 p-3">{vehicleItem.engineCapacityCc ? `${vehicleItem.engineCapacityCc} cc` : "N/A"}</td>
-                <td className="border border-gray-300 p-3 font-bold bg-gray-50">Fuel Type:</td>
-                <td className="border border-gray-300 p-3">{vehicleItem.fuelType || "N/A"}</td>
+                <td className="border border-gray-300 p-3 font-bold bg-gray-50">{t("importTools.fuelLabel")}</td>
+                <td className="border border-gray-300 p-3">{getFuelTypeTranslation(vehicleItem.fuelType || "")}</td>
               </tr>
               <tr>
-                <td className="border border-gray-300 p-3 font-bold bg-gray-50">Body Style:</td>
-                <td className="border border-gray-300 p-3">{vehicleItem.bodyStyle || "N/A"}</td>
-                <td className="border border-gray-300 p-3 font-bold bg-gray-50">Region of Origin:</td>
-                <td className="border border-gray-300 p-3">{vehicleItem.originRegion || "N/A"}</td>
+                <td className="border border-gray-300 p-3 font-bold bg-gray-50">{t("importTools.bodyLabel")}</td>
+                <td className="border border-gray-300 p-3">{getBodyStyleTranslation(vehicleItem.bodyStyle || "")}</td>
+                <td className="border border-gray-300 p-3 font-bold bg-gray-50">{t("importTools.originLabel")}</td>
+                <td className="border border-gray-300 p-3">{getRegionTranslation(vehicleItem.originRegion || "")}</td>
               </tr>
               <tr>
-                <td className="border border-gray-300 p-3 font-bold bg-gray-50">Vehicle Condition:</td>
-                <td className="border border-gray-300 p-3" colSpan={3}>{vehicleItem.condition || "N/A"}</td>
+                <td className="border border-gray-300 p-3 font-bold bg-gray-50">{t("importTools.conditionLabel")}</td>
+                <td className="border border-gray-300 p-3" colSpan={3}>{getConditionTranslation(vehicleItem.condition || "")}</td>
               </tr>
               {vehicleItem.vin && (
                 <tr>
-                  <td className="border border-gray-300 p-3 font-bold bg-gray-50">VIN:</td>
+                  <td className="border border-gray-300 p-3 font-bold bg-gray-50">{t("importTools.vinLabelPdf")}</td>
                   <td className="border border-gray-300 p-3 font-mono uppercase" colSpan={3}>
                     {vehicleItem.vin}
                   </td>
@@ -222,38 +263,38 @@ export default function PDFReport({
       {vehicleItem && isImport && (
         <div className="mt-8 space-y-2">
           <h2 className="text-sm font-bold bg-green-950 text-white px-4 py-2.5 uppercase tracking-wider">
-            Vehicle Valuation Details
+            {t("importTools.vehicleValuationDetails")}
           </h2>
           <table className="w-full border-collapse border-2 border-green-950 text-xs">
             <tbody>
               <tr>
-                <td className="border border-gray-300 p-3 font-bold bg-gray-50 w-1/3">MSRP / Original FOB (USD):</td>
+                <td className="border border-gray-300 p-3 font-bold bg-gray-50 w-1/3">{t("importTools.msrpOriginalFobUsd")}</td>
                 <td className="border border-gray-300 p-3 font-mono">${formatCurrency(originalFobUsd, "USD")}</td>
               </tr>
               <tr>
-                <td className="border border-gray-300 p-3 font-bold bg-gray-50">Depreciation Applied:</td>
+                <td className="border border-gray-300 p-3 font-bold bg-gray-50">{t("importTools.depreciationApplied")}</td>
                 <td className="border border-gray-300 p-3">
-                  {depreciationRate}% ({age} year(s) old)
+                  {t("importTools.depreciationValue", { rate: depreciationRate, age })}
                 </td>
               </tr>
               <tr>
-                <td className="border border-gray-300 p-3 font-bold bg-gray-50">Depreciated Cost (FOB USD):</td>
+                <td className="border border-gray-300 p-3 font-bold bg-gray-50">{t("importTools.depreciatedCostFobUsd")}</td>
                 <td className="border border-gray-300 p-3 font-mono">${formatCurrency(depreciatedFobUsd, "USD")}</td>
               </tr>
               <tr>
-                <td className="border border-gray-300 p-3 font-bold bg-gray-50">Estimated Freight ({displayCurrency}):</td>
+                <td className="border border-gray-300 p-3 font-bold bg-gray-50">{t("importTools.estimatedFreightDisplay", { currency: displayCurrency })}</td>
                 <td className="border border-gray-300 p-3 font-mono">{currencySymbol} {formatCurrency(freightDisplay, displayCurrency)}</td>
               </tr>
               <tr>
-                <td className="border border-gray-300 p-3 font-bold bg-gray-50">Estimated Insurance ({displayCurrency}):</td>
+                <td className="border border-gray-300 p-3 font-bold bg-gray-50">{t("importTools.estimatedInsuranceDisplay", { currency: displayCurrency })}</td>
                 <td className="border border-gray-300 p-3 font-mono">{currencySymbol} {formatCurrency(insuranceDisplay, displayCurrency)}</td>
               </tr>
               <tr>
-                <td className="border border-gray-300 p-3 font-bold bg-gray-50">Exchange Rate:</td>
+                <td className="border border-gray-300 p-3 font-bold bg-gray-50">{t("importTools.exchangeRate")}</td>
                 <td className="border border-gray-300 p-3 font-mono">{exchangeRateStr}</td>
               </tr>
               <tr className="bg-green-50/30">
-                <td className="border border-gray-300 p-3 font-bold text-green-950">Customs Value CIF ({displayCurrency}):</td>
+                <td className="border border-gray-300 p-3 font-bold text-green-950">{t("importTools.customsValueCifValuation", { currency: displayCurrency })}</td>
                 <td className="border border-gray-300 p-3 font-black text-green-950 font-mono">
                   {currencySymbol} {formatCurrency(cifDisplay, displayCurrency)}
                 </td>
@@ -267,15 +308,15 @@ export default function PDFReport({
       {!vehicleItem && (
         <div className="mt-8 space-y-2">
           <h2 className="text-sm font-bold bg-green-950 text-white px-4 py-2.5 uppercase tracking-wider">
-            Shipment Cargo Items
+            {t("importTools.shipmentCargoItems")}
           </h2>
           <table className="w-full border-collapse border-2 border-green-950 text-xs">
             <thead>
               <tr className="bg-green-100 text-green-950 font-black uppercase">
-                <th className="border border-green-300 p-3 text-left">Cargo Description</th>
-                <th className="border border-green-300 p-3">HS Code</th>
-                <th className="border border-green-300 p-3 text-right">Declared Value (USD)</th>
-                <th className="border border-green-300 p-3 text-right">Weight (kg)</th>
+                <th className="border border-green-300 p-3 text-left">{t("importTools.cargoDescription")}</th>
+                <th className="border border-green-300 p-3">{t("importTools.hsCode")}</th>
+                <th className="border border-green-300 p-3 text-right">{t("importTools.declaredValueUsd")}</th>
+                <th className="border border-green-300 p-3 text-right">{t("importTools.weightKgTable")}</th>
               </tr>
             </thead>
             <tbody>
@@ -295,14 +336,14 @@ export default function PDFReport({
       {/* 6. Taxes Payable Itemized List */}
       <div className="mt-8 space-y-2">
         <h2 className="text-sm font-bold bg-green-950 text-white px-4 py-2.5 uppercase tracking-wider">
-          Taxes & Duties Payable Breakdown
+          {t("importTools.taxesDutiesPayableBreakdown")}
         </h2>
         <table className="w-full border-collapse border-2 border-green-950 text-xs">
           <thead>
             <tr className="bg-green-100 text-green-950 font-black uppercase">
-              <th className="border border-green-300 p-3 text-left">Tax / Levy Component</th>
-              <th className="border border-green-300 p-3">Rate / Basis</th>
-              <th className="border border-green-300 p-3 text-right">Amount ({displayCurrency})</th>
+              <th className="border border-green-300 p-3 text-left">{t("importTools.taxLevyComponent")}</th>
+              <th className="border border-green-300 p-3">{t("importTools.rateBasis")}</th>
+              <th className="border border-green-300 p-3 text-right">{t("importTools.amountDisplay", { currency: displayCurrency })}</th>
             </tr>
           </thead>
           <tbody>
@@ -310,7 +351,11 @@ export default function PDFReport({
               <tr key={li}>
                 <td className="border border-gray-300 p-3 font-semibold text-gray-850">{line.name}</td>
                 <td className="border border-gray-300 p-3 text-center font-mono">
-                  {line.rate}% {line.method === "percentage" ? "percentage" : "flat"} of {line.basis}
+                  {t("importTools.rateBasisFormat", {
+                    rate: line.rate,
+                    method: line.method === "percentage" ? t("importTools.percentage") : t("importTools.flat"),
+                    basis: line.basis
+                  })}
                 </td>
                 <td className="border border-gray-300 p-3 text-right font-bold font-mono">
                   {currencySymbol} {formatCurrency(xafToDisplay(line.amount), displayCurrency)}
@@ -320,7 +365,7 @@ export default function PDFReport({
             {/* Grand Total */}
             <tr className="bg-green-950 text-white font-black text-base">
               <td className="border border-green-900 p-4" colSpan={2}>
-                TOTAL TAXES & DUTIES PAYABLE
+                {t("importTools.totalTaxesDutiesPayable")}
               </td>
               <td className="border border-green-900 p-4 text-right font-mono text-lg">
                 {currencySymbol} {formatCurrency(dutyPayableDisplay, displayCurrency)}
@@ -340,26 +385,26 @@ export default function PDFReport({
               className="w-32 h-32 border-2 border-green-950 p-2 bg-white"
             />
             <span className="text-[9px] font-black text-gray-600 uppercase tracking-wider">
-              Scan QR to View Online
+              {t("importTools.scanQrToViewOnline")}
             </span>
           </div>
         )}
         <div className={`text-[10px] text-gray-600 leading-relaxed space-y-2 ${qrCodeImage ? "md:col-span-3" : "md:col-span-4"}`}>
           <div className="bg-yellow-50 border-l-4 border-yellow-600 p-3 rounded">
-            <p className="font-bold text-yellow-900 mb-1">Important Disclaimer:</p>
+            <p className="font-bold text-yellow-900 mb-1">{t("importTools.importantDisclaimer")}</p>
             <p className="text-yellow-800">
-              This is an estimated customs duty calculation. The computed tax amount may vary due to changes in currency exchange rates, customs valuation methods, and tariff updates at the time of cargo entry assessment. Duty estimates are for informational purposes only and should not be considered as final or binding amounts.
+              {t("importTools.disclaimerDesc")}
             </p>
           </div>
           <div className="bg-green-50 border-l-4 border-green-600 p-3 rounded mt-3">
-            <p className="font-bold text-green-950 mb-1">Certificate Validity:</p>
+            <p className="font-bold text-green-950 mb-1">{t("importTools.certificateValidity")}</p>
             <p className="text-green-900">
-              This certificate is generated based on current tariff data and exchange rates. For official customs clearance, please consult with licensed customs brokers or contact Kassongo Logistics for professional assistance.
+              {t("importTools.validityDesc")}
             </p>
           </div>
           <div className="text-center mt-6 pt-4 border-t border-gray-300">
-            <p className="font-black text-green-950 text-sm">Powered by Kassongo Logistics Systems</p>
-            <p className="text-gray-500 text-[9px] mt-1">Real-time Trade Intelligence & Customs Automation Platform</p>
+            <p className="font-black text-green-950 text-sm">{t("importTools.poweredByKassongo")}</p>
+            <p className="text-gray-500 text-[9px] mt-1">{t("importTools.realTimeTradeIntel")}</p>
           </div>
         </div>
       </div>

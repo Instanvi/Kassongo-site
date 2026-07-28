@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Car, RefreshCw } from "lucide-react";
+import { useTranslation } from "../../lib/i18n/LanguageContext";
 
 interface VehicleSelectorProps {
   vin?: string;
@@ -72,8 +73,37 @@ export default function VehicleSelector({
   onChange,
   onDecode,
 }: VehicleSelectorProps) {
+  const { t } = useTranslation();
   const [decoding, setDecoding] = useState(false);
   const [decodeError, setDecodeError] = useState<string | null>(null);
+
+  const getFuelTypeTranslation = (f: string) => {
+    if (!f) return "N/A";
+    const key = f.toLowerCase();
+    const resolved = t(`importTools.fuelTypes.${key}`);
+    return resolved.startsWith("importTools.fuelTypes.") ? f : resolved;
+  };
+
+  const getBodyStyleTranslation = (b: string) => {
+    if (!b) return "N/A";
+    const key = b.toLowerCase();
+    const resolved = t(`importTools.bodyStyles.${key}`);
+    return resolved.startsWith("importTools.bodyStyles.") ? b : resolved;
+  };
+
+  const getConditionTranslation = (c: string) => {
+    if (!c) return "N/A";
+    const key = c.toLowerCase();
+    const resolved = t(`importTools.conditions.${key}`);
+    return resolved.startsWith("importTools.conditions.") ? c : resolved;
+  };
+
+  const getRegionTranslation = (r: string) => {
+    if (!r) return "N/A";
+    const key = r.toLowerCase().replace(" ", "_");
+    const resolved = t(`importTools.regions.${key}`);
+    return resolved.startsWith("importTools.regions.") ? r : resolved;
+  };
 
   // Form states (internal/local mirror to control editable inputs)
   const [make, setLocalMake] = useState("");
@@ -122,7 +152,7 @@ export default function VehicleSelector({
       });
     } catch (err: any) {
       console.error(err);
-      setDecodeError(err.message || "Could not decode VIN. Please enter manually.");
+      setDecodeError(err.message || t("importTools.errVinDecode"));
     } finally {
       setDecoding(false);
     }
@@ -159,7 +189,8 @@ export default function VehicleSelector({
     if (patch.originRegion !== undefined) setLocalOriginRegion(patch.originRegion);
     if (patch.trim !== undefined) setLocalTrim(patch.trim);
 
-    const titleStr = `${nextMake || "Vehicle"} ${nextModel || ""} ${nextYear || ""} ${nextTrim || ""} (${nextCapacity || 0}cc, ${nextFuel}, ${nextBody}, ${nextCond})`.trim();
+    const vehicleFallback = t("importTools.isVehicleToggle").includes("véhicule") ? "Véhicule" : t("importTools.isVehicleToggle").includes("Fahrzeug") ? "Fahrzeug" : t("importTools.isVehicleToggle").includes("车辆") ? "车辆" : "Vehicle";
+    const titleStr = `${nextMake || vehicleFallback} ${nextModel || ""} ${nextYear || ""} ${nextTrim || ""} (${nextCapacity || 0}cc, ${nextFuel}, ${nextBody}, ${nextCond})`.trim();
     
     onChange({
       title: titleStr,
@@ -182,20 +213,20 @@ export default function VehicleSelector({
     <div className="space-y-4 p-4 bg-slate-50 rounded-xl border border-slate-100 animate-in fade-in duration-200">
       <div className="flex items-center gap-2 text-slate-800 font-bold text-xs uppercase tracking-wider">
         <Car className="w-4 h-4 text-green-800" />
-        <span>Vehicle Specifications</span>
+        <span>{t("importTools.vehicleSpecifications")}</span>
       </div>
 
       {/* VIN Decoding */}
       <div className="space-y-1">
         <label className="block text-[10px] font-bold text-gray-500 uppercase tracking-wider">
-          VIN (Vehicle Identification Number)
+          {t("importTools.vinLabel")}
         </label>
         <div className="flex gap-2">
           <input
             type="text"
             value={vin}
             onChange={(e) => handleVinChange(e.target.value)}
-            placeholder="Enter 11-17 character VIN"
+            placeholder={t("importTools.vinPlaceholder")}
             maxLength={17}
             className="flex-1 px-3 py-2 border border-slate-200/60 rounded-lg text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-green-600 bg-white"
           />
@@ -208,10 +239,10 @@ export default function VehicleSelector({
             {decoding ? (
               <>
                 <RefreshCw className="w-3.5 h-3.5 animate-spin" />
-                <span>Decoding...</span>
+                <span>{t("importTools.decoding")}</span>
               </>
             ) : (
-              <span>Decode VIN</span>
+              <span>{t("importTools.decodeVin")}</span>
             )}
           </button>
         </div>
@@ -225,7 +256,7 @@ export default function VehicleSelector({
         {/* Make/Brand Selector */}
         <div className="space-y-1">
           <label className="block text-[10px] font-bold text-gray-500 uppercase tracking-wider">
-            Make / Brand
+            {t("importTools.makeBrand")}
           </label>
           {showOtherMake ? (
             <div className="flex gap-1.5">
@@ -233,7 +264,7 @@ export default function VehicleSelector({
                 type="text"
                 value={make}
                 onChange={(e) => handleManualChange({ make: e.target.value })}
-                placeholder="Enter Make"
+                placeholder={t("importTools.enterMake")}
                 className="flex-1 px-3 py-2 border border-slate-200/60 rounded-lg text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-green-600 bg-white"
               />
               <button
@@ -244,7 +275,7 @@ export default function VehicleSelector({
                 }}
                 className="px-2.5 py-1.5 bg-gray-200 text-gray-700 hover:bg-gray-300 text-[10px] font-bold rounded-lg transition-colors cursor-pointer"
               >
-                List
+                {t("importTools.list")}
               </button>
             </div>
           ) : (
@@ -260,13 +291,13 @@ export default function VehicleSelector({
               }}
               className="w-full px-3 py-2 bg-white border border-slate-200/60 rounded-lg text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-green-600 cursor-pointer"
             >
-              <option value="">Select Make...</option>
+              <option value="">{t("importTools.selectMake")}</option>
               {POPULAR_MAKES.map((m) => (
                 <option key={m} value={m}>
                   {m}
                 </option>
               ))}
-              <option value="Other">Other Make / Brand...</option>
+              <option value="Other">{t("importTools.otherMakeBrand")}</option>
             </select>
           )}
         </div>
@@ -274,13 +305,13 @@ export default function VehicleSelector({
         {/* Model */}
         <div className="space-y-1">
           <label className="block text-[10px] font-bold text-gray-500 uppercase tracking-wider">
-            Model
+            {t("importTools.model")}
           </label>
           <input
             type="text"
             value={model}
             onChange={(e) => handleManualChange({ model: e.target.value })}
-            placeholder="e.g. Corolla, GLE 350"
+            placeholder={t("importTools.modelPlaceholder")}
             className="w-full px-3 py-2 border border-slate-200/60 rounded-lg text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-green-600 bg-white"
           />
         </div>
@@ -288,13 +319,13 @@ export default function VehicleSelector({
         {/* Special Feature / Trim */}
         <div className="space-y-1">
           <label className="block text-[10px] font-bold text-gray-500 uppercase tracking-wider">
-            Special Feature / Trim
+            {t("importTools.specialFeatureTrim")}
           </label>
           <input
             type="text"
             value={trim}
             onChange={(e) => handleManualChange({ trim: e.target.value })}
-            placeholder="e.g. AMG, Sport, Convertible"
+            placeholder={t("importTools.trimPlaceholder")}
             className="w-full px-3 py-2 border border-slate-200/60 rounded-lg text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-green-600 bg-white"
           />
         </div>
@@ -302,14 +333,14 @@ export default function VehicleSelector({
         {/* Year */}
         <div className="space-y-1">
           <label className="block text-[10px] font-bold text-gray-500 uppercase tracking-wider">
-            Year of Manufacture
+            {t("importTools.yearOfManufacture")}
           </label>
           <select
             value={year || ""}
             onChange={(e) => handleManualChange({ year: parseInt(e.target.value) || undefined })}
             className="w-full px-3 py-2 bg-white border border-slate-200/60 rounded-lg text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-green-600 cursor-pointer"
           >
-            <option value="">Select Year...</option>
+            <option value="">{t("importTools.selectYear")}</option>
             {years.map((y) => (
               <option key={y} value={y}>
                 {y}
@@ -321,13 +352,13 @@ export default function VehicleSelector({
         {/* Engine capacity */}
         <div className="space-y-1">
           <label className="block text-[10px] font-bold text-gray-500 uppercase tracking-wider">
-            Engine Capacity (cc)
+            {t("importTools.engineCapacityCc")}
           </label>
           <input
             type="number"
             value={engineCapacity || ""}
             onChange={(e) => handleManualChange({ engineCapacityCc: parseInt(e.target.value) || undefined })}
-            placeholder="e.g. 1800, 3500"
+            placeholder={t("importTools.engineCapacityPlaceholder")}
             min="1"
             className="w-full px-3 py-2 border border-slate-200/60 rounded-lg text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-green-600 bg-white"
           />
@@ -336,7 +367,7 @@ export default function VehicleSelector({
         {/* Fuel Type */}
         <div className="space-y-1">
           <label className="block text-[10px] font-bold text-gray-500 uppercase tracking-wider">
-            Fuel Type
+            {t("importTools.fuelType")}
           </label>
           <select
             value={fuelType}
@@ -345,7 +376,7 @@ export default function VehicleSelector({
           >
             {FUEL_TYPES.map((f) => (
               <option key={f} value={f}>
-                {f}
+                {getFuelTypeTranslation(f)}
               </option>
             ))}
           </select>
@@ -354,7 +385,7 @@ export default function VehicleSelector({
         {/* Body Style */}
         <div className="space-y-1">
           <label className="block text-[10px] font-bold text-gray-500 uppercase tracking-wider">
-            Body Style
+            {t("importTools.bodyStyle")}
           </label>
           <select
             value={bodyStyle}
@@ -363,7 +394,7 @@ export default function VehicleSelector({
           >
             {BODY_STYLES.map((b) => (
               <option key={b} value={b}>
-                {b}
+                {getBodyStyleTranslation(b)}
               </option>
             ))}
           </select>
@@ -372,7 +403,7 @@ export default function VehicleSelector({
         {/* Region of Origin */}
         <div className="space-y-1">
           <label className="block text-[10px] font-bold text-gray-500 uppercase tracking-wider">
-            Region of Origin
+            {t("importTools.regionOfOrigin")}
           </label>
           <select
             value={originRegion}
@@ -381,7 +412,7 @@ export default function VehicleSelector({
           >
             {REGIONS.map((r) => (
               <option key={r} value={r}>
-                {r}
+                {getRegionTranslation(r)}
               </option>
             ))}
           </select>
@@ -390,7 +421,7 @@ export default function VehicleSelector({
         {/* Vehicle Condition */}
         <div className="space-y-1">
           <label className="block text-[10px] font-bold text-gray-500 uppercase tracking-wider">
-            Vehicle Condition
+            {t("importTools.vehicleCondition")}
           </label>
           <select
             value={condition}
@@ -399,7 +430,7 @@ export default function VehicleSelector({
           >
             {VEHICLE_CONDITIONS.map((c) => (
               <option key={c} value={c}>
-                {c}
+                {getConditionTranslation(c)}
               </option>
             ))}
           </select>

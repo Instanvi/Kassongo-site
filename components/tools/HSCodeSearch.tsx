@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Search, Package, ChevronRight, Tag, X } from "lucide-react";
 import { HS_CODES, searchHSCodes, getCategories, type HSCode } from "../../lib/hs-codes";
+import { useTranslation } from "../../lib/i18n/LanguageContext";
 
 interface HSCodeSearchProps {
   value: string;
@@ -14,9 +15,13 @@ interface HSCodeSearchProps {
 export default function HSCodeSearch({
   value,
   onChange,
-  label = "HS Code / Product",
-  placeholder = "Search by product name, HS code, or category...",
+  label,
+  placeholder,
 }: HSCodeSearchProps) {
+  const { t } = useTranslation();
+  const displayLabel = label ?? t("importTools.labelHsCodeProduct");
+  const displayPlaceholder = placeholder ?? t("importTools.placeholderHsCodeProduct");
+
   const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -73,7 +78,7 @@ export default function HSCodeSearch({
             : "bg-gray-100 text-gray-600 hover:bg-gray-200"
         }`}
       >
-        All Products
+        {t("importTools.allProducts")}
       </button>
       {categories.map((cat) => (
         <button
@@ -99,7 +104,7 @@ export default function HSCodeSearch({
     <div className="max-h-64 overflow-y-auto divide-y divide-gray-50">
       {results.length === 0 ? (
         <div className="p-6 text-center text-sm text-gray-400">
-          No products found. Try a different search term.
+          {t("importTools.noProductsFoundSearch")}
         </div>
       ) : (
         results.map((item) => (
@@ -138,9 +143,9 @@ export default function HSCodeSearch({
 
   return (
     <div ref={containerRef} className="relative w-full">
-      {label && (
+      {displayLabel && (
         <label className="block text-xs font-bold uppercase text-gray-500 tracking-wider mb-2">
-          {label}
+          {displayLabel}
         </label>
       )}
 
@@ -163,7 +168,7 @@ export default function HSCodeSearch({
         ) : (
           <>
             <Search className="w-5 h-5 text-gray-400 shrink-0" />
-            <span className="flex-1 text-gray-400 truncate">{placeholder}</span>
+            <span className="flex-1 text-gray-400 truncate">{displayPlaceholder}</span>
           </>
         )}
         <ChevronRight
@@ -186,7 +191,7 @@ export default function HSCodeSearch({
             <div className="w-12 h-1.5 bg-gray-200 rounded-full mx-auto my-3 cursor-pointer" onClick={() => setIsOpen(false)} />
 
             <div className="flex items-center justify-between px-4 pb-3 border-b border-gray-100">
-              <span className="font-display font-bold text-gray-900">{label}</span>
+              <span className="font-display font-bold text-gray-900">{displayLabel}</span>
               <button
                 type="button"
                 onClick={() => { setIsOpen(false); setSearchQuery(""); }}
@@ -208,7 +213,7 @@ export default function HSCodeSearch({
                     setSearchQuery(e.target.value);
                     setSelectedCategory(null);
                   }}
-                  placeholder="Type to search e.g. laptop, coffee..."
+                  placeholder={t("importTools.typeToSearchMobile")}
                   className="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-green-700 focus:bg-white transition-all"
                 />
               </div>
@@ -238,7 +243,7 @@ export default function HSCodeSearch({
                   setSearchQuery(e.target.value);
                   setSelectedCategory(null);
                 }}
-                placeholder="Type to search..."
+                placeholder={t("importTools.typeToSearchDesktop")}
                 className="w-full pl-9 pr-4 py-2 bg-gray-50 border border-gray-100 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-green-700 focus:bg-white transition-all"
               />
             </div>

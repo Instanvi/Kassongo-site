@@ -6,6 +6,7 @@ import Footer from "../../../../components/Footer";
 import Button from "../../../../components/Button";
 import { Select } from "../../../../components/Select";
 import CountrySelector from "../../../../components/tools/CountrySelector";
+import { useTranslation } from "../../../../lib/i18n/LanguageContext";
 import {
   Building2,
   User,
@@ -91,10 +92,33 @@ const DOCUMENTS = [
 ] as const;
 
 export default function ApplyCapitalPage() {
+  const { t } = useTranslation();
   const [step, setStep] = useState<1 | 2 | 3 | 4>(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>({});
+
+  const stepKeys = ["personal", "business", "financing", "documents"] as const;
+  const rangeKeys: Record<string, string> = {
+    "0-10k": "range1",
+    "10k-50k": "range2",
+    "50k-100k": "range3",
+    "100k-500k": "range4",
+    "500k+": "range5",
+  };
+  const termKeys: Record<string, string> = {
+    "30": "days30",
+    "60": "days60",
+    "90": "days90",
+    "120": "days120",
+  };
+  const businessTypeKeys: Record<string, string> = {
+    "sole_proprietor": "soleProprietor",
+    "llc": "llc",
+    "corporation": "corporation",
+    "partnership": "partnership",
+    "other": "other",
+  };
 
   const [formData, setFormData] = useState<FormData>({
     firstName: "",
@@ -142,24 +166,24 @@ export default function ApplyCapitalPage() {
     const newErrors: Partial<Record<keyof FormData, string>> = {};
 
     if (currentStep === 1) {
-      if (!formData.firstName.trim()) newErrors.firstName = "First name is required";
-      if (!formData.lastName.trim()) newErrors.lastName = "Last name is required";
-      if (!formData.email.trim()) newErrors.email = "Email is required";
-      else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = "Invalid email format";
-      if (!formData.phone.trim()) newErrors.phone = "Phone number is required";
-      if (!formData.country) newErrors.country = "Country is required";
+      if (!formData.firstName.trim()) newErrors.firstName = t("products.kassongoCapital.apply.validation.firstNameRequired");
+      if (!formData.lastName.trim()) newErrors.lastName = t("products.kassongoCapital.apply.validation.lastNameRequired");
+      if (!formData.email.trim()) newErrors.email = t("products.kassongoCapital.apply.validation.emailRequired");
+      else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = t("products.kassongoCapital.apply.validation.emailInvalid");
+      if (!formData.phone.trim()) newErrors.phone = t("products.kassongoCapital.apply.validation.phoneRequired");
+      if (!formData.country) newErrors.country = t("products.kassongoCapital.apply.validation.countryRequired");
     }
 
     if (currentStep === 2) {
-      if (!formData.businessName.trim()) newErrors.businessName = "Business name is required";
-      if (!formData.businessType) newErrors.businessType = "Business type is required";
-      if (!formData.yearEstablished) newErrors.yearEstablished = "Year established is required";
+      if (!formData.businessName.trim()) newErrors.businessName = t("products.kassongoCapital.apply.validation.businessNameRequired");
+      if (!formData.businessType) newErrors.businessType = t("products.kassongoCapital.apply.validation.businessTypeRequired");
+      if (!formData.yearEstablished) newErrors.yearEstablished = t("products.kassongoCapital.apply.validation.yearEstablishedRequired");
     }
 
     if (currentStep === 3) {
-      if (!formData.requestedAmount) newErrors.requestedAmount = "Amount is required";
-      if (!formData.purpose.trim()) newErrors.purpose = "Purpose is required";
-      if (!formData.monthlyRevenue) newErrors.monthlyRevenue = "Monthly revenue is required";
+      if (!formData.requestedAmount) newErrors.requestedAmount = t("products.kassongoCapital.apply.validation.requestedAmountRequired");
+      if (!formData.purpose.trim()) newErrors.purpose = t("products.kassongoCapital.apply.validation.purposeRequired");
+      if (!formData.monthlyRevenue) newErrors.monthlyRevenue = t("products.kassongoCapital.apply.validation.monthlyRevenueRequired");
     }
 
     setErrors(newErrors);
@@ -189,7 +213,7 @@ export default function ApplyCapitalPage() {
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (error) {
       console.error("Submission error:", error);
-      alert("An error occurred. Please try again.");
+      alert(t("products.kassongoCapital.apply.validation.errorTryAgain") || "An error occurred. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -208,21 +232,21 @@ export default function ApplyCapitalPage() {
             </div>
             <div>
               <h1 className="text-3xl md:text-4xl font-black text-gray-900 tracking-tight">
-                Application Submitted!
+                {t("products.kassongoCapital.apply.success.title")}
               </h1>
               <p className="text-gray-600 leading-relaxed max-w-lg mx-auto text-base mt-3">
-                Thank you for applying to Kassongo Capital. Our team will review your application and contact you within 2-3 business days.
+                {t("products.kassongoCapital.apply.success.subtitle")}
               </p>
             </div>
             
             <div className="bg-green-50 rounded-2xl p-6 space-y-4 border border-green-100 text-left">
-              <p className="text-xs font-black text-green-900 uppercase tracking-wider">What Happens Next</p>
+              <p className="text-xs font-black text-green-900 uppercase tracking-wider">{t("products.kassongoCapital.apply.success.nextSteps.title")}</p>
               <ul className="text-sm text-gray-700 space-y-3">
                 {[
-                  "Our team reviews your application and documents",
-                  "We conduct a preliminary credit assessment",
-                  "You'll receive a decision or request for additional information",
-                  "Upon approval, funds are disbursed according to the agreed terms",
+                  t("products.kassongoCapital.apply.success.nextSteps.step1"),
+                  t("products.kassongoCapital.apply.success.nextSteps.step2"),
+                  t("products.kassongoCapital.apply.success.nextSteps.step3"),
+                  t("products.kassongoCapital.apply.success.nextSteps.step4"),
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mt-0.5 shrink-0">
@@ -235,8 +259,8 @@ export default function ApplyCapitalPage() {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4">
-              <Button variant="primary" href="/" size="lg">Back to Home</Button>
-              <Button variant="outline" href="/products/kassongo-capital" size="lg">Learn More</Button>
+              <Button variant="primary" href="/" size="lg">{t("products.kassongoCapital.apply.success.actions.backHome")}</Button>
+              <Button variant="outline" href="/products/kassongo-capital" size="lg">{t("products.kassongoCapital.apply.success.actions.learnMore")}</Button>
             </div>
           </div>
         </main>
@@ -260,7 +284,7 @@ export default function ApplyCapitalPage() {
               className="inline-flex items-center gap-2"
             >
               <ArrowLeft className="w-4 h-4" />
-              Back to Kassongo Capital
+              {t("products.kassongoCapital.apply.header.backButton")}
             </Button>
             
             <div className="relative overflow-hidden bg-gradient-to-r from-green-950 to-green-900 rounded-3xl p-8 md:p-12 text-white">
@@ -270,13 +294,13 @@ export default function ApplyCapitalPage() {
               <div className="relative z-10 max-w-3xl">
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-yellow-400/20 border border-yellow-400/30 rounded-full text-yellow-300 text-xs font-bold uppercase tracking-wider shadow-sm mb-4">
                   <Shield className="w-3.5 h-3.5" />
-                  <span>Shariah-Compliant Financing</span>
+                  <span>{t("products.kassongoCapital.apply.header.badge")}</span>
                 </div>
                 <h1 className="text-4xl md:text-5xl font-black leading-tight tracking-tight mb-4">
-                  Apply for Trade Capital
+                  {t("products.kassongoCapital.apply.header.title")}
                 </h1>
                 <p className="text-green-100/90 text-base md:text-lg max-w-2xl leading-relaxed">
-                  Complete your application in 4 simple steps. Get ethical financing solutions tailored to grow your international trade business.
+                  {t("products.kassongoCapital.apply.header.subtitle")}
                 </p>
               </div>
             </div>
@@ -315,10 +339,10 @@ export default function ApplyCapitalPage() {
                       </div>
                       <div className="text-center">
                         <p className={`text-xs font-bold ${isActive ? "text-green-950" : "text-gray-500"}`}>
-                          Step {s.num}
+                          {t("products.kassongoCapital.apply.stepLabels.step")} {s.num}
                         </p>
                         <p className={`text-xs ${isActive ? "text-green-900 font-bold" : "text-gray-500"}`}>
-                          {s.label}
+                          {t("products.kassongoCapital.apply.steps." + stepKeys[s.num - 1])}
                         </p>
                       </div>
                     </div>
@@ -330,7 +354,6 @@ export default function ApplyCapitalPage() {
 
           {/* Form Card */}
           <form onSubmit={handleSubmit} className="bg-white rounded-3xl shadow-sm p-6 md:p-8 border border-gray-100 space-y-8">
-            
             {/* Step 1: Personal Information */}
             {step === 1 && (
               <div className="space-y-6 animate-in fade-in duration-300">
@@ -339,16 +362,16 @@ export default function ApplyCapitalPage() {
                     <User className="w-5 h-5 text-green-700" />
                   </div>
                   <div>
-                    <h2 className="text-xl font-black text-gray-900">Personal Information</h2>
-                    <p className="text-xs text-gray-500 mt-0.5">Tell us about yourself</p>
+                    <h2 className="text-xl font-black text-gray-900">{t("products.kassongoCapital.apply.personalInfo.title")}</h2>
+                    <p className="text-xs text-gray-500 mt-0.5">{t("products.kassongoCapital.apply.personalInfo.subtitle")}</p>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <InputField
-                    label="First Name"
+                    label={t("products.kassongoCapital.apply.personalInfo.firstName")}
                     name="firstName"
-                    placeholder="John"
+                    placeholder={t("products.kassongoCapital.apply.personalInfo.firstNamePlaceholder")}
                     icon={User}
                     required
                     value={formData.firstName}
@@ -356,9 +379,9 @@ export default function ApplyCapitalPage() {
                     onChange={handleInputChange}
                   />
                   <InputField
-                    label="Last Name"
+                    label={t("products.kassongoCapital.apply.personalInfo.lastName")}
                     name="lastName"
-                    placeholder="Doe"
+                    placeholder={t("products.kassongoCapital.apply.personalInfo.lastNamePlaceholder")}
                     required
                     value={formData.lastName}
                     error={errors.lastName}
@@ -367,10 +390,10 @@ export default function ApplyCapitalPage() {
                 </div>
 
                 <InputField
-                  label="Email Address"
+                  label={t("products.kassongoCapital.apply.personalInfo.email")}
                   name="email"
                   type="email"
-                  placeholder="john.doe@example.com"
+                  placeholder={t("products.kassongoCapital.apply.personalInfo.emailPlaceholder")}
                   icon={Mail}
                   required
                   value={formData.email}
@@ -380,10 +403,10 @@ export default function ApplyCapitalPage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <InputField
-                    label="Phone Number"
+                    label={t("products.kassongoCapital.apply.personalInfo.phone")}
                     name="phone"
                     type="tel"
-                    placeholder="+1 (555) 123-4567"
+                    placeholder={t("products.kassongoCapital.apply.personalInfo.phonePlaceholder")}
                     icon={Phone}
                     required
                     value={formData.phone}
@@ -393,12 +416,12 @@ export default function ApplyCapitalPage() {
                   
                   <div className="space-y-2">
                     <label className="block text-sm font-bold text-gray-700">
-                      Country <span className="text-red-500">*</span>
+                      {t("products.kassongoCapital.apply.personalInfo.country")} <span className="text-red-500">*</span>
                     </label>
                     <CountrySelector
                       value={formData.country}
                       onChange={(code) => updateField("country", code)}
-                      placeholder="Select your country"
+                      placeholder={t("products.kassongoCapital.apply.personalInfo.countryPlaceholder")}
                     />
                     {errors.country && (
                       <p className="text-xs text-red-500 flex items-center gap-1.5 mt-1">
@@ -419,15 +442,15 @@ export default function ApplyCapitalPage() {
                     <Building2 className="w-5 h-5 text-green-700" />
                   </div>
                   <div>
-                    <h2 className="text-xl font-black text-gray-900">Business Information</h2>
-                    <p className="text-xs text-gray-500 mt-0.5">Tell us about your company</p>
+                    <h2 className="text-xl font-black text-gray-900">{t("products.kassongoCapital.apply.businessInfo.title")}</h2>
+                    <p className="text-xs text-gray-500 mt-0.5">{t("products.kassongoCapital.apply.businessInfo.subtitle")}</p>
                   </div>
                 </div>
 
                 <InputField
-                  label="Business Name"
+                  label={t("products.kassongoCapital.apply.businessInfo.businessName")}
                   name="businessName"
-                  placeholder="Your Company LLC"
+                  placeholder={t("products.kassongoCapital.apply.businessInfo.businessNamePlaceholder")}
                   icon={Building2}
                   required
                   value={formData.businessName}
@@ -437,22 +460,21 @@ export default function ApplyCapitalPage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label htmlFor="businessType" className="block text-sm font-bold text-gray-700">
-                      Business Type <span className="text-red-500">*</span>
+                    <label className="block text-sm font-bold text-gray-700">
+                      {t("products.kassongoCapital.apply.businessInfo.businessType")} <span className="text-red-500">*</span>
                     </label>
                     <div className="relative">
                       <Building2 className="absolute left-3.5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none z-10" />
                       <Select
-                        id="businessType"
                         name="businessType"
                         value={formData.businessType}
                         onChange={handleInputChange}
                         className="pl-11"
                       >
-                        <option value="">Select Type</option>
+                        <option value="">{t("products.kassongoCapital.apply.businessInfo.businessTypePlaceholder")}</option>
                         {BUSINESS_TYPES.map((type) => (
                           <option key={type.value} value={type.value}>
-                            {type.label}
+                            {t("products.kassongoCapital.apply.businessInfo.businessTypes." + businessTypeKeys[type.value])}
                           </option>
                         ))}
                       </Select>
@@ -466,10 +488,10 @@ export default function ApplyCapitalPage() {
                   </div>
 
                   <InputField
-                    label="Year Established"
+                    label={t("products.kassongoCapital.apply.businessInfo.yearEstablished")}
                     name="yearEstablished"
                     type="number"
-                    placeholder="2020"
+                    placeholder={t("products.kassongoCapital.apply.businessInfo.yearEstablishedPlaceholder")}
                     icon={Calendar}
                     required
                     value={formData.yearEstablished}
@@ -480,19 +502,19 @@ export default function ApplyCapitalPage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <InputField
-                    label="Tax ID / EIN"
+                    label={t("products.kassongoCapital.apply.businessInfo.taxId")}
                     name="taxId"
-                    placeholder="12-3456789"
+                    placeholder={t("products.kassongoCapital.apply.businessInfo.taxIdPlaceholder")}
                     icon={FileText}
                     value={formData.taxId}
                     error={errors.taxId}
                     onChange={handleInputChange}
                   />
                   <InputField
-                    label="Website"
+                    label={t("products.kassongoCapital.apply.businessInfo.website")}
                     name="website"
                     type="url"
-                    placeholder="https://yourcompany.com"
+                    placeholder={t("products.kassongoCapital.apply.businessInfo.websitePlaceholder")}
                     icon={Globe}
                     value={formData.website}
                     error={errors.website}
@@ -510,14 +532,14 @@ export default function ApplyCapitalPage() {
                     <DollarSign className="w-5 h-5 text-green-700" />
                   </div>
                   <div>
-                    <h2 className="text-xl font-black text-gray-900">Financing Details</h2>
-                    <p className="text-xs text-gray-500 mt-0.5">Specify your financing needs</p>
+                    <h2 className="text-xl font-black text-gray-900">{t("products.kassongoCapital.apply.financingDetails.title")}</h2>
+                    <p className="text-xs text-gray-500 mt-0.5">{t("products.kassongoCapital.apply.financingDetails.subtitle")}</p>
                   </div>
                 </div>
 
                 <div className="space-y-3">
                   <label className="block text-sm font-bold text-gray-700">
-                    Type of Financing <span className="text-red-500">*</span>
+                    {t("products.kassongoCapital.apply.financingDetails.financingType")} <span className="text-red-500">*</span>
                   </label>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     {FINANCING_TYPES.map((type) => (
@@ -542,8 +564,8 @@ export default function ApplyCapitalPage() {
                             )}
                           </div>
                           <div>
-                            <div className="font-bold text-sm text-gray-900">{type.label}</div>
-                            <div className="text-xs text-gray-500 mt-1 leading-relaxed">{type.desc}</div>
+                            <div className="font-bold text-sm text-gray-900">{t("products.kassongoCapital.apply.financingDetails.financingTypes." + type.value)}</div>
+                            <div className="text-xs text-gray-500 mt-1 leading-relaxed">{t("products.kassongoCapital.apply.financingDetails.financingTypes." + type.value + "Desc")}</div>
                           </div>
                         </div>
                       </button>
@@ -553,10 +575,10 @@ export default function ApplyCapitalPage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <InputField
-                    label="Requested Amount"
+                    label={t("products.kassongoCapital.apply.financingDetails.requestedAmount")}
                     name="requestedAmount"
                     type="number"
-                    placeholder="50000"
+                    placeholder={t("products.kassongoCapital.apply.financingDetails.requestedAmountPlaceholder")}
                     icon={DollarSign}
                     required
                     value={formData.requestedAmount}
@@ -565,13 +587,12 @@ export default function ApplyCapitalPage() {
                   />
                   
                   <div className="space-y-2">
-                    <label htmlFor="term" className="block text-sm font-bold text-gray-700">
-                      Repayment Term <span className="text-red-500">*</span>
+                    <label className="block text-sm font-bold text-gray-700">
+                      {t("products.kassongoCapital.apply.financingDetails.term")} <span className="text-red-500">*</span>
                     </label>
                     <div className="relative">
                       <Calendar className="absolute left-3.5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none z-10" />
                       <Select
-                        id="term"
                         name="term"
                         value={formData.term}
                         onChange={handleInputChange}
@@ -579,7 +600,7 @@ export default function ApplyCapitalPage() {
                       >
                         {TERM_OPTIONS.map((opt) => (
                           <option key={opt.value} value={opt.value}>
-                            {opt.label}
+                            {t("products.kassongoCapital.apply.financingDetails.termOptions." + termKeys[opt.value])}
                           </option>
                         ))}
                       </Select>
@@ -588,9 +609,9 @@ export default function ApplyCapitalPage() {
                 </div>
 
                 <TextAreaField
-                  label="Purpose of Financing"
+                  label={t("products.kassongoCapital.apply.financingDetails.purpose")}
                   name="purpose"
-                  placeholder="Describe how you plan to use the funds..."
+                  placeholder={t("products.kassongoCapital.apply.financingDetails.purposePlaceholder")}
                   rows={4}
                   required
                   value={formData.purpose}
@@ -600,22 +621,21 @@ export default function ApplyCapitalPage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label htmlFor="monthlyRevenue" className="block text-sm font-bold text-gray-700">
-                      Monthly Revenue <span className="text-red-500">*</span>
+                    <label className="block text-sm font-bold text-gray-700">
+                      {t("products.kassongoCapital.apply.financingDetails.monthlyRevenue")} <span className="text-red-500">*</span>
                     </label>
                     <div className="relative">
                       <DollarSign className="absolute left-3.5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none z-10" />
                       <Select
-                        id="monthlyRevenue"
                         name="monthlyRevenue"
                         value={formData.monthlyRevenue}
                         onChange={handleInputChange}
                         className="pl-11"
                       >
-                        <option value="">Select Range</option>
+                        <option value="">{t("products.kassongoCapital.apply.financingDetails.monthlyRevenuePlaceholder")}</option>
                         {REVENUE_RANGES.map((range) => (
                           <option key={range.value} value={range.value}>
-                            {range.label}
+                            {t("products.kassongoCapital.apply.financingDetails.revenueRanges." + rangeKeys[range.value])}
                           </option>
                         ))}
                       </Select>
@@ -629,30 +649,29 @@ export default function ApplyCapitalPage() {
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="hasCollateral" className="block text-sm font-bold text-gray-700">
-                      Do you have collateral?
+                    <label className="block text-sm font-bold text-gray-700">
+                      {t("products.kassongoCapital.apply.financingDetails.hasCollateral")}
                     </label>
                     <div className="relative">
                       <Shield className="absolute left-3.5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none z-10" />
                       <Select
-                        id="hasCollateral"
                         name="hasCollateral"
                         value={formData.hasCollateral}
                         onChange={handleInputChange}
                         className="pl-11"
                       >
-                        <option value="">Select Option</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
+                        <option value="">{t("products.kassongoCapital.apply.financingDetails.hasCollateralPlaceholder")}</option>
+                        <option value="yes">{t("products.kassongoCapital.apply.financingDetails.collateralOptions.yes")}</option>
+                        <option value="no">{t("products.kassongoCapital.apply.financingDetails.collateralOptions.no")}</option>
                       </Select>
                     </div>
                   </div>
                 </div>
 
                 <TextAreaField
-                  label="Additional Comments"
+                  label={t("products.kassongoCapital.apply.financingDetails.additionalComments")}
                   name="comments"
-                  placeholder="Any additional information you'd like to share..."
+                  placeholder={t("products.kassongoCapital.apply.financingDetails.additionalCommentsPlaceholder")}
                   rows={3}
                   value={formData.comments}
                   onChange={handleInputChange}
@@ -668,19 +687,19 @@ export default function ApplyCapitalPage() {
                     <FileText className="w-5 h-5 text-green-700" />
                   </div>
                   <div>
-                    <h2 className="text-xl font-black text-gray-900">Required Documents</h2>
-                    <p className="text-xs text-gray-500 mt-0.5">Upload supporting documentation</p>
+                    <h2 className="text-xl font-black text-gray-900">{t("products.kassongoCapital.apply.documents.title")}</h2>
+                    <p className="text-xs text-gray-500 mt-0.5">{t("products.kassongoCapital.apply.documents.subtitle")}</p>
                   </div>
                 </div>
 
                 <div className="bg-blue-50 border border-blue-200 rounded-2xl p-5 flex items-start gap-3">
                   <Sparkles className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
                   <div className="text-sm text-blue-900">
-                    <p className="font-bold mb-2">Document Requirements</p>
+                    <p className="font-bold mb-2">{t("products.kassongoCapital.apply.documents.requirements.title")}</p>
                     <ul className="text-xs space-y-1.5 text-blue-800">
-                      <li>• All documents must be in PDF, JPEG, or PNG format</li>
-                      <li>• Maximum file size: 5MB per document</li>
-                      <li>• Documents must be clear and legible</li>
+                      <li>• {t("products.kassongoCapital.apply.documents.requirements.format")}</li>
+                      <li>• {t("products.kassongoCapital.apply.documents.requirements.size")}</li>
+                      <li>• {t("products.kassongoCapital.apply.documents.requirements.clarity")}</li>
                     </ul>
                   </div>
                 </div>
@@ -691,7 +710,7 @@ export default function ApplyCapitalPage() {
                     return (
                       <div key={doc.field} className="space-y-2">
                         <label className="block text-sm font-bold text-gray-700">
-                          {doc.label} {doc.required && <span className="text-red-500">*</span>}
+                          {t("products.kassongoCapital.apply.documents." + doc.field)} {doc.required && <span className="text-red-500">*</span>}
                         </label>
                         <div className="relative">
                           <input
@@ -724,9 +743,9 @@ export default function ApplyCapitalPage() {
                               ) : (
                                 <div>
                                   <p className="font-bold text-gray-700 group-hover:text-green-700 text-sm">
-                                    Click to upload or drag and drop
+                                    {t("products.kassongoCapital.apply.documents.uploadButton")}
                                   </p>
-                                  <p className="text-xs text-gray-500 mt-0.5">PDF, JPEG, PNG (Max 5MB)</p>
+                                  <p className="text-xs text-gray-500 mt-0.5">{t("products.kassongoCapital.apply.documents.requirements.format")}</p>
                                 </div>
                               )}
                             </div>
@@ -756,7 +775,7 @@ export default function ApplyCapitalPage() {
               {step > 1 ? (
                 <Button type="button" variant="outline" onClick={prevStep} className="flex items-center gap-2">
                   <ArrowLeft className="w-4 h-4" />
-                  Previous
+                  {t("products.kassongoCapital.apply.navigation.previous")}
                 </Button>
               ) : (
                 <div />
@@ -764,7 +783,7 @@ export default function ApplyCapitalPage() {
 
               {step < 4 ? (
                 <Button type="button" variant="primary" onClick={nextStep} className="ml-auto">
-                  Continue
+                  {t("products.kassongoCapital.apply.navigation.next")}
                 </Button>
               ) : (
                 <Button
@@ -776,11 +795,11 @@ export default function ApplyCapitalPage() {
                   {isSubmitting ? (
                     <>
                       <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                      Submitting...
+                      {t("products.kassongoCapital.apply.navigation.submitting")}
                     </>
                   ) : (
                     <>
-                      Submit Application
+                      {t("products.kassongoCapital.apply.navigation.submit")}
                       <CheckCircle2 className="w-4 h-4" />
                     </>
                   )}
@@ -793,11 +812,11 @@ export default function ApplyCapitalPage() {
           <div className="bg-white rounded-3xl shadow-sm p-6 border border-gray-100">
             <div className="flex flex-wrap items-center justify-center gap-6 text-center">
               {[
-                { icon: Shield, label: "Shariah Compliant" },
-                { icon: CheckCircle2, label: "Secure Application" },
-                { icon: Clock, label: "Fast Approval" },
+                { icon: Shield, label: t("products.kassongoCapital.apply.trustBadges.shariah"), key: "shariah" },
+                { icon: CheckCircle2, label: t("products.kassongoCapital.apply.trustBadges.secure"), key: "secure" },
+                { icon: Clock, label: t("products.kassongoCapital.apply.trustBadges.fast"), key: "fast" },
               ].map((badge) => (
-                <div key={badge.label} className="flex items-center gap-2 text-sm text-gray-600">
+                <div key={badge.key} className="flex items-center gap-2 text-sm text-gray-600">
                   <badge.icon className="w-4 h-4 text-green-700" />
                   <span className="font-bold">{badge.label}</span>
                 </div>

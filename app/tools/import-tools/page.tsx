@@ -23,6 +23,7 @@ import LandedCostCalculator from "../../../components/tools/LandedCostCalculator
 import HsCodeLookupTab from "../../../components/tools/HsCodeLookupTab";
 import PDFReport from "../../../components/tools/PDFReport";
 import { COUNTRIES } from "../../../lib/countries";
+import { useTranslation } from "../../../lib/i18n/LanguageContext";
 
 // ─── API CONFIGURATION ─────────────────────────────────────────
 const API_BASE = "https://new.ntigi.cm/backend/api/v1";
@@ -151,6 +152,14 @@ async function apiJson<T>(res: Response): Promise<T> {
 }
 
 function CombinedImportToolsContent({ defaultTab = "calculator" }: { defaultTab?: "calculator" | "lookup" }) {
+  const { t } = useTranslation();
+  const getLineDetails = (line: CustomsEstimateLine) => {
+    return t("importTools.rateBasisFormat", {
+      rate: line.rate,
+      method: line.method === "percentage" ? t("importTools.percentage") : t("importTools.flat"),
+      basis: line.basis,
+    });
+  };
   const searchParams = useSearchParams();
   const resultsRef = useRef<HTMLDivElement>(null);
 
@@ -391,13 +400,13 @@ function CombinedImportToolsContent({ defaultTab = "calculator" }: { defaultTab?
           <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-green-900/60 border border-green-800/40 rounded-full text-green-200 text-[10px] font-bold uppercase tracking-wider shadow-sm mx-auto">
               <Globe className="w-3.5 h-3.5 text-yellow-400 animate-pulse" />
-              <span>Real-Time Trade & Customs APIs</span>
+              <span>{t("importTools.apiBadge")}</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-black leading-tight tracking-tight text-white">
-              Customs Calculator & <span className="text-yellow-400">HS Classification</span>
+              {t("importTools.title").split(" & ")[0]} & <span className="text-yellow-400">{t("importTools.title").split(" & ")[1]}</span>
             </h1>
             <p className="text-sm md:text-base text-green-100/80 max-w-xl mx-auto leading-relaxed">
-              Verify standardized Harmonized System (HS) codes and estimate customs duties, local VAT rates, and container landed cost breakdowns.
+              {t("importTools.subtitle")}
             </p>
           </div>
         </section>
@@ -420,7 +429,7 @@ function CombinedImportToolsContent({ defaultTab = "calculator" }: { defaultTab?
                 }`}
               >
                 <Calculator className="w-4 h-4" />
-                <span>Duty & Landed Cost Calculator</span>
+                <span>{t("importTools.tabCalculator")}</span>
               </button>
               <button
                 onClick={() => {
@@ -434,7 +443,7 @@ function CombinedImportToolsContent({ defaultTab = "calculator" }: { defaultTab?
                 }`}
               >
                 <BookOpen className="w-4 h-4" />
-                <span>HS Code Lookup Directory</span>
+                <span>{t("importTools.tabLookup")}</span>
               </button>
             </div>
           </div>
@@ -480,32 +489,32 @@ function CombinedImportToolsContent({ defaultTab = "calculator" }: { defaultTab?
               <div ref={resultsRef} className="lg:col-span-5 space-y-6 animate-in fade-in duration-300">
                 <div className="flex items-center justify-between border-b border-gray-100 pb-2">
                   <h3 className="text-xs font-black text-gray-500 uppercase tracking-wider">
-                    Landed Cost Estimate
+                    {t("importTools.landedCostEstimate")}
                   </h3>
                   <button
                     onClick={() => handleEstimateCalculated(null)}
                     className="text-xs font-bold text-gray-450 hover:text-gray-900 cursor-pointer"
                   >
-                    Clear Results
+                    {t("importTools.clearResults")}
                   </button>
                 </div>
 
                 {/* Grand Total Summary Card */}
                 <div className="bg-green-950 rounded-3xl border border-green-900 p-6 text-center text-white shadow-soft-lg">
                   <span className="text-[10px] font-bold text-green-300 uppercase tracking-wider block mb-1">
-                    Grand Total Landed Cost ({estimate.mode.toUpperCase()})
+                    {t("importTools.grandTotalLandedCost", { mode: estimate.mode.toUpperCase() })}
                   </span>
                   <p className="text-3xl md:text-4xl font-black tracking-tight font-mono">
                     {currencySymbol} {formatCurrency(xafToDisplay(estimate.total), displayCurrency)}
                   </p>
 
                   <div className="mt-4 pt-4 border-t border-green-900 flex items-center justify-between text-xs text-green-200">
-                    <span>MSRP / Cargo FOB Value</span>
+                    <span>{t("importTools.msrpFobValue")}</span>
                     <span className="font-mono font-bold">${formatCurrency(estimate.totalFobUsd, "USD")}</span>
                   </div>
                   {estimate.totalCifXaf !== undefined && estimate.mode === "import" && (
                     <div className="flex items-center justify-between text-xs text-green-200 mt-2">
-                      <span>Valuation base (CIF)</span>
+                      <span>{t("importTools.valuationBaseCif")}</span>
                       <span className="font-mono font-bold">
                         {currencySymbol} {formatCurrency(xafToDisplay(estimate.totalCifXaf), displayCurrency)}
                       </span>
@@ -517,10 +526,10 @@ function CombinedImportToolsContent({ defaultTab = "calculator" }: { defaultTab?
                 <div className="bg-white rounded-2xl border border-gray-100 p-4 space-y-3 shadow-xs">
                   <div className="flex items-center gap-2 text-xs font-bold text-gray-700 uppercase">
                     <ShieldCheck className="w-4 h-4 text-green-800" />
-                    <span>Official Duty Certificate</span>
+                    <span>{t("importTools.officialDutyCertificate")}</span>
                   </div>
                   <p className="text-[11px] text-gray-500 leading-relaxed">
-                    Generate and download an official customs duty calculation certificate as a PDF document with the Kassongo logo and complete breakdown.
+                    {t("importTools.pdfCertificateDesc")}
                   </p>
                   <button
                     type="button"
@@ -528,7 +537,7 @@ function CombinedImportToolsContent({ defaultTab = "calculator" }: { defaultTab?
                     className="w-full py-3 bg-green-950 hover:bg-green-900 text-white font-bold rounded-xl text-xs transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md"
                   >
                     <Download className="w-4 h-4" />
-                    <span>Download Certificate (PDF)</span>
+                    <span>{t("importTools.downloadCertificatePdf")}</span>
                   </button>
                 </div>
 
@@ -544,9 +553,9 @@ function CombinedImportToolsContent({ defaultTab = "calculator" }: { defaultTab?
                   <div className="bg-orange-50 rounded-2xl border border-orange-200 p-4 flex gap-3 text-xs text-orange-800">
                     <Info className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
                     <div>
-                      <p className="font-bold">Missing tariff classifications:</p>
+                      <p className="font-bold">{t("importTools.missingTariffClassifications")}</p>
                       <p className="mt-0.5 leading-relaxed text-orange-700">
-                        Default fallback rates were applied for the following unrecognized HS codes:
+                        {t("importTools.missingTariffDesc")}
                       </p>
                       <div className="flex flex-wrap gap-1 mt-1.5">
                         {estimate.missingHsCodes.map((code) => (
@@ -565,7 +574,7 @@ function CombinedImportToolsContent({ defaultTab = "calculator" }: { defaultTab?
                 {/* Stage Breakdown Accordion */}
                 <div className="space-y-2">
                   <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider block">
-                    Breakdown by stage
+                    {t("importTools.breakdownByStage")}
                   </span>
                   {estimate.stages.map((stage) => (
                     <div key={stage.code || stage.name} className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-xs">
@@ -580,7 +589,7 @@ function CombinedImportToolsContent({ defaultTab = "calculator" }: { defaultTab?
                           </div>
                           <div>
                             <p className="text-xs font-bold text-gray-900">{stage.name}</p>
-                            <p className="text-[9px] text-gray-400">{stage.lineCount || stage.lines.length} lines</p>
+                            <p className="text-[9px] text-gray-400">{t("importTools.lines", { count: stage.lineCount || stage.lines.length })}</p>
                           </div>
                         </div>
                         <div className="flex items-center gap-2">
@@ -602,7 +611,7 @@ function CombinedImportToolsContent({ defaultTab = "calculator" }: { defaultTab?
                               <div className="min-w-0 pr-4">
                                 <p className="font-bold text-gray-800 truncate">{line.name}</p>
                                 <p className="text-[9px] text-gray-450 mt-0.5">
-                                  {line.code} · {line.rate}% of {line.basis}
+                                  {line.code} · {getLineDetails(line)}
                                 </p>
                               </div>
                               <span className="font-bold text-gray-900 font-mono shrink-0">
@@ -620,7 +629,7 @@ function CombinedImportToolsContent({ defaultTab = "calculator" }: { defaultTab?
                 <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-xs">
                   <div className="px-4 py-3 bg-gray-50 border-b border-gray-100">
                     <span className="text-[9px] font-bold text-gray-500 uppercase tracking-wider">
-                      Tax & Duty Line Items
+                      {t("importTools.taxDutyLineItems")}
                     </span>
                   </div>
                   <div className="max-h-56 overflow-y-auto divide-y divide-gray-50">
@@ -634,7 +643,7 @@ function CombinedImportToolsContent({ defaultTab = "calculator" }: { defaultTab?
                     ))}
                   </div>
                   <div className="px-4 py-3 bg-green-50 border-t border-green-150 flex items-center justify-between">
-                    <span className="text-xs font-black text-green-905">Total Taxes Payable</span>
+                    <span className="text-xs font-black text-green-905">{t("importTools.totalTaxesPayable")}</span>
                     <span className="text-sm font-black text-green-950 font-mono">
                       {currencySymbol} {formatCurrency(xafToDisplay(estimate.total), displayCurrency)}
                     </span>
@@ -650,10 +659,10 @@ function CombinedImportToolsContent({ defaultTab = "calculator" }: { defaultTab?
           <div className="max-w-4xl mx-auto text-center space-y-2">
             <div className="flex items-center justify-center gap-1.5">
               <ShieldCheck className="w-4 h-4 text-gray-400" />
-              <h4 className="font-bold text-xs text-gray-900 uppercase tracking-wider">Customs Legal Notice</h4>
+              <h4 className="font-bold text-xs text-gray-900 uppercase tracking-wider">{t("importTools.customsLegalNotice")}</h4>
             </div>
             <p className="text-[10px] text-gray-550 leading-relaxed max-w-2xl mx-auto">
-              Customs tariffs, VAT rates, age-based vehicle valuations, and shipping levies are configured using active regional regulatory guidelines. Final duties applied by customs inspectors are based on physical inspection, invoice checks, and direct hub operations. estimates are subject to terminal variations.
+              {t("importTools.legalNoticeDesc")}
             </p>
           </div>
         </section>
