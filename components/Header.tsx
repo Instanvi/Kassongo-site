@@ -179,7 +179,7 @@ export default function Header() {
     },
     {
       label: t("footer.links.newsroom") || "Newsroom",
-      href: "/company/newsroom",
+      href: "/blog",
       icon: <Newspaper className="w-4 h-4" />,
       colorBg: "bg-rose-100/80 text-rose-700 group-hover:bg-rose-600 group-hover:text-white",
       hoverBorder: "hover:border-rose-200/80 hover:bg-rose-50/50",
