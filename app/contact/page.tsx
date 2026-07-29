@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
-import toast, { Toaster } from "react-hot-toast";
+import { toast } from "sonner";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { Input } from "../../components/Input";
@@ -22,13 +22,7 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast.success(
-      t("contact.form.successMsg"),
-      {
-        duration: 4000,
-        position: "top-center",
-      },
-    );
+    toast.success("Message sent successfully to support@kassongo.com!");
     setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
   };
 
@@ -42,7 +36,6 @@ export default function ContactPage() {
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
-      <Toaster />
       <Header />
 
       <main className="flex-1 pt-16">

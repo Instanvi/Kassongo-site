@@ -2,6 +2,7 @@
 
 import { CheckCircle } from "lucide-react";
 import { useTranslation } from "../../../lib/i18n/LanguageContext";
+import { toast } from "sonner";
 
 export default function DownloadSection() {
   const { t } = useTranslation();
@@ -37,9 +38,9 @@ export default function DownloadSection() {
               </ul>
 
               <div className="flex flex-wrap gap-4 pt-4">
-                <a
-                  href="#app-store"
-                  className="bg-black text-white rounded-xl px-5 py-2.5 flex items-center gap-3 border border-white/20 hover:bg-gray-900 transition-all shadow-soft hover:shadow-soft-md min-w-[155px]"
+                <button
+                  onClick={() => toast.info("App Store version is coming soon!")}
+                  className="bg-black text-white rounded-xl px-5 py-2.5 flex items-center gap-3 border border-white/20 hover:bg-gray-900 transition-all shadow-soft hover:shadow-soft-md min-w-[155px] text-left cursor-pointer"
                 >
                   <img
                     src="/Apple_logo_black.svg"
@@ -52,10 +53,10 @@ export default function DownloadSection() {
                     </span>
                     <span className="text-base font-semibold tracking-tight">App Store</span>
                   </div>
-                </a>
+                </button>
 
                 <a
-                  href="#google-play"
+                  href="https://play.google.com/store/apps/details?id=com.instanvi2.Kassongo&hl=ln"
                   className="bg-black text-white rounded-xl px-5 py-2.5 flex items-center gap-3 border border-white/20 hover:bg-gray-900 transition-all shadow-soft hover:shadow-soft-md min-w-[155px]"
                 >
                   <img

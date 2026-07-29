@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useCallback } from "react";
+import { toast } from "sonner";
 import Header from "../../../../components/Header";
 import Footer from "../../../../components/Footer";
 import Button from "../../../../components/Button";
@@ -210,10 +211,11 @@ export default function ApplyCapitalPage() {
     try {
       await new Promise((resolve) => setTimeout(resolve, 2000));
       setIsSuccess(true);
+      toast.success("Application submitted successfully to support@kassongo.com!");
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (error) {
       console.error("Submission error:", error);
-      alert(t("products.kassongoCapital.apply.validation.errorTryAgain") || "An error occurred. Please try again.");
+      toast.error(t("products.kassongoCapital.apply.validation.errorTryAgain") || "An error occurred. Please try again.");
     } finally {
       setIsSubmitting(false);
     }

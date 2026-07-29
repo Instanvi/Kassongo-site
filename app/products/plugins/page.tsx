@@ -20,7 +20,7 @@ import { Select } from "../../../components/Select";
 import CountrySelector from "../../../components/tools/CountrySelector";
 import FAQComponent from "@/components/FAQComponent";
 import TestimonialSlider from "@/components/TestimonialSlider";
-import toast, { Toaster } from "react-hot-toast";
+import { toast } from "sonner";
 import { useTranslation } from "@/lib/i18n/LanguageContext";
 
 export default function PluginsPage() {
@@ -132,10 +132,7 @@ export default function PluginsPage() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast.success(t("products.plugins.apply.successToast"), {
-      duration: 4000,
-      position: "top-center",
-    });
+    toast.success("Application submitted successfully to support@kassongo.com!");
     setFormData({
       firstName: "",
       lastName: "",
@@ -152,7 +149,6 @@ export default function PluginsPage() {
 
   return (
     <div className="flex flex-col min-h-screen bg-white text-gray-900 font-sans antialiased overflow-x-hidden selection:bg-green-100 selection:text-gray-900">
-      <Toaster />
       <Header />
 
       <main className="flex-1 pt-16">

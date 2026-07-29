@@ -51,6 +51,8 @@ const FacebookIcon = () => (
   </svg>
 );
 
+import { toast } from "sonner";
+
 export default function Footer() {
   const [phone, setPhone] = useState("");
   const [emailMode, setEmailMode] = useState(false);
@@ -58,9 +60,10 @@ export default function Footer() {
 
   const handleSubscribe = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    alert(
+    toast.success(
       t("footer.subscribeSuccess", { value: phone || "email" })
     );
+    setPhone("");
   };
 
   return (
