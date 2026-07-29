@@ -105,6 +105,7 @@ export default function PluginsPage() {
     },
   ];
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -130,21 +131,47 @@ export default function PluginsPage() {
     setFormData({ ...formData, country: code });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast.success("Application submitted successfully to support@kassongo.com!");
-    setFormData({
-      firstName: "",
-      lastName: "",
-      companyEmail: "",
-      companyName: "",
-      website: "",
-      country: "",
-      partnerType: "",
-      usaShippingPercent: "",
-      referralSource: "",
-      message: "",
-    });
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          type: "partner-application",
+          data: formData,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        toast.success("Application submitted successfully to support@kassongo.com!");
+        setFormData({
+          firstName: "",
+          lastName: "",
+          companyEmail: "",
+          companyName: "",
+          website: "",
+          country: "",
+          partnerType: "",
+          usaShippingPercent: "",
+          referralSource: "",
+          message: "",
+        });
+      } else {
+        toast.error(result.error || "Failed to submit application. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("An error occurred. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -411,10 +438,20 @@ export default function PluginsPage() {
                     variant="primary"
                     size="lg"
                     type="submit"
+                    disabled={isSubmitting}
                     className="w-full md:w-auto px-12 shadow-soft-lg hover:shadow-soft-xl transition-all"
                   >
-                    <Send className="w-4 h-4" />
-                    <span>{t("products.plugins.apply.applyButton")}</span>
+                    {isSubmitting ? (
+                      <>
+                        <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                        <span>Submitting...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-4 h-4" />
+                        <span>{t("products.plugins.apply.applyButton")}</span>
+                      </>
+                    )}
                   </Button>
                 </div>
               </form>

@@ -146,11 +146,12 @@ export default function PDFReport({
     })
   });
 
+  const qrCodeApiBase = process.env.NEXT_PUBLIC_QR_CODE_API || "https://api.qrserver.com/v1/create-qr-code";
   const qrDataUrl = typeof window !== "undefined" && estimate.previewToken
     ? `${window.location.origin}/tools/import-tools?estimate=${estimate.previewToken}`
     : "";
   const qrCodeImage = qrDataUrl
-    ? `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(qrDataUrl)}`
+    ? `${qrCodeApiBase}/?size=150x150&data=${encodeURIComponent(qrDataUrl)}`
     : "";
 
   return (

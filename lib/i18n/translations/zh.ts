@@ -44,6 +44,7 @@ export const zh = {
       landedCost: "到岸成本估算",
       plugins: "系统插件",
       kassongoCapital: "卡松戈资本 (Kassongo Capital)",
+      cargoInsurance: "货运险",
       solutions: "解决方案",
       sourcing: "全球代采协助",
       forwarding: "特快包裹转运",

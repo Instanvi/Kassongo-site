@@ -209,10 +209,31 @@ export default function ApplyCapitalPage() {
 
     setIsSubmitting(true);
     try {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-      setIsSuccess(true);
-      toast.success("Application submitted successfully to support@kassongo.com!");
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          type: "capital-application",
+          data: {
+            ...formData,
+            hasBusinessLicense: !!formData.businessLicense,
+            hasFinancialStatements: !!formData.financialStatements,
+            hasTradingHistory: !!formData.tradingHistory,
+          },
+        }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setIsSuccess(true);
+        toast.success("Application submitted successfully to support@kassongo.com!");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        toast.error(result.error || "Failed to submit application. Please try again.");
+      }
     } catch (error) {
       console.error("Submission error:", error);
       toast.error(t("products.kassongoCapital.apply.validation.errorTryAgain") || "An error occurred. Please try again.");

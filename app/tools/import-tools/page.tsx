@@ -26,9 +26,10 @@ import { COUNTRIES } from "../../../lib/countries";
 import { useTranslation } from "../../../lib/i18n/LanguageContext";
 
 // ─── API CONFIGURATION ─────────────────────────────────────────
-const API_BASE = "https://new.ntigi.cm/backend/api/v1";
+const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || "https://new.ntigi.cm/backend/api/v1";
 const PUBLIC_API = `${API_BASE}/public/customs`;
 const TARIFF_API = `${API_BASE}/tariff`;
+const EXCHANGE_RATE_API = process.env.NEXT_PUBLIC_EXCHANGE_RATE_API || "https://api.exchangerate-api.com/v4/latest/USD";
 
 // ─── TYPES ─────────────────────────────────────────────────────
 interface TariffCountry {
@@ -118,7 +119,6 @@ interface CustomsEstimate {
   unlockCurrency?: string;
 }
 
-// ─── CURRENCY ──────────────────────────────────────────────────
 const CURRENCY_SYMBOLS: Record<string, string> = {
   XAF: "FCFA",
   XOF: "FCFA",
@@ -142,7 +142,6 @@ function formatCurrency(val: number, curr: string) {
   });
 }
 
-// ─── API HELPERS ───────────────────────────────────────────────
 async function apiJson<T>(res: Response): Promise<T> {
   const body = await res.json();
   if (!res.ok || !body.success) {
@@ -163,10 +162,8 @@ function CombinedImportToolsContent({ defaultTab = "calculator" }: { defaultTab?
   const searchParams = useSearchParams();
   const resultsRef = useRef<HTMLDivElement>(null);
 
-  // Default active tab: "calculator" or "lookup" based on query param
   const [activeTab, setActiveTab] = useState<"calculator" | "lookup">(defaultTab);
 
-  // Dynamic Country Lists
   const [allCountries, setAllCountries] = useState<TariffCountry[]>([]);
   const [allCountriesLoading, setAllCountriesLoading] = useState(false);
   const [configuredCountries, setConfiguredCountries] = useState<CustomsCountryOption[]>([]);
@@ -280,7 +277,7 @@ function CombinedImportToolsContent({ defaultTab = "calculator" }: { defaultTab?
           setExchangeRates({ XAF: 1, ...JSON.parse(cached) });
           return;
         }
-        const res = await fetch("https://api.exchangerate-api.com/v4/latest/USD");
+        const res = await fetch(EXCHANGE_RATE_API);
         if (!res.ok) throw new Error("Exchange rates API failed");
         const data = await res.json();
         if (data?.rates) {
@@ -393,15 +390,8 @@ function CombinedImportToolsContent({ defaultTab = "calculator" }: { defaultTab?
 
       <main className="flex-1 pt-16 print:pt-0">
         {/* Banner Section */}
-        <section className="relative py-20 md:py-24 px-6 overflow-hidden bg-green-950 print:hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-green-400 via-green-950 to-green-980" />
-          </div>
+        <section className="relative py-20 md:py-24 px-6 overflow-hidden bg-green-900 print:hidden">
           <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-green-900/60 border border-green-800/40 rounded-full text-green-200 text-[10px] font-bold uppercase tracking-wider shadow-sm mx-auto">
-              <Globe className="w-3.5 h-3.5 text-yellow-400 animate-pulse" />
-              <span>{t("importTools.apiBadge")}</span>
-            </div>
             <h1 className="text-4xl md:text-5xl font-black leading-tight tracking-tight text-white">
               {t("importTools.title").split(" & ")[0]} & <span className="text-yellow-400">{t("importTools.title").split(" & ")[1]}</span>
             </h1>
@@ -424,7 +414,7 @@ function CombinedImportToolsContent({ defaultTab = "calculator" }: { defaultTab?
                 }}
                 className={`py-3 px-6 text-sm font-bold rounded-xl transition-all flex items-center gap-2 cursor-pointer ${
                   activeTab === "calculator"
-                    ? "bg-green-950 text-white shadow-md"
+                    ? "bg-green-900 text-white shadow-md"
                     : "text-gray-600 hover:text-gray-900 hover:bg-gray-50/50"
                 }`}
               >
@@ -438,7 +428,7 @@ function CombinedImportToolsContent({ defaultTab = "calculator" }: { defaultTab?
                 }}
                 className={`py-3 px-6 text-sm font-bold rounded-xl transition-all flex items-center gap-2 cursor-pointer ${
                   activeTab === "lookup"
-                    ? "bg-green-950 text-white shadow-md"
+                    ? "bg-green-900 text-white shadow-md"
                     : "text-gray-600 hover:text-gray-900 hover:bg-gray-50/50"
                 }`}
               >

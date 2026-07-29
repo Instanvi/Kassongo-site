@@ -44,6 +44,7 @@ export const en = {
       landedCost: "Landed Cost",
       plugins: "Plugins",
       kassongoCapital: "Capital",
+      cargoInsurance: "Insurance",
       solutions: "Solutions",
       sourcing: "Assisted Sourcing",
       forwarding: "Express Forwarding",

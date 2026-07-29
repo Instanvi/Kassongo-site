@@ -12,6 +12,7 @@ import { useTranslation } from "../../lib/i18n/LanguageContext";
 
 export default function ContactPage() {
   const { t } = useTranslation();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -20,10 +21,36 @@ export default function ContactPage() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast.success("Message sent successfully to support@kassongo.com!");
-    setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          type: "contact",
+          data: formData,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        toast.success("Message sent successfully to support@kassongo.com!");
+        setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+      } else {
+        toast.error(result.error || "Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("An error occurred. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -267,10 +294,20 @@ export default function ContactPage() {
                         variant="secondary"
                         size="lg"
                         type="submit"
+                        disabled={isSubmitting}
                         className="w-full sm:w-auto justify-center shadow-soft-lg hover:shadow-soft-xl transition-all"
                       >
-                        <Send className="w-5 h-5" />
-                        {t("contact.form.btnSend")}
+                        {isSubmitting ? (
+                          <>
+                            <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                            Sending...
+                          </>
+                        ) : (
+                          <>
+                            <Send className="w-5 h-5" />
+                            {t("contact.form.btnSend")}
+                          </>
+                        )}
                       </Button>
                     </div>
                   </form>

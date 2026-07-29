@@ -56,14 +56,44 @@ import { toast } from "sonner";
 export default function Footer() {
   const [phone, setPhone] = useState("");
   const [emailMode, setEmailMode] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { t } = useTranslation();
 
-  const handleSubscribe = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubscribe = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast.success(
-      t("footer.subscribeSuccess", { value: phone || "email" })
-    );
-    setPhone("");
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          type: "newsletter",
+          data: {
+            contact: phone,
+            type: emailMode ? "email" : "phone",
+          },
+        }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        toast.success(
+          t("footer.subscribeSuccess", { value: phone || "email" })
+        );
+        setPhone("");
+      } else {
+        toast.error(result.error || "Failed to subscribe. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error subscribing:", error);
+      toast.error("An error occurred. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -94,9 +124,14 @@ export default function Footer() {
             <Button
               variant="secondary"
               type="submit"
+              disabled={isSubmitting}
               className="rounded-l-none px-6 shrink-0"
             >
-              <ArrowRight className="w-5 h-5" />
+              {isSubmitting ? (
+                <div className="w-5 h-5 border-2 border-gray-900 border-t-transparent rounded-full animate-spin" />
+              ) : (
+                <ArrowRight className="w-5 h-5" />
+              )}
             </Button>
           </form>
 
@@ -180,8 +215,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/products/kassongo-capital" className="hover:text-white transition-colors">
-                  {t("footer.links.kassongoCapital") || "Capital"}
+                <a href="/products/cargo-insurance" className="hover:text-white transition-colors">
+                  {t("footer.links.cargoInsurance") || "insurance"}
                 </a>
               </li>
             </ul>

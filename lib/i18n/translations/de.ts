@@ -44,6 +44,7 @@ export const de = {
       landedCost: "Gesamtkosten",
       plugins: "Plugins",
       kassongoCapital: "Kassongo Capital",
+      cargoInsurance: "Transportversicherung",
       solutions: "Lösungen",
       sourcing: "Unterstützung beim Einkauf",
       forwarding: "Express-Weiterleitung",

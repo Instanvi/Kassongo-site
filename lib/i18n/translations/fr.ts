@@ -44,6 +44,7 @@ export const fr = {
       landedCost: "Frais de douane",
       plugins: "Plugins",
       kassongoCapital: "Kassongo Capital",
+      cargoInsurance: "Assurance cargo",
       solutions: "Solutions",
       sourcing: "Achat assisté",
       forwarding: "Expédition Express",

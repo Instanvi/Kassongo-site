@@ -2,7 +2,7 @@
 
 import { useState, useCallback } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { Menu, X, ChevronDown, ShoppingCart, Package, Search, Plug, Truck, Warehouse, Users, Box, Building2, Phone, Newspaper, Briefcase, Calculator, FileImage, Sparkles } from "lucide-react";
+import { Menu, X, ChevronDown, ShoppingCart, Package, Search, Plug, Truck, Warehouse, Users, Box, Building2, Phone, Newspaper, Briefcase, Calculator, FileImage, Sparkles, Umbrella } from "lucide-react";
 import Button from "./Button";
 import StripeNavMenu, { DropdownItem, NavSection } from "./DropdownMenu";
 import { useTranslation } from "../lib/i18n/LanguageContext";
@@ -97,6 +97,15 @@ export default function Header() {
       icon: <Sparkles className="w-4 h-4" />,
       colorBg: "bg-teal-100/80 text-teal-700 group-hover:bg-teal-600 group-hover:text-white",
       hoverBorder: "hover:border-teal-200/80 hover:bg-teal-50/50",
+    },
+
+
+    {
+      label: t("footer.links.cargoInsurance") || "Insurance",
+      href: "/products/cargo-insurance",
+      icon: <Umbrella className="w-4 h-4" />,
+      colorBg: "bg-blue-100/80 text-blue-700 group-hover:bg-blue-600 group-hover:text-white",
+      hoverBorder: "hover:border-blue-200/80 hover:bg-blue-50/50",
     },
   ];
 
