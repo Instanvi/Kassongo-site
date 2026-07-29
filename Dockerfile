@@ -62,7 +62,7 @@ FROM node:${NODE_VERSION} AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
-ENV PORT=3000
+ENV PORT=3006
 ENV HOSTNAME="0.0.0.0"
 
 # Optional: disable telemetry at runtime
