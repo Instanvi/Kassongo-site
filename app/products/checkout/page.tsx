@@ -88,10 +88,10 @@ export default function CheckoutPage() {
 
                       <div className="flex justify-between items-center bg-white/5 rounded-xl p-3.5 border border-white/5">
                         <div className="flex items-center gap-3">
-                          <CreditCard className="w-5 h-5 text-yellow-400" />
+                          <ShieldCheck className="w-5 h-5 text-yellow-400" />
                           <div>
                             <p className="text-xs text-green-200 uppercase font-bold">{t("products.checkout.card.paymentMethod")}</p>
-                            <p className="text-sm font-semibold">Mobile Money (MTN / Orange)</p>
+                            <p className="text-sm font-semibold">{t("products.checkout.card.paymentMethodValue")}</p>
                           </div>
                         </div>
                         <span className="text-xs font-bold text-yellow-400">{t("products.checkout.card.xafAvailable")}</span>

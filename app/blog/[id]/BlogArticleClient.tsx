@@ -16,40 +16,92 @@ import {
     Mail,
     Bookmark,
 } from "lucide-react";
+import { BLOCKS } from "@contentful/rich-text-types";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
 import { Button } from "../../../components/Button";
 import { useTranslation } from "../../../lib/i18n/LanguageContext";
 import { blogArticles, relatedArticlesData } from "../blogData";
 
-export default function BlogArticleClient({ slug }: { slug: string }) {
+interface BlogArticleClientProps {
+    slug: string;
+    initialPost?: any; // Contentful post
+}
+
+export default function BlogArticleClient({ slug, initialPost }: BlogArticleClientProps) {
     const { t } = useTranslation();
     const [copied, setCopied] = useState(false);
     const [bookmarked, setBookmarked] = useState(false);
 
-    const article = blogArticles[slug];
+    const isContentful = !!initialPost;
 
-    if (!article) {
-        return (
-            <div className="flex flex-col min-h-screen bg-white">
-                <Header />
-                <main className="flex-1 pt-32 pb-20 px-6 text-center">
-                    <h1 className="text-4xl font-display font-bold text-gray-900 mb-4">
-                        {t("blog.article.notFound.title")}
-                    </h1>
-                    <p className="text-gray-600 mb-8">
-                        {t("blog.article.notFound.desc")}
-                    </p>
-                    <Button variant="primary" href="/blog">
-                        {t("blog.article.notFound.title")}
-                    </Button>
-                </main>
-                <Footer />
-            </div>
-        );
+    let title = "";
+    let excerpt = "";
+    let category = "";
+    let date = "";
+    let readTime = "";
+    let image = "";
+    let imageAlt = "";
+    let tags: string[] = [];
+    let content: any = null;
+    let related: any[] = [];
+    let author = "Thuram Junior";
+    let authorBio = "";
+
+    if (isContentful) {
+        const fields = initialPost.fields;
+        title = fields.title || "";
+        excerpt = fields.excerpt || "";
+        category = fields.category || "Blog";
+        date = fields.date ? fields.date.split("T")[0] : "";
+        readTime = fields.readTime || "5 min";
+        image = fields.coverImage?.fields?.file?.url 
+            ? `https:${fields.coverImage.fields.file.url}` 
+            : "/placeholder.jpg";
+        imageAlt = fields.title || "";
+        tags = fields.tags || [];
+        content = fields.content; // Rich text document
+        
+        // Filter static related articles as fallback placeholders
+        related = relatedArticlesData.slice(0, 3);
+    } else {
+        const article = blogArticles[slug];
+        if (!article) {
+            return (
+                <div className="flex flex-col min-h-screen bg-white">
+                    <Header />
+                    <main className="flex-1 pt-32 pb-20 px-6 text-center">
+                        <h1 className="text-4xl font-display font-bold text-gray-900 mb-4">
+                            {t("blog.article.notFound.title")}
+                        </h1>
+                        <p className="text-gray-600 mb-8">
+                            {t("blog.article.notFound.desc")}
+                        </p>
+                        <Button variant="primary" href="/blog">
+                            {t("blog.article.notFound.title")}
+                        </Button>
+                    </main>
+                    <Footer />
+                </div>
+            );
+        }
+        title = t(article.titleKey) || article.titleKey;
+        excerpt = t(article.excerptKey) || article.excerptKey;
+        category = t(article.categoryKey) || article.categoryKey;
+        date = article.date;
+        readTime = article.readTime;
+        image = article.image;
+        imageAlt = t(article.imageAltKey) || article.imageAltKey;
+        tags = article.tags;
+        content = article.content; // static ContentBlock[]
+        author = article.authorKey;
+        authorBio = article.authorBioKey ? t(article.authorBioKey) : "";
+        related = relatedArticlesData.filter((p) => article.relatedSlugs.includes(p.slug));
     }
 
-    const related = relatedArticlesData.filter((p) => article.relatedSlugs.includes(p.slug));
+    const tagsArray = (Array.isArray(tags) ? tags : (typeof tags === "string" ? [tags] : []))
+        .flatMap((tag) => tag.split(",").map((t) => t.trim()));
 
     const handleCopyLink = () => {
         navigator.clipboard.writeText(typeof window !== "undefined" ? window.location.href : "");
@@ -57,7 +109,72 @@ export default function BlogArticleClient({ slug }: { slug: string }) {
         setTimeout(() => setCopied(false), 2000);
     };
 
-    const renderContentBlock = (block: any, index: number) => {
+    const renderContentfulContent = (contentDoc: any) => {
+        if (!contentDoc) return null;
+        return documentToReactComponents(contentDoc, {
+            renderNode: {
+                [BLOCKS.HEADING_2]: (node, children) => (
+                    <h2 className="text-2xl md:text-3xl font-display font-bold text-gray-900 mt-12 mb-5">
+                        {children}
+                    </h2>
+                ),
+                [BLOCKS.HEADING_3]: (node, children) => (
+                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mt-8 mb-4">
+                        {children}
+                    </h3>
+                ),
+                [BLOCKS.PARAGRAPH]: (node, children) => (
+                    <p className="text-base text-gray-700 leading-relaxed mb-5 whitespace-pre-line">
+                        {children}
+                    </p>
+                ),
+                [BLOCKS.UL_LIST]: (node, children) => (
+                    <ul className="space-y-3 mb-6 ml-1 pl-5">
+                        {children}
+                    </ul>
+                ),
+                [BLOCKS.OL_LIST]: (node, children) => (
+                    <ol className="space-y-4 mb-6 ml-1 pl-5">
+                        {children}
+                    </ol>
+                ),
+                [BLOCKS.LIST_ITEM]: (node, children) => (
+                    <li className="flex items-start gap-3 text-base text-gray-700 leading-relaxed">
+                        <span className="w-1.5 h-1.5 bg-green-600 rounded-full mt-2.5 flex-shrink-0"></span>
+                        <span>{children}</span>
+                    </li>
+                ),
+                [BLOCKS.QUOTE]: (node, children) => (
+                    <div className="bg-green-50 border border-green-200 rounded-xl p-5 mb-6 flex items-start gap-3">
+                        <Lightbulb className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                        <div>
+                            <span className="text-xs font-bold text-green-700 uppercase tracking-wide">Note</span>
+                            <div className="text-sm text-gray-700 leading-relaxed mt-1">{children}</div>
+                        </div>
+                    </div>
+                ),
+                [BLOCKS.HR]: () => <hr className="my-10 border-gray-200" />,
+                [BLOCKS.EMBEDDED_ASSET]: (node) => {
+                    const target = node.data?.target;
+                    const fields = target?.fields;
+                    if (fields?.file?.url) {
+                        return (
+                            <div className="my-8 rounded-2xl overflow-hidden border border-gray-200 shadow-soft">
+                                <img
+                                    src={`https:${fields.file.url}`}
+                                    alt={fields.title || "Embedded Asset"}
+                                    className="w-full h-auto"
+                                />
+                            </div>
+                        );
+                    }
+                    return null;
+                }
+            }
+        });
+    };
+
+    const renderStaticContentBlock = (block: any, index: number) => {
         switch (block.type) {
             case "h2":
                 return (
@@ -162,7 +279,7 @@ export default function BlogArticleClient({ slug }: { slug: string }) {
                             <ChevronRight className="w-3 h-3" />
                             <a href="/blog" className="hover:text-green-600 transition-colors">Blog</a>
                             <ChevronRight className="w-3 h-3" />
-                            <span className="text-gray-900 font-medium truncate">{article.titleKey}</span>
+                            <span className="text-gray-900 font-medium truncate">{title}</span>
                         </div>
                     </div>
 
@@ -170,18 +287,18 @@ export default function BlogArticleClient({ slug }: { slug: string }) {
                     <div className="relative h-64 md:h-96 lg:h-[28rem] bg-gradient-to-br from-green-900 to-green-800 overflow-hidden">
                         <div className="absolute inset-0 bg-black/30"></div>
                         <img
-                            src={article.image}
-                            alt={article.imageAltKey}
+                            src={image}
+                            alt={imageAlt}
                             className="w-full h-full object-cover opacity-60"
                         />
                         <div className="absolute inset-0 flex items-end">
                             <div className="max-w-4xl mx-auto px-6 pb-8 md:pb-12 w-full">
                                 <span className="inline-flex items-center gap-1 bg-yellow-400 text-green-900 text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full mb-4">
                                     <Tag className="w-3 h-3" />
-                                    {t(article.categoryKey)}
+                                    {category}
                                 </span>
                                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-black text-white leading-tight tracking-tight max-w-3xl">
-                                    {t(article.titleKey) || article.titleKey}
+                                    {title}
                                 </h1>
                             </div>
                         </div>
@@ -193,21 +310,21 @@ export default function BlogArticleClient({ slug }: { slug: string }) {
                             <div className="flex items-center gap-4 text-sm text-gray-600">
                                 <div className="flex items-center gap-2">
                                     <div className="w-8 h-8 bg-green-900 rounded-full flex items-center justify-center text-white text-xs font-black">
-                                        {article.authorKey.charAt(0)}
+                                        {author.charAt(0)}
                                     </div>
                                     <div>
-                                        <span className="font-semibold text-gray-900 text-xs">{article.authorKey}</span>
-                                        <p className="text-[10px] text-gray-500">{article.authorBioKey}</p>
+                                        <span className="font-semibold text-gray-900 text-xs">{author}</span>
+                                        {authorBio && <p className="text-[10px] text-gray-500">{authorBio}</p>}
                                     </div>
                                 </div>
                                 <span className="text-gray-300">|</span>
                                 <span className="flex items-center gap-1 text-xs">
                                     <Calendar className="w-3.5 h-3.5" />
-                                    {article.date}
+                                    {date}
                                 </span>
                                 <span className="flex items-center gap-1 text-xs">
                                     <Clock className="w-3.5 h-3.5" />
-                                    {article.readTime}
+                                    {readTime}
                                 </span>
                             </div>
 
@@ -231,7 +348,7 @@ export default function BlogArticleClient({ slug }: { slug: string }) {
                                     <Printer className="w-4 h-4" />
                                 </button>
                                 <a
-                                    href={`mailto:?subject=${encodeURIComponent(article.titleKey)}`}
+                                    href={`mailto:?subject=${encodeURIComponent(title)}`}
                                     className="p-2 rounded-lg hover:bg-gray-100 transition-colors text-gray-500"
                                 >
                                     <Mail className="w-4 h-4" />
@@ -244,11 +361,14 @@ export default function BlogArticleClient({ slug }: { slug: string }) {
                     <div className="py-12 px-6">
                         <div className="max-w-4xl mx-auto">
                             <p className="text-xl text-gray-600 leading-relaxed mb-10 font-medium border-l-4 border-green-600 pl-6">
-                                {t(article.excerptKey) || article.excerptKey}
+                                {excerpt}
                             </p>
 
                             <div className="prose prose-lg max-w-none">
-                                {article.content.map((block, index) => renderContentBlock(block, index))}
+                                {isContentful
+                                    ? renderContentfulContent(content)
+                                    : content.map((block: any, index: number) => renderStaticContentBlock(block, index))
+                                }
                             </div>
 
                             {/* Tags */}
@@ -258,7 +378,7 @@ export default function BlogArticleClient({ slug }: { slug: string }) {
                                     <span className="text-xs font-bold uppercase text-gray-500 tracking-wide">Tags</span>
                                 </div>
                                 <div className="flex flex-wrap gap-2">
-                                    {article.tags.map((tag) => (
+                                    {tagsArray.map((tag) => (
                                         <a
                                             key={tag}
                                             href={`/blog?tag=${tag}`}
@@ -288,7 +408,7 @@ export default function BlogArticleClient({ slug }: { slug: string }) {
                                         className="group bg-white rounded-2xl border border-gray-200 shadow-card hover:shadow-card-hover transition-all overflow-hidden flex flex-col"
                                     >
                                         <div className="h-40 bg-gradient-to-br from-gray-100 to-green-50 flex items-center justify-center relative overflow-hidden">
-                                            <img src={post.heroImage} alt={post.titleKey} className="w-full h-full object-cover" />
+                                            <img src={post.heroImage} alt={t(post.titleKey) || post.titleKey} className="w-full h-full object-cover" />
                                         </div>
                                         <div className="p-5 flex-1 flex flex-col">
                                             <div className="flex items-center gap-2 mb-3">
