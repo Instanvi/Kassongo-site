@@ -6,7 +6,7 @@
 
 # IMPORTANT: Node.js Version Maintenance
 # Update NODE_VERSION to the latest LTS as needed.
-ARG NODE_VERSION=24.13.0-slim
+ARG NODE_VERSION=20.18.1-slim
 
 FROM node:${NODE_VERSION} AS dependencies
 
