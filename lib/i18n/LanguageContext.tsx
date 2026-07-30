@@ -14,6 +14,7 @@ interface LanguageContextProps {
   locale: Locale;
   setLocale: (locale: Locale) => void;
   t: (key: string, variables?: Record<string, string | number>) => string;
+  tArray: (key: string) => string[];
 }
 
 const LanguageContext = createContext<LanguageContextProps | undefined>(undefined);
@@ -75,8 +76,30 @@ export function LanguageProvider({
     return String(value);
   };
 
+  const tArray = (key: string): string[] => {
+    let value = getNestedValue(translations[locale], key);
+    
+    if (value === undefined || value === null) {
+      value = getNestedValue(translations["en"], key);
+    }
+
+    if (value === undefined || value === null) {
+      return [];
+    }
+
+    if (Array.isArray(value)) {
+      return value.map(String);
+    }
+
+    if (typeof value === "string") {
+      return [value];
+    }
+
+    return [String(value)];
+  };
+
   return (
-    <LanguageContext.Provider value={{ locale, setLocale, t }}>
+    <LanguageContext.Provider value={{ locale, setLocale, t, tArray }}>
       {children}
     </LanguageContext.Provider>
   );

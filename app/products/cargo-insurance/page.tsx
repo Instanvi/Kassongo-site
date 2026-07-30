@@ -23,7 +23,7 @@ import {
 import { useTranslation } from "@/lib/i18n/LanguageContext";
 
 export default function CargoInsurancePage() {
-  const { t } = useTranslation();
+  const { t, tArray } = useTranslation();
   // Insurance Calculator State
   const [cargoValue, setCargoValue] = useState<number>(10000);
   const [shipmentType, setShipmentType] = useState<"air" | "sea" | "land">("sea");
@@ -71,27 +71,21 @@ export default function CargoInsurancePage() {
       name: t('products.cargoInsurance.insuranceTypes.standardName'),
       type: t('products.cargoInsurance.insuranceTypes.standardType'),
       desc: t('products.cargoInsurance.insuranceTypes.standardDesc'),
-      features: Array.isArray(t('products.cargoInsurance.insuranceTypes.standardFeatures')) 
-        ? t('products.cargoInsurance.insuranceTypes.standardFeatures') as string[]
-        : [],
+      features: tArray('products.cargoInsurance.insuranceTypes.standardFeatures'),
       icon: <Package className="w-5 h-5 text-green-700" />
     },
     {
       name: t('products.cargoInsurance.insuranceTypes.comprehensiveName'),
       type: t('products.cargoInsurance.insuranceTypes.comprehensiveType'),
       desc: t('products.cargoInsurance.insuranceTypes.comprehensiveDesc'),
-      features: Array.isArray(t('products.cargoInsurance.insuranceTypes.comprehensiveFeatures'))
-        ? t('products.cargoInsurance.insuranceTypes.comprehensiveFeatures') as string[]
-        : [],
+      features: tArray('products.cargoInsurance.insuranceTypes.comprehensiveFeatures'),
       icon: <ShieldCheck className="w-5 h-5 text-green-700" />
     },
     {
       name: t('products.cargoInsurance.insuranceTypes.premiumName'),
       type: t('products.cargoInsurance.insuranceTypes.premiumType'),
       desc: t('products.cargoInsurance.insuranceTypes.premiumDesc'),
-      features: Array.isArray(t('products.cargoInsurance.insuranceTypes.premiumFeatures'))
-        ? t('products.cargoInsurance.insuranceTypes.premiumFeatures') as string[]
-        : [],
+      features: tArray('products.cargoInsurance.insuranceTypes.premiumFeatures'),
       icon: <Shield className="w-5 h-5 text-green-700" />
     }
   ];
@@ -446,7 +440,7 @@ export default function CargoInsurancePage() {
                   <div className="space-y-3 mb-8">
                     {plan.features.map((feature, idx) => (
                       <div key={idx} className="flex items-center gap-3 text-sm text-gray-700">
-                        <CheckCircle  className="w-4 h-4 text-green-700 shrink-0" />
+                        <CheckCircle className="w-4 h-4 text-green-700 shrink-0" />
                         <span>{feature}</span>
                       </div>
                     ))}
