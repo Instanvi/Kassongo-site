@@ -691,7 +691,7 @@ export default function LandedCostCalculator({
               key={idx}
               className={`border rounded-2xl p-4 space-y-4 bg-white transition-all ${
                 activeItemIndex === idx
-                  ? "border-green-850 ring-4 ring-green-900/5 bg-green-50/15"
+                  ? "border-green-800 ring-4 ring-green-900/5 bg-green-50"
                   : "border-slate-200/50 hover:border-slate-300/50 shadow-soft"
               }`}
             >

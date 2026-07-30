@@ -17,10 +17,13 @@ import {
   Clock,
   DollarSign,
   Globe,
-  CheckCircle2 
+  CheckCircle2, 
+  CheckCircle
 } from "lucide-react";
+import { useTranslation } from "@/lib/i18n/LanguageContext";
 
 export default function CargoInsurancePage() {
+  const { t } = useTranslation();
   // Insurance Calculator State
   const [cargoValue, setCargoValue] = useState<number>(10000);
   const [shipmentType, setShipmentType] = useState<"air" | "sea" | "land">("sea");
@@ -29,9 +32,9 @@ export default function CargoInsurancePage() {
   // Calculate premium rates
   const getPremiumRate = () => {
     const baseRates = {
-      air: { standard: 0.35, comprehensive: 0.65 },
-      sea: { standard: 0.45, comprehensive: 0.85 },
-      land: { standard: 0.25, comprehensive: 0.50 }
+      air: { standard: 2, comprehensive: 1.00 },
+      sea: { standard: 2, comprehensive: 1.50 },
+      land: { standard: 3, comprehensive: 1.20 }
     };
     return baseRates[shipmentType][coverage];
   };
@@ -65,36 +68,30 @@ export default function CargoInsurancePage() {
 
   const insuranceTypes = [
     {
-      name: "Standard Coverage",
-      type: "Basic Protection",
-      desc: "Essential insurance covering loss or damage caused by accidents, collisions, and common transit risks. Ideal for non-fragile goods.",
-      features: [
-        "Accidents & Collisions",
-        "Fire & Explosion",
-        "Natural Disasters",
-      ],
+      name: t('products.cargoInsurance.insuranceTypes.standardName'),
+      type: t('products.cargoInsurance.insuranceTypes.standardType'),
+      desc: t('products.cargoInsurance.insuranceTypes.standardDesc'),
+      features: Array.isArray(t('products.cargoInsurance.insuranceTypes.standardFeatures')) 
+        ? t('products.cargoInsurance.insuranceTypes.standardFeatures') as string[]
+        : [],
       icon: <Package className="w-5 h-5 text-green-700" />
     },
     {
-      name: "Comprehensive Coverage",
-      type: "All-Risk Protection",
-      desc: "Complete insurance including theft, pilferage, water damage, and all perils except war and strikes. Best for high-value cargo.",
-      features: [
-        "All Standard Risks",
-        "Theft & Pilferage",
-        "Water & Weather Damage",
-      ],
+      name: t('products.cargoInsurance.insuranceTypes.comprehensiveName'),
+      type: t('products.cargoInsurance.insuranceTypes.comprehensiveType'),
+      desc: t('products.cargoInsurance.insuranceTypes.comprehensiveDesc'),
+      features: Array.isArray(t('products.cargoInsurance.insuranceTypes.comprehensiveFeatures'))
+        ? t('products.cargoInsurance.insuranceTypes.comprehensiveFeatures') as string[]
+        : [],
       icon: <ShieldCheck className="w-5 h-5 text-green-700" />
     },
     {
-      name: "Premium Coverage",
-      type: "Maximum Protection",
-      desc: "Ultimate protection including war, strikes, riots, and all conceivable risks. For extremely valuable or sensitive shipments.",
-      features: [
-        "All Comprehensive Risks",
-        "War & Strikes",
-        "Riots & Civil Commotion",
-      ],
+      name: t('products.cargoInsurance.insuranceTypes.premiumName'),
+      type: t('products.cargoInsurance.insuranceTypes.premiumType'),
+      desc: t('products.cargoInsurance.insuranceTypes.premiumDesc'),
+      features: Array.isArray(t('products.cargoInsurance.insuranceTypes.premiumFeatures'))
+        ? t('products.cargoInsurance.insuranceTypes.premiumFeatures') as string[]
+        : [],
       icon: <Shield className="w-5 h-5 text-green-700" />
     }
   ];
@@ -102,50 +99,50 @@ export default function CargoInsurancePage() {
   const claimSteps = [
     {
       step: "01",
-      title: "Report Incident",
-      desc: "Notify us immediately of any loss or damage. Submit initial claim within 24 hours of discovery."
+      title: t('products.cargoInsurance.claimsProcess.step1Title'),
+      desc: t('products.cargoInsurance.claimsProcess.step1Desc')
     },
     {
       step: "02",
-      title: "Documentation",
-      desc: "Provide shipping documents, photos of damage, and detailed inventory of affected goods."
+      title: t('products.cargoInsurance.claimsProcess.step2Title'),
+      desc: t('products.cargoInsurance.claimsProcess.step2Desc')
     },
     {
       step: "03",
-      title: "Assessment",
-      desc: "Our claims team reviews your case and may arrange for independent surveyor inspection."
+      title: t('products.cargoInsurance.claimsProcess.step3Title'),
+      desc: t('products.cargoInsurance.claimsProcess.step3Desc')
     },
     {
       step: "04",
-      title: "Settlement",
-      desc: "Approved claims are settled within 7-10 business days via bank transfer."
+      title: t('products.cargoInsurance.claimsProcess.step4Title'),
+      desc: t('products.cargoInsurance.claimsProcess.step4Desc')
     }
   ];
 
   const faqsList = [
     {
-      question: "What types of cargo can be insured?",
-      answer: "We insure most commercial cargo including electronics, textiles, machinery, furniture, and consumer goods. Certain hazardous materials and perishables may require special approval."
+      question: t('products.cargoInsurance.faq.q1'),
+      answer: t('products.cargoInsurance.faq.a1')
     },
     {
-      question: "How quickly are claims processed?",
-      answer: "Standard claims are processed within 7-10 business days after all documentation is received. Complex claims may take longer depending on investigation requirements."
+      question: t('products.cargoInsurance.faq.q2'),
+      answer: t('products.cargoInsurance.faq.a2')
     },
     {
-      question: "What is not covered by cargo insurance?",
-      answer: "Standard policies exclude losses due to improper packaging, inherent vice (natural deterioration), delays, war/strikes (unless Premium coverage), and willful misconduct by the shipper."
+      question: t('products.cargoInsurance.faq.q3'),
+      answer: t('products.cargoInsurance.faq.a3')
     },
     {
-      question: "Can I insure multiple shipments at once?",
-      answer: "Yes! We offer open cargo policies for businesses with regular shipments. This provides automatic coverage for all shipments within agreed terms."
+      question: t('products.cargoInsurance.faq.q4'),
+      answer: t('products.cargoInsurance.faq.a4')
     },
     {
-      question: "How is the premium calculated?",
-      answer: "Premiums are based on cargo value, shipping method (air/sea/land), route risk level, cargo type, and coverage level. High-risk routes or fragile goods have higher rates."
+      question: t('products.cargoInsurance.faq.q5'),
+      answer: t('products.cargoInsurance.faq.a5')
     },
     {
-      question: "Do I need insurance if the carrier has liability coverage?",
-      answer: "Yes. Carrier liability is typically limited to a fraction of the cargo value (often $50-$100 per package). Cargo insurance provides full value protection."
+      question: t('products.cargoInsurance.faq.q6'),
+      answer: t('products.cargoInsurance.faq.a6')
     }
   ];
 
@@ -164,21 +161,21 @@ export default function CargoInsurancePage() {
               {/* Left Column: Heading and Value Prop */}
               <div className="space-y-6">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-black leading-[0.95] tracking-tight text-gray-900">
-                  Protect Your Cargo<br />
-                  <span className="text-green-800">Every Mile of the Way</span>
+                  {t('products.cargoInsurance.hero.title')}<br />
+                  <span className="text-green-800">{t('products.cargoInsurance.hero.titleHighlight')}</span>
                 </h1>
 
                 <p className="text-lg text-gray-600 leading-relaxed max-w-xl">
-                  Comprehensive cargo insurance coverage protecting your shipments against loss, damage, and theft from origin to destination across all transport modes.
+                  {t('products.cargoInsurance.hero.subtitle')}
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 pt-2">
                   <Button variant="primary" size="lg" href="/contact" className="shadow-soft-lg transition-all">
-                    <span>Get a Quote</span>
+                    <span>{t('products.cargoInsurance.hero.ctaPrimary')}</span>
                     <ArrowRight className="w-4 h-4" />
                   </Button>
                   <Button variant="secondary" size="lg" href="#coverage">
-                    View Coverage
+                    {t('products.cargoInsurance.hero.ctaSecondary')}
                   </Button>
                 </div>
               </div>
@@ -191,10 +188,10 @@ export default function CargoInsurancePage() {
                   <div className="relative z-10 space-y-6">
                     <div className="flex items-center justify-between border-b border-gray-100 pb-4">
                       <span className="text-xs uppercase font-bold text-green-800 tracking-wider">
-                        Insurance Calculator
+                        {t('products.cargoInsurance.calculator.title')}
                       </span>
                       <span className="px-2 py-0.5 bg-green-100 text-green-800 text-[10px] font-bold uppercase rounded">
-                        Instant Quote
+                        {t('products.cargoInsurance.calculator.badge')}
                       </span>
                     </div>
 
@@ -205,28 +202,28 @@ export default function CargoInsurancePage() {
                         className={`py-2 px-3 text-xs font-bold rounded-lg transition-all flex flex-col items-center gap-1 ${shipmentType === "sea" ? "bg-green-900 text-white shadow" : "text-gray-600 hover:text-gray-900"}`}
                       >
                         <Ship className="w-4 h-4" />
-                        <span>Sea</span>
+                        <span>{t('products.cargoInsurance.calculator.sea')}</span>
                       </button>
                       <button
                         onClick={() => setShipmentType("air")}
                         className={`py-2 px-3 text-xs font-bold rounded-lg transition-all flex flex-col items-center gap-1 ${shipmentType === "air" ? "bg-green-900 text-white shadow" : "text-gray-600 hover:text-gray-900"}`}
                       >
                         <Plane className="w-4 h-4" />
-                        <span>Air</span>
+                        <span>{t('products.cargoInsurance.calculator.air')}</span>
                       </button>
                       <button
                         onClick={() => setShipmentType("land")}
                         className={`py-2 px-3 text-xs font-bold rounded-lg transition-all flex flex-col items-center gap-1 ${shipmentType === "land" ? "bg-green-900 text-white shadow" : "text-gray-600 hover:text-gray-900"}`}
                       >
                         <Package className="w-4 h-4" />
-                        <span>Land</span>
+                        <span>{t('products.cargoInsurance.calculator.land')}</span>
                       </button>
                     </div>
 
                     {/* Slider for Cargo Value */}
                     <div className="space-y-2">
                       <div className="flex justify-between items-center text-sm font-semibold">
-                        <span className="text-gray-500">Cargo Value</span>
+                        <span className="text-gray-500">{t('products.cargoInsurance.calculator.cargoValue')}</span>
                         <span className="text-gray-900 font-bold text-lg">
                           ${cargoValue.toLocaleString()}
                         </span>
@@ -249,20 +246,20 @@ export default function CargoInsurancePage() {
                     {/* Coverage Level Selector */}
                     <div className="space-y-2">
                       <span className="text-xs font-bold text-gray-500 block">
-                        Coverage Level
+                        {t('products.cargoInsurance.calculator.coverageLevel')}
                       </span>
                       <div className="grid grid-cols-2 gap-2">
                         <button
                           onClick={() => setCoverage("standard")}
                           className={`py-2 rounded-xl text-xs font-bold border transition-all ${coverage === "standard" ? "bg-green-900 border-green-900 text-white" : "bg-white border-gray-200 text-gray-700 hover:border-green-800"}`}
                         >
-                          Standard
+                          {t('products.cargoInsurance.calculator.standard')}
                         </button>
                         <button
                           onClick={() => setCoverage("comprehensive")}
                           className={`py-2 rounded-xl text-xs font-bold border transition-all ${coverage === "comprehensive" ? "bg-green-900 border-green-900 text-white" : "bg-white border-gray-200 text-gray-700 hover:border-green-800"}`}
                         >
-                          Comprehensive
+                          {t('products.cargoInsurance.calculator.comprehensive')}
                         </button>
                       </div>
                     </div>
@@ -270,34 +267,34 @@ export default function CargoInsurancePage() {
                     {/* Breakdown */}
                     <div className="space-y-2 border-t border-gray-100 pt-4 text-sm text-gray-600">
                       <div className="flex justify-between">
-                        <span>Cargo Value</span>
+                        <span>{t('products.cargoInsurance.calculator.cargoValue')}</span>
                         <span className="font-semibold text-gray-900">${cargoValue.toLocaleString()}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span>Premium Rate</span>
+                        <span>{t('products.cargoInsurance.calculator.premiumRate')}</span>
                         <span className="font-semibold text-green-700">{premiumRate}%</span>
                       </div>
                       <div className="flex justify-between">
-                        <span>Transport Mode</span>
+                        <span>{t('products.cargoInsurance.calculator.transportMode')}</span>
                         <span className="font-semibold text-gray-900 capitalize">{shipmentType}</span>
                       </div>
                       <div className="flex justify-between text-gray-900 font-bold text-base pt-2 border-t border-gray-100">
-                        <span>Premium Cost</span>
+                        <span>{t('products.cargoInsurance.calculator.premiumCost')}</span>
                         <span>${premiumAmount.toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
                       </div>
                       <div className="flex justify-between text-[11px] text-gray-400">
-                        <span>Total Protection</span>
+                        <span>{t('products.cargoInsurance.calculator.totalProtection')}</span>
                         <span>${totalProtection.toLocaleString()}</span>
                       </div>
                     </div>
 
                     <Button variant="primary" href="/contact" className="w-full text-center py-3 font-bold">
-                      Get Insurance Quote
+                      {t('products.cargoInsurance.calculator.getQuote')}
                     </Button>
 
                     <div className="flex items-center justify-center gap-1.5 text-[10px] text-gray-400">
                       <ShieldCheck className="w-3.5 h-3.5 text-green-700" />
-                      <span>Underwritten by licensed insurance carriers</span>
+                      <span>{t('products.cargoInsurance.calculator.underwritten')}</span>
                     </div>
                   </div>
                 </div>
@@ -312,10 +309,10 @@ export default function CargoInsurancePage() {
           <div className="max-w-7xl mx-auto space-y-12">
             <div className="text-center max-w-2xl mx-auto space-y-3">
               <h2 className="text-3xl md:text-4xl font-display font-black text-white">
-                Comprehensive Protection
+                {t('products.cargoInsurance.features.title')}
               </h2>
               <p className="text-green-100 text-sm md:text-base leading-relaxed">
-                From origin to destination, we protect your cargo against all major risks during international and domestic transit.
+                {t('products.cargoInsurance.features.subtitle')}
               </p>
             </div>
 
@@ -329,10 +326,10 @@ export default function CargoInsurancePage() {
                     {feature.icon}
                   </div>
                   <h3 className="text-lg font-bold text-white">
-                    {feature.title}
+                    {t(`products.cargoInsurance.features.item${index + 1}Title`)}
                   </h3>
                   <p className="text-sm text-gray-400 leading-relaxed">
-                    {feature.desc}
+                    {t(`products.cargoInsurance.features.item${index + 1}Desc`)}
                   </p>
                 </div>
               ))}
@@ -360,53 +357,53 @@ export default function CargoInsurancePage() {
               {/* Copy Section */}
               <div className="lg:col-span-6 space-y-6">
                 <h2 className="text-3xl md:text-4xl font-display font-black text-gray-900 leading-tight">
-                  Why Choose Our<br />
-                  <span className="text-green-800">Cargo Insurance?</span>
+                  {t('products.cargoInsurance.whyChoose.title')}<br />
+                  <span className="text-green-800">{t('products.cargoInsurance.whyChoose.titleHighlight')}</span>
                 </h2>
 
                 <p className="text-gray-600 leading-relaxed text-sm">
-                  International shipping comes with inherent risks. From weather damage to theft, accidents to mishandling, your cargo faces numerous threats. Our insurance ensures you're financially protected no matter what happens.
+                  {t('products.cargoInsurance.whyChoose.intro')}
                 </p>
 
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center text-green-800 shrink-0 mt-1">
-                      <Check  className="w-3.5 h-3.5 font-bold" />
+                    <div className="w-5 h-5 bg-green-50 rounded-full flex items-center justify-center text-green-800 shrink-0 mt-1">
+                      <CheckCircle  className="w-3.5 h-3.5 font-bold" />
                     </div>
                     <div>
                       <h4 className="font-bold text-gray-900 text-sm">
-                        Door-to-Door Coverage
+                        {t('products.cargoInsurance.whyChoose.item1Title')}
                       </h4>
                       <p className="text-xs text-gray-500">
-                        Protection starts when cargo leaves your warehouse and ends when it reaches the destination.
+                        {t('products.cargoInsurance.whyChoose.item1Desc')}
                       </p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center text-green-800 shrink-0 mt-1">
-                      <Check className="w-3.5 h-3.5 font-bold" />
+                    <div className="w-5 h-5 bg-green-50 rounded-full flex items-center justify-center text-green-800 shrink-0 mt-1">
+                      <CheckCircle className="w-3.5 h-3.5 font-bold" />
                     </div>
                     <div>
                       <h4 className="font-bold text-gray-900 text-sm">
-                        Competitive Premiums
+                        {t('products.cargoInsurance.whyChoose.item2Title')}
                       </h4>
                       <p className="text-xs text-gray-500">
-                        We work with multiple underwriters to secure the best rates for your specific shipment needs.
+                        {t('products.cargoInsurance.whyChoose.item2Desc')}
                       </p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center text-green-800 shrink-0 mt-1">
-                      <Check className="w-3.5 h-3.5 font-bold" />
+                    <div className="w-5 h-5 bg-green-50 rounded-full flex items-center justify-center text-green-800 shrink-0 mt-1">
+                      <CheckCircle className="w-3.5 h-3.5 font-bold" />
                     </div>
                     <div>
                       <h4 className="font-bold text-gray-900 text-sm">
-                        Expert Claims Support
+                        {t('products.cargoInsurance.whyChoose.item3Title')}
                       </h4>
                       <p className="text-xs text-gray-500">
-                        Dedicated claims specialists guide you through the entire process from documentation to settlement.
+                        {t('products.cargoInsurance.whyChoose.item3Desc')}
                       </p>
                     </div>
                   </div>
@@ -422,10 +419,10 @@ export default function CargoInsurancePage() {
           <div className="max-w-6xl mx-auto space-y-16">
             <div className="text-center max-w-2xl mx-auto space-y-4">
               <h2 className="text-4xl md:text-5xl font-display font-black text-gray-900">
-                Three levels of protection
+                {t('products.cargoInsurance.insuranceTypes.title')}
               </h2>
               <p className="text-gray-500 text-lg">
-                Choose the coverage that matches your risk. All plans include 24/7 claims support.
+                {t('products.cargoInsurance.insuranceTypes.subtitle')}
               </p>
             </div>
 
@@ -449,7 +446,7 @@ export default function CargoInsurancePage() {
                   <div className="space-y-3 mb-8">
                     {plan.features.map((feature, idx) => (
                       <div key={idx} className="flex items-center gap-3 text-sm text-gray-700">
-                        <CheckCircle2  className="w-4 h-4 text-green-700 shrink-0" />
+                        <CheckCircle  className="w-4 h-4 text-green-700 shrink-0" />
                         <span>{feature}</span>
                       </div>
                     ))}
@@ -461,7 +458,7 @@ export default function CargoInsurancePage() {
                       href="/contact"
                       className="w-full text-xs py-3 text-center flex items-center justify-center gap-2 border-gray-200 hover:border-green-800 hover:bg-green-800 hover:text-white transition-all duration-300 rounded-xl"
                     >
-                      <span>Get Quote</span>
+                      <span>{t('products.cargoInsurance.insuranceTypes.getQuote')}</span>
                       <ArrowRight className="w-4 h-4" />
                     </Button>
                   </div>
@@ -476,10 +473,10 @@ export default function CargoInsurancePage() {
           <div className="max-w-7xl mx-auto space-y-16">
             <div className="text-center max-w-2xl mx-auto space-y-3">
               <h2 className="text-3xl md:text-4xl font-display font-black text-gray-900">
-                Simple Claims Process
+                {t('products.cargoInsurance.claimsProcess.title')}
               </h2>
               <p className="text-gray-500 text-sm md:text-base leading-relaxed">
-                File and settle claims quickly with our streamlined process. Most claims are resolved within 7-10 business days.
+                {t('products.cargoInsurance.claimsProcess.subtitle')}
               </p>
             </div>
 
@@ -518,8 +515,8 @@ export default function CargoInsurancePage() {
 
         {/* FAQ Section */}
         <FAQComponent
-          title="Frequently Asked Questions"
-          subtitle="Common questions about our cargo insurance coverage and claims process"
+          title={t('products.cargoInsurance.faq.title')}
+          subtitle={t('products.cargoInsurance.faq.subtitle')}
           faqs={faqsList}
           className="border-t border-gray-100"
         />

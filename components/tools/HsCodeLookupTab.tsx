@@ -22,15 +22,15 @@ interface HsCodeLookupTabProps {
   apiJson: <T>(res: Response) => Promise<T>;
 }
 
-// Custom debounce hook for inside the tab
-function useDebounce<T>(value: T, delay: number): T {
-  const [debouncedValue, setDebouncedValue] = useState(value);
-  useEffect(() => {
-    const handler = setTimeout(() => setDebouncedValue(value), delay);
-    return () => clearTimeout(handler);
-  }, [value, delay]);
-  return debouncedValue;
-}
+// Custom debounce hook for inside the tab - COMMENTED OUT FOR MANUAL SEARCH
+// function useDebounce<T>(value: T, delay: number): T {
+//   const [debouncedValue, setDebouncedValue] = useState(value);
+//   useEffect(() => {
+//     const handler = setTimeout(() => setDebouncedValue(value), delay);
+//     return () => clearTimeout(handler);
+//   }, [value, delay]);
+//   return debouncedValue;
+// }
 
 export default function HsCodeLookupTab({
   tariffApiUrl,
@@ -42,7 +42,7 @@ export default function HsCodeLookupTab({
 }: HsCodeLookupTabProps) {
   const { t } = useTranslation();
   const [query, setQuery] = useState("");
-  const debouncedQuery = useDebounce(query, 500);
+  // const debouncedQuery = useDebounce(query, 500); // COMMENTED OUT - using manual search instead
 
   const [results, setResults] = useState<TariffHsCodeMatch[]>([]);
   const [searching, setSearching] = useState(false);
@@ -50,62 +50,118 @@ export default function HsCodeLookupTab({
 
   const [selectedHS, setSelectedHS] = useState<TariffHsCodeMatch | null>(null);
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
-  const [retryTrigger, setRetryTrigger] = useState(0);
 
-  // Debounced Search Execution
-  useEffect(() => {
-    if (!debouncedQuery || debouncedQuery.trim().length < 2) {
-      setResults([]);
-      setError(null);
+  // Manual Search Function (triggered by button click)
+  const executeLookup = async () => {
+    if (!query || query.trim().length < 2) {
+      setError(t("importTools.errQueryTooShort") || "Please enter at least 2 characters");
       return;
     }
 
-    async function executeLookup() {
-      setSearching(true);
-      setError(null);
-      try {
-        const normalizedQuery = debouncedQuery.trim();
-        const looksLikeHs = /^[0-9.]{4,}$/.test(normalizedQuery);
+    setSearching(true);
+    setError(null);
+    try {
+      const normalizedQuery = query.trim();
+      const looksLikeHs = /^[0-9.]{4,}$/.test(normalizedQuery);
 
-        const dest = destinationCountryCode || "CMR";
-        const orig = originCountryCode || "CHN";
+      const dest = destinationCountryCode || "CMR";
+      const orig = originCountryCode || "CHN";
 
-        const qParams = new URLSearchParams();
-        qParams.set("dest_country", dest);
-        qParams.set("origin_country", orig);
-        const queryString = qParams.toString();
+      const qParams = new URLSearchParams();
+      qParams.set("dest_country", dest);
+      qParams.set("origin_country", orig);
+      const queryString = qParams.toString();
 
-        let response: Response;
-        if (looksLikeHs) {
-          response = await fetch(
-            `${tariffApiUrl}/by-hscode/${encodeURIComponent(normalizedQuery)}?${queryString}`
-          );
-        } else {
-          const dq = new URLSearchParams({
-            description: normalizedQuery,
-            dest_country: dest,
-            origin_country: orig,
-          });
-          response = await fetch(`${tariffApiUrl}/by-description?${dq}`);
-        }
-
-        if (response.status === 503) {
-          throw new Error(t("importTools.errTariffServiceOverloaded"));
-        }
-
-        const resData = await apiJson<{ hsCodes: TariffHsCodeMatch[] }>(response);
-        setResults(resData.hsCodes || (resData as any).HSCodes || (resData as any).mtechHSCodes || []);
-      } catch (err: any) {
-        console.error(err);
-        setError(err.message || t("importTools.errSearchFailed"));
-        setResults([]);
-      } finally {
-        setSearching(false);
+      let response: Response;
+      if (looksLikeHs) {
+        response = await fetch(
+          `${tariffApiUrl}/by-hscode/${encodeURIComponent(normalizedQuery)}?${queryString}`
+        );
+      } else {
+        const dq = new URLSearchParams({
+          description: normalizedQuery,
+          dest_country: dest,
+          origin_country: orig,
+        });
+        response = await fetch(`${tariffApiUrl}/by-description?${dq}`);
       }
-    }
 
-    executeLookup();
-  }, [debouncedQuery, destinationCountryCode, originCountryCode, tariffApiUrl, tariffApiAvailable, retryTrigger]);
+      if (response.status === 503) {
+        throw new Error(t("importTools.errTariffServiceOverloaded"));
+      }
+
+      const resData = await apiJson<{ hsCodes: TariffHsCodeMatch[] }>(response);
+      setResults(resData.hsCodes || (resData as any).HSCodes || (resData as any).mtechHSCodes || []);
+    } catch (err: any) {
+      console.error(err);
+      setError(err.message || t("importTools.errSearchFailed"));
+      setResults([]);
+    } finally {
+      setSearching(false);
+    }
+  };
+
+  // Handle Enter key press
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      executeLookup();
+    }
+  };
+
+  // COMMENTED OUT - Debounced Search Execution (now using manual search button)
+  // useEffect(() => {
+  //   if (!debouncedQuery || debouncedQuery.trim().length < 2) {
+  //     setResults([]);
+  //     setError(null);
+  //     return;
+  //   }
+
+  //   async function executeLookup() {
+  //     setSearching(true);
+  //     setError(null);
+  //     try {
+  //       const normalizedQuery = debouncedQuery.trim();
+  //       const looksLikeHs = /^[0-9.]{4,}$/.test(normalizedQuery);
+
+  //       const dest = destinationCountryCode || "CMR";
+  //       const orig = originCountryCode || "CHN";
+
+  //       const qParams = new URLSearchParams();
+  //       qParams.set("dest_country", dest);
+  //       qParams.set("origin_country", orig);
+  //       const queryString = qParams.toString();
+
+  //       let response: Response;
+  //       if (looksLikeHs) {
+  //         response = await fetch(
+  //           `${tariffApiUrl}/by-hscode/${encodeURIComponent(normalizedQuery)}?${queryString}`
+  //         );
+  //       } else {
+  //         const dq = new URLSearchParams({
+  //           description: normalizedQuery,
+  //           dest_country: dest,
+  //           origin_country: orig,
+  //         });
+  //         response = await fetch(`${tariffApiUrl}/by-description?${dq}`);
+  //       }
+
+  //       if (response.status === 503) {
+  //         throw new Error(t("importTools.errTariffServiceOverloaded"));
+  //       }
+
+  //       const resData = await apiJson<{ hsCodes: TariffHsCodeMatch[] }>(response);
+  //       setResults(resData.hsCodes || (resData as any).HSCodes || (resData as any).mtechHSCodes || []);
+  //     } catch (err: any) {
+  //       console.error(err);
+  //       setError(err.message || t("importTools.errSearchFailed"));
+  //       setResults([]);
+  //     } finally {
+  //       setSearching(false);
+  //     }
+  //   }
+
+  //   executeLookup();
+  // }, [debouncedQuery, destinationCountryCode, originCountryCode, tariffApiUrl, tariffApiAvailable, retryTrigger]);
 
   const handleCopy = (code: string) => {
     navigator.clipboard.writeText(code);
@@ -140,21 +196,44 @@ export default function HsCodeLookupTab({
               setQuery(e.target.value);
               setSelectedHS(null);
             }}
+            onKeyPress={handleKeyPress}
             placeholder={t("importTools.searchDirectoryPlaceholder")}
-            className="w-full pl-12 pr-10 py-4 bg-gray-50 border border-gray-100 rounded-2xl text-base font-semibold focus:outline-none focus:ring-2 focus:ring-green-700 focus:bg-white transition-all shadow-inner"
+            className="w-full pl-12 pr-32 py-4 bg-gray-50 border border-gray-100 rounded-2xl text-base font-semibold focus:outline-none focus:ring-2 focus:ring-green-700 focus:bg-white transition-all shadow-inner"
           />
-          {query && (
+          <div className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-2">
+            {query && (
+              <button
+                type="button"
+                onClick={() => {
+                  setQuery("");
+                  setResults([]);
+                  setSelectedHS(null);
+                  setError(null);
+                }}
+                className="p-1.5 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors"
+              >
+                <span className="text-xs font-semibold text-gray-600 block leading-none px-1">{t("importTools.clear")}</span>
+              </button>
+            )}
             <button
-              onClick={() => {
-                setQuery("");
-                setResults([]);
-                setSelectedHS(null);
-              }}
-              className="absolute right-4 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors"
+              type="button"
+              onClick={executeLookup}
+              disabled={searching || !query || query.trim().length < 2}
+              className="px-4 py-2 bg-green-950 hover:bg-green-900 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-bold rounded-xl transition-all cursor-pointer flex items-center gap-1.5 shadow-xs"
             >
-              <span className="text-xs font-semibold text-gray-600 block leading-none px-1">{t("importTools.clear")}</span>
+              {searching ? (
+                <>
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                  <span className="text-xs">{t("importTools.searching") || "Searching..."}</span>
+                </>
+              ) : (
+                <>
+                  <Search className="w-4 h-4" />
+                  <span className="text-xs">{t("importTools.search") || "Search"}</span>
+                </>
+              )}
             </button>
-          )}
+          </div>
         </div>
       </div>
 
@@ -183,7 +262,7 @@ export default function HsCodeLookupTab({
               </div>
               <button
                 type="button"
-                onClick={() => setRetryTrigger((prev) => prev + 1)}
+                onClick={executeLookup}
                 className="px-4 py-2 bg-red-700 hover:bg-red-800 text-white text-xs font-bold rounded-xl transition-all cursor-pointer inline-flex items-center gap-1.5 shadow-xs"
               >
                 <RefreshCw className="w-3.5 h-3.5" />
