@@ -6,7 +6,7 @@
 
 # IMPORTANT: Node.js Version Maintenance
 # Update NODE_VERSION to the latest LTS as needed.
-ARG NODE_VERSION=20.18.1-slim
+ARG NODE_VERSION=24.13.0-slim
 
 FROM node:${NODE_VERSION} AS dependencies
 
@@ -62,7 +62,7 @@ FROM node:${NODE_VERSION} AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
-ENV PORT=3006
+ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
 # Optional: disable telemetry at runtime
