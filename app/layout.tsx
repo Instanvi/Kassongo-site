@@ -8,9 +8,6 @@ import ClientLayout from "../components/ClientLayout";
 export const metadata: Metadata = {
   title: "Kassongo Express - Global Storage & Forwarding Solutions",
   description: "Sign up to get your unique Kassongo shipping addresses in major trade hubs. Shop any supplier, and we will securely store, combine, and forward your boxes to save you money.",
-  icons: {
-    icon: "/favicon.ico?v=2",
-  },
 };
 
 export default async function RootLayout({
@@ -29,6 +26,8 @@ export default async function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        {/* Favicon — explicit link ensures it works in Docker/Dokploy standalone mode */}
+        <link rel="icon" href="/favicon.ico?v=2" />
         {/* Preload critical Retail fonts to prevent FOUT (Flash of Unstyled Text) */}
         <link
           rel="preload"
