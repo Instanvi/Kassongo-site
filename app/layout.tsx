@@ -1,9 +1,16 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import "flag-icons/css/flag-icons.min.css";
 import { cookies } from "next/headers";
 import { Locale } from "../lib/i18n/LanguageContext";
 import ClientLayout from "../components/ClientLayout";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Kassongo Express - Global Storage & Forwarding Solutions",
@@ -22,12 +29,10 @@ export default async function RootLayout({
   return (
     <html
       lang={initialLocale}
-      className="h-full antialiased"
+      className={`${inter.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <head>
-        {/* Favicon — explicit link ensures it works in Docker/Dokploy standalone mode */}
-        <link rel="icon" href="/favicon.ico?v=2" />
         {/* Preload critical Retail fonts to prevent FOUT (Flash of Unstyled Text) */}
         <link
           rel="preload"
