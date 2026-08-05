@@ -82,7 +82,6 @@ export default function HeroSection() {
               <div className="absolute inset-0 bg-gradient-to-r from-green-50/10 via-transparent to-white/10 pointer-events-none z-10"></div>
               <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-green-50/10 pointer-events-none z-10"></div>
               <video
-                src="/globepackage.webm"
                 autoPlay
                 loop
                 muted
@@ -94,7 +93,9 @@ export default function HeroSection() {
                   WebkitMaskImage: "radial-gradient(ellipse 80% 80% at center, black 40%, transparent 100%)",
                 }}
                 aria-label="Kassongo Freight Platform Animation"
-              />
+              >
+                <source src="/globepackage.webm" type="video/webm" />
+              </video>
             </div>
           </div>
         </div>

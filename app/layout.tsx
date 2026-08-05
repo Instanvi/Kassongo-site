@@ -8,6 +8,9 @@ import ClientLayout from "../components/ClientLayout";
 export const metadata: Metadata = {
   title: "Kassongo Express - Global Storage & Forwarding Solutions",
   description: "Sign up to get your unique Kassongo shipping addresses in major trade hubs. Shop any supplier, and we will securely store, combine, and forward your boxes to save you money.",
+  icons: {
+    icon: "/favicon.ico?v=2",
+  },
 };
 
 export default async function RootLayout({
