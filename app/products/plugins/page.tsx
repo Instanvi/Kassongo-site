@@ -242,7 +242,7 @@ export default function PluginsPage() {
 
         {/* ===== JOIN PARTNERS APPLICATION FORM ===== */}
         <section id="apply" className="relative py-20 md:py-28 px-6 overflow-hidden">
-          {/* Solid dark gradient background — NO image */}
+          {/* Solid dark gradient background NO image */}
           <div className="absolute inset-0 bg-gradient-to-br from-green-950 via-gray-900 to-green-950"></div>
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(36,150,63,0.15),_transparent_50%)]"></div>
 

@@ -90,7 +90,7 @@ export class Testimonial implements ITestimonial {
   }
 
   get fullTitle(): string {
-    return `${this.author} — ${this.role}, ${this.company}`;
+    return `${this.author} ${this.role}, ${this.company}`;
   }
 
   static getGlobalTestimonials(): Testimonial[] {

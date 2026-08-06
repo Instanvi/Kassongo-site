@@ -181,10 +181,10 @@ export const en = {
       electronics: {
         title: "How to Ship Electronics with Lithium Batteries Internationally",
         excerpt: "Complete guide to shipping smartphones, laptops, and battery-powered devices across borders. Learn IATA regulations, packing requirements, and customs documentation.",
-        intro: "Shipping electronics internationally is one of the most common requests we handle at Kassongo Express — and also one of the most regulated. Between IATA restrictions on lithium batteries, carrier-specific rules, and destination-country import controls, there's a lot to get right. This guide covers everything you need to know to ship electronics safely, legally, and cost-effectively.",
+        intro: "Shipping electronics internationally is one of the most common requests we handle at Kassongo Express  and also one of the most regulated. Between IATA restrictions on lithium batteries, carrier-specific rules, and destination-country import controls, there's a lot to get right. This guide covers everything you need to know to ship electronics safely, legally, and cost-effectively.",
         h2_regulations: "Understanding Lithium Battery Regulations",
         p_regulations: "Lithium batteries power everything from smartphones to laptops to electric scooters. But they're also classified as dangerous goods by the International Air Transport Association (IATA) because they pose fire risks if damaged, short-circuited, or exposed to extreme temperatures. This classification affects how you pack, label, and declare your shipment.",
-        warn_loose: "Loose lithium batteries (not installed in devices) are prohibited on passenger aircraft and heavily restricted on cargo flights. Power banks over 100Wh require special handling documentation. Always declare electronics accurately — undeclared batteries can result in package seizure, fines, or criminal charges.",
+        warn_loose: "Loose lithium batteries (not installed in devices) are prohibited on passenger aircraft and heavily restricted on cargo flights. Power banks over 100Wh require special handling documentation. Always declare electronics accurately  undeclared batteries can result in package seizure, fines, or criminal charges.",
         h3_allowed: "What Electronics Are Allowed?",
         ul_allowed_1: "Smartphones, tablets, and laptops with built-in batteries (generally permitted)",
         ul_allowed_2: "Bluetooth headphones and wireless earbuds (allowed with proper packaging)",
@@ -195,7 +195,7 @@ export const en = {
         ol_packing_2: "Wrap each device individually in anti-static bubble wrap, minimum 2 inches thick.",
         ol_packing_3: "Place devices in original retail packaging if available, or use a sturdy corrugated box with 2-inch cushioning on all sides.",
         ol_packing_4: "Include a printed commercial invoice listing each device, its model number, serial number, and declared value.",
-        ol_packing_5: "Label the outer box with 'LITHIUM BATTERIES — HANDLE WITH CARE' if shipping devices with non-removable batteries.",
+        ol_packing_5: "Label the outer box with 'LITHIUM BATTERIES  HANDLE WITH CARE' if shipping devices with non-removable batteries.",
         tip_photos: "Take photos of your items before packing and upload them to your Kassongo shipment request. This creates a digital record that protects you if damage or loss occurs during transit.",
         h2_checklist: "Pre-Shipping Checklist",
         check_1: "Verify destination country allows import of your specific electronics model",
@@ -205,19 +205,19 @@ export const en = {
         check_5: "Purchase additional insurance if total value exceeds $100 USD",
         check_6: "Confirm carrier accepts lithium battery shipments on your chosen route",
         h2_mistakes: "Common Mistakes to Avoid",
-        p_mistakes: "The most expensive mistake in electronics shipping is assuming your package will 'just get through.' Customs inspectors worldwide are trained to spot undeclared batteries, incorrect values, and prohibited models. A single error can result in seizure, destruction, or return at your expense. When in doubt, contact Kassongo support before shipping — our compliance team reviews every package before it leaves our hub.",
+        p_mistakes: "The most expensive mistake in electronics shipping is assuming your package will 'just get through.' Customs inspectors worldwide are trained to spot undeclared batteries, incorrect values, and prohibited models. A single error can result in seizure, destruction, or return at your expense. When in doubt, contact Kassongo support before shipping  our compliance team reviews every package before it leaves our hub.",
         cta: "Ready to ship your electronics? Get your personalized hub address and let our compliance team handle the paperwork.",
         imageAlt: "Electronics being packed for international shipping with anti-static materials"
       },
       chinacameroon: {
         title: "China to Cameroon Shipping: Complete 2026 Guide",
-        excerpt: "Everything you need to know about importing goods from China to Cameroon — shipping methods, costs, customs requirements, and clearance procedures.",
+        excerpt: "Everything you need to know about importing goods from China to Cameroon  shipping methods, costs, customs requirements, and clearance procedures.",
         intro: "The China-to-Cameroon trade corridor is one of the busiest in Africa, with billions of dollars in goods moving between these countries every year. Whether you're a small business importing inventory, an individual buying personal items, or an e-commerce seller sourcing products, understanding the shipping process can save you thousands of francs and weeks of delays.",
         h2_methods: "Shipping Methods Compared",
         p_methods: "You have three main options for getting goods from China to Cameroon: express air freight, standard air freight, and ocean freight. Each has different cost, speed, and volume profiles.",
         h3_express: "Express Air Freight (3–7 days)",
         ul_express_1: "Best for: Urgent shipments under 100kg, high-value electronics, samples",
-        ul_express_2: "Carriers: DHL, FedEx, UPS — door-to-door with tracking",
+        ul_express_2: "Carriers: DHL, FedEx, UPS door-to-door with tracking",
         ul_express_3: "Cost: Highest per kg, but no hidden fees or customs brokerage surprises",
         h3_standard: "Standard Air Freight (7–14 days)",
         ol_standard_1: "Ship to Kassongo's Guangzhou or Yiwu hub address",
@@ -255,7 +255,7 @@ export const en = {
       },
       airVsOcean: {
         title: "Air Freight vs Ocean Freight: Which is Right for You?",
-        excerpt: "Compare air and ocean shipping for international freight — costs, speed, environmental impact, and best use cases for each method.",
+        excerpt: "Compare air and ocean shipping for international freight costs, speed, environmental impact, and best use cases for each method.",
         intro: "Choosing between air and ocean freight is one of the most important decisions in international shipping. Each mode has distinct advantages and trade-offs in terms of cost, speed, capacity, and environmental impact.",
         h2_comparison: "Key Differences",
         p_comparison: "Here's a detailed comparison to help you decide:",
@@ -285,16 +285,16 @@ export const en = {
         h2_tips: "5 Ways to Avoid These Fees",
         ol_tips_1: "Prepare customs documentation before cargo arrives so clearance is immediate",
         ol_tips_2: "Have a logistics partner or customs broker ready to process your shipment",
-        ol_tips_3: "Arrange trucking/pickup in advance — don't wait until cargo arrives",
+        ol_tips_3: "Arrange trucking/pickup in advance don't wait until cargo arrives",
         ol_tips_4: "Monitor vessel tracking closely so you know exact arrival dates",
         ol_tips_5: "Consider using a Container Freight Station (CFS) for consolidated cargo to extend free time",
         tip: "Kassongo's consolidation service includes extended free storage at our warehouses, eliminating demurrage risk for smaller shipments.",
-        cta: "Ship with confidence — our team handles customs clearance and coordinates pickup to prevent fees.",
+        cta: "Ship with confidence our team handles customs clearance and coordinates pickup to prevent fees.",
         imageAlt: "Shipping containers stacked at port terminal with time clock overlay"
       },
       usaEurope: {
         title: "USA to Europe Shipping Guide",
-        excerpt: "Complete guide to shipping from the United States to European countries — transit times, carrier options, and customs considerations.",
+        excerpt: "Complete guide to shipping from the United States to European countries transit times, carrier options, and customs considerations.",
         intro: "The transatlantic shipping route between the USA and Europe is one of the most efficient and well-established trade lanes in the world. Whether you're shipping to the UK, Germany, France, or other EU countries, you have reliable options for fast, cost-effective delivery.",
         h2_options: "Shipping Options",
         p_options: "Express carriers like DHL, FedEx, and UPS offer 2-5 day delivery with door-to-door service and customs clearance included. Standard air freight takes 5-10 days and is more economical for shipments over 50kg. Ocean freight takes 15-30 days and is ideal for palletized cargo or full containers.",
@@ -323,16 +323,16 @@ export const en = {
         p_how: "When you shop from multiple suppliers or online stores, each package arrives separately at your Kassongo hub address. We hold them in secure storage, then combine them into one optimized shipment when you're ready. We remove excess packaging, repack items securely, and forward everything together.",
         h2_benefits: "Benefits of Consolidation",
         ul_benefits_1: "Save 40-60% on shipping costs compared to individual packages",
-        ul_benefits_2: "Reduce customs clearance complexity — one shipment means one customs declaration",
-        ul_benefits_3: "Lower risk of lost items — everything travels together with one tracking number",
+        ul_benefits_2: "Reduce customs clearance complexity one shipment means one customs declaration",
+        ul_benefits_3: "Lower risk of lost items everything travels together with one tracking number",
         ul_benefits_4: "More efficient packing reduces volumetric weight charges",
         tip: "Platinum members get unlimited free consolidation. Free and Gold members pay a small per-consolidation fee that's still far cheaper than shipping packages separately.",
-        cta: "Start consolidating your shipments today — sign up for your free hub address.",
+        cta: "Start consolidating your shipments today sign up for your free hub address.",
         imageAlt: "Multiple small boxes being consolidated into one larger shipping package"
       },
       incoterms: {
         title: "Incoterms 2026: A Practical Guide",
-        excerpt: "Understand international trade terms like FOB, CIF, DDP, and EXW — who pays for shipping, insurance, and customs clearance.",
+        excerpt: "Understand international trade terms like FOB, CIF, DDP, and EXW who pays for shipping, insurance, and customs clearance.",
         intro: "Incoterms (International Commercial Terms) are standardized trade definitions published by the International Chamber of Commerce. They clarify responsibilities between buyers and sellers in international transactions.",
         h2_what: "What Are Incoterms?",
         p_what: "Incoterms define who pays for shipping, who arranges insurance, where risk transfers from seller to buyer, and who handles customs clearance. Common terms include EXW (Ex Works), FOB (Free on Board), CIF (Cost, Insurance & Freight), and DDP (Delivered Duty Paid).",
@@ -343,7 +343,7 @@ export const en = {
       },
       future: {
         title: "The Future of Freight Forwarding: AI, Automation, and Sustainability",
-        excerpt: "Explore emerging trends in global logistics — artificial intelligence, blockchain tracking, green shipping, and digital customs.",
+        excerpt: "Explore emerging trends in global logistics artificial intelligence, blockchain tracking, green shipping, and digital customs.",
         intro: "The freight forwarding industry is undergoing rapid transformation driven by technology and sustainability demands. AI-powered route optimization, blockchain-based tracking, and carbon-neutral shipping options are reshaping how goods move globally.",
         h2_trends: "Key Trends to Watch",
         p_trends: "Machine learning algorithms now predict customs delays and suggest alternative routes in real-time. Blockchain provides immutable tracking records. Digital customs platforms eliminate paper documentation. Electric cargo aircraft and carbon offset programs address environmental concerns.",
@@ -361,7 +361,7 @@ export const en = {
         ol_steps_4: "Place wrapped items in the center, ensuring they don't touch box walls",
         ol_steps_5: "Fill remaining space with packing material and seal with heavy-duty tape",
         tip: "Always purchase additional insurance for fragile, valuable items. Basic coverage may not fully protect glass, ceramics, or antiques.",
-        cta: "Ship fragile items with confidence — our team provides professional packing services.",
+        cta: "Ship fragile items with confidence our team provides professional packing services.",
         imageAlt: "Fragile glassware being wrapped in bubble wrap for safe shipping"
       },
       turkey: {
@@ -495,7 +495,7 @@ export const en = {
     mailbox: {
       title: "Kassongo Mailbox",
       desc: "Create your global shopping mailbox profiles. Instantly receive your addresses in trade hubs and forward cargo with ease.",
-      rating: "4.9/5.0 Rated (15,000+ members)",
+      rating: "4.9/5.0 Rated (5,000+ members)",
       selectHub: "Select Sourcing Hub Address:",
       estimatedTariff: "Estimated Sourcing Tariff",
       btnGetAddress: "Get My Hub Address Now",
@@ -529,7 +529,7 @@ export const en = {
       }
     },
     downloads: {
-      ratingText: "rating from 15,000+ verified accounts",
+      ratingText: "rating from 5,000+ verified accounts",
       title: "See what all the hype is about.",
       f1: "30-day cargo forwarding guarantee",
       f2: "Operationally verified and speed tested",
@@ -1015,7 +1015,7 @@ export const en = {
     },
     vision: {
       title: "Our Vision",
-      desc: "By 2028, Kassongo Express aims to become the world's most trusted digital freight platform — connecting every major trade corridor with seamless, AI-optimized logistics that puts the shipper in full control.",
+      desc: "By 2028, Kassongo Express aims to become the world's most trusted digital freight platform connecting every major trade corridor with seamless, AI-optimized logistics that puts the shipper in full control.",
       goal1: "Expand to 100+ global hubs",
       goal2: "Serve 5 million+ active members",
       imageAlt: "Vision graphic"
@@ -1037,7 +1037,7 @@ export const en = {
       },
       access: {
         title: "Global Access",
-        desc: "We believe anyone, anywhere, should be able to shop the world and receive it locally — no borders, no barriers."
+        desc: "We believe anyone, anywhere, should be able to shop the world and receive it locally no borders, no barriers."
       }
     },
     operate: {
@@ -1053,29 +1053,29 @@ export const en = {
       },
       step3: {
         title: "Reforward & Track",
-        desc: "Choose your carrier and speed. We handle the customs paperwork, provide real-time tracking, and deliver to your door — fully insured."
+        desc: "Choose your carrier and speed. We handle the customs paperwork, provide real-time tracking, and deliver to your door fully insured."
       }
     },
     hubs: {
       title: "Global Presence",
       subtitle: "Strategically located hubs across the world's busiest trade corridors, staffed by local teams who know the customs landscape inside and out.",
       us: {
-        name: "United States — New York & Houston",
+        name: "United States New York & Houston",
         feat1: "Daily departures to Africa and Europe",
         feat2: "Sales tax-exempt purchasing addresses"
       },
       uk: {
-        name: "United Kingdom — London Heathrow",
+        name: "United Kingdom London Heathrow",
         feat1: "Bi-weekly air freight consolidations",
         feat2: "VAT reclaim assistance"
       },
       china: {
-        name: "China — Guangzhou & Yiwu",
+        name: "China Guangzhou & Yiwu",
         feat1: "Consolidation with direct factory pickup",
         feat2: "Sea and air freight options"
       },
       turkey: {
-        name: "Turkey — Istanbul",
+        name: "Turkey Istanbul",
         feat1: "Bridge hub for the EU–MENA corridor",
         feat2: "Fast-track customs clearance"
       },
@@ -1083,7 +1083,7 @@ export const en = {
     },
     timeline: {
       title: "Our Journey",
-      subtitle: "From a single warehouse to a global network — here's how Kassongo Express has evolved.",
+      subtitle: "From a single warehouse to a global network here's how Kassongo Express has evolved.",
       m1: { title: "Founded in New York", desc: "Started with a single consolidation hub in New York, serving cross-border buyers from West Africa." },
       m2: { title: "UK Hub Launch", desc: "Opened the London Heathrow facility to serve European and Commonwealth trade routes." },
       m3: { title: "China Expansion", desc: "Added Guangzhou and Yiwu hubs for direct factory sourcing access and manufacturing supply chains." },
@@ -1093,7 +1093,7 @@ export const en = {
     },
     team: {
       title: "Meet the Team",
-      subtitle: "The people behind the packages — a diverse team of logistics veterans, engineers, and customer service champions.",
+      subtitle: "The people behind the packages a diverse team of logistics veterans, engineers, and customer service champions.",
       roles: {
         ceo: "Chief Executive Officer",
         coo: "Chief Operating Officer",
@@ -1105,7 +1105,7 @@ export const en = {
       title: "Why Kassongo Express?",
       subtitle: "We didn't just build another freight forwarder. We built the one we always wished existed.",
       items: {
-        speed: { title: "24-Hour Shipping", desc: "Packages ship within 24 hours of consolidation request — no warehouse limbo." },
+        speed: { title: "24-Hour Shipping", desc: "Packages ship within 24 hours of consolidation request no warehouse limbo." },
         security: { title: "100% Inspection", desc: "Every incoming package is physically verified, photographed, and its condition logged." },
         price: { title: "Fair Pricing", desc: "Consolidation cuts shipping costs by up to 60%. No hidden fees, ever." },
         coverage: { title: "Global Coverage", desc: "Ship to 150+ countries from hubs in the US, UK, China, Turkey, and beyond." },
@@ -1118,7 +1118,7 @@ export const en = {
       subtitle: "Common questions about who we are and how we work.",
       a1: {
         q: "Is Kassongo Express a shipping carrier?",
-        a: "We're a freight forwarding and package consolidation service — not a carrier. We partner with FedEx, DHL, UPS, USPS, and regional carriers to move your packages, while we handle consolidation, storage, customs, and coordination."
+        a: "We're a freight forwarding and package consolidation service not a carrier. We partner with FedEx, DHL, UPS, USPS, and regional carriers to move your packages, while we handle consolidation, storage, customs, and coordination."
       },
       a2: {
         q: "Where is your headquarters located?",
@@ -1419,7 +1419,7 @@ export const en = {
       hero: {
         title: "Calculate landed costs",
         titleHighlight: "with guaranteed accuracy.",
-        subtitle: "Surprise duty invoices ruin profits and customer trust. Kassongo calculates and guarantees every international charge—duties, taxes, and brokerage fees—so you can ship globally without financial risk. When customs charges more than we quoted, we pay the difference.",
+        subtitle: "Surprise duty invoices ruin profits and customer trust. Kassongo calculates and guarantees every international chargeduties, taxes, and brokerage feesso you can ship globally without financial risk. When customs charges more than we quoted, we pay the difference.",
         ctaPrimary: "Use Duty Calculator",
         ctaSecondary: "Book a demo",
       },
@@ -1440,7 +1440,7 @@ export const en = {
         item2Title: "Eliminate surprise fees",
         item2Desc: "Display the complete landed cost at checkout. Eliminating surprise fees at delivery results in happier customers and fewer returns.",
         item3Title: "We file taxes, you don't",
-        item3Desc: "We handle complex compliance schemes like EU IOSS, UK VAT, Australia GST, and Norway VOEC—no need to register or file manually.",
+        item3Desc: "We handle complex compliance schemes like EU IOSS, UK VAT, Australia GST, and Norway VOECno need to register or file manually.",
         item4Title: "Ship to 200+ countries",
         item4Desc: "Calculate precise customs duty, local tax, and clearance fees for over 200 countries and territories worldwide.",
         item5Title: "Free HS classification",
@@ -1451,7 +1451,7 @@ export const en = {
       process: {
         title: "From quote to delivery, we have you covered",
         step1Title: "Calculate at checkout automatically",
-        step1Desc: "When a customer enters a shipping destination, Landed Cost instantly calculates duties, taxes, and carrier fees in real time. The shopper sees the complete cost before they pay—no surprises, no hidden charges.",
+        step1Desc: "When a customer enters a shipping destination, Landed Cost instantly calculates duties, taxes, and carrier fees in real time. The shopper sees the complete cost before they payno surprises, no hidden charges.",
         step2Title: "Guarantee the calculation",
         step2Desc: "We cover any discrepancy between what we calculated and what customs invoices. Your finance team doesn't have to audit carrier bills or absorb unexpected fees.",
         step3Title: "Frictionless customs clearance",
@@ -1461,7 +1461,7 @@ export const en = {
         title: "Landed Cost FAQs",
         subtitle: "Everything you need to know about duty and tax calculations",
         q1: "What is a landed cost guarantee?",
-        a1: "When we calculate duties and taxes at checkout, we guarantee that amount. If customs charges more than we quoted, Kassongo pays the difference—you never absorb unexpected fees.",
+        a1: "When we calculate duties and taxes at checkout, we guarantee that amount. If customs charges more than we quoted, Kassongo pays the differenceyou never absorb unexpected fees.",
         q2: "How accurate are your HS code classifications?",
         a2: "We use a combination of AI and human customs experts to classify products. Our classification accuracy rate is 99.4%, and any misclassification is covered by our guarantee.",
         q3: "Do you support de minimis thresholds?",
@@ -1564,9 +1564,9 @@ export const en = {
         catCarrier: "Carrier Partner",
         catFulfillment: "Fulfillment Partner",
         desc1: "Amazon Global Logistics partnered with Kassongo to streamline cross-border shipping for FBA sellers. Our integrated duty calculator and customs clearance tools reduced shipment processing time by 40% and cut unexpected customs fees for merchants shipping from China, India, and Vietnam to US, UK, and EU fulfillment centers.",
-        desc2: "DHL Express integrated Kassongo's real-time duty estimation API into their cross-border e-commerce platform. This allows DHL customers to see accurate landed costs upfront — including customs duties, VAT, and handling fees — before checkout, reducing cart abandonment and improving delivery predictability across 220+ countries.",
+        desc2: "DHL Express integrated Kassongo's real-time duty estimation API into their cross-border e-commerce platform. This allows DHL customers to see accurate landed costs upfront including customs duties, VAT, and handling fees before checkout, reducing cart abandonment and improving delivery predictability across 220+ countries.",
         desc3: "Jumia, Africa's largest e-commerce platform, partnered with Kassongo to power last-mile logistics and customs compliance across 11 African markets. Our localized duty calculations and multi-currency support helped Jumia expand cross-border trade, connecting international sellers to millions of African consumers with transparent shipping costs.",
-        desc4: "Alibaba.com integrated Kassongo's HS code classification and duty calculator into their B2B trade platform. This partnership helps Alibaba's 200,000+ suppliers provide instant, accurate import duty quotes to global buyers — eliminating pricing surprises and accelerating purchase decisions for wholesale cross-border transactions.",
+        desc4: "Alibaba.com integrated Kassongo's HS code classification and duty calculator into their B2B trade platform. This partnership helps Alibaba's 200,000+ suppliers provide instant, accurate import duty quotes to global buyers eliminating pricing surprises and accelerating purchase decisions for wholesale cross-border transactions.",
         desc5: "FedEx Cross Border partnered with Kassongo to enhance their international e-commerce shipping solutions. Our compliance engine automates HS code determination and duty calculations for FedEx's global retail clients, ensuring accurate customs documentation and reducing shipment holds at border crossings worldwide.",
       },
       faq: {

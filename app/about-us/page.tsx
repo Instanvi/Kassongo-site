@@ -239,7 +239,7 @@ export default function AboutPage() {
                     </div>
                 </section>
 
-                {/* 4. How We Operate — 3-Step Process */}
+                {/* 4. How We Operate 3-Step Process */}
                 <section className="py-20 px-6 md:px-12 bg-gray-50">
                     <div className="max-w-6xl mx-auto">
                         <div className="text-center mb-16">
