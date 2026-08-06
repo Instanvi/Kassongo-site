@@ -29,7 +29,7 @@ export default function HeroSection() {
                 <br />
                 <span className="text-yellow-400">{t("home.hero.title3")}</span>
               </h1>
-              <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-xl">
+              <p className="text-lg text-gray-600 leading-relaxed max-w-xl">
                 {t("home.hero.subtitle")}
               </p>
             </div>

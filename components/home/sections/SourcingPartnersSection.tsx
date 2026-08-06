@@ -13,7 +13,7 @@ export default function SourcingPartnersSection() {
           <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight mb-6 text-gray-900">
             {t("home.unlocked.title")}
           </h2>
-          <p className="text-sm md:text-base leading-relaxed text-gray-700 mb-8">
+          <p className="text-md leading-relaxed text-gray-700 mb-8">
             {t("home.unlocked.desc")}
           </p>
         </div>

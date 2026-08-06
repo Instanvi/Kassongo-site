@@ -494,7 +494,7 @@ export const de = {
     mailbox: {
       title: "Kassongo Postbox",
       desc: "Erstellen Sie Ihr globales Postfach. Erhalten Sie Lieferadressen an den wichtigsten Knotenpunkten und leiten Sie Sendungen unkompliziert weiter.",
-      rating: "4.9 von 5.0 Punkten (15.000+ aktive Mitglieder)",
+      rating: "4.9 von 5.0 Punkten (5.000+ aktive Mitglieder)",
       selectHub: "Waehlen Sie einen Lagerstandort:",
       estimatedTariff: "Geschaetzter Basistarif",
       btnGetAddress: "Meine Lieferadresse anfordern",
@@ -527,7 +527,7 @@ export const de = {
       },
     },
     downloads: {
-      ratingText: "Bewertungen von über 15.000 verifizierten Mitgliedern",
+      ratingText: "Bewertungen von über 5.000 verifizierten Mitgliedern",
       title: "Erleben Sie erstklassigen Speditionsservice",
       f1: "30 Tage Versicherungsschutz bei Verzoegerung oder Verlust",
       f2: "Erprobte Logistikketten für schnelle Zollabfertigung",

@@ -191,15 +191,15 @@ export default function KassongoCapitalPage() {
                 
                 {/* Visual badges */}
                 <div className="flex flex-wrap gap-4 pt-4 border-t border-gray-100">
-                  <div className="flex items-center gap-2 text-xs font-bold text-gray-700">
+                  <div className="flex items-center gap-2 text-sm font-bold text-gray-700">
                     <ShieldCheck className="w-4.5 h-4.5 text-green-700" />
                     <span>{t("products.kassongoCapital.hero.badgeShariah")}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-xs font-bold text-gray-700">
+                  <div className="flex items-center gap-2 text-sm font-bold text-gray-700">
                     <Percent className="w-4.5 h-4.5 text-green-700" />
                     <span>{t("products.kassongoCapital.hero.badgeInterest")}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-xs font-bold text-gray-700">
+                  <div className="flex items-center gap-2 text-sm font-bold text-gray-700">
                     <Scale className="w-4.5 h-4.5 text-green-700" />
                     <span>{t("products.kassongoCapital.hero.badgeAaoifi")}</span>
                   </div>
@@ -336,7 +336,7 @@ export default function KassongoCapitalPage() {
               <h2 className="text-3xl md:text-4xl font-display font-black text-white">
                 {t("products.kassongoCapital.principles.title")}
               </h2>
-              <p className="text-green-100 text-sm md:text-base leading-relaxed">
+              <p className="text-green-100 text-md leading-relaxed">
                 {t("products.kassongoCapital.principles.subtitle")}
               </p>
             </div>
@@ -353,7 +353,7 @@ export default function KassongoCapitalPage() {
                   <h3 className="text-lg font-bold text-white">
                     {principle.title}
                   </h3>
-                  <p className="text-sm text-gray-300 leading-relaxed">
+                  <p className="text-md text-gray-300 leading-relaxed">
                     {principle.desc}
                   </p>
                 </div>
@@ -386,7 +386,7 @@ export default function KassongoCapitalPage() {
                   <span className="text-green-800">{t("products.kassongoCapital.split.titleHighlight")}</span>
                 </h2>
                 
-                <p className="text-gray-600 leading-relaxed text-sm">
+                <p className="text-gray-600 leading-relaxed text-md">
                   {t("products.kassongoCapital.split.desc")}
                 </p>
 
@@ -396,10 +396,10 @@ export default function KassongoCapitalPage() {
                       <Check className="w-3.5 h-3.5 font-bold" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-gray-900 text-sm">
+                      <h4 className="font-bold text-gray-900 text-md">
                         {t("products.kassongoCapital.split.feat1Title")}
                       </h4>
-                      <p className="text-xs text-gray-500">
+                      <p className="text-sm text-gray-500">
                         {t("products.kassongoCapital.split.feat1Desc")}
                       </p>
                     </div>
@@ -410,10 +410,10 @@ export default function KassongoCapitalPage() {
                       <Check className="w-3.5 h-3.5 font-bold" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-gray-900 text-sm">
+                      <h4 className="font-bold text-gray-900 text-md">
                         {t("products.kassongoCapital.split.feat2Title")}
                       </h4>
-                      <p className="text-xs text-gray-500">
+                      <p className="text-sm text-gray-500">
                         {t("products.kassongoCapital.split.feat2Desc")}
                       </p>
                     </div>
@@ -424,10 +424,10 @@ export default function KassongoCapitalPage() {
                       <Check className="w-3.5 h-3.5 font-bold" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-gray-900 text-sm">
+                      <h4 className="font-bold text-gray-900 text-md">
                         {t("products.kassongoCapital.split.feat3Title")}
                       </h4>
-                      <p className="text-xs text-gray-500">
+                      <p className="text-sm text-gray-500">
                         {t("products.kassongoCapital.split.feat3Desc")}
                       </p>
                     </div>
@@ -471,18 +471,18 @@ export default function KassongoCapitalPage() {
                       <h3 className="text-2xl font-black text-gray-900 leading-snug">
                         {product.name}
                       </h3>
-                      <p className="text-xs text-gray-500 leading-relaxed min-h-[96px]">
+                      <p className="text-sm text-gray-500 leading-relaxed min-h-[96px]">
                         {product.desc}
                       </p>
                     </div>
                     
                     <div className="space-y-3 pt-6 border-t border-gray-100">
-                      <span className="text-xs font-bold uppercase tracking-wider text-green-800 block">
+                      <span className="text-sm font-bold uppercase tracking-wider text-green-800 block">
                         Key Features
                       </span>
                       <div className="space-y-2">
                         {product.features.map((feature, idx) => (
-                          <div key={idx} className="flex items-start gap-2.5 text-xs text-gray-600 leading-normal">
+                          <div key={idx} className="flex items-start gap-2.5 text-sm text-gray-600 leading-normal">
                             <div className="w-4 h-4 bg-green-50 rounded-full flex items-center justify-center shrink-0 mt-0.5">
                               <Check className="w-2.5 h-2.5 text-green-800" />
                             </div>
@@ -498,7 +498,7 @@ export default function KassongoCapitalPage() {
                       <span className="text-gray-400 font-medium">Repayment Terms:</span>
                       <span className="font-bold text-gray-700">{product.terms}</span>
                     </div>
-                    <Button variant="outline" href="/products/kassongo-capital/apply" className="w-full text-xs py-3 text-center flex items-center justify-center gap-2 border-gray-200 hover:border-green-800 hover:bg-green-800 hover:text-white transition-all duration-300 rounded-xl shadow-soft">
+                    <Button variant="outline" href="/products/kassongo-capital/apply" className="w-full text-sm py-3 text-center flex items-center justify-center gap-2 border-gray-200 hover:border-green-800 hover:bg-green-800 hover:text-white transition-all duration-300 rounded-xl shadow-soft">
                       <span>Request Pre-Approval</span>
                       <ArrowUpRight className="w-4 h-4" />
                     </Button>
@@ -522,7 +522,6 @@ export default function KassongoCapitalPage() {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              {/* Left: Premium Styled Circle Image */}
               <div className="lg:col-span-6 flex items-center justify-center">
                 <div className="relative group">
                   {/* Decorative glowing gradient blur backgrounds */}
@@ -568,7 +567,7 @@ export default function KassongoCapitalPage() {
                             </span>
                             <h3 className="text-lg font-bold text-gray-900">{step.title}</h3>
                           </div>
-                          <p className="text-xs text-gray-500 leading-relaxed">{step.desc}</p>
+                          <p className="text-md text-gray-500 leading-relaxed">{step.desc}</p>
                         </div>
                       </div>
                       {index < steps.length - 1 && (

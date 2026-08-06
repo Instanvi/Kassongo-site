@@ -128,7 +128,7 @@ export default function CheckoutPage() {
           <div className="max-w-7xl mx-auto space-y-16">
             <div className="text-center max-w-3xl mx-auto space-y-4">
               <h2 className="text-3xl md:text-5xl font-display font-black text-white tracking-tight">{t("products.checkout.features.title")}</h2>
-              <p className="text-green-100 text-sm md:text-base leading-relaxed">
+              <p className="text-green-100 text-md leading-relaxed">
                 {t("products.checkout.features.subtitle")}
               </p>
             </div>
@@ -139,7 +139,7 @@ export default function CheckoutPage() {
                   <CreditCard className="w-6 h-6" />
                 </div>
                 <h3 className="text-lg font-bold text-white">{t("products.checkout.features.item1Title")}</h3>
-                <p className="text-sm text-gray-400 leading-relaxed">
+                <p className="text-md text-gray-400 leading-relaxed">
                   {t("products.checkout.features.item1Desc")}
                 </p>
               </div>
@@ -149,7 +149,7 @@ export default function CheckoutPage() {
                   <Globe className="w-6 h-6" />
                 </div>
                 <h3 className="text-lg font-bold text-white">{t("products.checkout.features.item2Title")}</h3>
-                <p className="text-sm text-gray-400 leading-relaxed">
+                <p className="text-md text-gray-400 leading-relaxed">
                   {t("products.checkout.features.item2Desc")}
                 </p>
               </div>
@@ -159,7 +159,7 @@ export default function CheckoutPage() {
                   <DollarSign className="w-6 h-6" />
                 </div>
                 <h3 className="text-lg font-bold text-white">{t("products.checkout.features.item3Title")}</h3>
-                <p className="text-sm text-gray-400 leading-relaxed">
+                <p className="text-md text-gray-400 leading-relaxed">
                   {t("products.checkout.features.item3Desc")}
                 </p>
               </div>
@@ -169,7 +169,7 @@ export default function CheckoutPage() {
                   <ShieldCheck className="w-6 h-6" />
                 </div>
                 <h3 className="text-lg font-bold text-white">{t("products.checkout.features.item4Title")}</h3>
-                <p className="text-sm text-gray-400 leading-relaxed">
+                <p className="text-md text-gray-400 leading-relaxed">
                   {t("products.checkout.features.item4Desc")}
                 </p>
               </div>
@@ -179,7 +179,7 @@ export default function CheckoutPage() {
                   <RefreshCw className="w-6 h-6" />
                 </div>
                 <h3 className="text-lg font-bold text-white">{t("products.checkout.features.item5Title")}</h3>
-                <p className="text-sm text-gray-400 leading-relaxed">
+                <p className="text-md text-gray-400 leading-relaxed">
                   {t("products.checkout.features.item5Desc")}
                 </p>
               </div>
@@ -189,7 +189,7 @@ export default function CheckoutPage() {
                   <Zap className="w-6 h-6" />
                 </div>
                 <h3 className="text-lg font-bold text-white">{t("products.checkout.features.item6Title")}</h3>
-                <p className="text-sm text-gray-400 leading-relaxed">
+                <p className="text-md text-gray-400 leading-relaxed">
                   {t("products.checkout.features.item6Desc")}
                 </p>
               </div>
@@ -204,7 +204,7 @@ export default function CheckoutPage() {
             <p className="text-sm text-gray-500 max-w-2xl mx-auto leading-relaxed">
               {t("products.checkout.techStack.subtitle")}
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs font-bold text-gray-700">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm font-bold text-gray-700">
               <div className="p-4 border border-gray-100 rounded-2xl shadow-soft">{t("products.checkout.techStack.method1")}</div>
               <div className="p-4 border border-gray-100 rounded-2xl shadow-soft">{t("products.checkout.techStack.method2")}</div>
               <div className="p-4 border border-gray-100 rounded-2xl shadow-soft">{t("products.checkout.techStack.method3")}</div>

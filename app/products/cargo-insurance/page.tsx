@@ -305,7 +305,7 @@ export default function CargoInsurancePage() {
               <h2 className="text-3xl md:text-4xl font-display font-black text-white">
                 {t('products.cargoInsurance.features.title')}
               </h2>
-              <p className="text-green-100 text-sm md:text-base leading-relaxed">
+              <p className="text-green-100 text-md leading-relaxed">
                 {t('products.cargoInsurance.features.subtitle')}
               </p>
             </div>
@@ -322,7 +322,7 @@ export default function CargoInsurancePage() {
                   <h3 className="text-lg font-bold text-white">
                     {t(`products.cargoInsurance.features.item${index + 1}Title`)}
                   </h3>
-                  <p className="text-sm text-gray-400 leading-relaxed">
+                  <p className="text-md text-gray-400 leading-relaxed">
                     {t(`products.cargoInsurance.features.item${index + 1}Desc`)}
                   </p>
                 </div>
@@ -355,7 +355,7 @@ export default function CargoInsurancePage() {
                   <span className="text-green-800">{t('products.cargoInsurance.whyChoose.titleHighlight')}</span>
                 </h2>
 
-                <p className="text-gray-600 leading-relaxed text-sm">
+                <p className="text-gray-600 leading-relaxed text-">md
                   {t('products.cargoInsurance.whyChoose.intro')}
                 </p>
 
@@ -365,10 +365,10 @@ export default function CargoInsurancePage() {
                       <CheckCircle  className="w-3.5 h-3.5 font-bold" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-gray-900 text-sm">
+                      <h4 className="font-bold text-gray-900 text-lg">
                         {t('products.cargoInsurance.whyChoose.item1Title')}
                       </h4>
-                      <p className="text-xs text-gray-500">
+                      <p className="text-sm text-gray-500">
                         {t('products.cargoInsurance.whyChoose.item1Desc')}
                       </p>
                     </div>
@@ -379,10 +379,10 @@ export default function CargoInsurancePage() {
                       <CheckCircle className="w-3.5 h-3.5 font-bold" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-gray-900 text-sm">
+                      <h4 className="font-bold text-gray-900 text-lg">
                         {t('products.cargoInsurance.whyChoose.item2Title')}
                       </h4>
-                      <p className="text-xs text-gray-500">
+                      <p className="text-sm text-gray-500">
                         {t('products.cargoInsurance.whyChoose.item2Desc')}
                       </p>
                     </div>
@@ -393,10 +393,10 @@ export default function CargoInsurancePage() {
                       <CheckCircle className="w-3.5 h-3.5 font-bold" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-gray-900 text-sm">
+                      <h4 className="font-bold text-gray-900 text-lg">
                         {t('products.cargoInsurance.whyChoose.item3Title')}
                       </h4>
-                      <p className="text-xs text-gray-500">
+                      <p className="text-sm text-gray-500">
                         {t('products.cargoInsurance.whyChoose.item3Desc')}
                       </p>
                     </div>
@@ -433,7 +433,7 @@ export default function CargoInsurancePage() {
                   <h3 className="text-2xl font-black text-gray-900 mb-3">
                     {plan.name}
                   </h3>
-                  <p className="text-sm text-gray-500 leading-relaxed mb-8">
+                  <p className="text-md text-gray-500 leading-relaxed mb-8">
                     {plan.desc}
                   </p>
 
@@ -495,7 +495,7 @@ export default function CargoInsurancePage() {
                     </span>
                     <div>
                       <h3 className="text-lg font-bold text-gray-900">{step.title}</h3>
-                      <p className="text-sm text-gray-500 mt-1 leading-relaxed">{step.desc}</p>
+                      <p className="text-md text-gray-500 mt-1 leading-relaxed">{step.desc}</p>
                     </div>
                   </div>
                 ))}

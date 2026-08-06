@@ -464,7 +464,7 @@ export default function PluginsPage() {
           <div className="max-w-7xl mx-auto space-y-12">
             <div className="text-center max-w-2xl mx-auto space-y-3">
               <h2 className="text-3xl md:text-4xl font-display font-black text-gray-900">{t("products.plugins.ecosystem.title")}</h2>
-              <p className="text-gray-500 text-sm leading-relaxed">
+              <p className="text-gray-500 text-md">
                 {t("products.plugins.ecosystem.subtitle")}
               </p>
             </div>
@@ -477,7 +477,7 @@ export default function PluginsPage() {
                     <Code2 className="w-6 h-6" />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900">{t("products.plugins.ecosystem.cat1Title")}</h3>
-                  <p className="text-xs text-gray-500 leading-relaxed">
+                  <p className="text-md text-gray-500 leading-relaxed">
                     {t("products.plugins.ecosystem.cat1Desc")}
                   </p>
                   <div className="flex flex-wrap gap-2 pt-1">
@@ -496,7 +496,7 @@ export default function PluginsPage() {
                     <Layers className="w-6 h-6" />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900">{t("products.plugins.ecosystem.cat2Title")}</h3>
-                  <p className="text-xs text-gray-500 leading-relaxed">
+                  <p className="text-md text-gray-500 leading-relaxed">
                     {t("products.plugins.ecosystem.cat2Desc")}
                   </p>
                   <div className="flex flex-wrap gap-2 pt-1">
@@ -515,7 +515,7 @@ export default function PluginsPage() {
                     <Cpu className="w-6 h-6" />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900">{t("products.plugins.ecosystem.cat3Title")}</h3>
-                  <p className="text-xs text-gray-500 leading-relaxed">
+                  <p className="text-md text-gray-500 leading-relaxed">
                     {t("products.plugins.ecosystem.cat3Desc")}
                   </p>
                   <div className="flex flex-wrap gap-2 pt-1">
@@ -534,7 +534,7 @@ export default function PluginsPage() {
                     <UserCheck className="w-6 h-6" />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900">{t("products.plugins.ecosystem.cat4Title")}</h3>
-                  <p className="text-xs text-gray-500 leading-relaxed">
+                  <p className="text-md text-gray-500 leading-relaxed">
                     {t("products.plugins.ecosystem.cat4Desc")}
                   </p>
                   <div className="flex flex-wrap gap-2 pt-1">
@@ -553,40 +553,35 @@ export default function PluginsPage() {
         <section className="bg-green-900 py-20 px-6">
           <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="space-y-4">
-              <h2 className="text-2xl md:text-3xl font-display font-black text-white">
+              <h2 className="text-3xl font-display font-black text-white">
                 {t("products.plugins.value.title")}
               </h2>
-              <p className="text-xs text-white leading-relaxed">
+              <p className="text-md text-white leading-relaxed">
                 {t("products.plugins.value.subtitle")}
               </p>
             </div>
             <div className="space-y-3">
               <div className="flex gap-3">
                 <CheckCircle2 className="w-4 h-4 text-yellow-400 shrink-0 mt-0.5" />
-                <span className="text-xs font-semibold text-white">{t("products.plugins.value.point1")}</span>
+                <span className="text-md font-semibold text-white">{t("products.plugins.value.point1")}</span>
               </div>
               <div className="flex gap-3">
                 <CheckCircle2 className="w-4 h-4 text-yellow-400 shrink-0 mt-0.5" />
-                <span className="text-xs font-semibold text-white">{t("products.plugins.value.point2")}</span>
+                <span className="text-md font-semibold text-white">{t("products.plugins.value.point2")}</span>
               </div>
               <div className="flex gap-3">
                 <CheckCircle2 className="w-4 h-4 text-yellow-400 shrink-0 mt-0.5" />
-                <span className="text-xs font-semibold text-white">{t("products.plugins.value.point3")}</span>
+                <span className="text-md font-semibold text-white">{t("products.plugins.value.point3")}</span>
               </div>
             </div>
           </div>
         </section>
 
-        {/* ===== REAL PARTNER CASE STUDIES ===== */}
         <section className="bg-gray-50 py-20 px-6 border-t border-gray-200">
           <div className="max-w-7xl mx-auto space-y-12">
             <div className="text-center max-w-2xl mx-auto space-y-3">
-              <div className="inline-flex items-center gap-2 bg-green-50 border border-green-100 rounded-full px-4 py-1.5 mb-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-green-600" />
-                <span className="text-[10px] font-bold text-green-700 uppercase tracking-wider">{t("products.plugins.caseStudies.badge")}</span>
-              </div>
               <h2 className="text-2xl md:text-3xl font-display font-black text-gray-900">{t("products.plugins.caseStudies.title")}</h2>
-              <p className="text-gray-500 text-sm leading-relaxed">
+              <p className="text-gray-500 text-md leading-relaxed">
                 {t("products.plugins.caseStudies.subtitle")}
               </p>
             </div>
@@ -611,7 +606,7 @@ export default function PluginsPage() {
 
                   {/* Card Body */}
                   <div className="p-6 flex-1 flex flex-col">
-                    <p className="text-xs text-gray-500 leading-relaxed mb-4 flex-1">
+                    <p className="text-sm text-gray-500 leading-relaxed mb-4 flex-1">
                       {study.desc}
                     </p>
 

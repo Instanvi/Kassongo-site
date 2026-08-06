@@ -21,7 +21,7 @@ export default function BusStationSection() {
               <h3 className="text-2xl md:text-3xl font-bold mb-3 text-gray-900">
                 {t("home.bus.title")}
               </h3>
-              <p className="text-sm md:text-base text-gray-600 leading-relaxed">
+              <p className="text-md text-gray-600 leading-relaxed">
                 {t("home.bus.desc")}
               </p>
             </div>

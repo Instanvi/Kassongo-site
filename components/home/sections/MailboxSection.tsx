@@ -136,7 +136,7 @@ export default function MailboxSection() {
           <h2 className="text-3xl font-display font-bold tracking-tight mb-2 text-gray-900">
             {t("home.mailbox.title")}
           </h2>
-          <p className="text-xs md:text-sm leading-relaxed text-gray-600 mb-6">
+          <p className="text-sm leading-relaxed text-gray-600 mb-6">
             {t("home.mailbox.desc")}
           </p>
 
@@ -173,7 +173,7 @@ export default function MailboxSection() {
           </div>
 
           <div className="bg-gray-50 border border-gray-200 rounded-2xl p-4 mb-6 shadow-soft">
-            <span className="text-[10px] font-bold uppercase text-gray-500 block mb-1">
+            <span className="text-sm font-bold uppercase text-gray-500 block mb-1">
               {t("home.mailbox.estimatedTariff")}
             </span>
             <div className="flex items-baseline gap-2">
@@ -188,7 +188,7 @@ export default function MailboxSection() {
             </div>
             <div className="mt-3 pt-3 border-t border-gray-200 space-y-1">
               {currentHub.features.map((feat) => (
-                <div key={feat} className="text-[10px] font-bold text-gray-600 flex gap-1 items-center">
+                <div key={feat} className="text-xs font-bold text-gray-600 flex gap-1 items-center">
                   <span>★</span> <span>{feat}</span>
                 </div>
               ))}

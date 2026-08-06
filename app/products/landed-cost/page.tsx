@@ -117,7 +117,7 @@ export default function LandedCostPage() {
           <div className="max-w-7xl mx-auto space-y-12">
             <div className="text-center max-w-2xl mx-auto space-y-3">
               <h2 className="text-3xl md:text-4xl font-display font-black text-white">{t("products.landedCost.benefits.title")}</h2>
-              <p className="text-green-100 text-sm md:text-base leading-relaxed">
+              <p className="text-green-100 text-md leading-relaxed">
                 {t("products.landedCost.benefits.subtitle")}
               </p>
             </div>
@@ -128,7 +128,7 @@ export default function LandedCostPage() {
                   <ShieldAlert className="w-6 h-6" />
                 </div>
                 <h3 className="text-lg font-bold text-white">{t("products.landedCost.benefits.item1Title")}</h3>
-                <p className="text-sm text-gray-400 leading-relaxed">
+                <p className="text-md text-gray-400 leading-relaxed">
                   {t("products.landedCost.benefits.item1Desc")}
                 </p>
               </div>
@@ -138,7 +138,7 @@ export default function LandedCostPage() {
                   <Percent className="w-6 h-6" />
                 </div>
                 <h3 className="text-lg font-bold text-white">{t("products.landedCost.benefits.item2Title")}</h3>
-                <p className="text-sm text-gray-400 leading-relaxed">
+                <p className="text-md text-gray-400 leading-relaxed">
                   {t("products.landedCost.benefits.item2Desc")}
                 </p>
               </div>
@@ -148,7 +148,7 @@ export default function LandedCostPage() {
                   <FileText className="w-6 h-6" />
                 </div>
                 <h3 className="text-lg font-bold text-white">{t("products.landedCost.benefits.item3Title")}</h3>
-                <p className="text-sm text-gray-400 leading-relaxed">
+                <p className="text-md text-gray-400 leading-relaxed">
                   {t("products.landedCost.benefits.item3Desc")}
                 </p>
               </div>
@@ -158,7 +158,7 @@ export default function LandedCostPage() {
                   <Scale className="w-6 h-6" />
                 </div>
                 <h3 className="text-lg font-bold text-white">{t("products.landedCost.benefits.item4Title")}</h3>
-                <p className="text-sm text-gray-400 leading-relaxed">
+                <p className="text-md text-gray-400 leading-relaxed">
                   {t("products.landedCost.benefits.item4Desc")}
                 </p>
               </div>
@@ -168,7 +168,7 @@ export default function LandedCostPage() {
                   <Calculator className="w-6 h-6" />
                 </div>
                 <h3 className="text-lg font-bold text-white">{t("products.landedCost.benefits.item5Title")}</h3>
-                <p className="text-sm text-gray-400 leading-relaxed">
+                <p className="text-md text-gray-400 leading-relaxed">
                   {t("products.landedCost.benefits.item5Desc")}
                 </p>
               </div>
@@ -178,7 +178,7 @@ export default function LandedCostPage() {
                   <BadgeDollarSign className="w-6 h-6" />
                 </div>
                 <h3 className="text-lg font-bold text-white">{t("products.landedCost.benefits.item6Title")}</h3>
-                <p className="text-sm text-gray-400 leading-relaxed">
+                <p className="text-md text-gray-400 leading-relaxed">
                   {t("products.landedCost.benefits.item6Desc")}
                 </p>
               </div>
@@ -205,7 +205,7 @@ export default function LandedCostPage() {
                   <span className="text-3xl font-display font-black text-green-800 tracking-tight shrink-0">{item.step}</span>
                   <div>
                     <h3 className="text-lg font-bold text-gray-900">{item.title}</h3>
-                    <p className="text-sm text-gray-500 mt-1 leading-relaxed">{item.desc}</p>
+                    <p className="text-md text-gray-500 mt-1 leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               ))}

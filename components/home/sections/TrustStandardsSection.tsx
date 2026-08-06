@@ -20,7 +20,7 @@ export default function TrustStandardsSection() {
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
             {t("home.standards.title")}
           </h2>
-          <p className="text-sm md:text-base text-gray-100 leading-relaxed">
+          <p className="text-md text-gray-100 leading-relaxed">
             {t("home.standards.desc")}
           </p>
         </div>
@@ -32,10 +32,10 @@ export default function TrustStandardsSection() {
               className="bg-green-950 p-6 rounded-2xl border border-white/10 text-center flex flex-col items-center justify-center shadow-soft-lg gap-3"
             >
               <std.icon className="w-8 h-8 text-yellow-400" />
-              <span className="text-xl font-bold text-yellow-400">
+              <span className="text-lg font-bold text-yellow-400">
                 {std.desc ? t(std.value) : std.value}
               </span>
-              <span className="text-[10px] uppercase font-bold text-gray-400 mt-1 leading-tight">
+              <span className="text-sm uppercase font-bold text-gray-400 mt-1 leading-tight">
                 {t(std.label)}
               </span>
             </div>

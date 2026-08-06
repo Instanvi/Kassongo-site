@@ -63,7 +63,7 @@ export default function HowItWorksSection() {
                       </span>
                       <h3 className="text-xl font-bold text-gray-900">{step.title}</h3>
                     </div>
-                    <p className="text-sm text-gray-600 leading-relaxed">{step.desc}</p>
+                    <p className="text-md text-gray-600 leading-relaxed">{step.desc}</p>
                   </div>
                 </div>
                 {index < steps.length - 1 && (

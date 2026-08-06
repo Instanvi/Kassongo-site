@@ -18,7 +18,7 @@ export default function DownloadSection() {
             <div className="lg:col-span-7 p-8 md:p-12 space-y-6 relative z-10">
               <div className="flex items-center gap-2">
                 <span className="text-green-400 tracking-tight">★★★★★</span>
-                <span className="text-xs font-bold text-gray-200">
+                <span className="text-sm font-bold text-gray-200">
                   <strong className="text-white">4.9</strong>{" "}
                   {t("home.downloads.ratingText")}
                 </span>
@@ -28,7 +28,7 @@ export default function DownloadSection() {
                 {t("home.downloads.title")}
               </h2>
 
-              <ul className="space-y-3 font-semibold text-sm">
+              <ul className="space-y-3 font-semibold text-md">
                 {features.map((feat) => (
                   <li key={feat} className="flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-green-400" />

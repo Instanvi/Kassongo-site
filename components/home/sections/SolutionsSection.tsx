@@ -43,10 +43,10 @@ export default function SolutionsSection() {
               <h3 className="text-2xl font-bold mb-4 text-gray-900">
                 {t(`home.solutions.${solution.key}.title`)}
               </h3>
-              <p className="text-sm text-gray-600 leading-relaxed mb-4">
+              <p className="text-md text-gray-600 leading-relaxed mb-4">
                 {t(`home.solutions.${solution.key}.desc`)}
               </p>
-              <ul className="space-y-2 text-xs text-gray-500">
+              <ul className="space-y-2 text-sm text-gray-500">
                 {solution.features.map((feat) => (
                   <li key={feat} className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-green-600" />
