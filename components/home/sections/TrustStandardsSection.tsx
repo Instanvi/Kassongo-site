@@ -1,7 +1,8 @@
 "use client";
 
 import { Shield, Scale, Package as PackageIcon, Zap } from "lucide-react";
-import { useTranslation } from "../../../lib/i18n/LanguageContext";
+import { useTranslations } from 'next-intl';
+
 
 const standards = [
   { icon: Shield, value: "100%", label: "home.standards.s1", desc: null },
@@ -11,7 +12,7 @@ const standards = [
 ];
 
 export default function TrustStandardsSection() {
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   return (
     <section id="standards" className="bg-green-900 text-white py-16 px-6 md:px-12">

@@ -1,7 +1,8 @@
 "use client";
 
 import { Send, Inbox, Warehouse, CheckCircle } from "lucide-react";
-import { useTranslation } from "../../../lib/i18n/LanguageContext";
+import { useTranslations } from 'next-intl';
+
 
 const solutions = [
   {
@@ -22,7 +23,7 @@ const solutions = [
 ];
 
 export default function SolutionsSection() {
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   return (
     <section className="py-20 px-6 md:px-12 bg-gray-50">

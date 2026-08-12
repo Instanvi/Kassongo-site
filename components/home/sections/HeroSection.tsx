@@ -2,10 +2,11 @@
 
 import { Zap, Shield, Truck, CheckCircle, Package as PackageIcon, Send } from "lucide-react";
 import Button from "../../Button";
-import { useTranslation } from "../../../lib/i18n/LanguageContext";
+import { useTranslations } from 'next-intl';
+
 
 export default function HeroSection() {
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   return (
     <section className="relative bg-white py-12 px-6 md:py-16 lg:py-20 overflow-hidden">

@@ -1,10 +1,11 @@
 "use client";
 
 import { MapPin, ShoppingCart, Truck } from "lucide-react";
-import { useTranslation } from "../../../lib/i18n/LanguageContext";
+import { useTranslations } from 'next-intl';
+
 
 export default function HowItWorksSection() {
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   const steps = [
     {

@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
 import { Testimonial, ITestimonial } from "@/types/testimonial";
-import { useTranslation } from "@/lib/i18n/LanguageContext";
+import { useTranslations } from 'next-intl';
 
 interface TestimonialSliderProps {
   testimonials?: ITestimonial[] | Testimonial[];
@@ -63,7 +63,7 @@ export default function TestimonialSlider({
   title,
   subtitle,
 }: TestimonialSliderProps) {
-  const { t } = useTranslation();
+  const t = useTranslations();
   const displayTitle = title || t("testimonials.title");
   const displaySubtitle = subtitle || t("testimonials.subtitle");
   const testimonialsList = (customTestimonials && customTestimonials.length > 0)

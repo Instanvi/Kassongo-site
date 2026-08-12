@@ -101,7 +101,7 @@ export async function POST(request: NextRequest) {
 
     const { data: emailData, error } = await resend.emails.send({
       from: "Kassongo Mail <noreply@instanvi.com>",
-      to: ["support@kassongo.com"], 
+      to: ["hi@instanvi.com"], 
       subject: subject,
       react: emailComponent,
     });

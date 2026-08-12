@@ -1,7 +1,8 @@
 "use client";
 
 import Button from "../../Button";
-import { useTranslation } from "../../../lib/i18n/LanguageContext";
+import { useTranslations } from 'next-intl';
+
 
 const services = [
   {
@@ -31,7 +32,7 @@ const services = [
 ];
 
 export default function ServicesSection() {
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   return (
     <section id="services" className="py-24 px-6 md:px-12 bg-gray-50">

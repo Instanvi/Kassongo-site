@@ -3,7 +3,8 @@
 import { useState } from "react";
 import { Flame, Shield, Zap, Globe } from "lucide-react";
 import Button from "../../Button";
-import { useTranslation } from "../../../lib/i18n/LanguageContext";
+import { useTranslations } from 'next-intl';
+
 
 type HubKey = "us" | "uk" | "china";
 
@@ -21,7 +22,7 @@ const hubs: { key: HubKey; flag: string; label: string }[] = [
 ];
 
 export default function MailboxSection() {
-  const { t } = useTranslation();
+  const t = useTranslations();
   const [activeThumb, setActiveThumb] = useState(0);
   const [selectedHub, setSelectedHub] = useState<HubKey>("us");
 

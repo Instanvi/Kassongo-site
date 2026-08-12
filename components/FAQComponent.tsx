@@ -2,7 +2,8 @@
 
 import React, { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import { useTranslation } from "@/lib/i18n/LanguageContext";
+import { useTranslations } from 'next-intl';
+
 
 interface FAQItem {
   question: string;
@@ -22,7 +23,7 @@ export default function FAQComponent({
   faqs,
   className = "",
 }: FAQComponentProps) {
-  const { t } = useTranslation();
+  const t = useTranslations();
   const displayTitle = title || t("faq.title") || "Frequently Asked Questions";
   const displaySubtitle = subtitle || t("faq.subtitle") || "Everything you need to know about our services";
   const [openIndex, setOpenIndex] = useState<number | null>(null);

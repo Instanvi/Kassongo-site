@@ -1,10 +1,11 @@
 "use client";
 
 import AnimatedPartnerGrid from "../AnimatedPartnerGrid";
-import { useTranslation } from "../../../lib/i18n/LanguageContext";
+import { useTranslations } from 'next-intl';
+
 
 export default function SourcingPartnersSection() {
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   return (
     <section id="about" className="py-20 px-6 md:px-12 bg-gray-50 text-center md:text-left">

@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "cp -r public .next/standalone/ && cp -r .next/static .next/standalone/.next/",
-    "start": "HOSTNAME=0.0.0.0 node .next/standalone/server.js",
+    "postbuild": "powershell -Command \"Copy-Item -Recurse -Force public .next/standalone/; Copy-Item -Recurse -Force .next/static .next/standalone/.next/\"",
+    "start": "SET HOSTNAME=0.0.0.0 && node .next/standalone/server.js",
     "lint": "eslint"
   },
   "dependencies": {
@@ -21,6 +21,7 @@
     "html2pdf.js": "^0.14.0",
     "lucide-react": "^1.23.0",
     "next": "16.2.10",
+    "next-intl": "^4.13.6",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-email": "^6.9.1",

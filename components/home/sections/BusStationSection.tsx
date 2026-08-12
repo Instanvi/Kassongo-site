@@ -1,10 +1,11 @@
 "use client";
 
 import { Bus } from "lucide-react";
-import { useTranslation } from "../../../lib/i18n/LanguageContext";
+import { useTranslations } from 'next-intl';
+
 
 export default function BusStationSection() {
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   return (
     <section className="py-16 px-6 md:px-12 bg-gradient-to-br from-green-50 to-yellow-50">

@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { Car, RefreshCw } from "lucide-react";
-import { useTranslation } from "../../lib/i18n/LanguageContext";
+import { useTranslations } from 'next-intl';
+
 
 interface VehicleSelectorProps {
   vin?: string;
@@ -73,7 +74,7 @@ export default function VehicleSelector({
   onChange,
   onDecode,
 }: VehicleSelectorProps) {
-  const { t } = useTranslation();
+  const t = useTranslations();
   const [decoding, setDecoding] = useState(false);
   const [decodeError, setDecodeError] = useState<string | null>(null);
 

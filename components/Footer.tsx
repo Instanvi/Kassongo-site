@@ -4,7 +4,8 @@ import React, { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Input } from "./Input";
 import Button from "./Button";
-import { useTranslation } from "../lib/i18n/LanguageContext";
+import { useTranslations } from 'next-intl';
+
 
 // Simple SVG icon components
 const InstagramIcon = () => (
@@ -57,7 +58,7 @@ export default function Footer() {
   const [phone, setPhone] = useState("");
   const [emailMode, setEmailMode] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   const handleSubscribe = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

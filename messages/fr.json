@@ -1,0 +1,2233 @@
+{
+  "common": {
+    "contactUs": "Contactez-nous",
+    "getStarted": "Commencer",
+    "howItWorks": "Comment ça marche",
+    "services": "Services",
+    "about": "À propos",
+    "standards": "Normes",
+    "faq": "FAQ",
+    "privacyPolicy": "Politique de confidentialité",
+    "termsConditions": "Conditions générales",
+    "prohibitedItems": "Objets interdits",
+    "emailUs": "Écrivez-nous",
+    "callUs": "Appelez-nous",
+    "address": "Adresse",
+    "responseTime": "Délai de réponse",
+    "headquarters": "Siège social",
+    "loading": "Chargement...",
+    "getStartedButton": "Commencer",
+    "whatsappAlerts": "Alertes de statut WhatsApp",
+    "limitedTimeOffer": "Offre temporaire : Économisez jusqu'à 60 % sur votre premier envoi",
+    "startingAt": "À partir de",
+    "kg": "/kg",
+    "tools": "Outils de commerce",
+    "dutyCalculator": "Calculateur de taxes",
+    "hsLookup": "Recherche de Code SH"
+  },
+  "header": {
+    "logo": "kassongo",
+    "toggleMenu": "Menu de navigation"
+  },
+  "footer": {
+    "title": "Obtenez votre adresse de hub",
+    "description": "Contactez-nous pour recevoir vos adresses d'expédition Kassongo uniques dans les principaux hubs commerciaux mondiaux. Commencez à consolider et à réexpédier vos colis dès aujourd'hui.",
+    "phonePlaceholder": "Numéro de téléphone",
+    "emailPlaceholder": "Votre e-mail",
+    "usePhone": "Utiliser le téléphone",
+    "useEmail": "Utiliser l'e-mail",
+    "subscribeSuccess": "Inscription réussie avec {value} ! Vérifiez vos messages pour obtenir les 60 % de réduction.",
+    "allRightsReserved": "© {year} Kassongo Express LLC. Tous droits réservés.",
+    "links": {
+      "products": "Produits",
+      "checkout": "Paiement international",
+      "landedCost": "Frais de douane",
+      "plugins": "Plugins",
+      "kassongoCapital": "Kassongo Capital",
+      "cargoInsurance": "Assurance cargo",
+      "solutions": "Solutions",
+      "sourcing": "Achat assisté",
+      "forwarding": "Expédition Express",
+      "warehousing": "Entreposage sécurisé",
+      "consolidation": "Consolidation",
+      "company": "L'Entreprise",
+      "aboutUs": "À propos de nous",
+      "contact": "Contactez-nous",
+      "careers": "Carrières",
+      "newsroom": "Espace Presse",
+      "blog": "Blog"
+    }
+  },
+  "network": {
+    "title": "Notre réseau mondial",
+    "subtitle": "Connecté à {count}+ pays sur 5 continents",
+    "stats": {
+      "countries": "Pays",
+      "continents": "Continents",
+      "operations": "Opérations"
+    }
+  },
+  "blog": {
+    "hero": {
+      "title": "Perspectives et guides sur le transit de fret",
+      "subtitle": "Conseils d'experts sur l'expédition internationale, la douane et la logistique mondiale"
+    },
+    "search": {
+      "placeholder": "Rechercher des articles..."
+    },
+    "categories": {
+      "all": "Tous",
+      "guides": "Guides",
+      "routes": "Routes",
+      "customs": "Douane",
+      "tips": "Astuces",
+      "industry": "Industrie"
+    },
+    "noResults": {
+      "title": "Aucun article trouvé",
+      "desc": "Essayez d'ajuster votre recherche ou vos filtres pour trouver ce que vous cherchez",
+      "button": "Effacer les filtres"
+    },
+    "readMore": "Lire la suite",
+    "cta": {
+      "title": "Prêt à expédier ?",
+      "subtitle": "Obtenez des services professionnels de transit de fret avec un support de conformité complet",
+      "button": "Obtenir un devis"
+    },
+    "article": {
+      "notFound": {
+        "title": "Article introuvable",
+        "desc": "L'article que vous recherchez n'existe pas ou a été déplacé.",
+        "button": "Retour au blog"
+      },
+      "proTip": "Astuce de pro",
+      "warning": "Avertissement important",
+      "tags": "Étiquettes",
+      "authorMore": "{{name}} écrit sur la logistique internationale, les réglementations douanières, et aide les entreprises à naviguer dans le commerce mondial. Une question ? Contactez-nous via notre page de contact.",
+      "relatedTitle": "Articles connexes",
+      "ctaButton": "Obtenir un devis d'expédition",
+      "share": {
+        "copy": "Copier le lien",
+        "bookmark": "Ajouter aux favoris",
+        "print": "Imprimer l'article",
+        "email": "Partager par e-mail"
+      }
+    },
+    "authorBios": {
+      "marcus": "Responsable Conformité & Sécurité",
+      "aisha": "Directrice régionale, Afrique & Moyen-Orient",
+      "james": "Ingénieur logistique senior",
+      "sarah": "Spécialiste douane et commerce"
+    },
+    "tags": {
+      "electronics": "Électronique",
+      "lithiumBatteries": "Batteries au lithium",
+      "iata": "IATA",
+      "china": "Chine",
+      "cameroon": "Cameroun",
+      "africaTrade": "Commerce Afrique",
+      "aes": "Déclaration AES",
+      "customs": "Douane",
+      "documentation": "Documentation",
+      "airFreight": "Fret aérien",
+      "oceanFreight": "Fret maritime",
+      "comparison": "Comparaison",
+      "demurrage": "Surestaries",
+      "detention": "Immobilisation",
+      "fees": "Frais",
+      "usa": "États-Unis",
+      "europe": "Europe",
+      "transatlantic": "Transatlantique",
+      "duties": "Droits de douane",
+      "taxes": "Taxes",
+      "consolidation": "Consolidation",
+      "costSavings": "Économies de coûts",
+      "efficiency": "Efficacité",
+      "incoterms": "Incoterms",
+      "tradeTerms": "Conditions commerciales",
+      "contracts": "Contrats",
+      "future": "Avenir",
+      "technology": "Technologie",
+      "ai": "IA et automatisation",
+      "packaging": "Emballage",
+      "fragile": "Articles fragiles",
+      "protection": "Protection",
+      "turkey": "Turquie",
+      "istanbul": "Istanbul",
+      "tradeHub": "Plaque tournante commerciale"
+    },
+    "authors": {
+      "marcus": {
+        "name": "Marcus Thompson",
+        "bio": "Marcus Thompson est le responsable Conformité et Sécurité de Kassongo, spécialisé dans les réglementations IATA sur les marchandises dangereuses, la conformité des batteries au lithium et les normes d'expédition internationales. Avec plus de 12 ans d'expérience dans le transit de fret, Marcus veille à ce que chaque envoi respecte les exigences de sécurité mondiales."
+      },
+      "aisha": {
+        "name": "Aisha Okonkwo",
+        "bio": "Aisha Okonkwo est directrice régionale pour l'Afrique et le Moyen-Orient chez Kassongo Express. Elle gère les corridors commerciaux entre la Chine, le Cameroun, le Kenya et les Émirats arabes unis. Grâce à sa connaissance approfondie des réglementations douanières africaines et des procédures d'importation, Aisha aide les entreprises à naviguer dans une logistique transfrontalière complexe."
+      },
+      "james": {
+        "name": "James Chen",
+        "bio": "James Chen est ingénieur logistique senior chez Kassongo, spécialisé dans l'optimisation de la chaîne d'approvisionnement, les Incoterms et la gestion de fret de grande valeur. Il conçoit des itinéraires d'expédition efficaces et des stratégies de consolidation pour des entreprises de toutes tailles."
+      },
+      "sarah": {
+        "name": "Sarah Müller",
+        "bio": "Sarah Müller est spécialiste en douane et commerce, experte des réglementations commerciales UE-États-Unis, de la documentation AES, du calcul des droits de douane et de la classification tarifaire. Elle aide les clients à naviguer dans les complexités de la conformité au commerce international."
+      }
+    },
+    "articles": {
+      "electronics": {
+        "title": "Comment expédier des appareils électroniques avec batteries au lithium à l'international",
+        "excerpt": "Guide complet pour expédier des smartphones, ordinateurs portables et appareils à batterie à travers les frontières. Découvrez les réglementations IATA, les exigences d'emballage et la documentation douanière.",
+        "intro": "L'expédition internationale d'appareils électroniques est l'une des demandes les plus courantes que nous traitons chez Kassongo Express et aussi l'une des plus réglementées. Entre les restrictions IATA sur les batteries au lithium, les règles spécifiques aux transporteurs et les contrôles d'importation du pays de destination, il y a beaucoup à bien faire. Ce guide couvre tout ce que vous devez savoir pour expédier des appareils électroniques en toute sécurité, légalement et à moindre coût.",
+        "h2_regulations": "Comprendre les réglementations sur les batteries au lithium",
+        "p_regulations": "Les batteries au lithium alimentent tout, des smartphones aux ordinateurs portables en passant par les trottinettes électriques. Mais elles sont également classées comme marchandises dangereuses par l'Association du transport aérien international (IATA), car elles présentent des risques d'incendie en cas d'endommagement, de court-circuit ou d'exposition à des températures extrêmes. Cette classification affecte la manière dont vous emballez, étiquetez et déclarez votre envoi.",
+        "warn_loose": "Les batteries au lithium détachées (non installées dans des appareils) sont interdites sur les avions de passagers et fortement restreintes sur les vols cargo. Les batteries externes de plus de 100 Wh nécessitent une documentation de manutention spéciale. Déclarez toujours l'électronique avec précision les batteries non déclarées peuvent entraîner la saisie du colis, des amendes ou des poursuites pénales.",
+        "h3_allowed": "Quels appareils électroniques sont autorisés ?",
+        "ul_allowed_1": "Smartphones, tablettes et ordinateurs portables avec batteries intégrées (généralement autorisés)",
+        "ul_allowed_2": "Écouteurs Bluetooth et écouteurs sans fil (autorisés avec un emballage adéquat)",
+        "ul_allowed_3": "Montres connectées et trackers de fitness (généralement acceptés, déclarez les caractéristiques de la batterie)",
+        "ul_allowed_4": "Consoles de jeux et manettes (vérifiez la présence de compartiments à batterie amovibles)",
+        "h3_packing": "Guide d'emballage étape par étape",
+        "ol_packing_1": "Éteignez complètement tous les appareils. N'expédiez pas d'appareils électroniques en mode veille.",
+        "ol_packing_2": "Enveloppez chaque appareil individuellement dans du papier bulle antistatique, d'au moins 5 cm d'épaisseur.",
+        "ol_packing_3": "Placez les appareils dans leur emballage d'origine si disponible, ou utilisez une boîte en carton ondulé robuste avec 5 cm de rembourrage sur tous les côtés.",
+        "ol_packing_4": "Incluez une facture commerciale imprimée listant chaque appareil, son numéro de modèle, son numéro de série et sa valeur déclarée.",
+        "ol_packing_5": "Étiquetez la boîte extérieure avec « BATTERIES AU LITHIUM MANIPULER AVEC PRÉCAUTION » si vous expédiez des appareils avec des batteries non amovibles.",
+        "tip_photos": "Prenez des photos de vos articles avant l'emballage et téléchargez-les sur votre demande d'expédition Kassongo. Cela crée un enregistrement numérique qui vous protège en cas de dommage ou de perte pendant le transport.",
+        "h2_checklist": "Liste de contrôle avant expédition",
+        "check_1": "Vérifiez que le pays de destination autorise l'importation de votre modèle d'appareil électronique spécifique",
+        "check_2": "Vérifiez la puissance en watts-heure de la batterie (doit être inférieure à 100 Wh pour la plupart des transporteurs)",
+        "check_3": "Obtenez tous les permis d'importation requis (certains pays exigent un pré-enregistrement)",
+        "check_4": "Préparez la facture commerciale avec des codes SH exacts et des valeurs déclarées",
+        "check_5": "Souscrivez une assurance supplémentaire si la valeur totale dépasse 100 USD",
+        "check_6": "Confirmez que le transporteur accepte les envois de batteries au lithium sur votre itinéraire choisi",
+        "h2_mistakes": "Erreurs courantes à éviter",
+        "p_mistakes": "L'erreur la plus coûteuse dans l'expédition d'électronique est de supposer que votre colis « passera tout simplement ». Les inspecteurs des douanes du monde entier sont formés pour repérer les batteries non déclarées, les valeurs incorrectes et les modèles interdits. Une seule erreur peut entraîner la saisie, la destruction ou le renvoi à vos frais. En cas de doute, contactez le support Kassongo avant l'expédition notre équipe de conformité examine chaque colis avant qu'il ne quitte notre hub.",
+        "cta": "Prêt à expédier votre électronique ? Obtenez votre adresse de hub personnalisée et laissez notre équipe de conformité gérer la paperasse.",
+        "imageAlt": "Appareils électroniques emballés avec des matériaux antistatiques pour l'expédition internationale"
+      },
+      "chinacameroon": {
+        "title": "Expédition Chine-Cameroun : Guide complet 2026",
+        "excerpt": "Tout ce que vous devez savoir sur l'importation de marchandises de Chine vers le Cameroun méthodes d'expédition, coûts, exigences douanières et dédouanement.",
+        "intro": "Le corridor commercial Chine-Cameroun est l'un des plus actifs d'Afrique, avec des milliards de dollars de marchandises circulant entre ces pays chaque année. Que vous soyez une petite entreprise important des stocks, un particulier achetant des articles personnels, ou un vendeur e-commerce s'approvisionnant en produits, comprendre le processus d'expédition peut vous faire économiser des milliers de francs et des semaines de retard.",
+        "h2_methods": "Comparaison des méthodes d'expédition",
+        "p_methods": "Vous avez trois options principales pour acheminer des marchandises de Chine vers le Cameroun : le fret aérien express, le fret aérien standard et le fret maritime. Chacune présente des profils de coût, de vitesse et de volume différents.",
+        "h3_express": "Fret aérien express (3 à 7 jours)",
+        "ul_express_1": "Idéal pour : envois urgents de moins de 100 kg, électronique de grande valeur, échantillons",
+        "ul_express_2": "Transporteurs : DHL, FedEx, UPS porte-à-porte avec suivi",
+        "ul_express_3": "Coût : le plus élevé par kg, mais sans frais cachés ni surprises de courtage douanier",
+        "h3_standard": "Fret aérien standard (7 à 14 jours)",
+        "ol_standard_1": "Expédiez vers l'adresse du hub Kassongo à Guangzhou ou Yiwu",
+        "ol_standard_2": "Nous consolidons avec d'autres marchandises à destination du Cameroun",
+        "ol_standard_3": "Fret aérien vers l'aéroport international de Douala",
+        "ol_standard_4": "Dédouanement et livraison du dernier kilomètre à votre adresse",
+        "warn_formm": "La douane camerounaise exige une documentation et une déclaration appropriées pour toutes les importations commerciales. Le non-respect entraînera une saisie ou un retour. L'équipe Kassongo Cameroun peut aider à la documentation et au dédouanement avant expédition.",
+        "h2_docs": "Documentation requise",
+        "p_docs": "Les réglementations d'importation camerounaises sont strictes mais prévisibles si vous vous préparez correctement. Voici ce dont vous avez besoin :",
+        "check_1": "Facture commerciale avec codes SH exacts et valeurs déclarées",
+        "check_2": "Liste de colisage correspondant exactement aux articles de la facture",
+        "check_3": "Certificat d'origine (si requis pour certains produits)",
+        "check_4": "Permis ou licence d'importation (pour les produits réglementés)",
+        "check_5": "Certificats de conformité aux normes (électronique, produits chimiques, etc.)",
+        "tip_consolidate": "Consolidez plusieurs commandes en un seul envoi via le hub de Guangzhou de Kassongo. Cela réduit les coûts par kg de 40 à 60 % et simplifie le dédouanement puisque tous les articles arrivent sous une seule déclaration douanière.",
+        "cta": "Vous importez de Chine vers le Cameroun ? Obtenez votre adresse gratuite du hub de Guangzhou et commencez à économiser sur chaque envoi.",
+        "imageAlt": "Conteneurs d'expédition au port de Guangzhou avec cargaison à destination du Cameroun"
+      },
+      "aes": {
+        "title": "Documentation AES pour les envois de grande valeur",
+        "excerpt": "Découvrez quand et comment déposer la documentation AES (Automated Export System) pour les envois d'une valeur supérieure à 2 500 $ depuis les États-Unis.",
+        "intro": "Si vous expédiez du fret de grande valeur depuis les États-Unis, vous devrez comprendre les exigences de déclaration AES (Automated Export System). Cette documentation obligatoire assure la conformité avec les réglementations d'exportation américaines et aide les douanes à suivre les flux commerciaux internationaux.",
+        "h2_what": "Qu'est-ce que la déclaration AES ?",
+        "p_what": "L'Automated Export System (AES) est un système de déclaration électronique maintenu par les douanes américaines. Il capture les données de transaction d'exportation et assure la conformité avec les lois de contrôle des exportations.",
+        "h2_when": "Quand l'AES est-elle requise ?",
+        "p_when": "La déclaration AES est obligatoire pour :",
+        "ol_when_1": "Les envois d'une valeur supérieure à 2 500 USD (par article de la Schedule B)",
+        "ol_when_2": "Tout envoi nécessitant une licence d'exportation, quelle que soit sa valeur",
+        "ol_when_3": "Les articles soumis aux Export Administration Regulations (EAR) ou aux International Traffic in Arms Regulations (ITAR)",
+        "tip": "Kassongo peut aider avec la déclaration AES moyennant des frais supplémentaires. Contactez notre équipe de conformité avant d'expédier du fret de grande valeur pour vous assurer que toute la documentation est correctement préparée.",
+        "h2_how": "Comment déposer une déclaration AES",
+        "p_how": "Vous aurez besoin d'un numéro d'identification d'employeur (EIN) américain valide pour déposer une déclaration AES. Une fois déposée, vous recevrez un numéro de transaction interne (ITN) qui doit figurer sur votre facture commerciale et vos documents d'expédition.",
+        "cta": "Besoin d'aide avec la documentation AES ? Nos spécialistes de la conformité peuvent vous guider tout au long du processus.",
+        "imageAlt": "Formulaire de documentation d'exportation des douanes américaines"
+      },
+      "airVsOcean": {
+        "title": "Fret aérien contre fret maritime : lequel vous convient ?",
+        "excerpt": "Comparez le fret aérien et maritime pour le fret international coûts, vitesse, impact environnemental et meilleurs cas d'usage pour chaque méthode.",
+        "intro": "Choisir entre le fret aérien et le fret maritime est l'une des décisions les plus importantes dans l'expédition internationale. Chaque mode présente des avantages et des compromis distincts en termes de coût, de vitesse, de capacité et d'impact environnemental.",
+        "h2_comparison": "Différences clés",
+        "p_comparison": "Voici une comparaison détaillée pour vous aider à décider :",
+        "h3_air": "Avantages du fret aérien",
+        "ul_air_1": "Vitesse : 3 à 7 jours pour la plupart des itinéraires internationaux",
+        "ul_air_2": "Fiabilité : horaires fixes, moins de perturbations météorologiques",
+        "ul_air_3": "Sécurité : risque de vol plus faible, meilleur suivi",
+        "ul_air_4": "Idéal pour : marchandises de grande valeur, envois urgents, produits périssables, échantillons",
+        "h3_ocean": "Avantages du fret maritime",
+        "ul_ocean_1": "Coût : 5 à 10 fois moins cher par kg que le fret aérien",
+        "ul_ocean_2": "Capacité : adapté aux gros volumes et au fret hors norme",
+        "ul_ocean_3": "Environnement : empreinte carbone plus faible par unité",
+        "ul_ocean_4": "Idéal pour : marchandises en vrac, machinerie lourde, meubles, inventaire non urgent",
+        "tip": "Envisagez de consolider plusieurs envois pour obtenir des tarifs de fret aérien proches des tarifs maritimes. Le service de consolidation de Kassongo peut réduire vos coûts d'expédition de 40 à 60 %.",
+        "h2_decide": "Comment décider",
+        "p_decide": "Calculez votre coût total à destination, incluant le fret, l'assurance, le stockage et le coût d'opportunité du retard d'inventaire. Pour les produits à forte marge ou les commandes urgentes, le fret aérien est souvent financièrement judicieux malgré des coûts initiaux plus élevés.",
+        "cta": "Obtenez des devis instantanés pour le fret aérien et maritime avec notre calculateur d'expédition.",
+        "imageAlt": "Illustration comparative d'un avion et d'un navire cargo"
+      },
+      "demurrage": {
+        "title": "Éviter les frais de surestaries et d'immobilisation",
+        "excerpt": "Apprenez à éviter les frais coûteux de surestaries et d'immobilisation lors de l'expédition par fret maritime. Conseils pratiques pour un enlèvement de cargaison en temps voulu.",
+        "intro": "Les frais de surestaries et d'immobilisation figurent parmi les coûts cachés les plus frustrants du fret maritime. Ces frais peuvent ajouter des centaines, voire des milliers de dollars à votre facture d'expédition si vous ne récupérez pas votre cargaison à temps.",
+        "h2_what": "Que sont ces frais ?",
+        "p_what": "Les surestaries sont facturées lorsque vous laissez des conteneurs de fret au terminal portuaire au-delà du temps gratuit autorisé (généralement 3 à 5 jours). L'immobilisation est facturée lorsque vous conservez le conteneur de la compagnie maritime au-delà du temps gratuit pour le déchargement (généralement 5 à 7 jours).",
+        "warn": "Les frais de surestaries et d'immobilisation s'accumulent quotidiennement et peuvent rapidement dépasser le coût d'expédition initial. Dans certains cas, les frais peuvent atteindre 100 à 300 $ par conteneur et par jour.",
+        "h2_tips": "5 façons d'éviter ces frais",
+        "ol_tips_1": "Préparez la documentation douanière avant l'arrivée de la cargaison pour un dédouanement immédiat",
+        "ol_tips_2": "Ayez un partenaire logistique ou un courtier en douane prêt à traiter votre envoi",
+        "ol_tips_3": "Organisez le transport/l'enlèvement à l'avance n'attendez pas l'arrivée de la cargaison",
+        "ol_tips_4": "Surveillez de près le suivi du navire pour connaître les dates d'arrivée exactes",
+        "ol_tips_5": "Envisagez d'utiliser une Container Freight Station (CFS) pour la cargaison consolidée afin de prolonger le temps gratuit",
+        "tip": "Le service de consolidation de Kassongo comprend un stockage gratuit prolongé dans nos entrepôts, éliminant le risque de surestaries pour les envois plus petits.",
+        "cta": "Expédiez en toute confiance notre équipe gère le dédouanement et coordonne l'enlèvement pour éviter les frais.",
+        "imageAlt": "Conteneurs d'expédition empilés au terminal portuaire avec une horloge en surimpression"
+      },
+      "usaEurope": {
+        "title": "Guide d'expédition des États-Unis vers l'Europe",
+        "excerpt": "Guide complet d'expédition des États-Unis vers les pays européens délais de transit, options de transporteur et considérations douanières.",
+        "intro": "La route d'expédition transatlantique entre les États-Unis et l'Europe est l'une des routes commerciales les plus efficaces et les plus établies au monde. Que vous expédiiez vers le Royaume-Uni, l'Allemagne, la France ou d'autres pays de l'UE, vous disposez d'options fiables pour une livraison rapide et rentable.",
+        "h2_options": "Options d'expédition",
+        "p_options": "Les transporteurs express comme DHL, FedEx et UPS offrent une livraison en 2 à 5 jours avec service porte-à-porte et dédouanement inclus. Le fret aérien standard prend 5 à 10 jours et est plus économique pour les envois de plus de 50 kg. Le fret maritime prend 15 à 30 jours et est idéal pour la cargaison palettisée ou les conteneurs complets.",
+        "h2_customs": "Considérations douanières et TVA",
+        "p_customs": "Tous les envois entrant dans l'UE sont soumis à la TVA (généralement 19 à 25 % selon le pays) et peuvent entraîner des droits de douane basés sur la classification du code SH. Le destinataire est responsable de ces frais, sauf si vous organisez une livraison Delivered Duty Paid (DDP).",
+        "cta": "Obtenez votre adresse gratuite du hub américain et commencez à expédier vers l'Europe en toute confiance.",
+        "imageAlt": "Tour Eiffel et Statue de la Liberté représentant l'expédition USA-Europe"
+      },
+      "customsDuties": {
+        "title": "Comprendre les droits de douane et les taxes à l'importation",
+        "excerpt": "Que sont les droits de douane, qui les paie et comment calculer les taxes à l'importation lors d'une expédition internationale.",
+        "intro": "Les droits de douane et les taxes à l'importation sont des frais imposés par les pays de destination lorsque les marchandises traversent les frontières internationales. Comprendre ces coûts est essentiel pour une budgétisation précise et pour éviter des frais imprévus.",
+        "h2_what": "Que sont les droits de douane ?",
+        "p_what": "Les droits de douane sont des taxes prélevées par les gouvernements sur les marchandises importées. Les taux varient selon la catégorie de produit (code SH), le pays d'origine et la destination. Certains pays facturent également la TVA, la TPS ou la taxe de vente sur les articles importés.",
+        "h2_who": "Qui est responsable ?",
+        "p_who": "Sauf si vous organisez une livraison Delivered Duty Paid (DDP), le destinataire paie tous les droits de douane et taxes. Les transitaires comme Kassongo n'incluent pas ces frais dans les devis d'expédition car ils sont déterminés par les autorités douanières de destination.",
+        "tip": "Utilisez des calculateurs de droits en ligne ou consultez un courtier en douane pour estimer les coûts avant l'expédition. Déclarer des valeurs précises sur les factures commerciales aide à éviter les retards et les pénalités.",
+        "cta": "Besoin d'aide pour naviguer dans les douanes ? Contactez notre équipe de conformité pour des conseils.",
+        "imageAlt": "Agent des douanes vérifiant la documentation de cargaison"
+      },
+      "consolidation": {
+        "title": "Comment la consolidation de colis vous fait économiser de l'argent",
+        "excerpt": "Découvrez comment combiner plusieurs colis en un seul envoi peut réduire vos coûts d'expédition internationale de 40 à 60 %.",
+        "intro": "La consolidation de colis est l'un des moyens les plus efficaces de réduire les coûts d'expédition internationale. Au lieu de payer pour expédier plusieurs petits colis séparément, vous les combinez en un seul envoi et payez un seul jeu de frais d'expédition.",
+        "h2_how": "Comment fonctionne la consolidation",
+        "p_how": "Lorsque vous achetez auprès de plusieurs fournisseurs ou boutiques en ligne, chaque colis arrive séparément à votre adresse du hub Kassongo. Nous les conservons dans un stockage sécurisé, puis les combinons en un seul envoi optimisé lorsque vous êtes prêt. Nous retirons l'emballage excédentaire, remballons les articles en toute sécurité et expédions le tout ensemble.",
+        "h2_benefits": "Avantages de la consolidation",
+        "ul_benefits_1": "Économisez 40 à 60 % sur les coûts d'expédition par rapport aux colis individuels",
+        "ul_benefits_2": "Réduisez la complexité du dédouanement un envoi signifie une seule déclaration en douane",
+        "ul_benefits_3": "Risque réduit d'articles perdus tout voyage ensemble avec un seul numéro de suivi",
+        "ul_benefits_4": "Un emballage plus efficace réduit les frais de poids volumétrique",
+        "tip": "Les membres Platinum bénéficient d'une consolidation gratuite illimitée. Les membres Free et Gold paient de petits frais par consolidation, ce qui reste bien moins cher que d'expédier les colis séparément.",
+        "cta": "Commencez à consolider vos envois dès aujourd'hui inscrivez-vous pour obtenir votre adresse de hub gratuite.",
+        "imageAlt": "Plusieurs petites boîtes consolidées en un seul colis d'expédition plus grand"
+      },
+      "incoterms": {
+        "title": "Incoterms 2026 : un guide pratique",
+        "excerpt": "Comprenez les termes du commerce international comme FOB, CIF, DDP et EXW qui paie l'expédition, l'assurance et le dédouanement.",
+        "intro": "Les Incoterms (International Commercial Terms) sont des définitions commerciales normalisées publiées par la Chambre de commerce internationale. Ils clarifient les responsabilités entre acheteurs et vendeurs dans les transactions internationales.",
+        "h2_what": "Que sont les Incoterms ?",
+        "p_what": "Les Incoterms définissent qui paie l'expédition, qui organise l'assurance, où le risque passe du vendeur à l'acheteur, et qui gère le dédouanement. Les termes courants incluent EXW (Ex Works), FOB (Free on Board), CIF (Cost, Insurance & Freight) et DDP (Delivered Duty Paid).",
+        "h2_common": "Incoterms les plus courants",
+        "p_common": "EXW signifie que l'acheteur gère tout depuis l'entrepôt du vendeur. FOB signifie que le vendeur livre au port et que l'acheteur gère le fret maritime. CIF inclut le fret maritime et l'assurance. DDP signifie que le vendeur paie tous les coûts, y compris les droits de douane, et livre à la porte de l'acheteur.",
+        "cta": "Besoin d'aide pour comprendre votre devis d'expédition ? Contactez notre équipe pour une répartition détaillée.",
+        "imageAlt": "Contrat d'expédition international avec terminologie Incoterms"
+      },
+      "future": {
+        "title": "L'avenir du transit de fret : IA, automatisation et durabilité",
+        "excerpt": "Explorez les tendances émergentes de la logistique mondiale intelligence artificielle, suivi par blockchain, expédition verte et douane numérique.",
+        "intro": "L'industrie du transit de fret connaît une transformation rapide, portée par la technologie et les exigences de durabilité. L'optimisation d'itinéraires alimentée par l'IA, le suivi basé sur la blockchain et les options d'expédition neutres en carbone remodèlent la manière dont les marchandises circulent à l'échelle mondiale.",
+        "h2_trends": "Tendances clés à surveiller",
+        "p_trends": "Les algorithmes d'apprentissage automatique prédisent désormais les retards douaniers et suggèrent des itinéraires alternatifs en temps réel. La blockchain fournit des enregistrements de suivi immuables. Les plateformes douanières numériques éliminent la documentation papier. Les avions cargo électriques et les programmes de compensation carbone répondent aux préoccupations environnementales.",
+        "cta": "Découvrez l'avenir du transit de fret avec la plateforme numérique de Kassongo.",
+        "imageAlt": "Entrepôt alimenté par l'IA avec robots autonomes et systèmes de suivi numériques"
+      },
+      "fragile": {
+        "title": "Comment emballer les articles fragiles pour l'expédition internationale",
+        "excerpt": "Techniques d'emballage professionnelles pour protéger le verre, la céramique, l'électronique et les marchandises délicates pendant le transit international.",
+        "intro": "Les articles fragiles nécessitent un soin particulier lors de l'expédition internationale. Un emballage adéquat peut faire la différence entre des articles arrivant intacts ou en morceaux.",
+        "h2_steps": "Processus d'emballage en 5 étapes",
+        "ol_steps_1": "Enveloppez chaque article fragile individuellement dans du papier bulle (au moins 3 couches)",
+        "ol_steps_2": "Utilisez une boîte en carton ondulé robuste à double paroi, d'au moins 8 cm plus grande que l'article de chaque côté",
+        "ol_steps_3": "Remplissez le fond avec des chips de calage ou du papier froissé (couche de 8 cm)",
+        "ol_steps_4": "Placez les articles emballés au centre, en veillant à ce qu'ils ne touchent pas les parois de la boîte",
+        "ol_steps_5": "Remplissez l'espace restant avec du matériel de calage et scellez avec du ruban adhésif renforcé",
+        "tip": "Souscrivez toujours une assurance supplémentaire pour les articles fragiles et précieux. La couverture de base peut ne pas protéger entièrement le verre, la céramique ou les antiquités.",
+        "cta": "Expédiez des articles fragiles en toute confiance notre équipe fournit des services d'emballage professionnels.",
+        "imageAlt": "Verrerie fragile emballée dans du papier bulle pour une expédition sécurisée"
+      },
+      "turkey": {
+        "title": "La Turquie comme plaque tournante commerciale stratégique : la porte d'Istanbul",
+        "excerpt": "Pourquoi la Turquie devient le hub de consolidation privilégié pour les routes commerciales vers l'Afrique, le Moyen-Orient et l'Asie centrale.",
+        "intro": "La position géographique de la Turquie au carrefour de l'Europe, de l'Asie et de l'Afrique en fait un hub de consolidation idéal pour les entreprises desservant plusieurs régions. Les aéroports et ports modernes d'Istanbul offrent des connexions rapides et rentables vers les marchés émergents.",
+        "h2_why": "Pourquoi choisir la Turquie ?",
+        "p_why": "La Turquie offre un accès sans visa ou avec visa à l'arrivée pour de nombreux pays africains et moyen-orientaux, des procédures douanières simplifiées pour la réexportation, et des coûts d'entreposage compétitifs. L'aéroport d'Istanbul traite plus de fret que de nombreux hubs européens, avec des délais de traitement plus rapides.",
+        "h2_advantages": "Avantages stratégiques",
+        "ul_advantages_1": "4 heures de vol vers la plupart des capitales du Moyen-Orient et d'Afrique",
+        "ul_advantages_2": "Des accords de libre-échange avec de nombreux pays de destination réduisent les tarifs douaniers",
+        "ul_advantages_3": "La douane turque autorise le stockage temporaire et la consolidation sans droits d'importation",
+        "cta": "Obtenez votre adresse de hub en Turquie et débloquez une expédition plus rapide vers l'Afrique et le Moyen-Orient.",
+        "imageAlt": "Le pont du Bosphore d'Istanbul reliant l'Europe et l'Asie"
+      }
+    }
+  },
+  "home": {
+    "hero": {
+      "badge": "Transport de fret de confiance",
+      "title1": "Achetez plus malin.",
+      "title2": "Achetez plus vite.",
+      "title3": "Expédiez à l'international.",
+      "subtitle": "Votre partenaire mondial de transport de fret. Consolidez, stockez et expédiez depuis les États-Unis, le Royaume-Uni et la Chine vers le monde entier.",
+      "btnAddress": "Obtenir une adresse gratuite",
+      "btnContact": "Contactez-nous",
+      "indicators": {
+        "insured": "Entièrement assuré",
+        "tracking": "Suivi en temps réel",
+        "storage": "30 jours de stockage gratuit"
+      },
+      "stats": {
+        "hubs": "Hubs mondiaux",
+        "carriers": "Transporteurs",
+        "members": "Membres"
+      }
+    },
+    "howItWorks": {
+      "title": "Comment ça marche",
+      "networkAlt": "Réseau mondial Kassongo",
+      "thumbs": {
+        "cHub": "Hub de consolidation",
+        "sDepot": "Dépôt de stockage",
+        "gTransit": "Transit mondial",
+        "sMap": "Carte de sourcing"
+      },
+      "step1": {
+        "title": "Obtenez votre adresse",
+        "desc": "Inscrivez-vous pour recevoir vos adresses d'expédition Kassongo Mail uniques dans les principaux hubs commerciaux mondiaux"
+      },
+      "step2": {
+        "title": "Achetez et sourcez",
+        "desc": "Achetez auprès de n'importe quel fournisseur ou usine et indiquez votre adresse Kassongo unique lors du paiement"
+      },
+      "step3": {
+        "title": "Consolidez et économisez",
+        "desc": "Nous conservons vos articles dans nos entrepôts sécurisés, les regroupons dans un envoi unique optimisé pour réduire vos coûts, et vous les réexpédions en toute sécurité. Formalités douanières gérées."
+      }
+    },
+    "solutions": {
+      "title": "Solutions mondiales de stockage et d'expédition",
+      "send": {
+        "title": "Envoyer",
+        "desc": "Obtenez une adresse internationale instantanément. Achetez sur Alibaba, Amazon ou 1688 et laissez-nous tout gérer. Nous stockons, combinons et réexpédions vos colis en toute sécurité pour vous faire économiser.",
+        "f1": "Génération d'adresse instantanée",
+        "f2": "Achetez chez n'importe quel fournisseur",
+        "f3": "30 jours de stockage gratuit"
+      },
+      "receive": {
+        "title": "Recevoir",
+        "desc": "Envoyez des colis dans le monde entier, sans effort. Déposez votre colis et nous l'expédierons partout avec suivi complet et assurance inclus.",
+        "f1": "Livraison dans le monde entier",
+        "f2": "Suivi en temps réel",
+        "f3": "Couverture d'assurance complète"
+      },
+      "storage": {
+        "title": "Stockage",
+        "desc": "Stockage sécurisé, expédition plus intelligente. Nous conservons votre inventaire en toute sécurité jusqu'à ce que vous soyez prêt à expédier. Douanes gérées.",
+        "f1": "Installations climatisées",
+        "f2": "Surveillance de sécurité 24h/24 et 7j/7",
+        "f3": "Durée de stockage flexible"
+      }
+    },
+    "bus": {
+      "title": "Accès pratique au service via les gares routières locales",
+      "desc": "Pas besoin de vous déplacer vers un terminal cargo éloigné. Déposez facilement vos colis sortants ou récupérez vos arrivées internationales directement dans la gare routière locale de votre choix.",
+      "locations": "Emplacements"
+    },
+    "partners": {
+      "headline": "Nous offrons l'assistance d'achat sur"
+    },
+    "services": {
+      "title": "Trouvez votre service",
+      "c1": {
+        "title": "Consolidation",
+        "badge": "Fret partagé, coûts divisés",
+        "desc": "Vous envoyez un colis à votre famille ou déplacez du stock commercial ? Nous regroupons vos marchandises pour vous garantir les tarifs les plus bas."
+      },
+      "c2": {
+        "title": "Stockage Sécurisé",
+        "badge": "Votre inventaire, géré en toute sécurité",
+        "desc": "Accédez à un entreposage flexible et climatisé dans nos hubs régionaux. Surveillez vos niveaux de stock et gérez la distribution locale de façon transparente."
+      },
+      "c3": {
+        "title": "Achat Assisté",
+        "badge": "Achetez dans le monde entier, payez localement",
+        "desc": "Collez simplement le lien d'Amazon, Alibaba ou d'autres magasins mondiaux. Nous gérons la barrière de paiement, vérifions la qualité et achetons pour vous."
+      },
+      "c4": {
+        "title": "Expédition Express",
+        "badge": "Priorité absolue sur le prochain vol",
+        "desc": "Électronique urgente, documents critiques ou échantillons de grande valeur ? Évitez l'attente et expédiez vos colis sur le premier vol disponible."
+      }
+    },
+    "banner": {
+      "title1": "Nous avons rendu l'expédition internationale,",
+      "title2": "vraiment, ",
+      "highlight": "ridiculement facile."
+    },
+    "standards": {
+      "title": "Consolidé pour la qualité, la rapidité et la sécurité.",
+      "desc": "Nous vérifions physiquement tous les colis reçus de vos fournisseurs dans nos hubs pour garantir leur exactitude, protéger les marchandises fragiles, vérifier les factures et écarter les risques douaniers.",
+      "s1": "Sécurité suivie",
+      "s2": "Aucun",
+      "s2_desc": "Frais cachés",
+      "s3": "30 Jours",
+      "s3_desc": "Stockage gratuit",
+      "s4": "24 Heures",
+      "s4_desc": "Expédition sortante"
+    },
+    "mailbox": {
+      "title": "Boîte postale Kassongo",
+      "desc": "Créez vos profils de boîtes d'achat mondiales. Recevez instantanément vos adresses dans nos hubs commerciaux et transférez votre fret facilement.",
+      "rating": "Évalué 4.9/5.0 (Plus de 15 000 membres)",
+      "selectHub": "Sélectionnez l'adresse du hub d'approvisionnement :",
+      "estimatedTariff": "Tarif d'approvisionnement estimé",
+      "btnGetAddress": "Obtenir mon adresse de hub maintenant",
+      "offerText": "Vérification standard du hub",
+      "registrationAlert": "Configuration de l'inscription réussie !",
+      "flyer": {
+        "f1": "Assurance fret complète standard",
+        "f2": "Alertes de statut WhatsApp",
+        "f3": "Gestion consolidée de commandes multiples",
+        "f4": "Dédouanement ultra-rapide Cheetah",
+        "model": "Modèle de visualisation {value}",
+        "standardVerify": "Vérification standard du hub"
+      },
+      "us": {
+        "name": "Hub commercial des États-Unis (New York et Houston)",
+        "feat1": "Départs quotidiens vers l'Afrique/l'Europe",
+        "feat2": "30 jours de stockage gratuit",
+        "feat3": "Adresse d'achat exonérée de taxe sur les ventes"
+      },
+      "uk": {
+        "name": "Hub commercial du Royaume-Uni (Londres Heathrow)",
+        "feat1": "Envois de fret aérien bihebdomadaires",
+        "feat2": "Assistance à la récupération de la TVA",
+        "feat3": "Dédouanement rapide"
+      },
+      "china": {
+        "name": "Hub commercial de la Chine (Guangzhou et Yiwu)",
+        "feat1": "Consolidation avec ramassage direct en usine",
+        "feat2": "Inspection standard par notre équipe de sourcing",
+        "feat3": "Options d'expédition maritime et aérienne"
+      }
+    },
+    "downloads": {
+      "ratingText": "d'évaluation de plus de 15 000 comptes vérifiés",
+      "title": "Découvrez pourquoi tout le monde en parle.",
+      "f1": "Garantie de réexpédition de fret sous 30 jours",
+      "f2": "Vérifié opérationnellement et testé en vitesse",
+      "f3": "Gestion douanière directe au terminal",
+      "btnAppStore": "Télécharger dans l'ou",
+      "btnGooglePlay": "DISPONIBLE SUR"
+    },
+    "unlocked": {
+      "title": "Approvisionnement international débloqué",
+      "desc": "Dans le marché mondial d'aujourd'hui, la gestion des approvisionnements internationaux à travers de multiples fournisseurs, continents et zones douanières est un goulot d'étranglement logistique. Les expéditions traditionnelles exposent les entreprises à des suivis fragmentés, des marges de transport exorbitantes et des frictions douanières excessives. Kassongo Express redéfinit les règles du commerce mondial. Nous sommes un réseau mondial léger en actifs et axé sur le numérique, fournissant des solutions de stockage, de consolidation et de réexpédition de fret conçues pour vous donner un contrôle absolu."
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Contactez-nous",
+      "subtitle": "Vous avez des questions sur l'expédition, l'approvisionnement ou le stockage ? Notre équipe est prête à vous aider."
+    },
+    "cards": {
+      "emailDesc": "Envoyez-nous un message à tout moment",
+      "phoneHours": "Lun-Ven, 9h-18h EST",
+      "responseTitle": "Délai de réponse",
+      "responseDesc": "Nous répondons généralement sous 24 heures les jours ouvrables"
+    },
+    "form": {
+      "title": "Envoyez-nous un message",
+      "subtitle": "Remplissez le formulaire ci-dessous et nous vous répondrons rapidement.",
+      "labelName": "Nom complet *",
+      "labelEmail": "Adresse e-mail *",
+      "labelPhone": "Numéro de téléphone",
+      "labelSubject": "Sujet *",
+      "labelMessage": "Votre message *",
+      "subjectPlaceholder": "Sélectionnez un sujet...",
+      "optGeneral": "Demande générale",
+      "optShipping": "Questions d'expédition",
+      "optPricing": "Tarifs & Formules",
+      "optSourcing": "Assistance d'achat",
+      "optStorage": "Services de stockage",
+      "optTracking": "Suivi d'envoi",
+      "optTechnical": "Support technique",
+      "optOther": "Autre",
+      "msgPlaceholder": "Dites-nous comment nous pouvons vous aider...",
+      "agreeText": "En soumettant ce formulaire, vous acceptez notre",
+      "btnSend": "Envoyer le message",
+      "successMsg": "Merci de nous avoir contactés ! Nous vous répondrons sous 24 heures."
+    }
+  },
+  "faq": {
+    "title": "Foire Aux Questions",
+    "subtitle": "Trouvez les réponses aux questions les plus fréquentes concernant l'expédition Kassongo Express, la consolidation, la douane, et plus encore.",
+    "hero": {
+      "title": "Foire Aux Questions (FAQ)",
+      "subtitle": "Trouvez les réponses aux questions les plus fréquentes concernant l'expédition Kassongo Express, la consolidation, la douane, et plus encore.",
+      "searchPlaceholder": "Rechercher une réponse..."
+    },
+    "sidebar": {
+      "title": "Catégories",
+      "all": "Toutes"
+    },
+    "categories": {
+      "gettingStarted": "Pour commencer",
+      "shippingAddresses": "Adresses d'expédition",
+      "pricingFees": "Tarifs & Frais",
+      "consolidation": "Consolidation de colis",
+      "customs": "Douanes & Droits",
+      "prohibited": "Objets interdits",
+      "shipping": "Expédition & Livraison",
+      "insurance": "Assurances & Réclamations",
+      "security": "Sécurité & Confidentialité",
+      "account": "Gestion du compte",
+      "commonIssues": "Problèmes fréquents"
+    },
+    "items": {
+      "q1": {
+        "q": "Qu'est-ce que Kassongo Express ?",
+        "a": "Kassongo Express est un service mondial de réexpédition de fret et de consolidation de colis qui vous fournit des adresses de livraison personnalisées dans les principaux hubs commerciaux du monde. Nous recevons, stockons, consolidons et réexpédions vos colis de fournisseurs internationaux jusqu'à votre porte, vous aidant ainsi à économiser sur vos frais de transport."
+      },
+      "q2": {
+        "q": "Comment puis-je m'inscrire ?",
+        "a": "L'inscription est simple ! Cliquez sur le bouton 'Commencer' sur notre page d'accueil, remplissez le formulaire d'inscription avec vos coordonnées, choisissez votre formule d'adhésion et finalisez le paiement. Une fois inscrit, vous recevrez vos adresses de livraison uniques pour différents pays par e-mail dans les 24 heures."
+      },
+      "q3": {
+        "q": "Comment fonctionnent les adresses d'expédition ?",
+        "a": "Après votre inscription, vous recevrez des numéros de suite personnalisés pour nos entrepôts situés dans des pays tels que les États-Unis, le Royaume-Uni, la Chine, la Turquie et d'autres. Utilisez ces adresses lorsque vous achetez en ligne auprès de n'importe quel fournisseur. Lorsque vos colis arrivent à notre entrepôt, nous vous en informons et les conservons pour consolidation."
+      },
+      "q4": {
+        "q": "Puis-je utiliser mon adresse Kassongo pour n'importe quelle boutique en ligne ?",
+        "a": "Oui ! Vous pouvez utiliser vos adresses Kassongo pour faire vos achats sur Amazon, eBay, AliExpress, Alibaba, Shein, Temu et des milliers d'autres détaillants en ligne. Indiquez simplement votre numéro de suite personnalisé comme adresse de livraison lors du paiement."
+      },
+      "q5": {
+        "q": "Quelles sont vos formules d'adhésion ?",
+        "a": "Nous proposons trois formules d'adhésion : la formule gratuite (paiement à l'utilisation avec facturation du stockage à partir du 7e jour), membre Gold (frais mensuels avec stockage gratuit pendant 30 jours) et membre Platinum (frais mensuels avec stockage gratuit pendant 45 jours plus des avantages supplémentaires comme la consolidation gratuite illimitée et le traitement prioritaire)."
+      },
+      "q6": {
+        "q": "Comment est calculé le coût d'expédition ?",
+        "a": "Les frais d'expédition sont calculés en fonction du poids réel ou du poids volumétrique (le plus élevé des deux) de votre colis, du pays de destination et du service de transport choisi (économique, standard ou express). Vous pouvez utiliser notre simulateur de frais de port pour obtenir une estimation avant de finaliser votre envoi."
+      },
+      "q7": {
+        "q": "Qu'est-ce que la consolidation de colis ?",
+        "a": "La consolidation de colis consiste à combiner plusieurs colis en un seul envoi. Cela réduit considérablement les coûts d'expédition puisque vous payez pour un seul envoi au lieu de plusieurs colis individuels. Nous retirons les emballages excédentaires, regroupons soigneusement vos articles et réemballons le tout de manière sécurisée."
+      },
+      "q8": {
+        "q": "Qui est responsable des droits de douane et des taxes ?",
+        "a": "Vous (le client) êtes seul responsable de tous les droits de douane, taxes d'importation et frais facturés par votre pays de destination. Ces frais s'ajoutent à nos frais d'expédition et sont déterminés par vos autorités douanières locales."
+      },
+      "q9": {
+        "q": "Quels sont les objets interdits ?",
+        "a": "Les objets interdits comprennent : tous les produits pharmaceutiques et médicaments, les armes à feu et répliques, les explosifs et matières inflammables, les denrées périssables, les animaux vivants, les espèces et devises, le tabac et l'alcool, les contrefaçons et tout article illégal dans le pays d'origine ou de destination. Consultez nos Conditions générales pour la liste complète."
+      },
+      "q10": {
+        "q": "Puis-je expédier des médicaments sur ordonnance ?",
+        "a": "Non, absolument pas. Les produits pharmaceutiques transfrontaliers de toute nature sont strictement interdits, y compris les médicaments sur ordonnance, les médicaments en vente libre, les vitamines et les compléments alimentaires."
+      },
+      "q11": {
+        "q": "Quels transporteurs utilisez-vous ?",
+        "a": "Nous travaillons en partenariat avec de grands transporteurs internationaux, notamment FedEx, DHL, UPS, USPS et des transporteurs régionaux. Vous pouvez choisir votre transporteur préféré en fonction de la rapidité, du coût et des options de service lors de votre demande d'expédition."
+      },
+      "q12": {
+        "q": "Puis-je suivre mon colis ?",
+        "a": "Oui ! Une fois votre colis expédié depuis notre entrepôt, vous recevrez un numéro de suivi par e-mail. Vous pourrez suivre votre envoi directement sur le site du transporteur ou depuis votre tableau de bord Kassongo."
+      },
+      "q13": {
+        "q": "Mon colis est-il automatiquement assuré ?",
+        "a": "Tous les envois incluent une couverture de base allant jusqu'à 100 $ USD. Pour les colis d'une valeur supérieure à 100 $, nous vous recommandons vivement de souscrire une assurance supplémentaire pour couvrir la valeur totale déclarée."
+      },
+      "q14": {
+        "q": "Est-ce que Kassongo peut ouvrir mes colis ?",
+        "a": "Oui, pour la protection légale de l'entreprise et des clients, Kassongo se réserve le droit d'ouvrir et d'inspecter tous les articles livrés à votre nom sans préavis. Cela permet de s'assurer du respect des réglementations d'expédition et d'identifier les objets interdits."
+      },
+      "q15": {
+        "q": "Comment mes informations personnelles sont-elles protégées ?",
+        "a": "Nous utilisons des technologies de chiffrement et des mesures de sécurité conformes aux normes de l'industrie pour protéger vos informations personnelles et de paiement. Nous ne partageons jamais vos données avec des tiers, sauf si cela est nécessaire pour l'expédition et le dédouanement. Consultez notre Politique de confidentialité pour plus de détails."
+      },
+      "q16": {
+        "q": "Dois-je avoir plus de 18 ans pour utiliser Kassongo Express ?",
+        "a": "Oui, vous devez avoir au moins 18 ans pour créer un compte et utiliser nos services. Nous exigeons une pièce d'identité officielle en cours de validité à des fins de vérification."
+      },
+      "q17": {
+        "q": "Quels documents dois-je fournir ?",
+        "a": "Vous devez fournir deux pièces d'identité officielles en cours de validité (passeport, permis de conduire, carte d'identité nationale) et remplir notre formulaire d'inscription avec des informations de livraison exactes. Des documents supplémentaires peuvent être requis pour les envois de grande valeur ou à des fins douanières."
+      },
+      "q18": {
+        "q": "Combien de colis puis-je envoyer à mon adresse Kassongo ?",
+        "a": "Il n'y a aucune limite au nombre de colis que vous pouvez envoyer à vos adresses Kassongo. Cependant, tenez compte de nos délais de stockage : les colis doivent être expédiés dans les 90 jours suivant leur réception pour éviter les frais d'abandon."
+      },
+      "q19": {
+        "q": "Puis-je expédier vers un autre transitaire en utilisant Kassongo ?",
+        "a": "Non, Kassongo Express n'expédie pas de colis vers d'autres sociétés de réexpédition ou de transport. Cette politique nous permet de maintenir la sécurité et la qualité du service."
+      },
+      "q20": {
+        "q": "Y a-t-il des frais de stockage ?",
+        "a": "Oui, des frais de stockage s'appliquent après une période de grâce en fonction de votre niveau d'adhésion : Formule gratuite (7 jours), membre Gold (30 jours), membre Platinum (45 jours). Les colis doivent être expédiés dans les 90 jours suivant leur réception ou ils seront considérés comme abandonnés."
+      },
+      "q21": {
+        "q": "Quels modes de paiement acceptez-vous ?",
+        "a": "Nous acceptons les principales cartes de crédit (Visa, Mastercard, American Express), les cartes de débit, PayPal et les virements bancaires. Tous les paiements doivent être effectués depuis un compte au même nom que votre compte Kassongo pour des raisons de sécurité."
+      },
+      "q22": {
+        "q": "Facturez-vous des frais de consolidation de colis ?",
+        "a": "Les frais de consolidation varient selon le niveau d'adhésion. Les clients de la formule gratuite paient par consolidation, les membres Gold bénéficient de tarifs réduits, et les membres Platinum profitent de consolidations gratuites et illimitées."
+      },
+      "q23": {
+        "q": "Y a-t-il des frais cachés ?",
+        "a": "Aucun frais caché ! Nous sommes transparents sur tous les coûts. Vous verrez les frais d'expédition, les frais de consolidation (le cas échéant), les frais de stockage (le cas échéant) et tout supplément de transporteur avant de confirmer votre envoi. Notez que les droits de douane et taxes de votre pays de destination sont de votre responsabilité."
+      },
+      "q24": {
+        "q": "Combien de temps prend la consolidation ?",
+        "a": "La consolidation standard prend 1 à 3 jours ouvrables une fois que tous les colis de votre demande de consolidation sont arrivés à notre entrepôt. Les membres Platinum bénéficient d'une consolidation prioritaire, généralement effectuée dans les 24 heures."
+      },
+      "q25": {
+        "q": "Puis-je retirer un article d'une consolidation après qu'elle a commencé ?",
+        "a": "Oui, mais des frais supplémentaires s'appliquent et le délai de traitement augmentera. Il est préférable de finaliser soigneusement votre demande de consolidation avant de la soumettre."
+      },
+      "q26": {
+        "q": "Kassongo est-il responsable si des articles disparaissent pendant la consolidation ?",
+        "a": "Kassongo n'est pas responsable des contenus manquants sans preuve de ce qui a été réellement reçu dans notre entrepôt. Nous vous recommandons d'ajouter des photos de vos articles à votre demande d'expédition pour documentation."
+      },
+      "q27": {
+        "q": "Les articles surdimensionnés peuvent-ils être consolidés ?",
+        "a": "Les colis surdimensionnés et palettisés ne peuvent pas être consolidés avec des colis standard. Ces articles doivent être expédiés séparément. Contactez notre équipe de support pour le traitement spécial des marchandises surdimensionnées."
+      },
+      "q28": {
+        "q": "Comment déclarer la valeur d'un colis ?",
+        "a": "Vous devez fournir une facture commerciale exacte détaillant la description et la valeur du contenu de chaque colis. Une déclaration de valeur incorrecte peut entraîner des retards douaniers, des pénalités ou la saisie du colis. Il est de votre responsabilité de fournir des informations exactes."
+      },
+      "q29": {
+        "q": "Que se passe-t-il si mon colis est saisi par les douanes ?",
+        "a": "Kassongo Express n'est pas responsable des colis saisis ou retournés par les douanes en raison d'articles interdits, de documents incorrects ou du non-respect des réglementations d'importation. Vous restez redevable de tous les frais, et aucun remboursement n'est fourni pour les colis rejetés par les douanes."
+      },
+      "q30": {
+        "q": "Ai-je besoin de documents spéciaux pour les envois de grande valeur ?",
+        "a": "Oui, pour les colis avec une valeur déclarée totale de 2 500 USD ou plus, vous êtes responsable de la complétion de la documentation AES (Automated Export System). Kassongo ne fournit pas ces documents ni de numéros d'identification fiscale."
+      },
+      "q31": {
+        "q": "Kassongo peut-il aider avec le dédouanement ?",
+        "a": "Oui, en vous inscrivant chez Kassongo, vous nous nommez comme votre agent pour le dédouanement, la préparation des documents d'expédition et les certificats d'origine. Cependant, vous restez responsable de la fourniture d'informations exactes et du respect de toutes les réglementations."
+      },
+      "q32": {
+        "q": "Puis-je expédier du parfum ou des cosmétiques ?",
+        "a": "Les parfums et cosmétiques contenant de l'alcool ou des substances inflammables sont restreints et peuvent entraîner des frais supplémentaires de matières dangereuses de la part des transporteurs. Certains parfums peuvent ne pas être expédiables selon la destination et le transporteur. Contactez-nous avant d'expédier de tels articles."
+      },
+      "q33": {
+        "q": "Puis-je expédier de l'électronique et des batteries ?",
+        "a": "L'électronique est généralement autorisée, mais les batteries au lithium ont des restrictions. Les articles avec batteries intégrées sont généralement acceptés, mais les batteries au lithium en vrac peuvent nécessiter une manipulation spéciale ou être interdites sur certains transporteurs. Déclarez toujours l'électronique avec exactitude."
+      },
+      "q34": {
+        "q": "Que se passe-t-il si j'expédie des articles interdits ?",
+        "a": "Les colis contenant des articles interdits seront refusés, retournés à l'expéditeur, confisqués par les autorités ou éliminés à la discrétion de Kassongo. Vous restez redevable de tous les coûts associés, et votre compte peut être résilié."
+      },
+      "q35": {
+        "q": "Combien de temps prend l'expédition ?",
+        "a": "Les délais de livraison varient selon le transporteur et la destination : Expédition économique (10 à 25 jours ouvrables), expédition standard (5 à 10 jours ouvrables), expédition express (2 à 5 jours ouvrables). Notez que le dédouanement peut ajouter du temps supplémentaire."
+      },
+      "q36": {
+        "q": "Vers quels pays expédiez-vous ?",
+        "a": "Nous expédions vers la plupart des pays du monde, sauf les destinations restreintes, notamment : Cuba, Iran, Corée du Nord, Syrie, Russie, Biélorussie et d'autres pays soumis à des sanctions internationales. Consultez nos Conditions générales pour la liste complète."
+      },
+      "q37": {
+        "q": "Que faire si mon colis est retardé ou perdu ?",
+        "a": "Contactez-nous immédiatement si votre colis est retardé au-delà de la fenêtre de livraison estimée. Pour les colis perdus, les réclamations doivent être déposées dans les 30 jours suivant la date d'expédition. Nous travaillerons avec le transporteur pour localiser votre colis ou traiter votre réclamation d'assurance."
+      },
+      "q38": {
+        "q": "Puis-je changer l'adresse de livraison après avoir soumis ma demande ?",
+        "a": "Les changements d'adresse peuvent être possibles avant que le colis ne quitte notre entrepôt. Contactez-nous immédiatement si vous devez changer l'adresse de destination. Une fois le colis remis au transporteur, les changements d'adresse doivent être organisés directement avec le transporteur."
+      },
+      "q39": {
+        "q": "Comment déposer une réclamation pour un colis perdu ou endommagé ?",
+        "a": "Colis perdus : Déposez une réclamation dans les 30 jours suivant la date d'expédition. Colis endommagés : Signalez les dommages dans les 10 jours suivant la livraison. Vous devrez fournir une preuve de valeur (facture ou reçu) et des photos des dommages. Les réclamations sont traitées dans les 30 jours."
+      },
+      "q40": {
+        "q": "Sur quoi se base l'indemnisation des réclamations ?",
+        "a": "Les réclamations sont payées au montant le plus bas entre la valeur déclarée en douane ou le prix d'achat réel indiqué sur votre facture. Vous devez fournir une preuve de valeur. Les indemnisations inférieures à 25 $ sont émises sous forme de crédits de compte."
+      },
+      "q41": {
+        "q": "Que se passe-t-il si Kassongo endommage mon colis pendant la consolidation ?",
+        "a": "Kassongo n'est pas responsable des dommages aux articles pré-emballés par les fabricants. Si des dommages se sont produits pendant notre processus de consolidation, déposez une réclamation avec des preuves à l'appui. Nous examinerons et traiterons les réclamations légitimes."
+      },
+      "q42": {
+        "q": "Y a-t-il des frais pour déposer des réclamations ?",
+        "a": "Oui, des frais de traitement s'appliquent pour les réclamations administrées par Kassongo Express. Les fausses réclamations seront facturées d'un minimum de 5,00 $ pour couvrir les frais d'enquête."
+      },
+      "q43": {
+        "q": "Que faire si je soupçonne un accès non autorisé à mon compte ?",
+        "a": "Contactez-nous immédiatement si vous soupçonnez un accès non autorisé à votre compte. Changez votre mot de passe immédiatement. Jusqu'à ce que vous nous informiez par écrit d'une violation de sécurité, vous restez responsable de toute utilisation non autorisée de votre compte."
+      },
+      "q44": {
+        "q": "Pourquoi dois-je fournir une vérification d'identité ?",
+        "a": "La vérification d'identité est requise pour se conformer aux réglementations anti-terrorisme, prévenir la fraude et assurer la sécurité du transport international. Nous pouvons demander des documents supplémentaires si nous détectons des anomalies de compte."
+      },
+      "q45": {
+        "q": "Puis-je avoir plusieurs comptes ?",
+        "a": "Non, les comptes en double ne sont pas autorisés. Cela inclut la création de plusieurs comptes payés avec le même mode de paiement. La violation de cette politique peut entraîner la résiliation du compte."
+      },
+      "q46": {
+        "q": "Comment annuler mon adhésion ?",
+        "a": "Vous pouvez annuler votre adhésion à tout moment via votre tableau de bord de compte. Les adhésions se terminent à la prochaine date de renouvellement sans rétroactivité. Aucun remboursement n'est fourni pour l'annulation anticipée des abonnements mensuels."
+      },
+      "q47": {
+        "q": "Que se passe-t-il avec mes colis si j'annule ?",
+        "a": "Après l'annulation, Kassongo se réserve le droit de facturer les tarifs standard pour les colis qui continuent d'arriver à votre nom. Les colis peuvent être retournés à l'expéditeur ou éliminés. Assurez-vous d'expédier tous les colis avant d'annuler."
+      },
+      "q48": {
+        "q": "Kassongo peut-il résilier mon compte ?",
+        "a": "Oui, Kassongo peut résilier votre compte immédiatement à sa discrétion si votre comportement ne respecte pas nos Conditions générales, y compris la fourniture de fausses informations, l'expédition d'articles interdits ou la violation de nos politiques."
+      },
+      "q49": {
+        "q": "J'ai reçu le mauvais colis. Que dois-je faire ?",
+        "a": "Contactez-nous immédiatement avec les détails et des photos. S'il est vérifié que vous avez reçu un colis incorrect, Kassongo remboursera les frais d'expédition pour le réacheminer vers le bon destinataire. Vous êtes obligé de signaler des informations factuelles sur ce qui a été reçu."
+      },
+      "q50": {
+        "q": "Mon colis n'est pas encore arrivé à l'entrepôt. Que dois-je faire ?",
+        "a": "Vérifiez le numéro de suivi fourni par le détaillant d'origine. Si le transporteur indique une livraison à notre entrepôt mais qu'il n'est pas dans votre compte après 48 heures, contactez-nous avec le numéro de suivi et nous enquêterons."
+      },
+      "q51": {
+        "q": "Puis-je refuser ou retourner un colis ?",
+        "a": "Si un colis n'a pas été ouvert, vous pouvez demander un retour à l'expéditeur. Les frais de retour s'appliquent et sont de votre responsabilité. Une fois la consolidation commencée ou le colis expédié, les retours ne sont pas possibles."
+      },
+      "q52": {
+        "q": "La valeur déclarée sur mon colis est incorrecte. Puis-je la changer ?",
+        "a": "Vous devez déclarer les valeurs avec exactitude avant l'expédition. Contactez-nous immédiatement si vous avez fait une erreur. Une fois le colis expédié, les déclarations de valeur ne peuvent pas être modifiées."
+      }
+    },
+    "list": {
+      "questionsCount": "questions",
+      "noResults": "Aucune question ne correspond à votre recherche.",
+      "stillHaveQuestions": "Vous avez encore des questions ?",
+      "cantFind": "Vous ne trouvez pas ce que vous cherchez ? Notre équipe de support est là pour vous aider.",
+      "contactSupport": "Contacter le support"
+    }
+  },
+  "prohibited": {
+    "hero": {
+      "title": "Objets interdits et restreints",
+      "subtitle": "Veuillez lire attentivement cette liste avant vos expéditions. Les infractions peuvent entraîner la saisie du colis, la clôture du compte et des poursuites judiciaires."
+    },
+    "strictlyProhibited": {
+      "title": "Strictement interdits",
+      "desc": "Les drogues, substances illégales (y compris le cannabis, la psilocybine, etc.) et les médicaments pharmaceutiques de toute nature ne peuvent en aucun cas être expédiés ou exportés. Cette politique est non négociable et toute violation entraînera la fermeture immédiate du compte et le signalement aux autorités compétentes."
+    },
+    "absolutelyProhibited": {
+      "title": "Objets absolument interdits",
+      "c1": {
+        "title": "Drogues et produits pharmaceutiques",
+        "items": [
+          "Tous les médicaments sur ordonnance",
+          "Médicaments en vente libre",
+          "Cannabis et produits à base de CBD",
+          "Psilocybine et psychédéliques",
+          "Toutes les substances contrôlées",
+          "Vitamines et compléments alimentaires"
+        ]
+      },
+      "c2": {
+        "title": "Armes et munitions",
+        "items": [
+          "Armes à feu et répliques d'armes",
+          "Munitions et explosifs",
+          "Pièces et accessoires d'armes",
+          "Couteaux et armes blanches",
+          "Pistolets à impulsion électrique (Tasers)",
+          "Équipement militaire ou de police"
+        ]
+      },
+      "c3": {
+        "title": "Matières dangereuses",
+        "items": [
+          "Liquides et gaz inflammables",
+          "Explosifs et feux d'artifice",
+          "Produits chimiques toxiques",
+          "Matières radioactives",
+          "Substances corrosives",
+          "Risques biologiques"
+        ]
+      },
+      "c4": {
+        "title": "Objets illégaux",
+        "items": [
+          "Marchandises contrefaites",
+          "Médias piratés",
+          "Objets volés",
+          "Produits d'animaux sauvages protégés",
+          "Contenus pornographiques",
+          "Restes humains"
+        ]
+      }
+    },
+    "restricted": {
+      "title": "Objets fortement restreints",
+      "subtitle": "Ces articles peuvent être expédiés sous certaines conditions, nécessiter une manipulation spéciale ou des frais supplémentaires. Contactez le support avant expédition.",
+      "c1": {
+        "title": "Produits combustibles",
+        "items": [
+          "Peintures et diluants",
+          "Huiles et lubrifiants",
+          "Briquets et allumettes",
+          "Parfums (à forte teneur en alcool)",
+          "Vernis à ongles et dissolvants",
+          "Teintures et produits chimiques pour cheveux",
+          "Aérosols"
+        ]
+      },
+      "c2": {
+        "title": "Articles sous pression",
+        "items": [
+          "Laques et produits coiffants",
+          "Mousse à raser",
+          "Bombes aérosols de tout type",
+          "Bouteilles de gaz comprimé",
+          "Extincteurs"
+        ]
+      },
+      "c3": {
+        "title": "Électronique et batteries",
+        "items": [
+          "Batteries au lithium (en vrac)",
+          "Batteries externes (Power banks) de plus de 100Wh",
+          "Électronique endommagée",
+          "Cigarettes électroniques et vaporisateurs"
+        ]
+      },
+      "c4": {
+        "title": "Alcool et tabac",
+        "items": [
+          "Boissons alcoolisées (toute quantité)",
+          "Produits du tabac",
+          "Cigarettes et cigares",
+          "Produits nicotinés",
+          "Liquides pour cigarettes électroniques"
+        ]
+      }
+    },
+    "countrySpecific": {
+      "title": "Restrictions spécifiques aux pays",
+      "c1": {
+        "title": "Produits agricoles",
+        "subtitle": "De nombreux pays interdisent ou limitent les produits agricoles :",
+        "items": [
+          "Plantes, graines et terreau",
+          "Fruits et légumes frais",
+          "Noix et graines comestibles",
+          "Produits et fourrures d'origine animale",
+          "Denrées alimentaires périssables"
+        ]
+      },
+      "c2": {
+        "title": "Devises et objets de valeur",
+        "items": [
+          "Espèces et devises",
+          "Mandats et traites bancaires",
+          "Cartes de crédit/débit (y compris prépayées)",
+          "Lingots et métaux précieux",
+          "Titres au porteur",
+          "Timbres et pièces de collection",
+          "Tickets de loterie"
+        ]
+      },
+      "c3": {
+        "title": "Bijoux et pierres précieuses",
+        "desc": "Les bijoux sont soumis à des restrictions selon les pays et sont assurés jusqu'à un montant maximal de 500 $ USD. Tout envoi dépassant 500 $ ne sera pas couvert par l'assurance et le client assume l'intégralité du risque."
+      }
+    },
+    "additional": {
+      "title": "Restrictions additionnelles & Notes",
+      "liveAnimals": "Animaux vivants",
+      "liveAnimalsDesc": "Les animaux et les produits en fourrure animale sont interdits dans la plupart des pays.",
+      "perishable": "Denrées périssables",
+      "perishableDesc": "Les aliments qui peuvent s'abîmer ou qui nécessitent une réfrigération sont interdits.",
+      "pornography": "Pornographie",
+      "pornographyDesc": "Les matériels pornographiques sont interdits dans la plupart des pays.",
+      "hazmat": "Surcharges matières dangereuses",
+      "hazmatDesc": "Les articles considérés comme dangereux selon la réglementation de l'IATA peuvent être soumis à des frais de transport supplémentaires.",
+      "surveillance": "Équipement de surveillance",
+      "surveillanceDesc": "Les dispositifs de surveillance, équipements de vision nocturne et matériels d'espionnage sont interdits."
+    },
+    "consequences": {
+      "title": "Conséquences de l'expédition d'objets interdits",
+      "items": [
+        "Les colis seront refusés, retournés à l'expéditeur ou détruits",
+        "Confiscation par les douanes ou les forces de l'ordre",
+        "Le client reste redevable de tous les frais et coûts associés",
+        "Fermeture immédiate du compte",
+        "Signalement aux autorités compétentes pour les objets illégaux",
+        "Poursuites judiciaires en vertu des lois applicables"
+      ]
+    },
+    "unsure": {
+      "title": "Un doute sur un article ?",
+      "desc": "Si vous n'êtes pas sûr qu'un article soit autorisé à l'expédition, veuillez contacter notre équipe de support AVANT d'envoyer des colis à nos entrepôts. Nous sommes là pour vous aider à rester en conformité."
+    }
+  },
+  "legal": {
+    "noticeTitle": "Avis juridique / Langue",
+    "noticeDesc": "À des fins juridiques, nos conditions générales et notre politique de confidentialité complètes sont rédigées en anglais. Veuillez nous contacter si vous avez besoin de clarifications.",
+    "lastUpdated": "Dernière mise à jour"
+  },
+  "about": {
+    "hero": {
+      "badge": "Transport de fret mondial",
+      "title1": "Redéfinir la logistique",
+      "title2": "globale.",
+      "subtitle": "Kassongo Express est un réseau léger en actifs et axé sur le numérique de consolidation et de réexpédition de fret, conçu pour vous donner un contrôle absolu sur l'expédition internationale.",
+      "btnContact": "Nous contacter",
+      "btnTeam": "Rencontrer l'équipe",
+      "imageAlt": "Opérations mondiales Kassongo"
+    },
+    "stats": {
+      "hubs": "Hubs mondiaux",
+      "members": "Membres actifs",
+      "carriers": "Partenaires transporteurs",
+      "countries": "Pays desservis"
+    },
+    "tabs": {
+      "mission": "Mission",
+      "vision": "Vision",
+      "values": "Valeurs"
+    },
+    "mission": {
+      "title": "Notre mission",
+      "desc": "Démocratiser le commerce mondial en rendant le fret international accessible, abordable et transparent pour les entreprises et les particuliers du monde entier. Nous éliminons les goulots d'étranglement logistiques qui fragmentent le suivi, gonflent les coûts et créent des frictions douanières.",
+      "point1": "Fournir des adresses d'expédition personnalisées dans les principaux hubs commerciaux dans plus de 60 emplacements",
+      "point2": "Consolider, stocker et réexpédier les colis avec suivi en temps réel et assurance complète",
+      "point3": "Gérer le dédouanement et la conformité pour que vous n'ayez jamais à vous soucier de la paperasse",
+      "imageAlt": "Graphique de mission"
+    },
+    "vision": {
+      "title": "Notre vision",
+      "desc": "D'ici 2028, Kassongo Express vise à devenir la plateforme de fret numérique la plus fiable au monde connectant chaque grand corridor commercial avec une logistique transparente et optimisée par l'IA qui donne à l'expéditeur un contrôle total.",
+      "goal1": "Étendre à plus de 100 hubs mondiaux",
+      "goal2": "Servir plus de 5 millions de membres actifs",
+      "imageAlt": "Graphique de vision"
+    },
+    "values": {
+      "title": "Nos valeurs fondamentales",
+      "subtitle": "Ces principes directeurs guident chaque décision que nous prenons et chaque colis que nous traitons.",
+      "trust": {
+        "title": "La confiance d'abord",
+        "desc": "Nous inspectons chaque colis, vérifions chaque facture et protégeons chaque envoi avec un chiffrement et une assurance conformes aux normes de l'industrie."
+      },
+      "speed": {
+        "title": "La rapidité compte",
+        "desc": "De l'expédition sortante en 24 heures à la réexpédition express sur le prochain vol, nous optimisons chaque itinéraire pour la livraison la plus rapide possible."
+      },
+      "transparency": {
+        "title": "Zéro frais cachés",
+        "desc": "Ce que vous voyez est ce que vous payez. Pas de suppléments surprises, pas de majorations douanières, pas de frais de stockage cachés."
+      },
+      "access": {
+        "title": "Accès mondial",
+        "desc": "Nous croyons que n'importe qui, n'importe où, devrait pouvoir faire ses achats dans le monde entier et les recevoir localement sans frontières ni barrières."
+      }
+    },
+    "operate": {
+      "title": "Comment nous opérons",
+      "subtitle": "Un processus en trois étapes simplifié qui vous donne le contrôle de l'enlèvement à la livraison.",
+      "step1": {
+        "title": "Réception et inspection",
+        "desc": "Vos colis arrivent dans nos hubs sécurisés où nous photographions, pesons et vérifions chaque article par rapport à votre facture."
+      },
+      "step2": {
+        "title": "Consolidation et stockage",
+        "desc": "Nous conservons vos articles dans des installations climatisées, regroupons plusieurs commandes en un seul envoi optimisé et retirons les emballages excédentaires pour réduire les coûts."
+      },
+      "step3": {
+        "title": "Réexpédition et suivi",
+        "desc": "Choisissez votre transporteur et votre vitesse. Nous gérons la documentation douanière, fournissons un suivi en temps réel et livrons à votre porte entièrement assuré."
+      }
+    },
+    "hubs": {
+      "title": "Présence mondiale",
+      "subtitle": "Des hubs stratégiquement situés dans les corridors commerciaux les plus fréquentés au monde, avec des équipes locales qui connaissent le paysage douanier sur le bout des doigts.",
+      "us": {
+        "name": "États-Unis New York & Houston",
+        "feat1": "Départs quotidiens vers l'Afrique et l'Europe",
+        "feat2": "Adresses d'achat exonérées de taxe sur les ventes"
+      },
+      "uk": {
+        "name": "Royaume-Uni Londres Heathrow",
+        "feat1": "Envois de fret aérien bihebdomadaires",
+        "feat2": "Assistance à la récupération de la TVA"
+      },
+      "china": {
+        "name": "Chine Guangzhou & Yiwu",
+        "feat1": "Consolidation avec ramassage direct en usine",
+        "feat2": "Options d'expédition maritime et aérienne"
+      },
+      "turkey": {
+        "name": "Turquie Istanbul",
+        "feat1": "Hub pont pour le corridor UE-MENA",
+        "feat2": "Dédouanement rapide"
+      },
+      "mapAlt": "Carte du réseau de hubs mondiaux"
+    },
+    "timeline": {
+      "title": "Notre parcours",
+      "subtitle": "D'un seul entrepôt à un réseau mondial voici comment Kassongo Express a évolué.",
+      "m1": {
+        "title": "Fondé à New York",
+        "desc": "Démarré avec un seul hub de consolidation à New York, desservant les acheteurs transfrontaliers d'Afrique de l'Ouest."
+      },
+      "m2": {
+        "title": "Lancement du hub UK",
+        "desc": "Ouverture de l'installation de Londres Heathrow pour desservir les routes commerciales européennes et du Commonwealth."
+      },
+      "m3": {
+        "title": "Expansion en Chine",
+        "desc": "Ajout des hubs de Guangzhou et Yiwu pour accéder à l'approvisionnement direct en usine et aux chaînes d'approvisionnement manufacturières."
+      },
+      "m4": {
+        "title": "1 million de membres",
+        "desc": "Dépassement du million de membres inscrits dans plus de 80 pays, avec 21+ partenariats de transporteurs."
+      },
+      "m5": {
+        "title": "Plateforme numérique",
+        "desc": "Lancement de l'optimisation d'itinéraire par IA, du tableau de bord de suivi en temps réel et des alertes de statut WhatsApp."
+      },
+      "m6": {
+        "title": "60+ hubs",
+        "desc": "Expansion à plus de 60 hubs mondiaux incluant la Turquie, les Émirats arabes unis et l'Afrique du Sud, avec accès aux terminaux de gares routières."
+      }
+    },
+    "team": {
+      "title": "Rencontrez l'équipe",
+      "subtitle": "Les personnes derrière les colis une équipe diversifiée de vétérans de la logistique, d'ingénieurs et de champions du service client.",
+      "roles": {
+        "ceo": "Directeur général",
+        "coo": "Directeur des opérations",
+        "cto": "Directeur technique",
+        "headLogistics": "Responsable de la logistique mondiale"
+      }
+    },
+    "why": {
+      "title": "Pourquoi Kassongo Express ?",
+      "subtitle": "Nous n'avons pas simplement créé un autre transitaire. Nous avons construit celui que nous aurions voulu voir exister.",
+      "items": {
+        "speed": {
+          "title": "Expédition en 24h",
+          "desc": "Les colis partent dans les 24 heures suivant la demande de consolidation pas de limbo dans l'entrepôt."
+        },
+        "security": {
+          "title": "Inspection 100%",
+          "desc": "Chaque colis entrant est physiquement vérifié, photographié et son état est enregistré."
+        },
+        "price": {
+          "title": "Tarifs équitables",
+          "desc": "La consolidation réduit les coûts d'expédition jusqu'à 60%. Aucun frais caché, jamais."
+        },
+        "coverage": {
+          "title": "Couverture mondiale",
+          "desc": "Expédiez vers plus de 150 pays depuis des hubs aux États-Unis, au Royaume-Uni, en Chine, en Turquie et au-delà."
+        },
+        "tracking": {
+          "title": "Suivi en temps réel",
+          "desc": "Suivez chaque colis de la réception à l'entrepôt jusqu'à la livraison à votre porte, sur n'importe quel appareil."
+        },
+        "support": {
+          "title": "Support humain",
+          "desc": "De vraies personnes, de vraies réponses. Notre équipe de support répond dans les 24 heures, garanti."
+        }
+      }
+    },
+    "faq": {
+      "title": "À propos de Kassongo",
+      "subtitle": "Questions courantes sur qui nous sommes et comment nous travaillons.",
+      "a1": {
+        "q": "Kassongo Express est-il une compagnie maritime ?",
+        "a": "Nous sommes un service de réexpédition de fret et de consolidation de colis pas un transporteur. Nous collaborons avec FedEx, DHL, UPS, USPS et des transporteurs régionaux pour déplacer vos colis, tandis que nous gérons la consolidation, le stockage, les douanes et la coordination."
+      },
+      "a2": {
+        "q": "Où se trouvent vos sièges sociaux ?",
+        "a": "Notre siège social est à New York, États-Unis. Nous exploitons également des hubs majeurs à Londres (Royaume-Uni), Guangzhou et Yiwu (Chine), et Istanbul (Turquie), avec des équipes locales à chaque emplacement."
+      },
+      "a3": {
+        "q": "En quoi Kassongo est-il différent des autres transitaires ?",
+        "a": "Nous combinons des outils numériques de premier ordre (suivi en temps réel, routage IA, alertes WhatsApp) avec des opérations physiques de hubs qui inspectent chaque colis. De plus, notre réseau de terminaux de gares routières rend le dépôt et le retrait accessibles même dans les zones reculées."
+      },
+      "a4": {
+        "q": "Travaillez-vous avec des entreprises ou uniquement des particuliers ?",
+        "a": "Les deux. Nous desservons les acheteurs individuels, les petites entreprises qui approvisionnent des stocks, les vendeurs en ligne et les clients entreprise avec des besoins de consolidation à fort volume. Les formules d'adhésion vont du gratuit au Platinum."
+      },
+      "a5": {
+        "q": "Comment rejoindre l'équipe Kassongo ?",
+        "a": "Nous recherchons toujours des spécialistes de la logistique, des ingénieurs logiciels et des champions du service client. Consultez notre page Carrières ou envoyez votre CV à careers@kassongo.com."
+      }
+    },
+    "cta": {
+      "title": "Prêt à expédier plus intelligemment ?",
+      "subtitle": "Rejoignez plus d'un million de membres qui font confiance à Kassongo Express pour leurs besoins de fret mondiaux. Obtenez votre adresse de hub gratuite dès aujourd'hui.",
+      "btnContact": "Nous contacter",
+      "btnFaq": "Lire la FAQ"
+    }
+  },
+  "testimonials": {
+    "title": "Ce que disent les commerçants du monde entier",
+    "subtitle": "Reconnu par les entreprises d'Afrique, d'Europe, d'Asie et d'Amérique du Nord pour la logistique de bout en bout"
+  },
+  "solutions": {
+    "assistedSourcing": {
+      "hero": {
+        "title": "Sourcing mondial.",
+        "titleHighlight": "Fournisseurs vérifiés.",
+        "subtitle": "Ne vous souciez plus des arnaques, des problèmes de qualité ou des barrières linguistiques. L'équipe de sourcing assisté de Kassongo gère la vérification des fournisseurs, le séquestre des paiements, l'inspection des usines et le transport conforme de Chine, d'Europe et de Turquie vers l'Afrique.",
+        "ctaPrimary": "Trouver un produit",
+        "ctaSecondary": "En savoir plus"
+      },
+      "card": {
+        "title": "Demande de sourcing",
+        "supplierStatus": "1. Statut du fournisseur",
+        "supplierValue": "Usine vérifiée (Guangzhou, CN)",
+        "inspectionCheck": "2. Contrôle de qualité",
+        "inspectionValue": "Réussi - Certificat délivré",
+        "escrowProtection": "3. Protection de paiement Escrow",
+        "escrowValue": "Fonds sécurisés sur le compte Escrow Kassongo"
+      },
+      "features": {
+        "title": "Approvisionnement sécurisé du début à la fin",
+        "subtitle": "Nous agissons comme vos représentants physiques sur les marchés mondiaux, protégeant vos investissements à chaque étape.",
+        "item1Title": "Audits de fournisseurs",
+        "item1Desc": "Nous vérifions les licences, inspectons les installations et évaluons les avis clients afin que vous ne traitiez qu'avec des fabricants légitimes.",
+        "item2Title": "Sécurité du séquestre",
+        "item2Desc": "Vos fonds sont conservés en toute sécurité par Kassongo et ne sont libérés au fournisseur qu'une fois la qualité validée à l'emballage.",
+        "item3Title": "Inspections de qualité",
+        "item3Desc": "Nos inspecteurs locaux réalisent des tests physiques, comptent les cartons et vérifient le chargement des conteneurs pour garantir la conformité."
+      },
+      "process": {
+        "title": "Le processus de sourcing assisté",
+        "step1Title": "Soumettre les détails de l'achat",
+        "step1Desc": "Partagez les spécifications, photos et prix cible estimé des articles que vous souhaitez approvisionner.",
+        "step2Title": "Examiner les devis et profils",
+        "step2Desc": "Nous obtenons des devis d'usines vérifiées et présentons des fiches produits détaillées avec devis de transport.",
+        "step3Title": "Activer le séquestre et l'inspection",
+        "step3Desc": "Sécurisez la commande avec un acompte en séquestre. Nous inspectons les composants pendant la fabrication et le chargement.",
+        "step4Title": "Livraison au port & expédition",
+        "step4Desc": "Les marchandises sont livrées dans notre centre de consolidation, dédouanées et expédiées vers votre pays."
+      },
+      "faq": {
+        "title": "FAQ Sourcing assisté",
+        "subtitle": "Questions fréquentes sur nos services de vérification de fournisseurs et d'approvisionnement",
+        "q1": "Comment fonctionne le système de paiement par séquestre (Escrow) ?",
+        "a1": "Vous transférez les fonds sur le compte séquestre sécurisé de Kassongo. Nous conservons le paiement jusqu'à ce que nos inspecteurs vérifient la qualité en usine. Ce n'est qu'alors que nous débloquons les fonds.",
+        "q2": "Quels types de produits pouvez-vous approvisionner ?",
+        "a2": "Nous sommes spécialisés dans l'électronique, les machines, les biens de consommation et les équipements industriels de Chine, de Turquie et d'Europe.",
+        "q3": "Combien de temps prend le processus de sourcing ?",
+        "a3": "L'approvisionnement d'échantillons prend 2 à 3 semaines. Les commandes volumineuses avec inspection prennent 4 à 6 semaines.",
+        "q4": "Qu'est-ce qui est inclus dans une inspection d'usine ?",
+        "a4": "Nos inspecteurs vérifient les spécifications, effectuent des tests fonctionnels, contrôlent l'emballage, comptent les cartons et documentent le chargement en photos et vidéos.",
+        "q5": "Gérez-vous le dédouanement ?",
+        "a5": "Oui. Les marchandises sont livrées à notre centre de consolidation où nous gérons la documentation douanière, le dédouanement et la livraison finale.",
+        "q6": "Que se passe-t-il si je ne suis pas satisfait des devis ?",
+        "a6": "Il n'y a aucun engagement tant que vous n'approuvez pas un devis. Nous présentons généralement 3 à 5 options de fournisseurs vérifiés."
+      }
+    },
+    "consolidation": {
+      "hero": {
+        "title": "Regroupez vos colis.",
+        "titleHighlight": "Réduisez vos coûts de 60%.",
+        "subtitle": "Arrêtez de payer des frais de port minimum séparés pour chaque colis. Notre service de consolidation vous permet de combiner vos achats auprès de plusieurs fournisseurs en un seul envoi conteneurisé dédouané.",
+        "ctaPrimary": "Obtenir une adresse & démarrer",
+        "ctaSecondary": "Estimer le coût rendu"
+      },
+      "example": {
+        "title": "Exemple de consolidation",
+        "supplierA": "Fournisseur A (Chaussures - Yiwu)",
+        "supplierB": "Fournisseur B (Sacs - Yiwu)",
+        "supplierC": "Fournisseur C (Tech - Shenzhen)",
+        "total": "Envoi combiné (1 Carton)"
+      },
+      "features": {
+        "title": "Comment fonctionne l'expédition consolidée",
+        "subtitle": "Économisez sur la logistique internationale en expédiant des poids unifiés plus importants au lieu de colis dispersés.",
+        "item1Title": "Remises sur volume",
+        "item1Desc": "Les tarifs d'expédition diminuent à mesure que les tranches de poids augmentent. Le regroupement vous aide à atteindre des tranches supérieures.",
+        "item2Title": "Reconditionnement & fusion de cartons",
+        "item2Desc": "Nos opérateurs déballent les cartons extérieurs superflus et regroupent les articles pour optimiser le poids volumétrique.",
+        "item3Title": "Déclaration douanière unique",
+        "item3Desc": "Au lieu de payer des frais de dédouanement pour 5 envois distincts, vous ne payez qu'un seul tarif forfaitaire pour le carton consolidé."
+      },
+      "benefits": {
+        "title": "Parfait pour l'e-commerce et les commerçants",
+        "item1": "Jusqu'à 30 jours de stockage gratuit dans nos hubs mondiaux",
+        "item2": "Élimination des caisses en bois lourdes pour réduire le poids facturable",
+        "item3": "Photos sécurisées des colis téléchargées sur votre tableau de bord",
+        "item4": "Transport flexible : choisissez entre fret aérien rapide ou maritime LCL"
+      }
+    },
+    "expressForwarding": {
+      "hero": {
+        "title": "Livraison rapide.",
+        "titleHighlight": "Voie dégagée.",
+        "subtitle": "Faites livrer vos marchandises de porte à porte grâce à nos itinéraires logistiques optimisés. Nous proposons des départs aériens quotidiens et des consolidations maritimes hebdomadaires avec support de dédouanement.",
+        "ctaPrimary": "Calculer un devis de transport",
+        "ctaSecondary": "Parler à l'équipe logistique"
+      },
+      "trackingCard": {
+        "title": "Détails du suivi en direct",
+        "currentLocation": "Emplacement actuel",
+        "shipmentStatus": "Statut de l'envoi",
+        "shipmentStatusValue": "Documents douaniers approuvés",
+        "estimatedDelivery": "Livraison estimée",
+        "estimatedDeliveryValue": "4 - 6 jours ouvrables"
+      },
+      "features": {
+        "title": "Réseaux de transporteurs & livraison transfrontalière",
+        "subtitle": "Nous prenons en charge la gestion administrative des douanes et de l'expédition pour des livraisons fluides.",
+        "item1Title": "Réseau de fret aérien",
+        "item1Desc": "Vols quotidiens rapides reliant les principales liaisons commerciales (Guangzhou, Yiwu, Paris, Londres vers Douala, Lagos, Nairobi).",
+        "item2Title": "Fret maritime hebdomadaire",
+        "item2Desc": "Départs hebdomadaires en conteneurs avec listes de colisage transparentes et options de groupage.",
+        "item3Title": "Suivi de bout en bout",
+        "item3Desc": "Alertes de statut GPS en temps réel. Sachez où se trouve votre cargaison de l'usine jusqu'au guichet de retrait."
+      },
+      "channels": {
+        "title": "Principaux canaux d'expédition Kassongo",
+        "colOrigin": "Hub d'origine",
+        "colDest": "Hub de destination",
+        "colAir": "Transit aérien",
+        "colSea": "Transit maritime",
+        "unitDays": "Jours"
+      },
+      "faq": {
+        "title": "FAQ Expédition Express",
+        "subtitle": "Questions fréquentes sur nos services de fret aérien et maritime",
+        "q1": "Quelle est la différence entre le fret aérien et maritime ?",
+        "a1": "Le fret aérien est plus rapide (3-6 jours) mais plus coûteux au kg. Le fret maritime est économique pour les gros envois mais prend 28-40 jours.",
+        "q2": "Gérez-vous le dédouanement ?",
+        "a2": "Oui, notre service d'expédition express comprend la documentation douanière complète, le dédouanement et la livraison au port.",
+        "q3": "Puis-je suivre mon envoi en temps réel ?",
+        "a3": "Absolument. Vous recevrez des mises à jour de suivi GPS à chaque étape via votre tableau de bord ou l'application mobile.",
+        "q4": "Quels articles peuvent être expédiés via l'express ?",
+        "a4": "Nous traitons la plupart des marchandises commerciales (électronique, machines, produits de consommation). Les matières dangereuses sont interdites.",
+        "q5": "Comment sont calculés les coûts d'expédition ?",
+        "a5": "Les coûts dépendent du poids, du volume, de l'origine, de la destination et du mode de transport. Les devis sont transparents.",
+        "q6": "Que se passe-t-il en cas de retard ?",
+        "a6": "Nous surveillons tous les envois de manière proactive et vous informons immédiatement de tout retard."
+      }
+    },
+    "secureWarehousing": {
+      "hero": {
+        "title": "Stockage mondial.",
+        "titleHighlight": "Coffres sécurisés.",
+        "subtitle": "Stockez vos stocks, reconditionnez vos marchandises et gérez la logistique depuis nos entrepôts sous douane de pointe à Guangzhou, Paris, Lagos et Douala.",
+        "ctaPrimary": "Réserver un entrepôt",
+        "ctaSecondary": "Explorer les hubs de stockage"
+      },
+      "card": {
+        "title": "Inventaire de l'entrepôt",
+        "activeHub": "Hub d'entrepôt actif",
+        "activeHubValue": "Hub de consolidation de Guangzhou (CN)",
+        "activeBadge": "Actif",
+        "shelvedItems": "Articles en rayon",
+        "shelvedItemsValue": "142 Cartons",
+        "repackedStatus": "Statut reconditionné",
+        "repackedStatusValue": "Prêt"
+      },
+      "features": {
+        "title": "Installations sous douane et sous contrôle climatique",
+        "subtitle": "Nos installations respectent des règles de sécurité ISO strictes pour sécuriser vos marchandises à haute valeur.",
+        "item1Title": "Coffres sécurisés 24h/24",
+        "item1Desc": "Équipés de vidéosurveillance CCTV, contrôle biométrique et gardes privés pour protéger votre stock.",
+        "item2Title": "Stockage consolidé",
+        "item2Desc": "Louez des emplacements de palettes ou des étagères dédiées. Adaptez la surface selon vos cycles saisonniers.",
+        "item3Title": "Reconditionnement & Kitting",
+        "item3Desc": "Nous emballons les marchandises en toute sécurité et imprimons des étiquettes de conformité."
+      },
+      "hubs": {
+        "title": "Réseau d'entrepôts Kassongo",
+        "hub1Type": "Hub de consolidation d'exportation",
+        "hub1Security": "Sous douane & CCTV",
+        "hub2Type": "Hub logistique européen",
+        "hub2Security": "Température contrôlée",
+        "hub3Type": "Hub de distribution CEMAC",
+        "hub3Security": "Contrôle d'accès biométrique",
+        "hub4Type": "Hub de traitement CEDEAO",
+        "hub4Security": "Gardes 24/7 & Sous douane",
+        "labelType": "Type",
+        "labelCapacity": "Capacité",
+        "labelSecurity": "Sécurité"
+      },
+      "faq": {
+        "title": "Questions sur l'entreposage ?",
+        "subtitle": "Obtenez des réponses sur nos installations et services de stockage sécurisés",
+        "q1": "Quels types de marchandises puis-je stocker ?",
+        "a1": "Nos entrepôts acceptent la plupart des marchandises commerciales (électronique, textiles, machines). Les produits dangereux ou périssables sans réfrigération sont exclus.",
+        "q2": "Comment sont calculés les tarifs de stockage ?",
+        "a2": "Les frais sont basés sur le volume (m³ ou palettes), la durée et l'emplacement. Les tarifs varient généralement de 15 $ à 50 $ par m³ et par mois.",
+        "q3": "Puis-je accéder à mon inventaire à distance ?",
+        "a3": "Oui ! Notre système de gestion offre un accès en ligne 24/7 pour consulter vos stocks, demander un reconditionnement et planifier les envois.",
+        "q4": "Quelles mesures de sécurité protègent mes marchandises ?",
+        "a4": "Vidéosurveillance 24/7, accès biométrique, gardiens sur place, systèmes d'extinction d'incendie et assurance complète.",
+        "q5": "Proposez-vous des services de reconditionnement et d'étiquetage ?",
+        "a5": "Absolument. Nous reconditionnons vos produits pour réduire le poids volumétrique et appliquons des étiquettes de conformité.",
+        "q6": "Combien de temps puis-je stocker mes marchandises ?",
+        "a6": "Il n'y a pas de durée maximale pour la plupart des biens. La durée minimale est généralement de 7 jours.",
+        "q7": "Que se passe-t-il si mes marchandises sont endommagées ?",
+        "a7": "Tous les biens sont couverts par notre assurance entrepôt. En cas de dommage, nous vous indemnisons selon la valeur déclarée.",
+        "q8": "Pouvez-vous gérer des produits sensibles à la température ?",
+        "a8": "Oui. Nos hubs de Paris et Douala disposent de zones à température contrôlée (15-25°C)."
+      }
+    }
+  },
+  "products": {
+    "checkout": {
+      "hero": {
+        "title": "Coût de revient garanti au",
+        "titleHighlight": "passage en caisse de votre boutique.",
+        "subtitle": "Intégrez Kassongo Checkout à votre boutique en ligne pour calculer et percevoir les droits de douane, les taxes et les tarifs d'expédition internationale en temps réel. Offrez à vos clients internationaux une clarté totale sur les prix lors du paiement et évitez les frais surprises à la livraison.",
+        "ctaPrimary": "Découvrir l'API de checkout",
+        "ctaSecondary": "Voir la doc d'intégration"
+      },
+      "card": {
+        "title": "Widget de paiement international",
+        "badgeLive": "En direct",
+        "shipmentRoute": "Destination d'expédition",
+        "paymentMethod": "Statut du dédouanement",
+        "paymentMethodValue": "DDP (Droits acquittés, dédouanement garanti)",
+        "statusBadge": "API active",
+        "xafAvailable": "Taxes locales incluses",
+        "shippingCost": "Expédition internationale",
+        "importDuties": "Droits et taxes (DDP)",
+        "handlingPackaging": "Frais de dédouanement transporteur",
+        "totalPayable": "Coût de revient total"
+      },
+      "features": {
+        "title": "Intégration transparente pour le e-commerce international",
+        "subtitle": "Permettez à votre plateforme e-commerce de vendre à l'échelle mondiale sans friction douanière. Notre widget calcule instantanément les taxes, convertit les devises et assure la conformité.",
+        "item1Title": "Coût de revient en temps réel",
+        "item1Desc": "Calculez instantanément les droits de douane, la TVA, la TPS et les frais de transporteur basés sur les codes SH des produits, leur valeur et la destination.",
+        "item2Title": "Options d'expédition DDP",
+        "item2Desc": "Convertissez vos envois de DDU (non dédouané) en DDP (droits acquittés). Permettez aux clients de prépayer les frais de douane pour accélérer la livraison.",
+        "item3Title": "Localisation & Multi-devises",
+        "item3Desc": "Affichez les taxes et droits dans la devise locale de vos acheteurs. Nous prenons en charge plus de 45 devises avec conversion en temps réel.",
+        "item4Title": "Garantie douanière totale",
+        "item4Desc": "Si les frais réels réclamés à la frontière sont supérieurs à nos calculs, Kassongo prend en charge la différence. Aucun risque pour vous.",
+        "item5Title": "Intégrations e-commerce simples",
+        "item5Desc": "Des modules d'extension prêts à l'emploi pour Shopify, WooCommerce, Magento et des composants React/Next.js. Installation en quelques minutes.",
+        "item6Title": "Conformité et déclarations fiscales",
+        "item6Desc": "Nul besoin de s'enregistrer pour les régimes fiscaux internationaux comme IOSS (UE) ou la TVA britannique. Nous gérons la collecte et le dépôt en votre nom."
+      },
+      "techStack": {
+        "title": "Plateformes e-commerce prises en charge",
+        "subtitle": "Intégrez Kassongo Checkout à n'importe quel site ou architecture e-commerce moderne grâce à nos SDK légers et plugins prêts à l'emploi.",
+        "method1": "Intégration Shopify",
+        "method2": "Extension WooCommerce",
+        "method3": "API & SDK personnalisés",
+        "method4": "Composants React / Vue"
+      },
+      "faq": {
+        "title": "FAQ sur l'intégration du Checkout",
+        "subtitle": "Questions fréquentes sur le calcul du coût de revient lors du paiement sur votre site",
+        "q1": "Kassongo Checkout est-il une passerelle de paiement ?",
+        "a1": "Non, Kassongo Checkout n'est pas une passerelle de paiement. C'est un moteur de calcul et de conformité qui s'intègre à votre système existant (Shopify, Stripe, PayPal) pour ajouter les frais d'expédition, de douane et de taxes à l'importation.",
+        "q2": "Comment calcule-t-il les droits et taxes ?",
+        "a2": "Notre API utilise le pays de destination, le montant du panier, le poids du colis et les codes SH pour obtenir les taux de douane en temps réel, la TVA locale et les frais de transporteur.",
+        "q3": "Quelles plateformes supportez-vous ?",
+        "a3": "Nous proposons des plugins pour Shopify, WooCommerce, Magento (Adobe Commerce) ainsi qu'une API REST flexible pour les sites sur mesure.",
+        "q4": "Qui paie les droits perçus lors du checkout ?",
+        "a4": "L'acheteur règle les taxes directement lors du paiement sur votre boutique. Kassongo se charge ensuite de reverser ces montants aux douanes ou au transporteur lors du passage de frontière.",
+        "q5": "Quelle est votre garantie de calcul ?",
+        "a5": "Nous garantissons la précision de nos calculs. Si la douane applique des frais supérieurs à ceux facturés au client à la caisse, Kassongo prend en charge 100 % de la différence.",
+        "q6": "Prenez-vous en charge les seuils de franchise (de minimis) ?",
+        "a6": "Oui. Kassongo Checkout détecte automatiquement si une commande est sous le seuil de franchise fiscale (ex. 800 USD pour les USA ou 1000 AUD pour l'Australie) pour appliquer une exonération."
+      }
+    },
+    "landedCost": {
+      "hero": {
+        "title": "Calculez le coût rendu",
+        "titleHighlight": "avec une précision garantie.",
+        "subtitle": "Les frais de douane imprévus détruisent la rentabilité. Kassongo calcule et garantit chaque frais international (droits, taxes, frais de dossier). En cas de surplus douanier, nous payons la différence.",
+        "ctaPrimary": "Utiliser le calculateur",
+        "ctaSecondary": "Réserver une démo"
+      },
+      "breakdown": {
+        "title": "Détail du coût rendu",
+        "commodityCode": "Code douanier (Ordinateur)",
+        "customsValue": "Valeur en douane (CIF)",
+        "duty": "Droits de douane (2%)",
+        "importVat": "TVA d'importation (Cameroun 19,25%)",
+        "regionalLevies": "Prélèvements communautaires CEMAC (1,95%)",
+        "totalDutiesTaxes": "Total Droits & Taxes"
+      },
+      "benefits": {
+        "title": "Pourquoi choisir Landed Cost",
+        "subtitle": "L'expédition internationale ne doit pas impacter vos marges bénéficiaires.",
+        "item1Title": "Aucun surcoût imprévu",
+        "item1Desc": "Si la douane facture plus que notre calcul, nous payons la différence. Vos marges sont protégées.",
+        "item2Title": "Éliminez les frais surprises",
+        "item2Desc": "Affichez le coût rendu total au moment du paiement pour améliorer la satisfaction client.",
+        "item3Title": "Gestion fiscale automatisée",
+        "item3Desc": "Nous gérons les régimes complexes (IOSS UE, TVA UK, GST Australie) sans inscription préalable de votre part.",
+        "item4Title": "Expédiez vers 200+ pays",
+        "item4Desc": "Calculez précisément les taxes douanières locales pour plus de 200 pays et territoires.",
+        "item5Title": "Classification HS gratuite",
+        "item5Desc": "Bénéficiez de la classification automatique des codes HS incluse sans frais supplémentaires.",
+        "item6Title": "Réduisez les frais de dossier",
+        "item6Desc": "Économisez jusqu'à 50 % sur les frais d'avancement des transporteurs grâce à nos tarifs négociés."
+      },
+      "process": {
+        "title": "Du devis à la livraison, nous gérons tout",
+        "step1Title": "Calcul automatique au paiement",
+        "step1Desc": "Lors de la saisie de l'adresse de destination, les droits et taxes sont calculés immédiatement.",
+        "step2Title": "Garantie du calcul",
+        "step2Desc": "Nous couvrons tout écart entre le calcul initial et la facturation douanière finale.",
+        "step3Title": "Dédouanement fluide",
+        "step3Desc": "Les marchandises franchissent les douanes plus rapidement car tous les frais sont prépayés."
+      },
+      "faq": {
+        "title": "FAQ Coût Rendu",
+        "subtitle": "Tout ce que vous devez savoir sur le calcul des droits et taxes",
+        "q1": "Qu'est-ce que la garantie de coût rendu ?",
+        "a1": "Si les douanes réclament plus que le montant estimé au paiement, Kassongo règle la différence.",
+        "q2": "Quelle est la précision de vos codes HS ?",
+        "a2": "Notre précision atteint 99,4% grâce à la combinaison de l'IA et de nos experts douaniers.",
+        "q3": "Prenez-vous en compte les seuils de franchise ?",
+        "a3": "Oui, notre moteur applique automatiquement les règles de de minimis pour chaque pays.",
+        "q4": "Puis-je utiliser Landed Cost séparément ?",
+        "a4": "Absolument. Landed Cost est disponible sous forme d'API autonome pour n'importe quelle plateforme e-commerce.",
+        "q5": "Que se passe-t-il si un colis est retenu ?",
+        "a5": "Nous fournissons des documents de pré-dédouanement optimisés et intervenons directement auprès des autorités."
+      }
+    },
+    "plugins": {
+      "hero": {
+        "title": "Devenez partenaire",
+        "titleHighlight": "Kassongo.",
+        "subtitle": "Rejoignez Kassongo pour offrir aux commerçants des solutions d'expédition de premier ordre, des droits de douane pré-calculés et des intégrations de paiement locales.",
+        "ctaPrimary": "Devenir partenaire",
+        "ctaSecondary": "Explorer l'écosystème",
+        "cardTitle": "Intégrations e-commerce"
+      },
+      "integrations": {
+        "shopifyDesc": "Installation de l'application en 1 clic",
+        "shopifyStatus": "Application certifiée",
+        "wooDesc": "Extension WordPress",
+        "wooStatus": "Plugin actif",
+        "wixDesc": "Intégration d'applications Wix",
+        "wixStatus": "Plugin actif",
+        "apiDesc": "Protocoles REST & GraphQL",
+        "apiStatus": "Prêt pour les développeurs"
+      },
+      "apply": {
+        "badge": "Candidature Partenaire",
+        "title": "Postuler à notre réseau de partenaires",
+        "subtitle": "Remplissez le formulaire ci-dessous. Notre équipe examinera votre demande sous 48 heures.",
+        "firstName": "Prénom",
+        "lastName": "Nom",
+        "companyEmail": "E-mail professionnel",
+        "companyName": "Nom de l'entreprise",
+        "website": "Site internet",
+        "websitePlaceholder": "https://votreentreprise.com",
+        "country": "Pays",
+        "selectCountry": "Sélectionnez votre pays",
+        "partnerType": "Type de partenaire",
+        "partnerTypePlaceholder": "Êtes-vous un agrégateur, un expéditeur ou un transporteur ?",
+        "optAggregator": "Agrégateur de transport",
+        "optShipper": "Expéditeur unique",
+        "optCarrier": "Transporteur maritime/aérien",
+        "opt3pl": "Logistique / 3PL",
+        "optTech": "Partenaire technologique",
+        "optOther": "Autre",
+        "usaShipping": "Volume d'expédition USA",
+        "usaShippingPlaceholder": "Quel pourcentage de vos envois se fait vers/depuis les USA ?",
+        "optUsa0_25": "0% - 25%",
+        "optUsa26_50": "26% - 50%",
+        "optUsa51_75": "51% - 75%",
+        "optUsa76_100": "76% - 100%",
+        "optUsaNa": "Non applicable",
+        "referral": "Source de recommandation",
+        "referralPlaceholder": "Comment avez-vous entendu parler de nous ?",
+        "optRefSearch": "Moteur de recherche (Google, Bing, etc.)",
+        "optRefSocial": "Réseaux sociaux",
+        "optRefReferral": "Recommandation d'un partenaire",
+        "optRefEvent": "Événement / Conférence",
+        "optRefEmail": "Campagne e-mail",
+        "optRefOther": "Autre",
+        "message": "Message",
+        "messagePlaceholder": "Veuillez nous indiquer la raison de votre demande.",
+        "applyButton": "Postuler maintenant",
+        "successToast": "Candidature envoyée avec succès ! Nous vous répondrons sous 48 heures."
+      },
+      "ecosystem": {
+        "title": "Un écosystème de partenaires e-commerce privilégié",
+        "subtitle": "Nous rassemblons technologies, transporteurs et agences pour propulser le commerce transfrontalier.",
+        "cat1Title": "Partenaires technologiques",
+        "cat1Desc": "Logiciels et plateformes intégrés avec Kassongo pour offrir une solution globale aux commerçants.",
+        "cat2Title": "Transporteurs partenaires",
+        "cat2Desc": "Un réseau mondial de transporteurs aériens, maritimes et terrestres pour faciliter le suivi des colis.",
+        "cat3Title": "Partenaires Logistiques (3PL)",
+        "cat3Desc": "Entrepôts et centres de traitement utilisant les services Kassongo pour une logistique fluide.",
+        "cat4Title": "Partenaires de solutions",
+        "cat4Desc": "Agences et consultants accompagnant les entreprises dans le développement de leurs ventes internationales.",
+        "applyNow": "Postuler"
+      },
+      "value": {
+        "title": "Développez votre activité grâce à notre écosystème",
+        "subtitle": "En tant que partenaire Kassongo, vous bénéficiez d'un support technique exclusif et de nouvelles opportunités de revenus.",
+        "point1": "Accès au co-marketing & événements sponsors",
+        "point2": "Options de partage de revenus sur les flux logistiques",
+        "point3": "Accès prioritaire aux identifiants API Sandbox"
+      },
+      "caseStudies": {
+        "badge": "Histoires de succès",
+        "title": "Études de cas partenaires",
+        "subtitle": "Découvrez comment de grandes marques mondiales ont développé leur activité avec Kassongo.",
+        "metric1": "Dédouanement 40% plus rapide",
+        "metric2": "220+ pays couverts",
+        "metric3": "11 marchés africains desservis",
+        "metric4": "200K+ fournisseurs intégrés",
+        "metric5": "99.2% de réussite au dédouanement",
+        "catTech": "Partenaire Technologique",
+        "catCarrier": "Transporteur Partenaire",
+        "catFulfillment": "Partenaire Logistique",
+        "desc1": "Amazon Global Logistics s'est associé à Kassongo pour rationaliser les expéditions transfrontalières pour les vendeurs FBA. Nos outils intégrés ont réduit le temps de traitement de 40%.",
+        "desc2": "DHL Express a intégré l'API d'estimation des droits de Kassongo afin d'offrir une visibilité totale sur les coûts rendus avant le paiement.",
+        "desc3": "Jumia a fait équipe avec Kassongo pour alimenter la logistique du dernier kilomètre et la conformité douanière sur 11 marchés africains.",
+        "desc4": "Alibaba.com a intégré le calculateur de droits de douane de Kassongo pour aider plus de 200 000 fournisseurs à fournir des devis instantanés.",
+        "desc5": "FedEx Cross Border utilise notre moteur de conformité pour automatiser la classification des codes HS pour ses clients internationaux."
+      },
+      "faq": {
+        "title": "FAQ Programme Partenaire",
+        "subtitle": "Questions fréquentes sur l'adhésion à notre écosystème",
+        "q1": "Combien de temps faut-il pour devenir partenaire ?",
+        "a1": "L'équipe étudie votre demande sous 48 heures. L'approbation prend généralement 3 à 5 jours ouvrés.",
+        "q2": "Y a-t-il des frais d'inscription ?",
+        "a2": "Non. L'adhésion au programme partenaire est 100% gratuite.",
+        "q3": "Puis-je intégrer Kassongo sans compétences techniques ?",
+        "a3": "Oui ! Nous proposons des applications en 1 clic pour Shopify, WooCommerce et Wix.",
+        "q4": "Quel accompagnement reçoivent les partenaires ?",
+        "a4": "Accès au portail partenaire, documentation technique, environnement sandbox et support prioritaire.",
+        "q5": "Puis-je utiliser les services Kassongo en marque blanche ?",
+        "a5": "Oui, certains niveaux de partenariat permettent l'intégration en marque blanche.",
+        "q6": "Comment fonctionne le partage de revenus ?",
+        "a6": "Les modalités dépendent du type de partenariat (commissions d'affiliation ou partage de frais de transaction)."
+      }
+    },
+    "kassongoCapital": {
+      "apply": {
+        "meta": {
+          "title": "Demande de Capital Commercial - Kassongo Capital",
+          "description": "Demandez un financement conforme à la Shariah pour votre entreprise de commerce international"
+        },
+        "header": {
+          "backButton": "Retour à Kassongo Capital",
+          "badge": "Financement Conforme Shariah",
+          "title": "Demande de Capital Commercial",
+          "subtitle": "Complétez votre demande en 4 étapes simples. Obtenez des solutions de financement éthiques adaptées pour développer votre entreprise de commerce international."
+        },
+        "steps": {
+          "personal": "Infos Personnelles",
+          "business": "Détails de l'Entreprise",
+          "financing": "Financement",
+          "documents": "Documents"
+        },
+        "stepLabels": {
+          "step": "Étape"
+        },
+        "personalInfo": {
+          "title": "Informations Personnelles",
+          "subtitle": "Parlez-nous de vous",
+          "firstName": "Prénom",
+          "firstNamePlaceholder": "Jean",
+          "lastName": "Nom de famille",
+          "lastNamePlaceholder": "Dupont",
+          "email": "Adresse e-mail",
+          "emailPlaceholder": "jean.dupont@exemple.com",
+          "phone": "Numéro de téléphone",
+          "phonePlaceholder": "+33 1 23 45 67 89",
+          "country": "Pays",
+          "countryPlaceholder": "Sélectionnez votre pays"
+        },
+        "businessInfo": {
+          "title": "Informations sur l'Entreprise",
+          "subtitle": "Parlez-nous de votre entreprise",
+          "businessName": "Nom de l'Entreprise",
+          "businessNamePlaceholder": "Votre Entreprise SARL",
+          "businessType": "Type d'Entreprise",
+          "businessTypePlaceholder": "Sélectionnez le Type",
+          "businessTypes": {
+            "soleProprietor": "Entrepreneur Individuel",
+            "llc": "SARL",
+            "corporation": "Société Anonyme",
+            "partnership": "Société de Personnes",
+            "other": "Autre"
+          },
+          "yearEstablished": "Année de Création",
+          "yearEstablishedPlaceholder": "2020",
+          "taxId": "Numéro SIRET / TVA",
+          "taxIdPlaceholder": "12345678901234",
+          "website": "Site Web",
+          "websitePlaceholder": "https://votreentreprise.com"
+        },
+        "financingDetails": {
+          "title": "Détails du Financement",
+          "subtitle": "Spécifiez vos besoins de financement",
+          "financingType": "Type de Financement",
+          "financingTypes": {
+            "inventory": "Financement de l'Inventaire",
+            "inventoryDesc": "Murabaha pour l'inventaire",
+            "logistics": "Financement Logistique",
+            "logisticsDesc": "Qard Hassan pour la logistique",
+            "lease": "Location d'Équipement",
+            "leaseDesc": "Ijarah pour l'équipement"
+          },
+          "requestedAmount": "Montant Demandé",
+          "requestedAmountPlaceholder": "50000",
+          "term": "Période de Remboursement",
+          "termOptions": {
+            "days30": "30 Jours",
+            "days60": "60 Jours",
+            "days90": "90 Jours",
+            "days120": "120 Jours"
+          },
+          "purpose": "Objectif du Financement",
+          "purposePlaceholder": "Décrivez comment vous prévoyez d'utiliser les fonds...",
+          "monthlyRevenue": "Revenu Mensuel",
+          "monthlyRevenuePlaceholder": "Sélectionnez la Tranche",
+          "revenueRanges": {
+            "range1": "$0 - $10 000",
+            "range2": "$10 000 - $50 000",
+            "range3": "$50 000 - $100 000",
+            "range4": "$100 000 - $500 000",
+            "range5": "$500 000+"
+          },
+          "hasCollateral": "Avez-vous une garantie ?",
+          "hasCollateralPlaceholder": "Sélectionnez une Option",
+          "collateralOptions": {
+            "yes": "Oui",
+            "no": "Non"
+          },
+          "additionalComments": "Commentaires Supplémentaires",
+          "additionalCommentsPlaceholder": "Toute information supplémentaire que vous souhaitez partager..."
+        },
+        "documents": {
+          "title": "Documents Requis",
+          "subtitle": "Téléchargez les documents justificatifs",
+          "requirements": {
+            "title": "Exigences des Documents",
+            "format": "Tous les documents doivent être au format PDF, JPEG ou PNG",
+            "size": "Taille maximale du fichier : 5 Mo par document",
+            "clarity": "Les documents doivent être clairs et lisibles"
+          },
+          "businessLicense": "Licence Commerciale ou Enregistrement",
+          "financialStatements": "États Financiers (6-12 derniers mois)",
+          "tradingHistory": "Historique Commercial ou Factures",
+          "required": "Obligatoire",
+          "optional": "Facultatif",
+          "uploadButton": "Choisir un Fichier",
+          "noFileChosen": "Aucun fichier choisi",
+          "clearFile": "Supprimer"
+        },
+        "validation": {
+          "firstNameRequired": "Le prénom est obligatoire",
+          "lastNameRequired": "Le nom de famille est obligatoire",
+          "emailRequired": "L'e-mail est obligatoire",
+          "emailInvalid": "Format d'e-mail invalide",
+          "phoneRequired": "Le numéro de téléphone est obligatoire",
+          "countryRequired": "Le pays est obligatoire",
+          "businessNameRequired": "Le nom de l'entreprise est obligatoire",
+          "businessTypeRequired": "Le type d'entreprise est obligatoire",
+          "yearEstablishedRequired": "L'année de création est obligatoire",
+          "requestedAmountRequired": "Le montant est obligatoire",
+          "purposeRequired": "L'objectif est obligatoire",
+          "monthlyRevenueRequired": "Le revenu mensuel est obligatoire",
+          "errorTryAgain": "Une erreur s'est produite. Veuillez réessayer."
+        },
+        "navigation": {
+          "next": "Continuer",
+          "previous": "Retour",
+          "submit": "Soumettre la Demande",
+          "submitting": "Envoi en cours..."
+        },
+        "success": {
+          "title": "Demande Soumise !",
+          "subtitle": "Merci d'avoir fait une demande à Kassongo Capital. Notre équipe examinera votre demande et vous contactera dans les 2-3 jours ouvrables.",
+          "nextSteps": {
+            "title": "Prochaines Étapes",
+            "step1": "Notre équipe examine votre demande et vos documents",
+            "step2": "Nous effectuons une évaluation préliminaire du crédit",
+            "step3": "Vous recevrez une décision ou une demande d'informations supplémentaires",
+            "step4": "Après approbation, les fonds sont décaissés selon les conditions convenues"
+          },
+          "actions": {
+            "backHome": "Retour à l'Accueil",
+            "learnMore": "En Savoir Plus"
+          }
+        },
+        "trustBadges": {
+          "shariah": "Conforme Shariah",
+          "secure": "Demande Sécurisée",
+          "fast": "Approbation Rapide"
+        }
+      },
+      "hero": {
+        "badge": "Kassongo Capital",
+        "title": "Financement Conforme Shariah",
+        "titleHighlight": "Pour Importateurs Globaux",
+        "subtitle": "Libérez votre chaîne d'approvisionnement et développez votre activité grâce à un financement conforme à la Shariah. Nous payons directement vos fournisseurs et différons vos frais logistiques, le tout avec 0 % d'intérêt et une marge transparente convenue à l'avance.",
+        "ctaPrimary": "Demander un Financement",
+        "ctaSecondary": "Découvrir les Principes",
+        "badgeShariah": "100% Conforme Shariah",
+        "badgeInterest": "Taux d'intérêt de 0%",
+        "badgeAaoifi": "Conforme AAOIFI"
+      },
+      "calculator": {
+        "title": "Estimateur de Capital",
+        "badge": "Sans Riba",
+        "modeInventory": "Murabaha Inventaire",
+        "modeLogistics": "Qard Logistique",
+        "labelValueInventory": "Valeur d'achat de l'inventaire",
+        "labelValueLogistics": "Factures Logistique & Douane",
+        "labelTerm": "Période de paiement différé",
+        "labelAmount": "Montant du financement",
+        "labelInterest": "Taux d'intérêt (Riba)",
+        "labelMarkup": "Marge bénéficiaire Murabaha",
+        "labelFee": "Frais administratifs et de traitement",
+        "labelTotal": "Total différé à payer",
+        "labelRepayment": "Remboursement estimé",
+        "btnSubmit": "Obtenir un pré-accord en 24h",
+        "footerText": "Transaction d'achat d'actifs certifiée conforme à la loi Shariah."
+      },
+      "principles": {
+        "title": "Nos Principes de la Shariah",
+        "subtitle": "Kassongo Capital agit comme un partenaire commercial éthique soutenu par des actifs réels. Nous évitons les prêts avec intérêts en espèces et la spéculation, intégrant directement la transparence dans votre chaîne d'approvisionnement.",
+        "ribaTitle": "Sans Riba (Zéro intérêt)",
+        "ribaDesc": "Nous éliminons totalement les intérêts de nos transactions. La dette traditionnelle est remplacée par des structures d'achat et de revente d'actifs éthiques.",
+        "assetTitle": "Adossé à des Actifs (Murabaha)",
+        "assetDesc": "Chaque transaction de financement est adossée à des marchandises physiques ou à des inventaires. Nous achetons directement les biens pour éviter tout commerce spéculatif.",
+        "riskTitle": "Partenariat de Partage des Risques",
+        "riskDesc": "We share in the operational risk of transit and ownership during the trade cycle, building an ethical business alignment.",
+        "halalTitle": "Réservé aux Biens Halal",
+        "halalDesc": "Le capital est strictement orienté vers des industries éthiques. Nous ne finançons pas de marchandises prohibées, spéculatives ou nocives."
+      },
+      "split": {
+        "title": "Capital Intégré et Transparent",
+        "titleHighlight": "Pour le Commerce International",
+        "desc": "Le financement de la chaîne d'approvisionnement ne doit pas être isolé de vos expéditions réelles. Kassongo Capital s'intègre directement à nos services logistiques mondiaux, vous permettant de vous approvisionner et d'expédier sans contraintes de trésorerie.",
+        "feat1Title": "Capital de Croissance Sans Dilution",
+        "feat1Desc": "Financez vos factures d'inventaire et de fret maritime sans céder de capital social ni hypothéquer d'actifs immobiliers.",
+        "feat2Title": "Adaptation Flexible aux Flux de Trésorerie",
+        "feat2Desc": "Payez sur une base hebdomadaire ou mensuelle sur des échéances différées allant jusqu'à 120 jours, vous permettant de vendre vos marchandises avant de nous rembourser.",
+        "feat3Title": "Zéro Intérêt et Plafonnement des Pénalités de Retard",
+        "feat3Desc": "Calculs des frais de marge entièrement transparents avec des limites de plafond absolues. Pas de pénalités de retard cumulatives."
+      },
+      "products": {
+        "title": "Solutions de Financement Commercial",
+        "subtitle": "Choisissez parmi notre gamme de contrats certifiés conformes à la Shariah, conçus pour soutenir vos opérations logistiques et d'approvisionnement.",
+        "inventoryName": "Financement de l'Inventaire (Murabaha)",
+        "inventoryType": "Contrat Murabaha",
+        "inventoryDesc": "Développez votre pouvoir d'achat sans contracter de dette portant intérêt. Kassongo achète l'inventaire directement auprès de vos fournisseurs internationaux vérifiés (en Chine, Europe ou Turquie) et vous le revend avec une marge transparente convenue à l'avance et un paiement différé.",
+        "inventoryTerms": "Conditions: Jusqu'à 120 jours de paiement différé",
+        "inventoryF1": "Paiements directs aux fournisseurs",
+        "inventoryF2": "Pas de dilution de capital ni de blocage de garanties",
+        "inventoryF3": "Tarification au coût réel plus marge bénéficiaire transparente",
+        "logisticsName": "Financement de la Logistique & Droits de Douane (Qard / Murabaha pour services)",
+        "logisticsType": "Qard al-Hasan & Murabaha pour services",
+        "logisticsDesc": "Maintenez la fluidité de vos expéditions sans bloquer votre fonds de roulement. Différez le paiement des droits de douane, des frais de fret maritime ou aérien et des frais d'entreposage sécurisé. Remboursez selon un calendrier adapté à vos ventes.",
+        "logisticsTerms": "Conditions: Jusqu'à 90 jours de remboursement",
+        "logisticsF1": "Libération instantanée du fret (évitez les frais de surestaries)",
+        "logisticsF2": "Crédit douanier bienveillant sans intérêt (Qard)",
+        "logisticsF3": "Gestion consolidée des factures logistiques",
+        "leaseName": "Location-Vente Logistique (Ijarah)",
+        "leaseType": "Ijarah wa Iqtina",
+        "leaseDesc": "Louez des actifs logistiques de grande valeur, des véhicules commerciaux ou des infrastructures d'entreposage dédiées via un contrat de crédit-bail conforme à la Shariah. Préservez votre trésorerie avec des loyers qui contribuent à l'acquisition finale de l'actif.",
+        "leaseTerms": "Conditions: Contrats à moyen et long terme flexibles",
+        "leaseF1": "Frais de maintenance partagés ou couverts",
+        "leaseF2": "Transfert de propriété de l'actif à la fin du bail",
+        "leaseF3": "Gestion prévisible des flux financiers"
+      },
+      "howItWorks": {
+        "title": "Comment ça fonctionne",
+        "subtitle": "Connectez votre profil commercial et obtenez l'approbation de votre ligne de capital sans Riba en quatre étapes simples.",
+        "step1Title": "Postuler en Ligne",
+        "step1Desc": "Soumettez les informations de base de votre entreprise et connectez vos relevés bancaires ou votre tableau de bord commercial.",
+        "step2Title": "Audit de Conformité",
+        "step2Desc": "Nos analystes vérifient la nature physique de vos importations pour structurer l'accord Murabaha conforme.",
+        "step3Title": "Règlement Fournisseur",
+        "step3Desc": "Nous payons directement votre fournisseur pour la valeur de l'inventaire ou réglons les factures de fret logistique.",
+        "step4Title": "Remboursements Différés",
+        "step4Desc": "Effectuez des remboursements simples, hebdomadaires ou mensuels, selon votre plan d'échéances fixes convenu d'avance."
+      },
+      "compliance": {
+        "badge": "Normes AAOIFI Certifiées",
+        "title": "Comité Consultatif de la Shariah Indépendant",
+        "desc": "Kassongo Capital fonctionne sous la supervision constante de savants islamiques et d'auditeurs de conformité juridique indépendants. Tous les contrats d'achat-vente, les modèles de services logistiques et les politiques administratives sont audités annuellement pour garantir une conformité totale avec les règles de la finance islamique."
+      },
+      "faq": {
+        "title": "Questions Fréquemment Posées",
+        "subtitle": "Tout ce que vous devez savoir sur le financement éthique de la chaîne d'approvisionnement.",
+        "q1": "Qu'est-ce qui rend Kassongo Capital conforme à la Shariah ?",
+        "a1": "Contrairement aux prêteurs conventionnels qui facturent des intérêts sur les prêts en espèces, Kassongo Capital utilise des structures adossées à des actifs. Dans le cadre de notre programme de Murabaha d'inventaire, nous achetons directement les biens auprès du fournisseur pour vous les revendre ensuite avec une marge bénéficiaire transparente et des paiements différés. Nos contrats sont certifiés conformes par des érudits indépendants en finance islamique.",
+        "q2": "Comment fonctionne le financement Murabaha de l'inventaire ?",
+        "a2": "Une fois votre demande approuvée, vous nous fournissez la facture proforma de votre fournisseur vérifié. Kassongo achète les marchandises, en prend possession légale, puis vous les revend au prix d'achat majoré d'une marge bénéficiaire fixe et transparente. Vous recevez les biens et remboursez selon des mensualités différées (jusqu'à 120 jours).",
+        "q3": "Y a-t-il des frais d'intérêt cachés ou des pénalités de retard cumulatives ?",
+        "a3": "Non. La jurisprudence islamique interdit strictement les intérêts composés ou le profit généré par le défaut de paiement d'un client. Tous les frais sont déclarés à l'avance. En cas de retard, les frais de dossier sont limités à un coût administratif fixe ou reversés intégralement à des œuvres de charité sous la supervision de notre comité Shariah.",
+        "q4": "Quelles sont les conditions d'éligibilité pour postuler ?",
+        "a4": "Pour bénéficier de nos solutions, votre entreprise doit justifier d'au moins 12 mois d'activité commerciale, importer ses marchandises via le réseau logistique de Kassongo et commercialiser exclusivement des produits halal. Nous analysons vos états financiers pour valider votre ligne de financement.",
+        "q5": "Puis-je utiliser Kassongo Capital si je ne suis pas musulman ?",
+        "a5": "Oui, tout à fait. Kassongo Capital est ouvert à toutes les entreprises, sans distinction confessionnelle. De nombreux commerçants choisissent nos solutions éthiques pour leur transparence, leur partage des risques et l'absence totale de taux d'intérêt prédateurs.",
+        "q6": "Combien de temps prend l'approbation de la demande ?",
+        "a6": "Notre processus est entièrement numérisé. Une fois vos relevés bancaires ou documents commerciaux transmis, nos équipes de gestion des risques et de conformité valident généralement votre ligne de financement sous 24 à 48 heures."
+      }
+    },
+    "cargoInsurance": {
+      "hero": {
+        "title": "Protégez votre cargaison",
+        "titleHighlight": "À chaque kilomètre",
+        "subtitle": "Couverture d'assurance cargo complète protégeant vos expéditions contre les pertes, les dommages et le vol de l'origine à la destination à travers tous les modes de transport.",
+        "ctaPrimary": "Obtenir un devis",
+        "ctaSecondary": "Voir la couverture"
+      },
+      "calculator": {
+        "title": "Calculateur d'assurance",
+        "badge": "Devis instantané",
+        "cargoValue": "Valeur de la cargaison",
+        "transportMode": "Mode de transport",
+        "sea": "Maritime",
+        "air": "Aérien",
+        "land": "Terrestre",
+        "coverageLevel": "Niveau de couverture",
+        "standard": "Standard",
+        "comprehensive": "Complète",
+        "breakdown": "Détail",
+        "premiumRate": "Taux de prime",
+        "premiumCost": "Coût de la prime",
+        "totalProtection": "Protection totale",
+        "getQuote": "Obtenir un devis d'assurance",
+        "underwritten": "Souscrit par des assureurs agréés"
+      },
+      "features": {
+        "title": "Protection complète",
+        "subtitle": "De l'origine à la destination, nous protégeons votre cargaison contre tous les risques majeurs pendant le transit international et domestique.",
+        "item1Title": "Protection complète",
+        "item1Desc": "Couverture contre la perte, les dommages, le vol et les catastrophes naturelles pendant le transit",
+        "item2Title": "Couverture mondiale",
+        "item2Desc": "Protection pour les expéditions sur toutes les principales routes commerciales et destinations",
+        "item3Title": "Réclamations rapides",
+        "item3Desc": "Processus de réclamation simplifié avec règlement sous 7-10 jours ouvrables",
+        "item4Title": "Primes flexibles",
+        "item4Desc": "Tarifs compétitifs basés sur le type de cargaison, l'itinéraire et la méthode d'expédition"
+      },
+      "whyChoose": {
+        "title": "Pourquoi choisir notre",
+        "titleHighlight": "assurance cargo ?",
+        "intro": "L'expédition internationale comporte des risques inhérents. Des dommages causés par les intempéries au vol, des accidents aux mauvaises manipulations, votre cargaison fait face à de nombreuses menaces. Notre assurance vous garantit une protection financière quoi qu'il arrive.",
+        "item1Title": "Couverture de porte à porte",
+        "item1Desc": "La protection commence lorsque la cargaison quitte votre entrepôt et se termine lorsqu'elle arrive à destination.",
+        "item2Title": "Primes compétitives",
+        "item2Desc": "Nous travaillons avec plusieurs assureurs pour obtenir les meilleurs tarifs pour vos besoins d'expédition spécifiques.",
+        "item3Title": "Support d'experts pour les réclamations",
+        "item3Desc": "Des spécialistes dédiés vous guident tout au long du processus, de la documentation au règlement."
+      },
+      "insuranceTypes": {
+        "title": "Trois niveaux de protection",
+        "subtitle": "Choisissez la couverture qui correspond à votre risque. Tous les plans incluent un support de réclamation 24h/24 et 7j/7.",
+        "standardName": "Couverture standard",
+        "standardType": "Protection de base",
+        "standardDesc": "Assurance essentielle couvrant les pertes ou dommages causés par des accidents, collisions et risques de transit courants. Idéal pour les marchandises non fragiles.",
+        "standardFeatures": [
+          "Accidents et collisions",
+          "Incendie et explosion",
+          "Catastrophes naturelles"
+        ],
+        "comprehensiveName": "Couverture complète",
+        "comprehensiveType": "Protection tous risques",
+        "comprehensiveDesc": "Assurance complète incluant le vol, le pillage, les dommages causés par l'eau et tous les périls sauf la guerre et les grèves. Idéal pour les cargaisons de grande valeur.",
+        "comprehensiveFeatures": [
+          "Tous les risques standards",
+          "Vol et pillage",
+          "Dommages causés par l'eau et les intempéries"
+        ],
+        "premiumName": "Couverture premium",
+        "premiumType": "Protection maximale",
+        "premiumDesc": "Protection ultime incluant la guerre, les grèves, les émeutes et tous les risques imaginables. Pour les expéditions extrêmement précieuses ou sensibles.",
+        "premiumFeatures": [
+          "Tous les risques complets",
+          "Guerre et grèves",
+          "Émeutes et troubles civils"
+        ],
+        "getQuote": "Obtenir un devis"
+      },
+      "claimsProcess": {
+        "title": "Processus de réclamation simple",
+        "subtitle": "Déposez et réglez rapidement les réclamations grâce à notre processus simplifié. La plupart des réclamations sont résolues sous 7-10 jours ouvrables.",
+        "step1Title": "Signaler l'incident",
+        "step1Desc": "Informez-nous immédiatement de toute perte ou dommage. Soumettez la réclamation initiale dans les 24 heures suivant la découverte.",
+        "step2Title": "Documentation",
+        "step2Desc": "Fournissez les documents d'expédition, les photos des dommages et l'inventaire détaillé des marchandises affectées.",
+        "step3Title": "Évaluation",
+        "step3Desc": "Notre équipe de réclamations examine votre dossier et peut organiser une inspection par un expert indépendant.",
+        "step4Title": "Règlement",
+        "step4Desc": "Les réclamations approuvées sont réglées sous 7-10 jours ouvrables par virement bancaire."
+      },
+      "faq": {
+        "title": "Questions fréquemment posées",
+        "subtitle": "Questions courantes sur notre couverture d'assurance cargo et le processus de réclamation",
+        "q1": "Quels types de cargaisons peuvent être assurés ?",
+        "a1": "Nous assurons la plupart des cargaisons commerciales, y compris l'électronique, les textiles, les machines, les meubles et les biens de consommation. Certaines matières dangereuses et denrées périssables peuvent nécessiter une approbation spéciale.",
+        "q2": "À quelle vitesse les réclamations sont-elles traitées ?",
+        "a2": "Les réclamations standard sont traitées sous 7-10 jours ouvrables après réception de toute la documentation. Les réclamations complexes peuvent prendre plus de temps selon les exigences d'enquête.",
+        "q3": "Qu'est-ce qui n'est pas couvert par l'assurance cargo ?",
+        "a3": "Les polices standard excluent les pertes dues à un emballage inapproprié, vice propre (détérioration naturelle), retards, guerre/grèves (sauf couverture Premium) et faute intentionnelle de l'expéditeur.",
+        "q4": "Puis-je assurer plusieurs expéditions à la fois ?",
+        "a4": "Oui ! Nous proposons des polices cargo ouvertes pour les entreprises avec des expéditions régulières. Cela fournit une couverture automatique pour toutes les expéditions dans les conditions convenues.",
+        "q5": "Comment est calculée la prime ?",
+        "a5": "Les primes sont basées sur la valeur de la cargaison, la méthode d'expédition (air/mer/terre), le niveau de risque de l'itinéraire, le type de cargaison et le niveau de couverture. Les itinéraires à haut risque ou les marchandises fragiles ont des tarifs plus élevés.",
+        "q6": "Ai-je besoin d'une assurance si le transporteur a une couverture de responsabilité ?",
+        "a6": "Oui. La responsabilité du transporteur est généralement limitée à une fraction de la valeur de la cargaison (souvent 50-100 $ par colis). L'assurance cargo offre une protection de la pleine valeur."
+      }
+    }
+  },
+  "importTools": {
+    "title": "Calculateur de Douane & Nomenclature SH",
+    "subtitle": "Vérifiez les codes du Système Harmonisé (SH) standardisés et estimez les droits de douane, les taux de TVA locaux et le détail des coûts de débarquement des conteneurs.",
+    "apiBadge": "APIs de Douane et Commerce en Temps Réel",
+    "tabCalculator": "Calculateur de Droits & Coût Débarqué",
+    "tabLookup": "Répertoire de Recherche de Code SH",
+    "landedCostEstimate": "Estimation du Coût Débarqué",
+    "clearResults": "Effacer les Résultats",
+    "grandTotalLandedCost": "Coût Débarqué Global ({mode})",
+    "msrpFobValue": "MSRP / Valeur FOB du Cargo",
+    "valuationBaseCif": "Base d'Évaluation (CIF)",
+    "officialDutyCertificate": "Certificat de Douane Officiel",
+    "pdfCertificateDesc": "Générez et téléchargez un certificat officiel de calcul des droits de douane au format PDF avec le logo Kassongo et le détail complet.",
+    "downloadCertificatePdf": "Télécharger le Certificat (PDF)",
+    "missingTariffClassifications": "Classifications tarifaires manquantes :",
+    "missingTariffDesc": "Des taux par défaut ont été appliqués pour les codes SH non reconnus suivants :",
+    "breakdownByStage": "Détail par étape",
+    "lines": "{count} lignes",
+    "taxDutyLineItems": "Éléments de Taxes & Droits de Douane",
+    "totalTaxesPayable": "Total des Taxes à Payer",
+    "customsLegalNotice": "Avis Juridique de Douane",
+    "legalNoticeDesc": "Les tarifs douaniers, les taux de TVA, les évaluations de véhicules basées sur l'âge et les taxes d'expédition sont configurés en utilisant les directives réglementaires régionales actives. Les droits finaux appliqués par les inspecteurs des douanes sont basés sur l'inspection physique, les contrôles de factures et les opérations directes des hubs. Les estimations sont sujettes aux variations des terminaux.",
+    "calcTitle": "Calculateur de Coût de Douane",
+    "calcSubtitle": "Estimez les droits de dédouanement, les frais de port, la TVA et les taxes d'expédition.",
+    "import": "IMPORTATION",
+    "export": "EXPORTATION",
+    "reset": "Réinitialiser",
+    "originDispatchCountry": "Pays d'Origine / d'Expédition",
+    "selectOriginConfigured": "Sélectionnez l'Origine (Configuré)...",
+    "selectOriginCountry": "Sélectionnez le Pays d'Origine...",
+    "destinationImportCountry": "Pays de Destination / d'Importation",
+    "selectDestinationConfigured": "Sélectionnez la Destination (Configuré)...",
+    "selectDestinationCountry": "Sélectionnez le Pays de Destination...",
+    "portOfArrival": "Port d'Arrivée",
+    "portArrivalOptional": "Port d'Arrivée (Optionnel)",
+    "loadingPorts": "Chargement des ports...",
+    "applyGlobalPortLevies": "Appliquer les Taxes Globales / de Tous les Ports",
+    "containerCargoType": "Type de Cargo de Conteneur",
+    "fullContainerFcl": "Conteneur Complet (FCL)",
+    "looseCargoLcl": "Marchandises en Vrac (LCL)",
+    "cooAvailable": "Certificat d'Origine Disponible",
+    "cooDesc": "Active les accords tarifaires préférentiels si disponibles selon les règles de la route commerciale.",
+    "customsDeclarations": "Déclarations de Douane ({count})",
+    "addItem": "Ajouter un Élément",
+    "noItemsConfigured": "Aucun élément configuré pour le moment.",
+    "noItemsDesc": "Cliquez sur \"Ajouter un Élément\" pour ajouter des produits standards ou des évaluations de véhicules.",
+    "itemDeclarationHeader": "Déclaration Élément #{index}",
+    "searchPlaceholder": "Rechercher un produit ou coller un code SH à 6 chiffres...",
+    "typeHsCodeManual": "Saisir le Code SH à 6 chiffres manuellement...",
+    "searchingTariffTable": "Recherche dans la table des tarifs...",
+    "noMatchingHsCode": "Aucun code SH correspondant trouvé.",
+    "isVehicleToggle": "Cet élément est un véhicule / une voiture",
+    "declaredFobValueUsd": "Valeur FOB Déclarée (USD)",
+    "weightKgOptional": "Poids (kg) (Optionnel)",
+    "conversionDisplayCurrency": "Devise d'Affichage de la Conversion",
+    "updatingRates": "Mise à jour des taux...",
+    "computingLandedCosts": "Calcul des coûts de débarquement...",
+    "calculateLandedDutyFees": "Calculer les Droits & Taxes Débarqués",
+    "errAddAtLeastOne": "Veuillez ajouter au moins une marchandise à estimer.",
+    "errSelectOriginDest": "Veuillez sélectionner les pays d'origine et de destination.",
+    "errMissingDescHs": "L'élément {index} n'a pas de description ou de code SH.",
+    "errMissingValue": "L'élément {index} nécessite une valeur USD déclarée (ou un code VIN valide).",
+    "errCalculationFailed": "Le calcul de l'évaluation douanière a échoué. Vérifiez les détails.",
+    "loadingConfigured": "Chargement des configurations...",
+    "loadingCountries": "Chargement des pays...",
+    "directoryTitle": "Répertoire Standard des Produits",
+    "directorySubtitle": "Recherchez des codes SH standardisés en saisissant des mots-clés (ex : café, téléphone portable, berline) ou collez un code directement.",
+    "searchDirectoryPlaceholder": "Rechercher par mots-clés ex : ordinateur, café, t-shirt, voiture...",
+    "clear": "Effacer",
+    "search": "Rechercher",
+    "searching": "Recherche...",
+    "errQueryTooShort": "Veuillez saisir au moins 2 caractères pour rechercher",
+    "searchingDatabase": "Recherche dans la base de données...",
+    "productMatches": "Correspondances de Produits ({count})",
+    "retrievingHsCodes": "Récupération des codes SH standardisés...",
+    "searchError": "Erreur de Recherche",
+    "retrySearch": "Réessayer la Recherche",
+    "noCommoditiesFound": "Aucune marchandise trouvée",
+    "tryDifferentDescription": "Essayez une autre description ou un terme plus général",
+    "awaitingQuery": "En attente de saisie",
+    "awaitingQueryDesc": "Saisissez au moins 2 caractères dans le champ ci-dessus pour lancer la recherche.",
+    "matchBest": "Meilleure Correspondance",
+    "matchGood": "Bonne Correspondance",
+    "matchFair": "Correspondance Moyenne",
+    "matchPossible": "Correspondance Possible",
+    "unclassifiedCommodity": "Marchandise non Classifiée",
+    "tariffInfoInside": "Informations Tarifaires Incluses",
+    "copied": "Copié",
+    "copy": "Copier",
+    "wcoCodeStructure": "Structure du Code OMD",
+    "description": "Description",
+    "indicativeTariffRange": "Fourchette Tarifaire Indicative :",
+    "hierarchyLevels": "Niveaux Hiérarchiques",
+    "chapterLabel": "Chapitre (2 premiers chiffres)",
+    "chapterValue": "Chapitre {code}",
+    "headingLabel": "Position (4 premiers chiffres)",
+    "headingValue": "Position {code}",
+    "subheadingLabel": "Sous-position (Code Complet)",
+    "subheadingValue": "Sous-position {code}",
+    "calculateLandedCustomsCost": "Calculer le Coût de Douane Débarqué",
+    "copiedCode": "Code Copié !",
+    "copyCodeToClipboard": "Copier le Code dans le Presse-papiers",
+    "classificationDetails": "Détails de la Classification",
+    "selectProductCardDesc": "Sélectionnez une fiche produit pour afficher ses niveaux de hiérarchie, ses fourchettes de tarifs et l'envoyer au calculateur.",
+    "errSearchFailed": "La recherche de produit a échoué. Vérifiez votre réseau.",
+    "errTariffServiceOverloaded": "Le fournisseur de tarifs est temporairement indisponible. Veuillez réessayer plus tard.",
+    "labelHsCodeProduct": "Code SH / Produit",
+    "placeholderHsCodeProduct": "Rechercher par nom de produit, code SH ou catégorie...",
+    "allProducts": "Tous les Produits",
+    "noProductsFoundSearch": "Aucun produit trouvé. Essayez un autre terme.",
+    "typeToSearchMobile": "Saisir pour rechercher ex : ordinateur, café...",
+    "typeToSearchDesktop": "Saisir pour rechercher...",
+    "vehicleSpecifications": "Spécifications du Véhicule",
+    "vinLabel": "VIN (Numéro d'Identification du Véhicule)",
+    "vinPlaceholder": "Saisir le VIN (11-17 caractères)",
+    "decodeVin": "Décoder le VIN",
+    "decoding": "Décodage en cours...",
+    "errVinDecode": "Impossible de décoder le VIN. Veuillez le saisir manuellement.",
+    "makeBrand": "Marque / Constructeur",
+    "enterMake": "Saisir la Marque",
+    "list": "Liste",
+    "selectMake": "Sélectionner la Marque...",
+    "otherMakeBrand": "Autre Marque...",
+    "model": "Modèle",
+    "modelPlaceholder": "ex : Corolla, GLE 350",
+    "specialFeatureTrim": "Caractéristique / Finition",
+    "trimPlaceholder": "ex : AMG, Sport, Cabriolet",
+    "yearOfManufacture": "Année de Fabrication",
+    "selectYear": "Sélectionner l'Année...",
+    "engineCapacityCc": "Cylindrée (cc)",
+    "engineCapacityPlaceholder": "ex : 1800, 3500",
+    "fuelType": "Type de Carburant",
+    "bodyStyle": "Carrosserie",
+    "regionOfOrigin": "Région d'Origine",
+    "vehicleCondition": "État du Véhicule",
+    "customsImportDutyCertificate": "Certificat de Droits de Douane d'Importation",
+    "customsExportDutyCertificate": "Certificat de Droits de Douane d'Exportation",
+    "officialLandedCostReport": "Rapport Officiel d'Estimation du Coût Débarqué",
+    "generatedTimestamp": "Généré le : {timestamp}",
+    "summaryOfResults": "Résumé des Résultats",
+    "msrpFobValueUsd": "Valeur MSRP / FOB (USD)",
+    "customsValueCifDisplay": "Valeur en Douane (CIF) ({currency})",
+    "totalDutyPayableDisplay": "Total des Droits à Payer ({currency})",
+    "vehicleInformation": "Informations sur le Véhicule",
+    "yearLabel": "Année :",
+    "makeLabel": "Marque :",
+    "modelLabel": "Modèle :",
+    "trimLabel": "Caractéristique / Finition :",
+    "engineLabel": "Cylindrée :",
+    "fuelLabel": "Carburant :",
+    "bodyLabel": "Carrosserie :",
+    "originLabel": "Région d'Origine :",
+    "conditionLabel": "État du Véhicule :",
+    "vinLabelPdf": "VIN :",
+    "vehicleValuationDetails": "Détails de l'Évaluation du Véhicule",
+    "msrpOriginalFobUsd": "MSRP / FOB d'Origine (USD) :",
+    "depreciationApplied": "Dépréciation Appliquée :",
+    "depreciationValue": "{rate}% (Âge : {age} an(s))",
+    "depreciatedCostFobUsd": "Coût Déprécié (FOB USD) :",
+    "estimatedFreightDisplay": "Fret Estimé ({currency}) :",
+    "estimatedInsuranceDisplay": "Assurance Estimée ({currency}) :",
+    "exchangeRate": "Taux de Change :",
+    "customsValueCifValuation": "Valeur en Douane CIF ({currency}) :",
+    "shipmentCargoItems": "Articles du Cargo",
+    "cargoDescription": "Description des Marchandises",
+    "hsCode": "Code SH",
+    "declaredValueUsd": "Valeur Déclarée (USD)",
+    "weightKgTable": "Poids (kg)",
+    "taxesDutiesPayableBreakdown": "Détail des Taxes & Droits de Douane",
+    "taxLevyComponent": "Composante Taxe / Droit",
+    "rateBasis": "Taux / Base",
+    "amountDisplay": "Montant ({currency})",
+    "rateBasisFormat": "{rate}% {method} de {basis}",
+    "percentage": "pourcentage",
+    "flat": "forfait",
+    "totalTaxesDutiesPayable": "TOTAL DES TAXES & DROITS PAYABLES",
+    "scanQrToViewOnline": "Scanner le QR pour Voir en Ligne",
+    "importantDisclaimer": "Avis de Non-Responsabilité Important :",
+    "disclaimerDesc": "Il s'agit d'un calcul estimatif des droits de douane. Le montant final de la taxe peut varier en raison des fluctuations des taux de change, des méthodes d'évaluation douanière et des mises à jour des tarifs au moment du dédouanement effectif. Les estimations sont fournies à titre indicatif et ne doivent pas être considérées comme définitives.",
+    "certificateValidity": "Validité du Certificat :",
+    "validityDesc": "Ce certificat est généré sur la base des données tarifaires et des taux de change actuels. Pour un dédouanement officiel, veuillez consulter un commissionnaire agréé en douane ou contacter Kassongo Logistics.",
+    "poweredByKassongo": "Propulsé par Kassongo Logistics Systems",
+    "realTimeTradeIntel": "Plateforme d'Intelligence Commerciale et d'Automatisation Douanière en Temps Réel",
+    "fuelTypes": {
+      "petrol": "Essence",
+      "diesel": "Diesel",
+      "hybrid": "Hybride",
+      "electric": "Électrique"
+    },
+    "bodyStyles": {
+      "sedan": "Berline",
+      "suv": "SUV",
+      "hatchback": "Citadine",
+      "coupe": "Coupé",
+      "convertible": "Cabriolet",
+      "pickup": "Pickup",
+      "van": "Fourgonnette",
+      "wagon": "Break",
+      "other": "Autre"
+    },
+    "conditions": {
+      "new": "Neuf",
+      "used": "D'occasion",
+      "salvage": "Accidenté"
+    },
+    "regions": {
+      "europe": "Europe",
+      "asia": "Asie",
+      "north_america": "Amérique du Nord",
+      "africa": "Afrique",
+      "south_america": "Amérique du Sud",
+      "oceania": "Océanie"
+    },
+    "categories": {
+      "Electronics": "Électronique",
+      "Clothing": "Vêtements",
+      "Vehicles": "Véhicules",
+      "Machinery": "Machines",
+      "Food": "Alimentation",
+      "Chemicals": "Produits Chimiques",
+      "Textiles": "Textiles",
+      "Other": "Autre"
+    }
+  },
+  "Metadata": {
+    "title": "Kassongo Express - Global Storage & Forwarding Solutions",
+    "description": "Sign up to get your unique Kassongo shipping addresses in major trade hubs. Shop any supplier, and we will securely store, combine, and forward your boxes to save you money."
+  },
+  "USA": "États-Unis",
+  "Europe": "Europe",
+  "International Shipping": "Expédition internationale",
+  "Air Freight": "Fret aérien",
+  "Ocean Freight": "Fret maritime",
+  "Customs": "Douane",
+  "VAT": "TVA",
+  "Logistics": "Logistique"
+}

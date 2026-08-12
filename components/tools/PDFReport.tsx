@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useTranslation } from "../../lib/i18n/LanguageContext";
+import { useTranslations, useLocale } from 'next-intl';
 
 interface CustomsEstimateLine {
   name: string;
@@ -65,7 +65,8 @@ export default function PDFReport({
   xafToDisplay,
   formatCurrency,
 }: PDFReportProps) {
-  const { t, locale } = useTranslation();
+  const t = useTranslations();
+  const locale = useLocale();
   const isImport = estimate.mode === "import";
   const vehicleItem = estimate.items.find((it) => it.isCar);
 

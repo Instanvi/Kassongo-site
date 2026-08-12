@@ -1,9 +1,10 @@
 "use client";
 
-import { useTranslation } from "../../../lib/i18n/LanguageContext";
+import { useTranslations } from 'next-intl';
+
 
 export default function BannerSection() {
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   return (
     <section className="bg-green-900 text-white py-20 px-6 text-center">

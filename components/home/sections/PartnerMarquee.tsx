@@ -1,6 +1,7 @@
 "use client";
 
-import { useTranslation } from "../../../lib/i18n/LanguageContext";
+import { useTranslations } from 'next-intl';
+
 
 const logos = [
   { src: "/Amazon_logo.svg.webp", alt: "Amazon", h: "30px" },
@@ -39,7 +40,7 @@ const logos = [
 ];
 
 export default function PartnerMarquee() {
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   return (
     <section className="bg-white py-6 border-y border-gray-100 overflow-hidden">

@@ -1,11 +1,12 @@
 "use client";
 
 import { CheckCircle } from "lucide-react";
-import { useTranslation } from "../../../lib/i18n/LanguageContext";
+import { useTranslations } from 'next-intl';
+
 import { toast } from "sonner";
 
 export default function DownloadSection() {
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   const features = ["f1", "f2", "f3"];
 

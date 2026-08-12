@@ -1,6 +1,7 @@
 "use client";
 
-import { useTranslation } from "../../lib/i18n/LanguageContext";
+import { useTranslations } from 'next-intl';
+
 import { motion } from "framer-motion";
 
 const partnerCountries = [
@@ -103,7 +104,7 @@ function MarqueeRow({ countries, seed, direction, duration }: MarqueeRowProps) {
 }
 
 export default function NetworkCountriesGrid() {
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   return (
     <section className="py-16 bg-white border-t border-gray-100 w-full overflow-hidden">

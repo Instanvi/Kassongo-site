@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Search, Loader2, Tag, ChevronRight, Copy, CheckCircle, Calculator, HelpCircle, RefreshCw } from "lucide-react";
-import { useTranslation } from "../../lib/i18n/LanguageContext";
+import { useTranslations } from 'next-intl';
 
 interface TariffHsCodeMatch {
   code: string;
@@ -40,7 +40,7 @@ export default function HsCodeLookupTab({
   onAddProductToCalculator,
   apiJson,
 }: HsCodeLookupTabProps) {
-  const { t } = useTranslation();
+  const t = useTranslations();
   const [query, setQuery] = useState("");
   // const debouncedQuery = useDebounce(query, 500); // COMMENTED OUT - using manual search instead
 

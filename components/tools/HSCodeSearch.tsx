@@ -3,7 +3,8 @@
 import { useState, useRef, useEffect } from "react";
 import { Search, Package, ChevronRight, Tag, X } from "lucide-react";
 import { HS_CODES, searchHSCodes, getCategories, type HSCode } from "../../lib/hs-codes";
-import { useTranslation } from "../../lib/i18n/LanguageContext";
+import { useTranslations } from 'next-intl';
+
 
 interface HSCodeSearchProps {
   value: string;
@@ -18,7 +19,7 @@ export default function HSCodeSearch({
   label,
   placeholder,
 }: HSCodeSearchProps) {
-  const { t } = useTranslation();
+  const t = useTranslations();
   const displayLabel = label ?? t("importTools.labelHsCodeProduct");
   const displayPlaceholder = placeholder ?? t("importTools.placeholderHsCodeProduct");
 

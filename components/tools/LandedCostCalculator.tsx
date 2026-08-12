@@ -17,7 +17,7 @@ import {
   Loader2,
 } from "lucide-react";
 import VehicleSelector from "./VehicleSelector";
-import { useTranslation } from "../../lib/i18n/LanguageContext";
+import { useTranslations } from 'next-intl';
 
 interface TariffCountry {
   name: string;
@@ -145,7 +145,7 @@ export default function LandedCostCalculator({
   onClearSharedProduct,
   initialEstimateToken,
 }: LandedCostCalculatorProps) {
-  const { t } = useTranslation();
+  const t = useTranslations();
   const formRef = useRef<HTMLDivElement>(null);
 
   // Core configuration states

@@ -1,11 +1,13 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
+import { useRouter } from "@/i18n/navigation";
+import { useLocale } from 'next-intl';
 import { Menu, X, ChevronDown, ShoppingCart, Package, Search, Plug, Truck, Warehouse, Users, Box, Building2, Phone, Newspaper, Briefcase, Calculator, FileImage, Sparkles, Umbrella } from "lucide-react";
 import Button from "./Button";
 import StripeNavMenu, { DropdownItem, NavSection } from "./DropdownMenu";
-import { useTranslation } from "../lib/i18n/LanguageContext";
+import { useTranslations } from 'next-intl';
 
 // ============================================
 // Mobile Dropdown (accordion style)
@@ -61,7 +63,8 @@ export default function Header() {
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [mobileOpenDropdown, setMobileOpenDropdown] = useState<string | null>(null);
   const pathname = usePathname();
-  const { locale, setLocale, t } = useTranslation();
+  const locale = useLocale();
+  const t = useTranslations();
 
   const handleMobileNavigate = useCallback((href: string) => {
     setIsMenuOpen(false);
@@ -225,6 +228,14 @@ export default function Header() {
     { code: "zh" as const, flag: "cn", label: "简体中文" },
   ];
 
+  const handleLocaleChange = (newLocale: string) => {
+    // Get the current path without the locale prefix
+    const pathWithoutLocale = pathname.replace(`/${locale}`, '');
+    // Navigate to the same path with the new locale
+    router.push(pathWithoutLocale || '/', { locale: newLocale as 'en' | 'fr' | 'de' | 'zh' });
+    setIsLangOpen(false);
+  };
+
   return (
     <header className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -264,7 +275,7 @@ export default function Header() {
                     {languages.map((lang) => (
                       <button
                         key={lang.code}
-                        onClick={() => { setLocale(lang.code); setIsLangOpen(false); }}
+                        onClick={() => handleLocaleChange(lang.code)}
                         className={`w-full flex items-center gap-2 px-3 py-2 text-xs font-semibold rounded-lg text-left hover:bg-gray-50 transition-colors ${locale === lang.code ? "text-green-800 bg-green-50/50" : "text-gray-700"}`}
                       >
                         <span className={`fi fi-${lang.flag} rounded-sm`} style={{ width: "1.1rem", height: "0.825rem", display: "inline-block", backgroundSize: "cover" }} />
@@ -347,7 +358,10 @@ export default function Header() {
                     {languages.map((lang) => (
                       <button
                         key={lang.code}
-                        onClick={() => { setLocale(lang.code); setIsMenuOpen(false); }}
+                        onClick={() => {
+                          handleLocaleChange(lang.code);
+                          setIsMenuOpen(false);
+                        }}
                         className={`px-2 py-1 rounded-lg border text-[10px] font-bold flex items-center gap-1 transition-all ${locale === lang.code ? "bg-green-900 text-white border-green-900" : "bg-white border-gray-200 text-gray-700"}`}
                       >
                         <span className={`fi fi-${lang.flag} rounded-sm`} style={{ width: "0.85rem", height: "0.64rem", display: "inline-block", backgroundSize: "cover" }} />
