@@ -1941,27 +1941,21 @@
         "standardName": "Standard Coverage",
         "standardType": "Basic Protection",
         "standardDesc": "Essential insurance covering loss or damage caused by accidents, collisions, and common transit risks. Ideal for non-fragile goods.",
-        "standardFeatures": [
-          "Accidents & Collisions",
-          "Fire & Explosion",
-          "Natural Disasters"
-        ],
+        "standardFeature1": "Accidents & Collisions",
+        "standardFeature2": "Fire & Explosion",
+        "standardFeature3": "Natural Disasters",
         "comprehensiveName": "Comprehensive Coverage",
         "comprehensiveType": "All-Risk Protection",
         "comprehensiveDesc": "Complete insurance including theft, pilferage, water damage, and all perils except war and strikes. Best for high-value cargo.",
-        "comprehensiveFeatures": [
-          "All Standard Risks",
-          "Theft & Pilferage",
-          "Water & Weather Damage"
-        ],
+        "comprehensiveFeature1": "All Standard Risks",
+        "comprehensiveFeature2": "Theft & Pilferage",
+        "comprehensiveFeature3": "Water & Weather Damage",
         "premiumName": "Premium Coverage",
         "premiumType": "Maximum Protection",
         "premiumDesc": "Ultimate protection including war, strikes, riots, and all conceivable risks. For extremely valuable or sensitive shipments.",
-        "premiumFeatures": [
-          "All Comprehensive Risks",
-          "War & Strikes",
-          "Riots & Civil Commotion"
-        ],
+        "premiumFeature1": "All Comprehensive Risks",
+        "premiumFeature2": "War & Strikes",
+        "premiumFeature3": "Riots & Civil Commotion",
         "getQuote": "Get Quote"
       },
       "claimsProcess": {

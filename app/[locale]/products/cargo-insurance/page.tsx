@@ -24,10 +24,7 @@ import { useTranslations } from 'next-intl';
 
 export default function CargoInsurancePage() {
   const t = useTranslations();
-  const tArray = (key: string): string[] => {
-    const value = t(key);
-    return typeof value === 'string' ? value.split(',').map(s => s.trim()) : [];
-  };
+  
   // Insurance Calculator State
   const [cargoValue, setCargoValue] = useState<number>(10000);
   const [shipmentType, setShipmentType] = useState<"air" | "sea" | "land">("sea");
@@ -75,21 +72,33 @@ export default function CargoInsurancePage() {
       name: t('products.cargoInsurance.insuranceTypes.standardName'),
       type: t('products.cargoInsurance.insuranceTypes.standardType'),
       desc: t('products.cargoInsurance.insuranceTypes.standardDesc'),
-      features: tArray('products.cargoInsurance.insuranceTypes.standardFeatures'),
+      features: [
+        t('products.cargoInsurance.insuranceTypes.standardFeature1'),
+        t('products.cargoInsurance.insuranceTypes.standardFeature2'),
+        t('products.cargoInsurance.insuranceTypes.standardFeature3')
+      ],
       icon: <Package className="w-5 h-5 text-green-700" />
     },
     {
       name: t('products.cargoInsurance.insuranceTypes.comprehensiveName'),
       type: t('products.cargoInsurance.insuranceTypes.comprehensiveType'),
       desc: t('products.cargoInsurance.insuranceTypes.comprehensiveDesc'),
-      features: tArray('products.cargoInsurance.insuranceTypes.comprehensiveFeatures'),
+      features: [
+        t('products.cargoInsurance.insuranceTypes.comprehensiveFeature1'),
+        t('products.cargoInsurance.insuranceTypes.comprehensiveFeature2'),
+        t('products.cargoInsurance.insuranceTypes.comprehensiveFeature3')
+      ],
       icon: <ShieldCheck className="w-5 h-5 text-green-700" />
     },
     {
       name: t('products.cargoInsurance.insuranceTypes.premiumName'),
       type: t('products.cargoInsurance.insuranceTypes.premiumType'),
       desc: t('products.cargoInsurance.insuranceTypes.premiumDesc'),
-      features: tArray('products.cargoInsurance.insuranceTypes.premiumFeatures'),
+      features: [
+        t('products.cargoInsurance.insuranceTypes.premiumFeature1'),
+        t('products.cargoInsurance.insuranceTypes.premiumFeature2'),
+        t('products.cargoInsurance.insuranceTypes.premiumFeature3')
+      ],
       icon: <Shield className="w-5 h-5 text-green-700" />
     }
   ];

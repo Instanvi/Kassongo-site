@@ -1868,10 +1868,22 @@
         "title": "Unabhängiger Shariah-Beirat",
         "desc": "Kassongo Capital arbeitet unter ständiger Aufsicht unabhängiger islamischer Gelehrter und Wirtschaftsprüfer. Alle Kauf- und Dienstleistungsverträge sowie Richtlinien werden jährlich geprüft, um die Shariah-Konformität zu garantieren."
       },
-      "faq": {
-        "title": "Häufig Gestellte Fragen",
-        "subtitle": "Alles, was Sie über Shariah-konforme Lieferkettenfinanzierung wissen müssen."
-      }
+"faq": {
+  "title": "Häufig gestellte Fragen",
+  "subtitle": "Alles, was Sie über schariakompatible Lieferkettenfinanzierung wissen müssen.",
+  "q1": "Was macht Kassongo Capital schariakompatibel?",
+  "a1": "Im Gegensatz zu herkömmlichen Kreditgebern, die Zinsen (Riba) auf Barkredite erheben, nutzt Kassongo Capital Vermögenswert-gestützte Strukturen. In unserem Murabaha-Lagerbestandsprogramm treten wir als Käufer auf, kaufen die Waren beim Lieferanten ein und verkaufen sie Ihnen zu einem transparenten Selbstkostenpreis plus einem vorab vereinbarten Gewinnaufschlag mit Zahlungsaufschub. Unsere Verträge wurden von unabhängigen islamischen Finanzgelehrten strukturiert und zertifiziert.",
+  "q2": "Wie funktioniert die Murabaha-Lagerbestandsfinanzierung?",
+  "a2": "Sobald Ihr Antrag genehmigt ist, übermitteln Sie uns die Proforma-Rechnung Ihres verifizierten Lieferanten. Kassongo kauft die Waren direkt bei Ihrem Lieferanten und erwirbt das Eigentum. Anschließend verkaufen wir Ihnen die Waren zum Selbstkostenpreis zuzüglich eines vorab vereinbarten pauschalen Gewinnaufschlags. Sie erhalten die Waren und tilgen den Betrag in wöchentlichen oder monatlichen Raten mit Zahlungsaufschub (bis zu 120 Tage).",
+  "q3": "Gibt es versteckte Zinsgebühren oder Verzugszinsen?",
+  "a3": "Nein. Die islamische Rechtswissenschaft verbietet strengstens Zinseszinsen oder den Profit aus dem Zahlungsverzug eines Kunden. Alle Gebühren werden von vornherein transparent offengelegt. Im Falle einer Zahlungsverzögerung sind Verzugsgebühren streng auf einen pauschalen Verwaltungsaufwand begrenzt oder werden unter Aufsicht unseres Schariarats vollständig an registrierte Wohltätigkeitsorganisationen gespendet.",
+  "q4": "Welche Voraussetzungen muss ich für einen Antrag erfüllen?",
+  "a4": "Um sich für Handelsfinanzierung zu qualifizieren, muss ein Unternehmen mindestens 12 Monate aktive Handelsgeschäfte nachweisen, Waren über das Logistik- und Versandnetzwerk von Kassongo importieren und ausschließlich Halal-konforme (zulässige) Produkte handeln. Wir benötigen eine grundlegende Bilanzprüfung zur Ermittlung Ihres Kreditrahmens.",
+  "q5": "Kann ich Kassongo Capital nutzen, auch wenn ich nicht Muslim bin?",
+  "a5": "Ja, selbstverständlich. Kassongo Capital steht allen Unternehmen unabhängig von der religiösen Herkunft offen. Viele globale Händler entscheiden sich für schariakompatible Finanzierung aufgrund ihrer ethischen Struktur, transparenten Preisgestaltung, Risikoteilungsmerkmale und dem Fehlen räuberischer Zinseszinsen.",
+  "q6": "Wie schnell läuft die Kreditprüfung und Genehmigung ab?",
+  "a6": "Unser Antrags- und Risikobewertungsprozess ist vollständig digitalisiert. Sobald Sie Ihre Bankkonten verknüpfen oder Ihre Steuer- und Handelsunterlagen hochladen, stellen unsere Risikoanalyse-Engine und unser Compliance-Gremium in der Regel innerhalb von 24 bis 48 Stunden einen Kreditrahmen zur Verfügung."
+}
     },
     "cargoInsurance": {
       "hero": {
@@ -1928,27 +1940,21 @@
         "standardName": "Standarddeckung",
         "standardType": "Basisschutz",
         "standardDesc": "Grundlegende Versicherung gegen Verlust oder Beschaedigung durch Unfaelle, Kollisionen und haeufige Transportrisiken. Ideal fuer nicht zerbrechliche Gueter.",
-        "standardFeatures": [
-          "Unfaelle und Kollisionen",
-          "Brand und Explosion",
-          "Naturkatastrophen"
-        ],
+        "standardFeature1": "Unfaelle und Kollisionen",
+        "standardFeature2": "Brand und Explosion",
+        "standardFeature3": "Naturkatastrophen",
         "comprehensiveName": "Umfassende Deckung",
         "comprehensiveType": "Allgefahrenversicherung",
         "comprehensiveDesc": "Vollstaendige Versicherung einschliesslich Diebstahl, Plünderung, Wasserschaeden und aller Gefahren ausser Krieg und Streiks. Am besten fuer hochwertige Fracht.",
-        "comprehensiveFeatures": [
-          "Alle Standardrisiken",
-          "Diebstahl und Pluenderung",
-          "Wasser- und Wetterschaeden"
-        ],
+        "comprehensiveFeature1": "Alle Standardrisiken",
+        "comprehensiveFeature2": "Diebstahl und Pluenderung",
+        "comprehensiveFeature3": "Wasser- und Wetterschaeden",
         "premiumName": "Premium-Deckung",
         "premiumType": "Maximaler Schutz",
         "premiumDesc": "Ultimativer Schutz einschliesslich Krieg, Streiks, Unruhen und alle erdenklichen Risiken. Fuer aeusserst wertvolle oder empfindliche Sendungen.",
-        "premiumFeatures": [
-          "Alle umfassenden Risiken",
-          "Krieg und Streiks",
-          "Aufruhr und Buergerunruhen"
-        ],
+        "premiumFeature1": "Alle umfassenden Risiken",
+        "premiumFeature2": "Krieg und Streiks",
+        "premiumFeature3": "Aufruhr und Buergerunruhen",
         "getQuote": "Angebot einholen"
       },
       "claimsProcess": {
