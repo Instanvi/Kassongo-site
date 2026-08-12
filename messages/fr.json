@@ -154,7 +154,14 @@
       "protection": "Protection",
       "turkey": "Turquie",
       "istanbul": "Istanbul",
-      "tradeHub": "Plaque tournante commerciale"
+      "tradeHub": "Plaque tournante commerciale",
+      "USA": "États-Unis",
+      "Europe": "Europe",
+      "Africa": "Afrique",
+      "GlobalTrade": "Commerce mondial",
+      "Maritime": "Maritime",
+      "Aviation": "Aviation",
+      "CreditInsurance": "Assurance-crédit"
     },
     "authors": {
       "marcus": {
@@ -1884,6 +1891,22 @@
         "a5": "Oui, tout à fait. Kassongo Capital est ouvert à toutes les entreprises, sans distinction confessionnelle. De nombreux commerçants choisissent nos solutions éthiques pour leur transparence, leur partage des risques et l'absence totale de taux d'intérêt prédateurs.",
         "q6": "Combien de temps prend l'approbation de la demande ?",
         "a6": "Notre processus est entièrement numérisé. Une fois vos relevés bancaires ou documents commerciaux transmis, nos équipes de gestion des risques et de conformité valident généralement votre ligne de financement sous 24 à 48 heures."
+      },
+      "kassongoCapitalFaq": {
+        "title": "FAQ Kassongo Capital",
+        "subtitle": "Questions fréquentes sur notre financement commercial conforme à la Shariah",
+        "q1": "Qu'est-ce que Kassongo Capital ?",
+        "a1": "Kassongo Capital fournit un financement conforme à la Shariah pour les entreprises de commerce international. Nous proposons des solutions de financement d'inventaire (Murabaha), de logistique (Qard Hassan) et de location d'équipement (Ijarah) qui sont éthiques, transparentes et sans intérêts.",
+        "q2": "En quoi le financement Shariah diffère-t-il des prêts bancaires traditionnels ?",
+        "a2": "Contrairement aux banques qui facturent des intérêts (Riba), Kassongo Capital utilise des transactions adossées à des actifs. Pour le financement d'inventaire, nous achetons les marchandises et vous les revendons avec une marge bénéficiaire transparente. Pour la logistique, nous proposons des prêts bienveillants (Qard Hassan) sans intérêt.",
+        "q3": "Quels types de financement proposez-vous ?",
+        "a3": "Nous proposons : (1) Financement d'inventaire (Murabaha) - paiement différé jusqu'à 120 jours avec marge transparente, (2) Financement logistique (Qard Hassan) - prêts sans intérêt pour les frais de fret et de douane, et (3) Location d'équipement (Ijarah) - location-vente d'actifs logistiques.",
+        "q4": "Qui peut postuler au financement Kassongo Capital ?",
+        "a4": "Toute entreprise importatrice avec au moins 12 mois d'historique d'exploitation, des revenus mensuels vérifiables et des activités commerciales conformes à la Shariah peut postuler. Vous n'avez pas besoin d'être musulman - nos solutions éthiques sont ouvertes à tous.",
+        "q5": "Combien de temps prend le processus d'approbation ?",
+        "a5": "Notre processus d'approbation numérique prend généralement 24-48 heures après réception de votre demande complète et des documents justificatifs. Les demandes urgentes peuvent être accélérées.",
+        "q6": "Y a-t-il des frais cachés ou des pénalités de retard ?",
+        "a6": "Non. Toutes les marges et tous les frais sont déclarés à l'avance dans le contrat. Les pénalités de retard sont limitées aux coûts administratifs réels et plafonnées conformément aux directives Shariah. Tout excédent est reversé à des œuvres caritatives."
       }
     },
     "cargoInsurance": {
@@ -1941,27 +1964,21 @@
         "standardName": "Couverture standard",
         "standardType": "Protection de base",
         "standardDesc": "Assurance essentielle couvrant les pertes ou dommages causés par des accidents, collisions et risques de transit courants. Idéal pour les marchandises non fragiles.",
-        "standardFeatures": [
-          "Accidents et collisions",
-          "Incendie et explosion",
-          "Catastrophes naturelles"
-        ],
+        "standardFeature1": "Accidents et collisions",
+        "standardFeature2": "Incendie et explosion",
+        "standardFeature3": "Catastrophes naturelles",
         "comprehensiveName": "Couverture complète",
         "comprehensiveType": "Protection tous risques",
         "comprehensiveDesc": "Assurance complète incluant le vol, le pillage, les dommages causés par l'eau et tous les périls sauf la guerre et les grèves. Idéal pour les cargaisons de grande valeur.",
-        "comprehensiveFeatures": [
-          "Tous les risques standards",
-          "Vol et pillage",
-          "Dommages causés par l'eau et les intempéries"
-        ],
+        "comprehensiveFeature1": "Tous les risques standards",
+        "comprehensiveFeature2": "Vol et pillage",
+        "comprehensiveFeature3": "Dommages causés par l'eau et les intempéries",
         "premiumName": "Couverture premium",
         "premiumType": "Protection maximale",
         "premiumDesc": "Protection ultime incluant la guerre, les grèves, les émeutes et tous les risques imaginables. Pour les expéditions extrêmement précieuses ou sensibles.",
-        "premiumFeatures": [
-          "Tous les risques complets",
-          "Guerre et grèves",
-          "Émeutes et troubles civils"
-        ],
+        "premiumFeature1": "Tous les risques complets",
+        "premiumFeature2": "Guerre et grèves",
+        "premiumFeature3": "Émeutes et troubles civils",
         "getQuote": "Obtenir un devis"
       },
       "claimsProcess": {
